@@ -1,0 +1,3 @@
+vsim -gui work.ModuloProcessador_tb
+run
+quit -sim
