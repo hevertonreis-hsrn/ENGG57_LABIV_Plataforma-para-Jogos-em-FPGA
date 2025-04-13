@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 384 304)
+	(rect 16 16 384 368)
 	(text "EX_STAGE" (rect 5 0 68 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 267 24 284)(font "Intel Clear" ))
+	(text "inst" (rect 8 331 24 348)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -122,6 +122,34 @@ refer to the applicable agreement for further details.
 		(line (pt 0 240)(pt 16 240)(line_width 3))
 	)
 	(port
+		(pt 0 256)
+		(input)
+		(text "FowardA[1..0]" (rect 0 0 82 19)(font "Intel Clear" (font_size 8)))
+		(text "FowardA[1..0]" (rect 21 251 103 270)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 256)(pt 16 256)(line_width 3))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "FowardB[1..0]" (rect 0 0 82 19)(font "Intel Clear" (font_size 8)))
+		(text "FowardB[1..0]" (rect 21 267 103 286)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 272)(pt 16 272)(line_width 3))
+	)
+	(port
+		(pt 0 288)
+		(input)
+		(text "MEM_Data[31..0]" (rect 0 0 102 19)(font "Intel Clear" (font_size 8)))
+		(text "MEM_Data[31..0]" (rect 21 283 123 302)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 288)(pt 16 288)(line_width 3))
+	)
+	(port
+		(pt 0 304)
+		(input)
+		(text "EX_Data[31..0]" (rect 0 0 89 19)(font "Intel Clear" (font_size 8)))
+		(text "EX_Data[31..0]" (rect 21 299 110 318)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 304)(pt 16 304)(line_width 3))
+	)
+	(port
 		(pt 368 32)
 		(output)
 		(text "BranchTaken" (rect 0 0 76 19)(font "Intel Clear" (font_size 8)))
@@ -185,6 +213,6 @@ refer to the applicable agreement for further details.
 		(line (pt 368 160)(pt 352 160)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 352 272))
+		(rectangle (rect 16 16 352 336))
 	)
 )

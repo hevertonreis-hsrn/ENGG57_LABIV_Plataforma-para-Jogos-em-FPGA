@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Wed Apr 09 14:01:29 2025"
+// CREATED		"Sun Apr 13 13:45:48 2025"
 
 module IF_STAGE(
 	clk,
@@ -22,6 +22,8 @@ module IF_STAGE(
 	clk_Mem,
 	PCSrc,
 	IF_Flush,
+	HD_Hold_IF_ID,
+	HD_HoldPC,
 	BranchTarget,
 	IF_ID_Inst,
 	IF_ID_PC
@@ -33,6 +35,8 @@ input wire	rst;
 input wire	clk_Mem;
 input wire	PCSrc;
 input wire	IF_Flush;
+input wire	HD_Hold_IF_ID;
+input wire	HD_HoldPC;
 input wire	[7:0] BranchTarget;
 output wire	[31:0] IF_ID_Inst;
 output wire	[7:0] IF_ID_PC;
@@ -49,6 +53,7 @@ wire	[7:0] SYNTHESIZED_WIRE_3;
 IF_ID_Register	b2v_inst(
 	.clk(clk),
 	.rst(rst),
+	.hold_IF_ID(HD_Hold_IF_ID),
 	.IF_Flush(IF_Flush),
 	.inInstruction(SYNTHESIZED_WIRE_0),
 	.inPC(SYNTHESIZED_WIRE_6),
@@ -64,6 +69,7 @@ PCAdder	b2v_inst1(
 ProgramCounter	b2v_inst2(
 	.clk(clk),
 	.rst(rst),
+	.holdPC(HD_HoldPC),
 	.nextPC(SYNTHESIZED_WIRE_3),
 	.currentPC(SYNTHESIZED_WIRE_7));
 

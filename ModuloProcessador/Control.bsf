@@ -107,13 +107,6 @@ refer to the applicable agreement for further details.
 		(text "RegWrite" (rect 139 187 179 199)(font "Arial" ))
 		(line (pt 200 192)(pt 184 192)(line_width 1))
 	)
-	(port
-		(pt 200 208)
-		(output)
-		(text "IF_Flush" (rect 0 0 35 12)(font "Arial" ))
-		(text "IF_Flush" (rect 144 203 179 215)(font "Arial" ))
-		(line (pt 200 208)(pt 184 208)(line_width 1))
-	)
 	(parameter
 		"LW_1"
 		"000000"

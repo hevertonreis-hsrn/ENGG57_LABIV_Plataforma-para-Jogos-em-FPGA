@@ -1,8 +1,6 @@
 module EX_MEM_Register (
     input wire clk, 
 	 input wire rst,
-	 input wire inBranchTaken,
-	 input wire [7:0] inBranchTarget,
     input wire inMemToReg,
     input wire inRegWrite,
 	 input wire inMemRead,
@@ -10,8 +8,6 @@ module EX_MEM_Register (
 	 input wire [31:0] inALUResult,
 	 input wire [31:0] inWriteData,
 	 input wire [4:0] inWriteReg,
-	 output reg outBranchTaken,
-	 output reg [7:0] outBranchTarget,
 	 output reg outMemToReg,
     output reg outRegWrite,
 	 output reg outMemRead,
@@ -23,8 +19,6 @@ module EX_MEM_Register (
   
 always@(posedge clk)
 	if (rst) begin
-		 outBranchTaken <= 1'b0;
-		 outBranchTarget <= 8'b0;
 		 outMemToReg <= 1'b0;
 		 outRegWrite <= 1'b0;
 		 outMemRead <= 1'b0;
@@ -34,8 +28,6 @@ always@(posedge clk)
 		 outWriteReg <= 5'b0;
 	end
 	else begin
-		 outBranchTaken <= inBranchTaken;
-		 outBranchTarget <= inBranchTarget;
 		 outMemToReg <= inMemToReg;
 		 outRegWrite <= inRegWrite;
 		 outMemRead <= inMemRead;

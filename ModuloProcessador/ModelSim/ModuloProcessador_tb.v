@@ -38,20 +38,9 @@ module ModuloProcessador_tb;
         $display("--- IF STAGE ---------------------------------------");
         $display("IF_ID_PC: %d", uut.b2v_inst.IF_ID_PC);
         $display("IF_ID_Inst: %b", uut.b2v_inst.IF_ID_Inst);
+        $display("IF_Flush: %b", uut.b2v_inst.IF_Flush);
         $display("----------------------------------------------------");
         $display("--- ID STAGE ---------------------------------------");
-        //$display("OPCode: %b, R1: %b, R2: %b, Imediato: %d", 
-        //        uut.b2v_inst2.b2v_inst1.opcode, uut.b2v_inst2.b2v_inst1.r1,
-        //        uut.b2v_inst2.b2v_inst1.r2, uut.b2v_inst2.b2v_inst1.immediate);
-        //$display("ALUOp: %b, Branch: %b, BranchMode: %b, MemRead: %b, MemToReg: %b, MemWrite: %b, ALUSrc: %b, RegWrite: %b, BranchSrc: %b, Push: %b, Pop: %b, IF_Flush: %b", 
-        //        uut.b2v_inst2.b2v_inst.ALUOp, uut.b2v_inst2.b2v_inst.Branch, 
-        //        uut.b2v_inst2.b2v_inst.BranchMode, uut.b2v_inst2.b2v_inst.MemRead, 
-        //        uut.b2v_inst2.b2v_inst.MemToReg, uut.b2v_inst2.b2v_inst.MemWrite, 
-        //        uut.b2v_inst2.b2v_inst.ALUSrc, uut.b2v_inst2.b2v_inst.RegWrite,
-        //        uut.b2v_inst2.b2v_inst.BranchSrc, uut.b2v_inst2.b2v_inst.StackPush,
-        //        uut.b2v_inst2.b2v_inst.StackPop, uut.b2v_inst2.b2v_inst.IF_Flush);
-        //$display("readData1: %d, readData2: %d", 
-        //        uut.b2v_inst2.b2v_inst2.readData1, uut.b2v_inst2.b2v_inst2.readData2);
         $display("ID_EX_MemToReg: %b, ID_EX_RegWrite: %b", 
                 uut.b2v_inst2.ID_EX_MemToReg, uut.b2v_inst2.ID_EX_RegWrite);
         $display("ID_EX_BranchTarget: %d, ID_EX_Branch: %b, ID_EX_MemRead: %b, ID_EX_MemWrite: %b",        
@@ -60,9 +49,16 @@ module ModuloProcessador_tb;
         $display("ID_EX_ReadData1: %d, ID_EX_ReadData2: %d, ID_EX_SignExtImm: %d",
                 uut.b2v_inst2.ID_EX_ReadData1, uut.b2v_inst2.ID_EX_ReadData2,
                 uut.b2v_inst2.ID_EX_SignExtImm);
-        $display("ID_EX_ALUSrc: %b, ID_EX_ALUOp: %b, IF_Flush: %b", 
-                uut.b2v_inst2.ID_EX_ALUSrc, uut.b2v_inst2.ID_EX_ALUOp,
-                uut.b2v_inst2.IF_Flush);
+        $display("ID_EX_ALUSrc: %b, ID_EX_ALUOp: %b", 
+                uut.b2v_inst2.ID_EX_ALUSrc, uut.b2v_inst2.ID_EX_ALUOp);
+        $display("r1: %b, r2: %b, ID_EX_WriteReg: %b", 
+                uut.b2v_inst1.r1, uut.b2v_inst1.r2,
+                uut.b2v_inst2.ID_EX_WriteReg);
+        $display("----------------------------------------------------");
+        $display("--- Hazard Detection -------------------------------");
+        $display("HoldPC: %b, Hold_IF_ID: %b, HoldControl: %b",
+                uut.b2v_inst1.HD_HoldPC, uut.b2v_inst1.HD_Hold_IF_ID,
+                uut.b2v_inst1.HD_HoldControl);
         $display("----------------------------------------------------");
         $display("--- EX STAGE ---------------------------------------");
         $display("EX_MEM_MemToReg: %b, EX_MEM_RegWrite: %b, EX_MEM_MemRead: %b, EX_MEM_MemWrite: %b", 
@@ -73,14 +69,25 @@ module ModuloProcessador_tb;
         $display("BranchTaken: %b, BranchTarget: %d", 
                 uut.b2v_inst3.BranchTaken, uut.b2v_inst3.BranchTarget);
         $display("----------------------------------------------------");
+        $display("--- Fowarding -------------------------------");
+        $display("ID_EX_rs1: %b, ID_EX_rs2: %b",
+                uut.b2v_inst7.ID_EX_rs1, uut.b2v_inst7.ID_EX_rs2);
+        $display("EX_MEM_rd: %b, MEM_WB_rd: %b",
+                uut.b2v_inst7.EX_MEM_rd, uut.b2v_inst7.MEM_WB_rd);
+        $display("EX_MEM_RegWrite: %b, MEM_WB_RegWrite: %b",
+                uut.b2v_inst7.EX_MEM_RegWrite, uut.b2v_inst7.MEM_WB_RegWrite);
+        $display("ForwardA: %b, ForwardB: %b",
+                uut.b2v_inst7.ForwardA, uut.b2v_inst7.ForwardB);
+        $display("----------------------------------------------------");
         $display("--- MEM STAGE ---------------------------------------");
         $display("MEM_WB_RegWrite: %b, MEM_WB_MemToReg: %b, MEM_WB_ALUResult: %d, MEM_WB_ReadData: %d", 
                 uut.b2v_inst4.MEM_WB_RegWrite, uut.b2v_inst4.MEM_WB_MemToReg,
                 uut.b2v_inst4.MEM_WB_ALUResult, uut.b2v_inst4.MEM_WB_ReadData);
         $display("----------------------------------------------------");
         $display("--- WB STAGE ---------------------------------------");
-        $display("RegWrite: %b, WriteData: %d", 
-                uut.b2v_inst5.RegWrite, uut.b2v_inst5.WriteData);
+        $display("RegWrite: %b, WriteData: %d, WriteReg: %b", 
+                uut.b2v_inst5.RegWrite, uut.b2v_inst5.WriteData,
+                uut.b2v_inst5.WriteReg);
         $display(" ");
         //$display("EntradaPilha: %d, SaidaPilha: %d, SP: %d", 
         //        uut.b2v_inst15.data_in, uut.b2v_inst15.data_out, uut.b2v_inst15.sp);
