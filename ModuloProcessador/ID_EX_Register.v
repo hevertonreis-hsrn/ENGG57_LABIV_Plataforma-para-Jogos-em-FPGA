@@ -12,7 +12,8 @@ module ID_EX_Register (
     input wire [31:0] inSignExtImm,       
     input wire [5:0] inALUOp,            
     input wire inALUSrc,
-	 input wire [4:0] inWriteReg, 
+	 input wire [4:0] inWriteReg,
+	 input wire [4:0] inRegSrc1,
    
 	 output reg outMemToReg,               
     output reg outRegWrite,
@@ -25,7 +26,8 @@ module ID_EX_Register (
     output reg [31:0] outSignExtImm,      
 	 output reg [5:0] outALUOp,             
     output reg outALUSrc,
-	 output reg [4:0] outWriteReg	 
+	 output reg [4:0] outWriteReg,
+	 output reg [4:0] outRegSrc1
 );
 
   always @(posedge clk) begin
@@ -39,9 +41,10 @@ module ID_EX_Register (
             outReadData1 <= 32'b0;
             outReadData2 <= 32'b0;
             outSignExtImm <= 32'b0;
-				outALUOp <= 5'b11111;
+				outALUOp <= 6'b010101;
             outALUSrc <= 1'b0;
-			   outWriteReg <= 5'b0;	
+			   outWriteReg <= 5'b0;
+				outRegSrc1 <= 5'b0;
         end else begin
             outMemToReg <= inMemToReg;
 				outRegWrite <= inRegWrite;
@@ -55,6 +58,7 @@ module ID_EX_Register (
 				outALUOp <= inALUOp;
             outALUSrc <= inALUSrc;
 				outWriteReg <= inWriteReg;
+				outRegSrc1 <= inRegSrc1;
         end
     end
 

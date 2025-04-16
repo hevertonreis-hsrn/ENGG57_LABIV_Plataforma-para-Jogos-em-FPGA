@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Sun Apr 13 16:44:03 2025"
+// CREATED		"Tue Apr 15 22:01:33 2025"
 
 module ID_STAGE(
 	clk,
@@ -91,7 +91,6 @@ wire	SYNTHESIZED_WIRE_18;
 wire	[5:0] SYNTHESIZED_WIRE_19;
 wire	[7:0] SYNTHESIZED_WIRE_20;
 wire	[31:0] SYNTHESIZED_WIRE_22;
-wire	SYNTHESIZED_WIRE_25;
 wire	SYNTHESIZED_WIRE_26;
 wire	SYNTHESIZED_WIRE_27;
 wire	SYNTHESIZED_WIRE_28;
@@ -99,9 +98,9 @@ wire	SYNTHESIZED_WIRE_29;
 wire	SYNTHESIZED_WIRE_30;
 wire	SYNTHESIZED_WIRE_31;
 wire	SYNTHESIZED_WIRE_32;
-wire	[5:0] SYNTHESIZED_WIRE_33;
+wire	SYNTHESIZED_WIRE_33;
+wire	[5:0] SYNTHESIZED_WIRE_34;
 
-assign	ID_EX_Rs = SYNTHESIZED_WIRE_35;
 assign	r1 = SYNTHESIZED_WIRE_35;
 assign	r2 = SYNTHESIZED_WIRE_36;
 
@@ -112,15 +111,15 @@ Control	b2v_inst(
 	.opcode(SYNTHESIZED_WIRE_0),
 	.StackPush(SYNTHESIZED_WIRE_10),
 	.StackPop(SYNTHESIZED_WIRE_11),
-	.BranchMode(SYNTHESIZED_WIRE_25),
-	.BranchSrc(SYNTHESIZED_WIRE_26),
-	.Branch(SYNTHESIZED_WIRE_27),
-	.MemRead(SYNTHESIZED_WIRE_28),
-	.MemToReg(SYNTHESIZED_WIRE_29),
-	.MemWrite(SYNTHESIZED_WIRE_30),
-	.ALUSrc(SYNTHESIZED_WIRE_31),
-	.RegWrite(SYNTHESIZED_WIRE_32),
-	.ALUOp(SYNTHESIZED_WIRE_33));
+	.BranchMode(SYNTHESIZED_WIRE_26),
+	.BranchSrc(SYNTHESIZED_WIRE_27),
+	.Branch(SYNTHESIZED_WIRE_28),
+	.MemRead(SYNTHESIZED_WIRE_29),
+	.MemToReg(SYNTHESIZED_WIRE_30),
+	.MemWrite(SYNTHESIZED_WIRE_31),
+	.ALUSrc(SYNTHESIZED_WIRE_32),
+	.RegWrite(SYNTHESIZED_WIRE_33),
+	.ALUOp(SYNTHESIZED_WIRE_34));
 	defparam	b2v_inst.ADD = 6'b000110;
 	defparam	b2v_inst.AND = 6'b001010;
 	defparam	b2v_inst.BRFL = 6'b010010;
@@ -215,6 +214,7 @@ ID_EX_Register	b2v_inst8(
 	.inBranchTarget(SYNTHESIZED_WIRE_20),
 	.inReadData1(SYNTHESIZED_WIRE_38),
 	.inReadData2(SYNTHESIZED_WIRE_22),
+	.inRegSrc1(SYNTHESIZED_WIRE_35),
 	.inSignExtImm(SYNTHESIZED_WIRE_37),
 	.inWriteReg(SYNTHESIZED_WIRE_36),
 	.outMemToReg(ID_EX_MemToReg),
@@ -227,21 +227,22 @@ ID_EX_Register	b2v_inst8(
 	.outBranchTarget(ID_EX_BranchTarget),
 	.outReadData1(ID_EX_ReadData1),
 	.outReadData2(ID_EX_ReadData2),
+	.outRegSrc1(ID_EX_Rs),
 	.outSignExtImm(ID_EX_SignExtImm),
 	.outWriteReg(ID_EX_WriteReg));
 
 
 ControlMux	b2v_inst9(
-	.inBranchMode(SYNTHESIZED_WIRE_25),
-	.inBranchSrc(SYNTHESIZED_WIRE_26),
-	.inBranch(SYNTHESIZED_WIRE_27),
-	.inMemRead(SYNTHESIZED_WIRE_28),
-	.inMemToReg(SYNTHESIZED_WIRE_29),
-	.inMemWrite(SYNTHESIZED_WIRE_30),
-	.inALUSrc(SYNTHESIZED_WIRE_31),
-	.inRegWrite(SYNTHESIZED_WIRE_32),
+	.inBranchMode(SYNTHESIZED_WIRE_26),
+	.inBranchSrc(SYNTHESIZED_WIRE_27),
+	.inBranch(SYNTHESIZED_WIRE_28),
+	.inMemRead(SYNTHESIZED_WIRE_29),
+	.inMemToReg(SYNTHESIZED_WIRE_30),
+	.inMemWrite(SYNTHESIZED_WIRE_31),
+	.inALUSrc(SYNTHESIZED_WIRE_32),
+	.inRegWrite(SYNTHESIZED_WIRE_33),
 	.holdControl(HD_HoldControl),
-	.inALUOp(SYNTHESIZED_WIRE_33),
+	.inALUOp(SYNTHESIZED_WIRE_34),
 	.outBranchMode(SYNTHESIZED_WIRE_4),
 	.outBranchSrc(SYNTHESIZED_WIRE_7),
 	.outBranch(SYNTHESIZED_WIRE_15),

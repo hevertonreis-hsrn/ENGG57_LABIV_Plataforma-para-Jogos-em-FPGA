@@ -21,10 +21,10 @@ module Stack (
         end else begin
             if (push && !full) begin
                 stack_mem[sp] <= data_in;
-                sp <= sp + 1;
+                sp <= sp + 5'd1;
                 data_out <= data_in;  // Atualiza o topo
             end else if (pop && !empty) begin
-                sp <= sp - 1;
+                sp <= sp - 5'd1;
                 data_out <= stack_mem[sp - 1]; // Captura o novo topo antes de mudar sp
             end
 

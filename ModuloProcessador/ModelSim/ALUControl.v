@@ -30,6 +30,8 @@ parameter   LW_1  = 6'b000000,  // Load Word - Estado 1
 // Operações da ALU
 always @(*) begin
 
+	 Operation = 4'b1111;
+
     case (ALUOp)
         LW_1,SW_1,ADD: begin
             Operation = 4'b0001; // Adição

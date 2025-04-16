@@ -1,3 +1,5 @@
 /ModuloProcessador/db
 /ModuloProcessador/greybox_tmp
 /ModuloProcessador/**.bak
+/ModuloProcessador/incremental_db
+/ModuloProcessador/output_files

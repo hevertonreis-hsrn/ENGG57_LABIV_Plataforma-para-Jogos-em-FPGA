@@ -71,13 +71,13 @@ module ModuloProcessador_tb;
         $display("----------------------------------------------------");
         $display("--- Fowarding -------------------------------");
         $display("ID_EX_rs1: %b, ID_EX_rs2: %b",
-                uut.b2v_inst7.ID_EX_rs1, uut.b2v_inst7.ID_EX_rs2);
+                uut.b2v_inst8.ID_EX_rs1, uut.b2v_inst8.ID_EX_rs2);
         $display("EX_MEM_rd: %b, MEM_WB_rd: %b",
-                uut.b2v_inst7.EX_MEM_rd, uut.b2v_inst7.MEM_WB_rd);
+                uut.b2v_inst8.EX_MEM_rd, uut.b2v_inst8.MEM_WB_rd);
         $display("EX_MEM_RegWrite: %b, MEM_WB_RegWrite: %b",
-                uut.b2v_inst7.EX_MEM_RegWrite, uut.b2v_inst7.MEM_WB_RegWrite);
+                uut.b2v_inst8.EX_MEM_RegWrite, uut.b2v_inst8.MEM_WB_RegWrite);
         $display("ForwardA: %b, ForwardB: %b",
-                uut.b2v_inst7.ForwardA, uut.b2v_inst7.ForwardB);
+                uut.b2v_inst8.ForwardA, uut.b2v_inst8.ForwardB);
         $display("----------------------------------------------------");
         $display("--- MEM STAGE ---------------------------------------");
         $display("MEM_WB_RegWrite: %b, MEM_WB_MemToReg: %b, MEM_WB_ALUResult: %d, MEM_WB_ReadData: %d", 

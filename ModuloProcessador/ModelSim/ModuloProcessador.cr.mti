@@ -14,13 +14,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ROM
 -- Compiling architecture SYN of rom
 
-} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_WB_Register.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_WB_Register.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module MEM_WB_Register
-
-Top level modules:
-	MEM_WB_Register
-
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/PCAdder.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/PCAdder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module PCAdder
@@ -34,6 +27,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	ALUControl
+
+} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_WB_Register.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_WB_Register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MEM_WB_Register
+
+Top level modules:
+	MEM_WB_Register
 
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/DataMemory.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/DataMemory.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -72,12 +72,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ID_EX_Register
 
-} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RegFile.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RegFile.v}
+} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ForwardingMux.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ForwardingMux.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module RegFile
+-- Compiling module ForwardingMux
 
 Top level modules:
-	RegFile
+	ForwardingMux
 
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/BranchAdder.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/BranchAdder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -85,6 +85,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	BranchAdder
+
+} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RegFile.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RegFile.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RegFile
+
+Top level modules:
+	RegFile
 
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_ID_Register.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_ID_Register.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -100,19 +107,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	EX_MEM_Register
 
-} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_STAGE.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_STAGE.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ID_STAGE
-
-Top level modules:
-	ID_STAGE
-
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/EX_STAGE.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/EX_STAGE.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module EX_STAGE
 
 Top level modules:
 	EX_STAGE
+
+} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_STAGE.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_STAGE.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ID_STAGE
+
+Top level modules:
+	ID_STAGE
 
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ProgramCounter.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ProgramCounter.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -135,13 +142,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Mux2to1_8b
 
-} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador_tb.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador_tb.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ModuloProcessador_tb
-
-Top level modules:
-	ModuloProcessador_tb
-
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_STAGE.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_STAGE.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module IF_STAGE
@@ -156,12 +156,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	MEM_STAGE
 
-} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/FowardingMux.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/FowardingMux.v}
+} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador_tb.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador_tb.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ForwardingMux
+-- Compiling module ModuloProcessador_tb
 
 Top level modules:
-	ForwardingMux
+	ModuloProcessador_tb
 
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ControlMux.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ControlMux.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -176,6 +176,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	InstructionMemory
+
+} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ForwardingUnit.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ForwardingUnit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ForwardingUnit
+
+Top level modules:
+	ForwardingUnit
 
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Mux2to1_5.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Mux2to1_5.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -239,13 +246,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	HazardDetectionUnit
-
-} {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/FowardingUnit.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/FowardingUnit.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ForwardingUnit
-
-Top level modules:
-	ForwardingUnit
 
 } {} {}} {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Control.v} {1 {vlog -work work -stats=none {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Control.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

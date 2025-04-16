@@ -10,7 +10,6 @@ module ALU(
     reg [6:0] RFlags; // [overflow, above, equal, below, between, collision, error] 
                       // [6       ,5     ,4     ,3     ,2       ,1         ,0     ]
     reg match;
-    integer i;
 
     // Parâmetros das operações
 
@@ -19,6 +18,7 @@ module ALU(
         Zero = 1'b0;
         RFlags = 5'b00000;
         match = 1'b1;
+		  MUL_Result = 64'b0;
 
         case (Operation)
 
@@ -67,9 +67,9 @@ module ALU(
                 Result = data1 | data2;
             end
 
-            4'b1001: Result = data2 << data1;
+            4'b1001: Result = data2 << $unsigned(data1);
 
-            4'b1010: Result = data2 >>> data1;
+				4'b1010: Result = data2 >>> $unsigned(data1);
 
             // Comparação
             4'b1011: begin
@@ -91,18 +91,26 @@ module ALU(
             end
 
             4'b1110: begin
-                match = 1'b1;
+					 match = 1'b1;
 
-                for (i = 0; i < 7; i = i + 1) begin
-                    if (data2[i] && (RFlagsStored[i] != data2[i + 7]))
-                        match = 1'b0;
-                end
+					 if (data2[0] && (RFlagsStored[0] != data2[7]))
+						  match = 1'b0;
+					 if (data2[1] && (RFlagsStored[1] != data2[8]))
+						  match = 1'b0;
+					 if (data2[2] && (RFlagsStored[2] != data2[9]))
+						  match = 1'b0;
+					 if (data2[3] && (RFlagsStored[3] != data2[10]))
+						  match = 1'b0;
+					 if (data2[4] && (RFlagsStored[4] != data2[11]))
+						  match = 1'b0;
+					 if (data2[5] && (RFlagsStored[5] != data2[12]))
+						  match = 1'b0;
+					 if (data2[6] && (RFlagsStored[6] != data2[13]))
+						  match = 1'b0;
 
-                if (match)
-                    Zero = 1'b1;
-                else
-                    Zero = 1'b0;
-            end
+					 Zero = match;
+				end
+
 
             // No Operation
             4'b1111: begin

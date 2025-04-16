@@ -3,6 +3,6 @@ module PCAdder (
   	output wire [7:0] outPC      // PC incrementado (proxima instrucao)
 );
 
-    assign outPC = inPC + 1;
+    assign outPC = inPC + 8'd1;
 
 endmodule

@@ -9,6 +9,9 @@ module BranchFormat(
 	 reg [31:0] address;
 
     always @(*) begin
+	 
+		  address = 32'd0;
+		  
         if (BranchMode) begin
             BranchTarget = RegValue[7:0];
         end else begin
