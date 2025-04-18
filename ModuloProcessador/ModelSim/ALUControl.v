@@ -27,74 +27,90 @@ parameter   LW_1  = 6'b000000,  // Load Word - Estado 1
 			RET   = 6'b010100,  // Return
 			NOP   = 6'b010101;  // No Operation
 
+parameter   ALU_ADD = 4'b0001,
+            ALU_SUB = 4'b0010,
+            ALU_MUL = 4'b0011,
+            ALU_DIV = 4'b0100,
+            ALU_MOV = 4'b0101,
+            ALU_SLW = 4'b0110,
+            ALU_AND = 4'b0111,
+            ALU_OR  = 4'b1000,
+            ALU_SHL = 4'b1001,
+            ALU_SHR = 4'b1010,
+            ALU_CMP = 4'b1011,
+            ALU_NOT = 4'b1100,
+            ALU_JMP = 4'b1101,
+            ALU_BFJ = 4'b1110,
+            ALU_NOP = 4'b1111;
+
 // Operações da ALU
 always @(*) begin
 
-	 Operation = 4'b1111;
+	Operation = 4'b1111;
 
     case (ALUOp)
         LW_1,SW_1,ADD: begin
-            Operation = 4'b0001; // Adição
+            Operation = ALU_ADD; // Adição
         end
 
         SUB: begin
-            Operation = 4'b0010; // Subtração
+            Operation = ALU_SUB; // Subtração
         end
 
         MUL: begin
-            Operation = 4'b0011; // Multiplicação
+            Operation = ALU_MUL; // Multiplicação
         end
 
         DIV: begin
-            Operation = 4'b0100; // Divisão
+            Operation = ALU_DIV; // Divisão
         end
 
         LW_2, SW_2, MOV: begin
-            Operation = 4'b0101; // Move
+            Operation = ALU_MOV; // Move
         end
 
         LW_3: begin
-            Operation = 4'b0110; 
+            Operation = ALU_SLW; 
         end
 
         AND: begin
-            Operation = 4'b0111; // AND
+            Operation = ALU_AND; // AND
         end
 
         OR: begin
-            Operation = 4'b1000; // OR
+            Operation = ALU_OR; // OR
         end
 
         SHL: begin
-            Operation = 4'b1001; // Shift Left
+            Operation = ALU_SHL; // Shift Left
         end
 
         SHR: begin
-            Operation = 4'b1010; // Shift Right
+            Operation = ALU_SHR; // Shift Right
         end
 
         CMP: begin
-            Operation = 4'b1011; // Comparação
+            Operation = ALU_CMP; // Comparação
         end
 
         NOT: begin
-            Operation = 4'b1100; // NOT
+            Operation = ALU_NOT; // NOT
         end
 
         JR, JPC, CALL, RET: begin
-            Operation = 4'b1101; // Jump Register, Jump on Condition, Call, Return
+            Operation = ALU_JMP; // Jump Register, Jump on Condition, Call, Return
         end
 
         BRFL: begin
-            Operation = 4'b1110; // Branch Flag
+            Operation = ALU_BFJ; // Branch Flag
         end
 
         NOP: begin
-            Operation = 4'b1111; // No Operation
+            Operation = ALU_NOP; // No Operation
         end
 
         default: begin
-
+            Operation = ALU_NOP;
         end
     endcase
 

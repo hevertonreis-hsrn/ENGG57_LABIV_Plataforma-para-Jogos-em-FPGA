@@ -12,30 +12,45 @@ module ALU(
     reg match;
 
     // Parâmetros das operações
+    parameter   ALU_ADD = 4'b0001,
+                ALU_SUB = 4'b0010,
+                ALU_MUL = 4'b0011,
+                ALU_DIV = 4'b0100,
+                ALU_MOV = 4'b0101,
+                ALU_SLW = 4'b0110,
+                ALU_AND = 4'b0111,
+                ALU_OR  = 4'b1000,
+                ALU_SHL = 4'b1001,
+                ALU_SHR = 4'b1010,
+                ALU_CMP = 4'b1011,
+                ALU_NOT = 4'b1100,
+                ALU_JMP = 4'b1101,
+                ALU_BFJ = 4'b1110,
+                ALU_NOP = 4'b1111;
 
     always @(*) begin
         Result = 32'b0;
         Zero = 1'b0;
         RFlags = 5'b00000;
         match = 1'b1;
-		  MUL_Result = 64'b0;
+		MUL_Result = 64'b0;
 
         case (Operation)
 
             // Aritmética
-            4'b0001: begin
+            ALU_ADD: begin
                 Result = data1 + data2;
                 if ((data1[31] == data2[31]) && (Result[31] != data1[31]))
                     RFlags[6] = 1'b1; // Overflow
             end
 
-            4'b0010: begin
+            ALU_SUB: begin
                 Result = data1 - data2;
                 if ((data1[31] != data2[31]) && (Result[31] != data1[31]))
                     RFlags[6] = 1'b1; // Underflow
             end
 
-            4'b0011: begin
+            ALU_MUL: begin
                 MUL_Result = data1 * data2;
                 Result = MUL_Result[31:0];
                 if ((MUL_Result > 64'sd2147483647) || (MUL_Result < -64'sd2147483648)) begin
@@ -45,7 +60,7 @@ module ALU(
 
             end
 
-            4'b0100: begin
+            ALU_DIV: begin
                 if (data2 == 0) begin
                     Result = 0;
                     RFlags[0] = 1'b1; // Error (divisão por zero) 
@@ -54,25 +69,25 @@ module ALU(
                 end
             end
 
-            4'b0101: Result = data1;
+            ALU_MOV: Result = data1;
 
-            4'b0110: Result = data2;
+            ALU_SLW: Result = data2;
 
             // Lógicos
-            4'b0111: begin
+            ALU_AND: begin
                 Result = data1 & data2;
             end
 
-            4'b1000: begin
+            ALU_OR: begin
                 Result = data1 | data2;
             end
 
-            4'b1001: Result = data2 << $unsigned(data1);
+            ALU_SHL: Result = data2 << $unsigned(data1);
 
-				4'b1010: Result = data2 >>> $unsigned(data1);
+			ALU_SHR: Result = data2 >>> $unsigned(data1);
 
             // Comparação
-            4'b1011: begin
+            ALU_CMP: begin
                 if (data1 == data2)
                     RFlags[4] = 1'b1; // Equal
                 else if (data1 > data2)
@@ -81,39 +96,39 @@ module ALU(
                     RFlags[3] = 1'b1; // Below
             end
 
-            4'b1100: begin
+            ALU_NOT: begin
                 Result = ~data2;
             end
 
             // Fluxo de controle
-            4'b1101: begin
+            ALU_JMP: begin
                 Zero = 1'b1;
             end
 
-            4'b1110: begin
-					 match = 1'b1;
+            ALU_BFJ: begin
+				match = 1'b1;
 
-					 if (data2[0] && (RFlagsStored[0] != data2[7]))
-						  match = 1'b0;
-					 if (data2[1] && (RFlagsStored[1] != data2[8]))
-						  match = 1'b0;
-					 if (data2[2] && (RFlagsStored[2] != data2[9]))
-						  match = 1'b0;
-					 if (data2[3] && (RFlagsStored[3] != data2[10]))
-						  match = 1'b0;
-					 if (data2[4] && (RFlagsStored[4] != data2[11]))
-						  match = 1'b0;
-					 if (data2[5] && (RFlagsStored[5] != data2[12]))
-						  match = 1'b0;
-					 if (data2[6] && (RFlagsStored[6] != data2[13]))
-						  match = 1'b0;
+				if (data2[0] && (RFlagsStored[0] != data2[7]))
+				    match = 1'b0;
+				if (data2[1] && (RFlagsStored[1] != data2[8]))
+					match = 1'b0;
+				if (data2[2] && (RFlagsStored[2] != data2[9]))
+					match = 1'b0;
+				if (data2[3] && (RFlagsStored[3] != data2[10]))
+					match = 1'b0;
+				if (data2[4] && (RFlagsStored[4] != data2[11]))
+					match = 1'b0;
+				if (data2[5] && (RFlagsStored[5] != data2[12]))
+					match = 1'b0;
+				if (data2[6] && (RFlagsStored[6] != data2[13]))
+					match = 1'b0;
 
-					 Zero = match;
-				end
+				Zero = match;
+			end
 
 
             // No Operation
-            4'b1111: begin
+            ALU_NOP: begin
                 Result = 0;
                 Zero = 1;
             end
@@ -125,7 +140,7 @@ module ALU(
             end
         endcase
 		  
-		  RFlagsOut = RFlags;
+		RFlagsOut = RFlags;
 
     end
 endmodule
