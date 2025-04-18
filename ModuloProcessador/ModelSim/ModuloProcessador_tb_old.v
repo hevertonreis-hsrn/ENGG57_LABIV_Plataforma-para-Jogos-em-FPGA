@@ -2,21 +2,24 @@ module ModuloProcessador_tb;
 
     // Inputs
     reg clk;
+    reg clkMem;
     reg rst;
     
     // Instantiate the Unit Under Test (UUT)
     ModuloProcessador uut (
         .clk(clk), 
-        .rst(rst)
+        .rst(rst),
+        .clk_Mem(clkMem)
     );
 
     // Clock generation
-    always #2.5 clk = ~clk; // Gera um clock com período de 10 unidades de tempo
-    //always #2.5 clkMem = ~clkMem;
+    always #5 clk = ~clk; // Gera um clock com período de 10 unidades de tempo
+    always #2.5 clkMem = ~clkMem;
 
     initial begin
         // Initialize Inputs
         clk = 0;
+        clkMem = 0;
         rst = 1;
         
         // Reset ativo por alguns ciclos
