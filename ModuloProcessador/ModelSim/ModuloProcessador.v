@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Fri Apr 18 09:38:05 2025"
+// CREATED		"Sat Apr 19 16:35:05 2025"
 
 module ModuloProcessador(
 	clk,
@@ -181,10 +181,10 @@ WB_STAGE	b2v_inst5(
 	.WriteReg(SYNTHESIZED_WIRE_18));
 
 
-ClockDivider	b2v_inst6(
-	.clk_in(clk),
-	.rst(rst),
-	.clk_out(SYNTHESIZED_WIRE_59));
+DividerPLL	b2v_inst6(
+	.inclk0(clk),
+	.areset(rst),
+	.c0(SYNTHESIZED_WIRE_59));
 
 
 ResetSync	b2v_inst7(

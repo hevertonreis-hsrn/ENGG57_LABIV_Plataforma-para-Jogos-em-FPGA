@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/Heverton Reis/Documents/LAB04/ProcessadorSingleCycle/ModelSim
 vALU
-Z0 !s110 1744979921
+Z0 !s110 1745091670
 !i10b 1
 !s100 ZN86hkKTD@RfD_]k35i?a2
 I<N3PRlVFmRj[a9KBPV==[3
@@ -23,7 +23,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1744979921.000000
+Z5 !s108 1745091670.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ALU.v|
 !i113 1
@@ -75,7 +75,7 @@ R6
 R7
 n@branch@adder
 vBranchFormat
-Z8 !s110 1744979922
+R0
 !i10b 1
 !s100 Q3SWlL>h]kE?C:WTHMOh12
 Im1DWGi@2KK^hai1TJ;d^X2
@@ -97,7 +97,7 @@ R6
 R7
 n@branch@format
 vClockDivider
-R8
+Z8 !s110 1745091671
 !i10b 1
 !s100 A9TfzPIbkk^i;<WEfzkgo2
 IH9_<PCkGW=a2>m4f3Mm4=0
@@ -111,7 +111,7 @@ R4
 r1
 !s85 0
 31
-Z9 !s108 1744979922.000000
+R5
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ClockDivider.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ClockDivider.v|
 !i113 1
@@ -133,7 +133,7 @@ R4
 r1
 !s85 0
 31
-R9
+Z9 !s108 1745091671.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Control.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Control.v|
 !i113 1
@@ -184,8 +184,47 @@ R9
 R6
 R7
 n@data@memory
+Edividerpll
+Z10 w1745091137
+Z11 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z12 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R2
+Z13 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/DividerPLL.vhd
+Z14 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/DividerPLL.vhd
+l0
+L42
+VW;Pd0dzcj=L67SQVH=B9[0
+!s100 AfH5AKo?NhZnCNML1Lj0=0
+Z15 OV;C;10.5b;63
+32
+Z16 !s110 1745091672
+!i10b 1
+Z17 !s108 1745091672.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/DividerPLL.vhd|
+Z19 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/DividerPLL.vhd|
+!i113 1
+Z20 o-work work -2002 -explicit
+Z21 tExplicit 1 CvgOpt 0
+Asyn
+R11
+R12
+DEx4 work 10 dividerpll 0 22 W;Pd0dzcj=L67SQVH=B9[0
+l127
+L52
+Vl3mkB4g854a<_mR3O4A472
+!s100 mB6RBOeP6<WhhEb5a9HZl1
+R15
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R20
+R21
 vEX_MEM_Register
-R8
+R16
 !i10b 1
 !s100 8GT>`D^=U?m?ZVR6g`@NG0
 IgelTYjeD:iK_3P`RQBa<R3
@@ -199,7 +238,7 @@ R4
 r1
 !s85 0
 31
-R9
+R17
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/EX_MEM_Register.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/EX_MEM_Register.v|
 !i113 1
@@ -207,7 +246,7 @@ R6
 R7
 n@e@x_@m@e@m_@register
 vEX_STAGE
-R8
+R16
 !i10b 1
 !s100 8>?E>:6lN1o>@ZOJK7@R_0
 Ig]iCH1nMU?GJ<DbS?BFHC3
@@ -216,12 +255,12 @@ R2
 w1744574700
 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/EX_STAGE.v
 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/EX_STAGE.v
-Z10 L0 19
+Z22 L0 19
 R4
 r1
 !s85 0
 31
-R9
+R17
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/EX_STAGE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/EX_STAGE.v|
 !i113 1
@@ -229,7 +268,7 @@ R6
 R7
 n@e@x_@s@t@a@g@e
 vExtend_8to32
-R8
+R16
 !i10b 1
 !s100 :aSLA98U]Yzd2X95fGN5>2
 IRgda1:_C8W8?na2P;X4bZ3
@@ -243,7 +282,7 @@ R4
 r1
 !s85 0
 31
-R9
+R17
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Extend_8to32b.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Extend_8to32b.v|
 !i113 1
@@ -251,7 +290,7 @@ R6
 R7
 n@extend_8to32
 vForwardingMux
-Z11 !s110 1744979923
+Z23 !s110 1745091673
 !i10b 1
 !s100 4znVPR:BAddN;;:jkRH=M3
 IaXWWZI:]A4`X:;NiihMDc1
@@ -265,7 +304,7 @@ R4
 r1
 !s85 0
 31
-Z12 !s108 1744979923.000000
+Z24 !s108 1745091673.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/FowardingMux.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/FowardingMux.v|
 !i113 1
@@ -273,7 +312,7 @@ R6
 R7
 n@forwarding@mux
 vForwardingUnit
-R11
+R23
 !i10b 1
 !s100 e`o`?`ThD17XP;gRCIo4C1
 IYRoA@O38DhSKC15_[dJkO3
@@ -287,7 +326,7 @@ R4
 r1
 !s85 0
 31
-R12
+R24
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/FowardingUnit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/FowardingUnit.v|
 !i113 1
@@ -295,7 +334,7 @@ R6
 R7
 n@forwarding@unit
 vHazardDetectionUnit
-R11
+Z25 !s110 1745091674
 !i10b 1
 !s100 f`H:6Q9b?W<R@RROTZLJ01
 IzTFY8fJ1Z0fQ6aAn[l]W51
@@ -309,7 +348,7 @@ R4
 r1
 !s85 0
 31
-R12
+Z26 !s108 1745091674.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/HazardDetectionUnit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/HazardDetectionUnit.v|
 !i113 1
@@ -317,7 +356,7 @@ R6
 R7
 n@hazard@detection@unit
 vID_EX_Register
-R11
+R25
 !i10b 1
 !s100 1]93XnE7UP>C[@gkIoT2a0
 I0Zl=Bce?]H1cVOdk10n6X3
@@ -331,7 +370,7 @@ R4
 r1
 !s85 0
 31
-R12
+R26
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_EX_Register.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_EX_Register.v|
 !i113 1
@@ -339,7 +378,7 @@ R6
 R7
 n@i@d_@e@x_@register
 vID_STAGE
-R11
+R25
 !i10b 1
 !s100 DYkBZCRGfDh_QlK^Q^SMB3
 I2^Kc@L>44ZQ;Ghf6X[Hna1
@@ -348,12 +387,12 @@ R2
 w1744765293
 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_STAGE.v
 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_STAGE.v
-R10
+R22
 R4
 r1
 !s85 0
 31
-R12
+R26
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_STAGE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ID_STAGE.v|
 !i113 1
@@ -361,7 +400,7 @@ R6
 R7
 n@i@d_@s@t@a@g@e
 vIF_ID_Register
-R11
+R25
 !i10b 1
 !s100 =2KQ9:<L>:mhk^fAeNz2e2
 I68PF:@d6Dnac5Q9`0IU:Z0
@@ -375,7 +414,7 @@ R4
 r1
 !s85 0
 31
-R12
+R26
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_ID_Register.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_ID_Register.v|
 !i113 1
@@ -383,7 +422,7 @@ R6
 R7
 n@i@f_@i@d_@register
 vIF_STAGE
-Z13 !s110 1744979924
+Z27 !s110 1745091675
 !i10b 1
 !s100 ECC2GRPQiD08MT;=Z;?AX2
 I6cGL2Mz02[9>RVGmUW:jT1
@@ -392,12 +431,12 @@ R2
 w1744562748
 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_STAGE.v
 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_STAGE.v
-R10
+R22
 R4
 r1
 !s85 0
 31
-Z14 !s108 1744979924.000000
+Z28 !s108 1745091675.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_STAGE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/IF_STAGE.v|
 !i113 1
@@ -405,7 +444,7 @@ R6
 R7
 n@i@f_@s@t@a@g@e
 vInstructionDecoder
-R13
+R27
 !i10b 1
 !s100 CM?JC6XJFM<@@8<71lQA^0
 ILo^V;n0;7MCb:Fzm:T_0Q1
@@ -419,7 +458,7 @@ R4
 r1
 !s85 0
 31
-R14
+R28
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/InstructionDecoder.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/InstructionDecoder.v|
 !i113 1
@@ -427,7 +466,7 @@ R6
 R7
 n@instruction@decoder
 vInstructionMemory
-R13
+R27
 !i10b 1
 !s100 oh>nTPJOf?8W?06E7Nk0Q0
 IP6@kng_C?[694kmVLj^553
@@ -441,7 +480,7 @@ R4
 r1
 !s85 0
 31
-R14
+R28
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/InstructionMemory.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/InstructionMemory.v|
 !i113 1
@@ -449,7 +488,7 @@ R6
 R7
 n@instruction@memory
 vMEM_STAGE
-R13
+R27
 !i10b 1
 !s100 1NOQg66DbJ?fe9SI8YMB>3
 Il>?R_n7NX`nIMMBS76iU^2
@@ -458,12 +497,12 @@ R2
 w1744227626
 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_STAGE.v
 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_STAGE.v
-R10
+R22
 R4
 r1
 !s85 0
 31
-R14
+R28
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_STAGE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_STAGE.v|
 !i113 1
@@ -471,7 +510,7 @@ R6
 R7
 n@m@e@m_@s@t@a@g@e
 vMEM_WB_Register
-R13
+Z29 !s110 1745091676
 !i10b 1
 !s100 z@5D1W49WWW88DlnIS<HC1
 IokkMgocNO2lT@ei64z>b`2
@@ -485,7 +524,7 @@ R4
 r1
 !s85 0
 31
-R14
+Z30 !s108 1745091676.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_WB_Register.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MEM_WB_Register.v|
 !i113 1
@@ -493,7 +532,7 @@ R6
 R7
 n@m@e@m_@w@b_@register
 vMemAddressFormat
-R13
+R29
 !i10b 1
 !s100 VMkfdollLD7n7a<S>K0`[3
 I1G29LlX[7MAL>;fQT[h:Y0
@@ -507,7 +546,7 @@ R4
 r1
 !s85 0
 31
-R14
+R30
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MemAddressFormat.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/MemAddressFormat.v|
 !i113 1
@@ -515,21 +554,21 @@ R6
 R7
 n@mem@address@format
 vModuloProcessador
-R13
+R29
 !i10b 1
-!s100 jVhF^z@n9=07fl3ol_HBh3
-IoL`f>CYG0eF?zDCH[imX91
+!s100 OQPV:dDT:kPSiD1IV@Akf1
+IK<d^Tb<WkzYIm0mnH][N>2
 R1
 R2
-w1744979885
+w1745091305
 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador.v
 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador.v
-R10
+R22
 R4
 r1
 !s85 0
 31
-R14
+R30
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador.v|
 !i113 1
@@ -537,21 +576,21 @@ R6
 R7
 n@modulo@processador
 vModuloProcessador_tb
-Z15 !s110 1744979925
+!s110 1745092615
 !i10b 1
-!s100 c7[`ETR^cn9icMVB>i34M3
-I6;ZUbYBoBQga>[95P@`BB2
+!s100 H9oV@zQd[NAZSU?>LDa;<2
+I=2UDJEMS]3Z[AFIo@M=[I2
 R1
 R2
-w1744979112
+w1745092595
 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador_tb.v
 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador_tb.v
-L0 1
+L0 3
 R4
 r1
 !s85 0
 31
-R14
+!s108 1745092615.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ModuloProcessador_tb.v|
 !i113 1
@@ -559,7 +598,7 @@ R6
 R7
 n@modulo@processador_tb
 vMux2to1_32b
-R15
+Z31 !s110 1745091677
 !i10b 1
 !s100 Z=9lX=gbC?Fa3eIhmIAMB0
 IB=1]fV9C1aSVdK<h58B:K1
@@ -573,7 +612,7 @@ R4
 r1
 !s85 0
 31
-Z16 !s108 1744979925.000000
+Z32 !s108 1745091677.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Mux2to1_32b.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Mux2to1_32b.v|
 !i113 1
@@ -581,7 +620,7 @@ R6
 R7
 n@mux2to1_32b
 vMux2to1_5
-R15
+R29
 !i10b 1
 !s100 a65zC@kFnSK4kN`lf5iM10
 Ih4I9@OcXKTYGHS@YNl:341
@@ -595,7 +634,7 @@ R4
 r1
 !s85 0
 31
-R16
+R30
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Mux2to1_5.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Mux2to1_5.v|
 !i113 1
@@ -603,7 +642,7 @@ R6
 R7
 n@mux2to1_5
 vMux2to1_8b
-R15
+R31
 !i10b 1
 !s100 @3gS5n9FRbc86Q_dcLABT0
 IP<7:2=gjSYDjDVic1dDQW3
@@ -617,7 +656,7 @@ R4
 r1
 !s85 0
 31
-R16
+R32
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Mux2to1_8b.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Mux2to1_8b.v|
 !i113 1
@@ -625,7 +664,7 @@ R6
 R7
 n@mux2to1_8b
 vPCAdder
-R15
+R31
 !i10b 1
 !s100 M:2Q]<X:@f0b4M?gd@fK]3
 IJIf8^KLfE:0k`bh^YKSm53
@@ -639,7 +678,7 @@ R4
 r1
 !s85 0
 31
-R16
+R32
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/PCAdder.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/PCAdder.v|
 !i113 1
@@ -647,7 +686,7 @@ R6
 R7
 n@p@c@adder
 vProgramCounter
-R15
+R31
 !i10b 1
 !s100 ZfZ:N>^5R<3MV9I7WbkAY1
 IbL:>2ocTieaj0[OGazQLc0
@@ -661,7 +700,7 @@ R4
 r1
 !s85 0
 31
-R16
+R32
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ProgramCounter.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ProgramCounter.v|
 !i113 1
@@ -669,48 +708,48 @@ R6
 R7
 n@program@counter
 Eram
-Z17 w1744216645
-Z18 DPx9 altera_mf 20 altera_mf_components 0 22 gV:l9C^?PSb6]b5V?_jR@3
-Z19 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z20 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z33 w1744216645
+Z34 DPx9 altera_mf 20 altera_mf_components 0 22 gV:l9C^?PSb6]b5V?_jR@3
+R11
+R12
 R2
-Z21 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RAM.vhd
-Z22 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RAM.vhd
+Z35 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RAM.vhd
+Z36 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RAM.vhd
 l0
 L42
 VbJBL14_d2kRT<B]lY20>]1
 !s100 JaZo5hEj2IA6n8B5AJkZ<3
-Z23 OV;C;10.5b;63
-32
 R15
+32
+R31
 !i10b 1
-R16
-Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RAM.vhd|
-Z25 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RAM.vhd|
+R32
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RAM.vhd|
+Z38 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RAM.vhd|
 !i113 1
-Z26 o-work work -2002 -explicit
-Z27 tExplicit 1 CvgOpt 0
-Asyn
-R18
-R19
 R20
+R21
+Asyn
+R34
+R11
+R12
 DEx4 work 3 ram 0 22 bJBL14_d2kRT<B]lY20>]1
 l59
 L55
 V=@nA;R8W];4l8W7bi@LW23
 !s100 4WYUFQnz=7n2>F]mHZZBN1
-R23
-32
 R15
+32
+R31
 !i10b 1
-R16
-R24
-R25
+R32
+R37
+R38
 !i113 1
-R26
-R27
+R20
+R21
 vRegFile
-Z28 !s110 1744979926
+Z39 !s110 1745091678
 !i10b 1
 !s100 9>@HZa7?P2<o?6[FkoA8n1
 I9NNZ756A4Tm>3U>PC?gL20
@@ -724,7 +763,7 @@ R4
 r1
 !s85 0
 31
-R16
+R32
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RegFile.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RegFile.v|
 !i113 1
@@ -732,13 +771,13 @@ R6
 R7
 n@reg@file
 vResetSync
-!s110 1744980524
+R39
 !i10b 1
 !s100 J3hllM3gBOD>TYlZmTdF91
 IFSj[A`g[>m?c844Xe=BGD0
 R1
 R2
-w1744980501
+w1744981094
 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ResetSync.v
 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ResetSync.v
 L0 1
@@ -746,7 +785,7 @@ R4
 r1
 !s85 0
 31
-!s108 1744980524.000000
+Z40 !s108 1745091678.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ResetSync.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ResetSync.v|
 !i113 1
@@ -754,7 +793,7 @@ R6
 R7
 n@reset@sync
 vReturn
-R28
+R39
 !i10b 1
 !s100 J`XboKP`JSCP1A>U=9Jzb0
 Il`lf?ULkOV_RcKAKQ=ObU1
@@ -768,7 +807,7 @@ R4
 r1
 !s85 0
 31
-Z29 !s108 1744979926.000000
+R40
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Return.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Return.v|
 !i113 1
@@ -776,7 +815,7 @@ R6
 R7
 n@return
 vRFlagsRegister
-R28
+R39
 !i10b 1
 !s100 ojie@`jjn3BbD?UllffJ91
 I8zW5YZ0ODGaG2DbQlGLi[0
@@ -790,7 +829,7 @@ R4
 r1
 !s85 0
 31
-R29
+R40
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RFlagsRegister.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/RFlagsRegister.v|
 !i113 1
@@ -798,48 +837,48 @@ R6
 R7
 n@r@flags@register
 Erom
-Z30 w1744216326
-R18
-R19
-R20
+Z41 w1744216326
+R34
+R11
+R12
 R2
-Z31 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ROM.vhd
-Z32 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ROM.vhd
+Z42 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ROM.vhd
+Z43 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ROM.vhd
 l0
 L42
 VmMM86zHXANUXVNi1cM5Zn0
 !s100 ?WfRK8Yh_6D4Uz8LIUEUk3
-R23
+R15
 32
-R28
+R39
 !i10b 1
-R29
-Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ROM.vhd|
-Z34 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ROM.vhd|
+R40
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ROM.vhd|
+Z45 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/ROM.vhd|
 !i113 1
-R26
-R27
-Asyn
-R18
-R19
 R20
+R21
+Asyn
+R34
+R11
+R12
 DEx4 work 3 rom 0 22 mMM86zHXANUXVNi1cM5Zn0
 l56
 L52
 VGB??e_LLmfk_8eH^T8J>o2
 !s100 7F8EMXjD0ijcMiVJggeOO3
-R23
+R15
 32
-R28
+R39
 !i10b 1
-R29
-R33
-R34
+R40
+R44
+R45
 !i113 1
-R26
-R27
+R20
+R21
 vSignExtend
-R28
+R39
 !i10b 1
 !s100 U3YRN1o:Fhd82Le451GBg3
 I[97_01Izg232Qo]?;=W2J2
@@ -853,7 +892,7 @@ R4
 r1
 !s85 0
 31
-R29
+R40
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/SignExtend.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/SignExtend.v|
 !i113 1
@@ -861,7 +900,7 @@ R6
 R7
 n@sign@extend
 vStack
-R28
+R39
 !i10b 1
 !s100 SlBF?Bzi4750=fXQcod8k1
 IJXUdEM^kYjo5WFb[EZ[mU0
@@ -875,7 +914,7 @@ R4
 r1
 !s85 0
 31
-R29
+R40
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Stack.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/Stack.v|
 !i113 1
@@ -883,7 +922,7 @@ R6
 R7
 n@stack
 vWB_STAGE
-R0
+!s110 1745091669
 !i10b 1
 !s100 AX4Wahn?hR_[BL2;7b6^L1
 I05o1_B^Acz`=6;0m9:YQ12
@@ -892,12 +931,12 @@ R2
 w1744228002
 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/WB_STAGE.v
 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/WB_STAGE.v
-R10
+R22
 R4
 r1
 !s85 0
 31
-R5
+!s108 1745091669.000000
 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/WB_STAGE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim/WB_STAGE.v|
 !i113 1

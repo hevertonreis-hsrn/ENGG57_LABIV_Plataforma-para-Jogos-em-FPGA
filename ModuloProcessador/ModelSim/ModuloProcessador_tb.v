@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module ModuloProcessador_tb;
 
     // Inputs
@@ -11,7 +13,7 @@ module ModuloProcessador_tb;
     );
 
     // Clock generation
-    always #2.5 clk = ~clk; // Gera um clock com período de 10 unidades de tempo
+    always #10 clk = ~clk; // Gera um clock com período de 10 unidades de tempo
     //always #2.5 clkMem = ~clkMem;
 
     initial begin
@@ -20,7 +22,7 @@ module ModuloProcessador_tb;
         rst = 1;
         
         // Reset ativo por alguns ciclos
-        #20 rst = 0;
+        #102 rst = 0;
         
         // Executa por um determinado periodo e para
         #1000;
