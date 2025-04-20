@@ -6,19 +6,20 @@ module vgaController(
 	output vSync,
 	output [3:0] outRed,
 	output [3:0] outGreen,
-	output [3:0] outBlue,
-);
+	output [3:0] outBlue
+	);
 
-wire enableVerticalCounter, clk25Mhz;
+wire enableVerticalCounter;
+wire clk25Mhz;
 wire [9:0] hCount, vCount;
 reg reset = 0; // Para o PLL.
 
 // Divisor de clock (requer 25 MHz)
-clockDivider(.areset(reset), .inclk0(clk), .c0(clk25Mhz), .locked())
+clockDivider(.areset(reset), .inclk0(clk), .c0(clk25Mhz), .locked());
 
 // Contagem.
-hCounter(.clk25Mhz(clk25Mhz), .counter(hCount), .jumpLine(enableVerticalCounter))
-vCounter(.clk25Mhz(clk25Mhz), .enable(enableVerticalCounter), .counter(vCount))
+hCounter vgaH (.clk25MHz(clk25Mhz), .counter(hCount), .jumpLine(enableVerticalCounter));
+vCounter vgaV (.clk25MHz(clk25Mhz), .enable(enableVerticalCounter), .counter(vCount));
 
 // Sincronizando.
 assign hSync = (hCount < 96) ? 1'b1 : 1'b0;
