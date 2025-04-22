@@ -6,7 +6,7 @@ module vgaControllerTB;
 	reg Clk = 0;
 
 	// Sinais de saída
-	wire HSync, VSync;
+	wire HSync, VSync, BlankN, SyncN;
 	wire [7:0] OutRed, OutGreen, OutBlue;
 
 	// Instância do DUT
@@ -14,6 +14,8 @@ module vgaControllerTB;
 		.clk(Clk),
 		.hSync(HSync),
 		.vSync(VSync),
+		.blankN(BlankN),
+		.syncN(SyncN),
 		.outRed(OutRed),
 		.outGreen(OutGreen),
 		.outBlue(OutBlue)
