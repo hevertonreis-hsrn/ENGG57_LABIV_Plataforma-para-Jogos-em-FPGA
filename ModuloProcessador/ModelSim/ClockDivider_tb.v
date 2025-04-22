@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module ClockDivider_tb;
     reg clk_in; // Clock de entrada
     reg rst;    // Reset assíncrono
@@ -9,21 +11,16 @@ module ClockDivider_tb;
         .clk_out(clk_out)
     );
 
-    task Test(input clk, input reset);
-        begin
-            clk_in = clk;
-            rst = reset;
-            #10; // Espera 10 unidades de tempo para estabilizar a saída
-            $display("clk_in: %b, rst: %b, clk_out: %b", clk_in, rst, clk_out);
+    always #5 clk_in = ~clk_in;
 
-            
-        end
-    endtask
-
-    integer i;
-    reg [31:0] seed;
     initial begin
-        seed = 32
+        clk_in = 0;
+        rst = 0;
+        #10;
+        #10 rst = 1; // Ativa o reset
+        #10 rst = 0; // Desativa o reset
+        #300;
+        $stop;
     end
 
 endmodule
