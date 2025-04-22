@@ -8,6 +8,7 @@ module hCounter(
 	
 		if (counter < 799) begin
 			counter <= counter + 1;
+			jumpLine <= 0;
 		end
 		else begin
 			counter <= 0;

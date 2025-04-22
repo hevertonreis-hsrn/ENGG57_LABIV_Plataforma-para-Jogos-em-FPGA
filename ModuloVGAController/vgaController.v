@@ -4,9 +4,9 @@ module vgaController(
 	input clk,
 	output hSync,
 	output vSync,
-	output [3:0] outRed,
-	output [3:0] outGreen,
-	output [3:0] outBlue
+	output [7:0] outRed,
+	output [7:0] outGreen,
+	output [7:0] outBlue
 	);
 
 wire enableVerticalCounter;
@@ -15,7 +15,7 @@ wire [9:0] hCount, vCount;
 reg reset = 0; // Para o PLL.
 
 // Divisor de clock (requer 25 MHz)
-clockDivider(.areset(reset), .inclk0(clk), .c0(clk25Mhz), .locked());
+clkDivider cd (.areset(reset), .inclk0(clk), .c0(clk25Mhz));
 
 // Contagem.
 hCounter vgaH (.clk25MHz(clk25Mhz), .counter(hCount), .jumpLine(enableVerticalCounter));
@@ -26,8 +26,8 @@ assign hSync = (hCount < 96) ? 1'b1 : 1'b0;
 assign vSync = (vCount < 2) ? 1'b1 : 1'b0;
 
 // Colorindo saida. (Por hora exibiria uma tela em branco)
-assign outRed = (hCount < 784 && hCount > 143 && vCount < 515 && vCount > 34) ? 4'hF : 4'b0;
-assign outGreen = (hCount < 784 && hCount > 143 && vCount < 515 && vCount > 34) ? 4'hF : 4'b0;
-assign outBlue = (hCount < 784 && hCount > 143 && vCount < 515 && vCount > 34) ? 4'hF : 4'b0;
+assign outRed = (hCount < 784 && hCount > 143 && vCount < 515 && vCount > 34) ? 8'hFF : 8'h00;
+assign outGreen = (hCount < 784 && hCount > 143 && vCount < 515 && vCount > 34) ? 8'hFF : 8'h00;
+assign outBlue = (hCount < 784 && hCount > 143 && vCount < 515 && vCount > 34) ? 8'hFF : 8'h00;
 
 endmodule

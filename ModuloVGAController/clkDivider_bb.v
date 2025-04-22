@@ -4,7 +4,7 @@
 // MODULE: altpll 
 
 // ============================================================
-// File Name: clockDivider.v
+// File Name: clkDivider.v
 // Megafunction Name(s):
 // 			altpll
 //
@@ -31,16 +31,14 @@
 //Intel and sold by Intel or its authorized distributors.  Please
 //refer to the applicable agreement for further details.
 
-module clockDivider (
+module clkDivider (
 	areset,
 	inclk0,
-	c0,
-	locked);
+	c0);
 
 	input	  areset;
 	input	  inclk0;
 	output	  c0;
-	output	  locked;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -88,7 +86,7 @@ endmodule
 // Retrieval info: PRIVATE: INCLK1_FREQ_UNIT_COMBO STRING "MHz"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: PRIVATE: INT_FEEDBACK__MODE_RADIO STRING "1"
-// Retrieval info: PRIVATE: LOCKED_OUTPUT_CHECK STRING "1"
+// Retrieval info: PRIVATE: LOCKED_OUTPUT_CHECK STRING "0"
 // Retrieval info: PRIVATE: LONG_SCAN_RADIO STRING "1"
 // Retrieval info: PRIVATE: LVDS_MODE_DATA_RATE STRING "Not Available"
 // Retrieval info: PRIVATE: LVDS_MODE_DATA_RATE_DIRTY NUMERIC "0"
@@ -115,7 +113,7 @@ endmodule
 // Retrieval info: PRIVATE: PLL_PFDENA_CHECK STRING "0"
 // Retrieval info: PRIVATE: PLL_TARGET_HARCOPY_CHECK NUMERIC "0"
 // Retrieval info: PRIVATE: PRIMARY_CLK_COMBO STRING "inclk0"
-// Retrieval info: PRIVATE: RECONFIG_FILE STRING "clockDivider.mif"
+// Retrieval info: PRIVATE: RECONFIG_FILE STRING "clkDivider.mif"
 // Retrieval info: PRIVATE: SACN_INPUTS_CHECK STRING "0"
 // Retrieval info: PRIVATE: SCAN_FEATURE_ENABLED STRING "1"
 // Retrieval info: PRIVATE: SELF_RESET_LOCK_LOSS STRING "0"
@@ -156,7 +154,7 @@ endmodule
 // Retrieval info: CONSTANT: PORT_FBIN STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_INCLK0 STRING "PORT_USED"
 // Retrieval info: CONSTANT: PORT_INCLK1 STRING "PORT_UNUSED"
-// Retrieval info: CONSTANT: PORT_LOCKED STRING "PORT_USED"
+// Retrieval info: CONSTANT: PORT_LOCKED STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_PFDENA STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_PHASECOUNTERSELECT STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_PHASEDONE STRING "PORT_UNUSED"
@@ -187,24 +185,21 @@ endmodule
 // Retrieval info: CONSTANT: PORT_extclk1 STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_extclk2 STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_extclk3 STRING "PORT_UNUSED"
-// Retrieval info: CONSTANT: SELF_RESET_ON_LOSS_LOCK STRING "OFF"
 // Retrieval info: CONSTANT: WIDTH_CLOCK NUMERIC "5"
 // Retrieval info: USED_PORT: @clk 0 0 5 0 OUTPUT_CLK_EXT VCC "@clk[4..0]"
 // Retrieval info: USED_PORT: areset 0 0 0 0 INPUT GND "areset"
 // Retrieval info: USED_PORT: c0 0 0 0 0 OUTPUT_CLK_EXT VCC "c0"
 // Retrieval info: USED_PORT: inclk0 0 0 0 0 INPUT_CLK_EXT GND "inclk0"
-// Retrieval info: USED_PORT: locked 0 0 0 0 OUTPUT GND "locked"
 // Retrieval info: CONNECT: @areset 0 0 0 0 areset 0 0 0 0
 // Retrieval info: CONNECT: @inclk 0 0 1 1 GND 0 0 0 0
 // Retrieval info: CONNECT: @inclk 0 0 1 0 inclk0 0 0 0 0
 // Retrieval info: CONNECT: c0 0 0 0 0 @clk 0 0 1 0
-// Retrieval info: CONNECT: locked 0 0 0 0 @locked 0 0 0 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL clockDivider.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL clockDivider.ppf TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL clockDivider.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL clockDivider.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL clockDivider.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL clockDivider_inst.v FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL clockDivider_bb.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL clkDivider.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL clkDivider.ppf TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL clkDivider.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL clkDivider.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL clkDivider.bsf FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL clkDivider_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL clkDivider_bb.v TRUE
 // Retrieval info: LIB_FILE: altera_mf
 // Retrieval info: CBX_MODULE_PREFIX: ON

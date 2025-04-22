@@ -1,0 +1,13 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController {C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/hCounter.v}
+vlog -vlog01compat -work work +incdir+C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController {C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/vCounter.v}
+vlog -vlog01compat -work work +incdir+C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController {C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/vgaController.v}
+vlog -vlog01compat -work work +incdir+C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController {C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/clockDivider.v}
+vlog -vlog01compat -work work +incdir+C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/db {C:/Users/david/Github/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/db/clockdivider_altpll.v}
+
