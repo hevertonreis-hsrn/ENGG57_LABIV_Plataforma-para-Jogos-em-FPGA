@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="79" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library/Basic Functions/On Chip Memory,Project,Library/Interface Protocols/Ethernet,Library/DSP,Library,Library/DSP/Video and Image Processing,Library/University Program/Audio &amp; Video,Library/Interface Protocols,Library/Basic Functions/Simulation; Debug and Verification,Library/University Program/Audio &amp; Video/Video,Library/Basic Functions/Simulation; Debug and Verification/Verification,Library/University Program,Library/Interface Protocols/Ethernet/Reference Design Components,Library/Basic Functions/Bridges and Adaptors,Library/Basic Functions/Bridges and Adaptors/Streaming,Library/Basic Functions" />
+ <window width="1938" height="1038" x="-9" y="-9" />
+</preferences>

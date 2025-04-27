@@ -1,0 +1,193 @@
+Info: Starting: Create testbench Platform Designer system
+Info: C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado.ipx
+Info: qsys-generate "C:\Users\Heverton Reis\Documents\LAB04\ModuloProcessador\SistemaEmbarcado.qsys" --testbench=STANDARD --output-directory="C:\Users\Heverton Reis\Documents\LAB04\ModuloProcessador" --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading ModuloProcessador/SistemaEmbarcado.qsys
+Progress: Reading input file
+Progress: Adding ProcessadorCentral [ProcessadorCentral 1.0]
+Progress: Parameterizing module ProcessadorCentral
+Progress: Adding RAM [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module RAM
+Progress: Adding ROM [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module ROM
+Progress: Adding clock [clock_source 18.1]
+Progress: Parameterizing module clock
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Loading IP catalog for testbench.
+Progress: 
+Progress: 
+Progress: 
+Progress: (2) searching C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx (ipx file)
+Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx: Loading now from components.ipx
+Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0,01 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0,01 seconds
+Info: C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/ip/**/* matched 0 files in 0,00 seconds
+Info: Reading index C:\Users\Heverton Reis\Documents\LAB04\ModuloProcessador\SistemaEmbarcado\testbench\SistemaEmbarcado.ipx
+Progress: Loading ModuloProcessador/ProcessadorCentral_hw.tcl
+Progress: Loading ModuloProcessador/SistemaEmbarcado.qsys
+Info: C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/* matched 58 files in 0,06 seconds
+Info: C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ip/**/* matched 0 files in 0,00 seconds
+Info: C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/*/* matched 16 files in 0,01 seconds
+Info: C:\Users\Heverton Reis\Documents\LAB04\ModuloProcessador\SistemaEmbarcado\testbench\SistemaEmbarcado.ipx described 0 plugins, 3 paths, in 0,07 seconds
+Info: C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/* matched 4 files in 0,07 seconds
+Info: C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/*/* matched 0 files in 0,00 seconds
+Info: C:/Users/Heverton Reis/.altera.quartus/ip/18.1/**/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0,00 seconds
+Info: Reading index C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx
+Info: C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0,17 seconds
+Info: C:/intelfpga_lite/18.1/ip/**/* matched 139 files in 0,21 seconds
+Info: C:/intelfpga_lite/ip/**/* matched 0 files in 0,00 seconds
+Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0,01 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/**/* matched 8 files in 0,01 seconds
+Info: Reading index C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx
+Info: C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0,01 seconds
+Info: C:/intelfpga_lite/18.1/quartus/common/librarian/factories/**/* matched 4 files in 0,01 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0,00 seconds
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,30 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,31 seconds
+Progress: 
+Progress: 
+Progress: 
+Info: Running script C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/tbgen.tcl
+Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: get_module_property NAME
+Info: send_message Info TB_Gen: System design is: SistemaEmbarcado
+Info: TB_Gen: System design is: SistemaEmbarcado
+Info: get_interfaces 
+Info: get_connections 
+Info: get_interface_property clk EXPORT_OF
+Info: get_instance_property clock CLASS_NAME
+Info: get_instance_assignment clock testbench.partner.map.clk_in
+Info: get_interface_property reset EXPORT_OF
+Info: get_instance_property clock CLASS_NAME
+Info: get_instance_assignment clock testbench.partner.map.clk_in_reset
+Info: send_message Info TB_Gen: Creating testbench system : SistemaEmbarcado_tb with all standard BFMs
+Info: TB_Gen: Creating testbench system : SistemaEmbarcado_tb with all standard BFMs
+Info: create_system SistemaEmbarcado_tb
+Info: add_instance SistemaEmbarcado_inst SistemaEmbarcado 
+Info: set_use_testbench_naming_pattern true SistemaEmbarcado
+Info: get_instance_interfaces SistemaEmbarcado_inst
+Info: get_instance_interface_property SistemaEmbarcado_inst clk CLASS_NAME
+Info: get_instance_interface_property SistemaEmbarcado_inst reset CLASS_NAME
+Info: get_instance_interface_property SistemaEmbarcado_inst clk CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk
+Info: TB_Gen: clock_sink found: clk
+Info: get_instance_interface_property SistemaEmbarcado_inst clk CLASS_NAME
+Info: add_instance SistemaEmbarcado_inst_clk_bfm altera_avalon_clock_source 
+Info: get_instance_property SistemaEmbarcado_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value SistemaEmbarcado_inst clk clockRate
+Info: set_instance_parameter_value SistemaEmbarcado_inst_clk_bfm CLOCK_RATE 50000000.0
+Info: set_instance_parameter_value SistemaEmbarcado_inst_clk_bfm CLOCK_UNIT 1
+Info: get_instance_property SistemaEmbarcado_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_property SistemaEmbarcado_inst clk CLASS_NAME
+Info: get_instance_interfaces SistemaEmbarcado_inst_clk_bfm
+Info: get_instance_interface_property SistemaEmbarcado_inst_clk_bfm clk CLASS_NAME
+Info: add_connection SistemaEmbarcado_inst_clk_bfm.clk SistemaEmbarcado_inst.clk
+Info: get_instance_interface_property SistemaEmbarcado_inst reset CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: reset
+Info: TB_Gen: reset_sink found: reset
+Info: get_instance_interface_property SistemaEmbarcado_inst reset CLASS_NAME
+Info: add_instance SistemaEmbarcado_inst_reset_bfm altera_avalon_reset_source 
+Info: get_instance_property SistemaEmbarcado_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_ports SistemaEmbarcado_inst reset
+Info: get_instance_interface_port_property SistemaEmbarcado_inst reset reset_reset_n ROLE
+Info: get_instance_interface_port_property SistemaEmbarcado_inst reset reset_reset_n ROLE
+Info: set_instance_parameter_value SistemaEmbarcado_inst_reset_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value SistemaEmbarcado_inst_reset_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property SistemaEmbarcado_inst_reset_bfm CLASS_NAME
+Info: get_instance_interfaces SistemaEmbarcado_inst_reset_bfm
+Info: get_instance_interface_property SistemaEmbarcado_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property SistemaEmbarcado_inst_reset_bfm reset CLASS_NAME
+Info: get_instance_property SistemaEmbarcado_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value SistemaEmbarcado_inst reset associatedClock
+Info: get_instance_interfaces SistemaEmbarcado_inst_clk_bfm
+Info: get_instance_interface_property SistemaEmbarcado_inst_clk_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: SistemaEmbarcado_inst_reset_bfm is not associated to any clock; connecting SistemaEmbarcado_inst_reset_bfm to 'SistemaEmbarcado_inst_clk_bfm.clk'
+Warning: TB_Gen: SistemaEmbarcado_inst_reset_bfm is not associated to any clock; connecting SistemaEmbarcado_inst_reset_bfm to 'SistemaEmbarcado_inst_clk_bfm.clk'
+Info: add_connection SistemaEmbarcado_inst_clk_bfm.clk SistemaEmbarcado_inst_reset_bfm.clk
+Info: get_instance_interface_property SistemaEmbarcado_inst reset CLASS_NAME
+Info: get_instance_interfaces SistemaEmbarcado_inst_reset_bfm
+Info: get_instance_interface_property SistemaEmbarcado_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property SistemaEmbarcado_inst_reset_bfm reset CLASS_NAME
+Info: add_connection SistemaEmbarcado_inst_reset_bfm.reset SistemaEmbarcado_inst.reset
+Info: send_message Info TB_Gen: Saving testbench system: SistemaEmbarcado_tb.qsys
+Info: TB_Gen: Saving testbench system: SistemaEmbarcado_tb.qsys
+Info: save_system SistemaEmbarcado_tb.qsys
+Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
+Info: TB_Gen: TBGEN SUCCESSFUL
+Info: Testbench system: C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb.qsys
+Info: Done
+Info: qsys-generate "C:\Users\Heverton Reis\Documents\LAB04\ModuloProcessador\SistemaEmbarcado.qsys" --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory="C:\Users\Heverton Reis\Documents\LAB04\ModuloProcessador\SistemaEmbarcado\testbench\SistemaEmbarcado_tb\simulation" --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading testbench/SistemaEmbarcado_tb.qsys
+Progress: Reading input file
+Progress: Adding SistemaEmbarcado_inst [SistemaEmbarcado 1.0]
+Progress: Parameterizing module SistemaEmbarcado_inst
+Progress: Adding SistemaEmbarcado_inst_clk_bfm [altera_avalon_clock_source 18.1]
+Progress: Parameterizing module SistemaEmbarcado_inst_clk_bfm
+Progress: Adding SistemaEmbarcado_inst_reset_bfm [altera_avalon_reset_source 18.1]
+Progress: Parameterizing module SistemaEmbarcado_inst_reset_bfm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_clk_bfm: Elaborate: altera_clock_source
+Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_clk_bfm:            $Revision: #1 $
+Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_clk_bfm:            $Date: 2018/07/18 $
+Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_reset_bfm: Elaborate: altera_reset_source
+Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_reset_bfm:            $Revision: #1 $
+Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_reset_bfm:            $Date: 2018/07/18 $
+Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_reset_bfm: Reset is negatively asserted.
+Info: SistemaEmbarcado_tb: Generating SistemaEmbarcado_tb "SistemaEmbarcado_tb" for SIM_VERILOG
+Info: Interconnect is inserted between master ProcessadorCentral.data_master and slave RAM.s1 because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.data_master and slave RAM.s1 because the master has read signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.data_master and slave RAM.s1 because the master has address signal 32 bit wide, but the slave is 10 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.instruction_master and slave ROM.s1 because the master has address signal 32 bit wide, but the slave is 10 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.instruction_master and slave ROM.s1 because the master has read signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.instruction_master and slave ROM.s1 because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: SistemaEmbarcado_inst: "SistemaEmbarcado_tb" instantiated SistemaEmbarcado "SistemaEmbarcado_inst"
+Info: SistemaEmbarcado_inst_clk_bfm: "SistemaEmbarcado_tb" instantiated altera_avalon_clock_source "SistemaEmbarcado_inst_clk_bfm"
+Info: SistemaEmbarcado_inst_reset_bfm: "SistemaEmbarcado_tb" instantiated altera_avalon_reset_source "SistemaEmbarcado_inst_reset_bfm"
+Info: Reusing file C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/verbosity_pkg.sv
+Info: ProcessadorCentral: "SistemaEmbarcado_inst" instantiated ProcessadorCentral "ProcessadorCentral"
+Info: RAM: Starting RTL generation for module 'SistemaEmbarcado_RAM'
+Info: RAM:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcado_RAM --dir=C:/Users/HEVERT~1/AppData/Local/Temp/alt0205_4225065015551155072.dir/0006_RAM_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/HEVERT~1/AppData/Local/Temp/alt0205_4225065015551155072.dir/0006_RAM_gen//SistemaEmbarcado_RAM_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/HEVERT~1/AppData/Local/Temp/alt0205_4225065015551155072.dir/0006_RAM_gen/  ]
+Info: RAM: Done RTL generation for module 'SistemaEmbarcado_RAM'
+Info: RAM: "SistemaEmbarcado_inst" instantiated altera_avalon_onchip_memory2 "RAM"
+Info: ROM: Starting RTL generation for module 'SistemaEmbarcado_ROM'
+Info: ROM:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcado_ROM --dir=C:/Users/HEVERT~1/AppData/Local/Temp/alt0205_4225065015551155072.dir/0007_ROM_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/HEVERT~1/AppData/Local/Temp/alt0205_4225065015551155072.dir/0007_ROM_gen//SistemaEmbarcado_ROM_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/HEVERT~1/AppData/Local/Temp/alt0205_4225065015551155072.dir/0007_ROM_gen/  ]
+Info: ROM: Done RTL generation for module 'SistemaEmbarcado_ROM'
+Info: ROM: "SistemaEmbarcado_inst" instantiated altera_avalon_onchip_memory2 "ROM"
+Info: mm_interconnect_0: "SistemaEmbarcado_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: mm_interconnect_1: "SistemaEmbarcado_inst" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: rst_controller: "SistemaEmbarcado_inst" instantiated altera_reset_controller "rst_controller"
+Info: ProcessadorCentral_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "ProcessadorCentral_data_master_translator"
+Info: RAM_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "RAM_s1_translator"
+Info: SistemaEmbarcado_tb: Done "SistemaEmbarcado_tb" with 12 modules, 30 files
+Info: qsys-generate succeeded.
+Info: sim-script-gen --spd="C:\Users\Heverton Reis\Documents\LAB04\ModuloProcessador\SistemaEmbarcado_tb.spd" --output-directory="C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/" --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\Heverton Reis\Documents\LAB04\ModuloProcessador\SistemaEmbarcado_tb.spd --output-directory=C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	12 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create testbench Platform Designer system

@@ -1,0 +1,2 @@
+do {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/mentor/msim_setup.tcl}
+do {C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/mentor/sim.do}

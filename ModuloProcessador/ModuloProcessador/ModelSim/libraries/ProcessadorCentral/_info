@@ -1,0 +1,555 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim
+vALU
+Z1 !s110 1745789829
+!i10b 1
+!s100 ilk;SEgT6j`5iGZ3mfWm:2
+I?O_X_hT8S0Y?TS3Hc2TX20
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1745788886
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ALU.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ALU.v
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1745789829.000000
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ALU.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ALU.v|-work|ProcessadorCentral|
+!i113 1
+Z6 o-work ProcessadorCentral
+Z7 tCvgOpt 0
+n@a@l@u
+vALUControl
+Z8 !s110 1745789830
+!i10b 1
+!s100 IKeHb5P@XE=A5Hz8J0J@P3
+I2:^O`IM=mkHXK[EESKY]^2
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ALUControl.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ALUControl.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ALUControl.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ALUControl.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@a@l@u@control
+vAvalonMM_Master_Data_Interface
+R8
+!i10b 1
+!s100 O^0]f2g4z7Ih^Oc86_VR91
+I8U_4J9Vbo5:LlZh`0^o2T2
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/AvalonMM_Master_DataInterface.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/AvalonMM_Master_DataInterface.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z9 !s108 1745789830.000000
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/AvalonMM_Master_DataInterface.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/AvalonMM_Master_DataInterface.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@avalon@m@m_@master_@data_@interface
+vAvalonMM_Master_InstInterface
+R8
+!i10b 1
+!s100 Q;_Y>1nRMA5TIjkgVdXYS2
+I_f^z90g:bBjm[3d;<`_I61
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/AvalonMM_Master_InstInterface.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/AvalonMM_Master_InstInterface.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/AvalonMM_Master_InstInterface.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/AvalonMM_Master_InstInterface.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@avalon@m@m_@master_@inst@interface
+vControl
+R8
+!i10b 1
+!s100 18kW8?O]?3OD;R95[kIfI1
+I`>c8KEkg^TSFDMYU<]:zo0
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Control.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Control.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Control.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Control.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@control
+vCPU
+R1
+!i10b 1
+!s100 lXJ>CNlB4daIH3_PVAkzB0
+IkR<>7^kkY0z>Inm7XbMD<1
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/CPU.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/CPU.v
+L0 19
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/CPU.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/CPU.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@c@p@u
+vEX_MEM_Register
+R8
+!i10b 1
+!s100 X8;F_V?_XZ0gO7dEGOV_h3
+INmmQKV]Y::lPLV`3Pz1LE1
+R2
+R0
+R3
+Z10 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/EX_STAGE.v
+Z11 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/EX_STAGE.v
+L0 151
+R4
+r1
+!s85 0
+31
+R9
+Z12 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/EX_STAGE.v|
+Z13 !s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/EX_STAGE.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@e@x_@m@e@m_@register
+vEX_STAGE
+R8
+!i10b 1
+!s100 :>jI?X_HEFbaD5WUUnTF;3
+I=oAVMGHzd<]_gjG=i^L9g2
+R2
+R0
+R3
+R10
+R11
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+R12
+R13
+!i113 1
+R6
+R7
+n@e@x_@s@t@a@g@e
+vForwardingMux
+R8
+!i10b 1
+!s100 V4HQiG`7Ok05l=mOGOR4:0
+IV5OodLiRRP89XLd?a@UBm2
+R2
+R0
+R3
+R10
+R11
+L0 116
+R4
+r1
+!s85 0
+31
+R9
+R12
+R13
+!i113 1
+R6
+R7
+n@forwarding@mux
+vForwardingUnit
+R8
+!i10b 1
+!s100 Wl:Ba_9Kz>ZkPo?T?m@Ql0
+IA3gma=T_KmBj9:cRinn^n3
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ForwardingUnit.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ForwardingUnit.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ForwardingUnit.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ForwardingUnit.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@forwarding@unit
+vHazardDetectionUnit
+R8
+!i10b 1
+!s100 ]k`:cOTKGT=<>GSA9mH;D3
+I0S__1oEVV[PL3cPA9BW]M1
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/HazardDetectionUnit.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/HazardDetectionUnit.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/HazardDetectionUnit.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/HazardDetectionUnit.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@hazard@detection@unit
+vID_EX_Register
+Z14 !s110 1745789831
+!i10b 1
+!s100 SncGZ6SR6W;0:=Uc0Vmg71
+ITE2JS<B2ejK9[a;bQSjJD0
+R2
+R0
+R3
+Z15 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ID_STAGE.v
+Z16 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ID_STAGE.v
+L0 184
+R4
+r1
+!s85 0
+31
+R9
+Z17 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ID_STAGE.v|
+Z18 !s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ID_STAGE.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@i@d_@e@x_@register
+vID_STAGE
+R14
+!i10b 1
+!s100 6An7SBQ3hZJY_^HTM;zcg1
+IfThS>Q8=3;e;L`8A@Z`U43
+R2
+R0
+R3
+R15
+R16
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+R17
+R18
+!i113 1
+R6
+R7
+n@i@d_@s@t@a@g@e
+vIF_ID_Register
+R14
+!i10b 1
+!s100 PmWOoU^C9WzMm]Kn_zHh42
+I78YO3^8UEj3Mc@Eb2ED>72
+R2
+R0
+R3
+Z19 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/IF_STAGE.v
+Z20 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/IF_STAGE.v
+L0 122
+R4
+r1
+!s85 0
+31
+Z21 !s108 1745789831.000000
+Z22 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/IF_STAGE.v|
+Z23 !s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/IF_STAGE.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@i@f_@i@d_@register
+vIF_STAGE
+R14
+!i10b 1
+!s100 n@h<n:n7bB1MQbM?lY8RK2
+I?GQhMfhTgnH`afnUOLnQV1
+R2
+R0
+R3
+R19
+R20
+L0 1
+R4
+r1
+!s85 0
+31
+R21
+R22
+R23
+!i113 1
+R6
+R7
+n@i@f_@s@t@a@g@e
+vMEM_STAGE
+R14
+!i10b 1
+!s100 ;aLGWNbD2oUgS?;g6AVT^2
+ILa>UM;>PXbzlK_h`5imoA2
+R2
+R0
+R3
+Z24 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/MEM_STAGE.v
+Z25 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/MEM_STAGE.v
+L0 1
+R4
+r1
+!s85 0
+31
+R21
+Z26 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/MEM_STAGE.v|
+Z27 !s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/MEM_STAGE.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@m@e@m_@s@t@a@g@e
+vMEM_WB_Register
+R14
+!i10b 1
+!s100 654942GGAXVZ][75okmNJ1
+IRK=mPDzoJb6aeeAJz3]5J2
+R2
+R0
+R3
+R24
+R25
+L0 80
+R4
+r1
+!s85 0
+31
+R21
+R26
+R27
+!i113 1
+R6
+R7
+n@m@e@m_@w@b_@register
+Epll
+R3
+Z28 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z29 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z30 8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/PLL.vhd
+Z31 FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/PLL.vhd
+l0
+L42
+VzR3ij?V5bfhgAaH5KH=_D0
+!s100 @Vc8G46`9WHiAkh`TJKX>0
+Z32 OV;C;10.5b;63
+32
+R14
+!i10b 1
+R21
+Z33 !s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/PLL.vhd|-work|ProcessadorCentral|
+Z34 !s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/PLL.vhd|
+!i113 1
+R6
+Z35 tExplicit 1 CvgOpt 0
+Asyn
+R28
+R29
+DEx4 work 3 pll 0 22 zR3ij?V5bfhgAaH5KH=_D0
+l127
+L52
+V@IeA432K;81Jbj32eQ<3:2
+!s100 kFiz5DcX]>DnF@iD8U3CF3
+R32
+32
+R14
+!i10b 1
+R21
+R33
+R34
+!i113 1
+R6
+R35
+vProgramCounter
+R14
+!i10b 1
+!s100 IF@Z<IjE5U3X_1oXS5`6Z3
+IhHH^Lo9jGGgYh:214]@T@3
+R2
+R0
+R3
+R19
+R20
+L0 101
+R4
+r1
+!s85 0
+31
+R21
+R22
+R23
+!i113 1
+R6
+R7
+n@program@counter
+vRegFile
+R14
+!i10b 1
+!s100 9>@HZa7?P2<o?6[FkoA8n1
+IilkeSIDPzgMB76e8TK;]D3
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/RegFile.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/RegFile.v
+L0 1
+R4
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/RegFile.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/RegFile.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@reg@file
+vResetSync
+R14
+!i10b 1
+!s100 RA1VPi>U:Sch>RAhgZB:R1
+I:AF;of6<ZmfDka2500afG1
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v
+L0 1
+R4
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@reset@sync
+vRFlagsRegister
+R8
+!i10b 1
+!s100 Q>T7SiQi^WLn3jR`^lCB_3
+I]DIg31Li[fkEW8h6TI@VN2
+R2
+R0
+R3
+R10
+R11
+L0 135
+R4
+r1
+!s85 0
+31
+R9
+R12
+R13
+!i113 1
+R6
+R7
+n@r@flags@register
+vStack
+R14
+!i10b 1
+!s100 0TAF[3Dm^H1GDREVj4dN^2
+IL`:h_E`<gE6WFNE5kYkVE1
+R2
+R0
+R3
+R15
+R16
+L0 148
+R4
+r1
+!s85 0
+31
+R9
+R17
+R18
+!i113 1
+R6
+R7
+n@stack
+vWB_STAGE
+R14
+!i10b 1
+!s100 jgln12`OJXL]O747a1MCz0
+Ig@CM3z8ZM[=[_Q7K[6Ndk2
+R2
+R0
+R3
+8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v
+FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v
+L0 1
+R4
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v|-work|ProcessadorCentral|
+!i113 1
+R6
+R7
+n@w@b_@s@t@a@g@e
