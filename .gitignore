@@ -3,3 +3,4 @@
 **.bak
 **/incremental_db
 **/output_files
+.qsys_edit

@@ -9,44 +9,44 @@ z2
 cModel Technology
 dC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim
 valtera_reset_controller
-Z0 !s110 1745861746
+Z0 !s110 1745881472
 !i10b 1
 !s100 z[H_hRO9gO=:^2E3_jWH03
-I20^TdH0gWX5flCkh][8mb1
+I64joi7^KIL2zDd4LM^B2R1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModelSim
-Z3 w1745858848
-8C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v
-FC:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v
+Z2 dC:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModelSim
+Z3 w1745788900
+8C:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v
+FC:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v
 L0 42
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1745861745.000000
-!s107 C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v|
-!s90 -reportprogress|300|C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
+Z5 !s108 1745881472.000000
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
 !i113 1
-Z5 o-work rst_controller
-Z6 tCvgOpt 0
+Z6 o-work rst_controller
+Z7 tCvgOpt 0
 valtera_reset_synchronizer
 R0
 !i10b 1
 !s100 oWLYmSO[EOX[G0PgQhZ2=0
-Ik?=nNo6dP9cQOaBMi01fK0
+I3hO^ghhYX0YXggO^EizFb2
 R1
 R2
 R3
-8C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v
-FC:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v
+8C:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v
+FC:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v
 L0 24
 R4
 r1
 !s85 0
 31
-!s108 1745861746.000000
-!s107 C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v|
-!s90 -reportprogress|300|C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
-!i113 1
 R5
+!s107 C:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
+!i113 1
 R6
+R7

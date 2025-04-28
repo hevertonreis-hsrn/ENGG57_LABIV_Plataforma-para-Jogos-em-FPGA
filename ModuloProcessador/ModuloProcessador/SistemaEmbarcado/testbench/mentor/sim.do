@@ -9,7 +9,8 @@
 # # the simulator.
 # #
 # # set QSYS_SIMDIR "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench"
-set QSYS_SIMDIR "C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench"
+# # set QSYS_SIMDIR "C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench"
+set QSYS_SIMDIR "C:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench"
 
 # #
 # # Source the generated IP simulation script.
@@ -62,8 +63,10 @@ vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarc
 vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v"                                                                                                       
 # # vlog "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v"
 # # vlog "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v"
-vlog "C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v"
-vlog "C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v"
+# # vlog "C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v"
+# # vlog "C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v"
+vlog "C:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v"
+vlog "C:/Users/Heverton Reis/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v"
 
 # #
 # # Set the top-level simulation or testbench module/entity name, which is
