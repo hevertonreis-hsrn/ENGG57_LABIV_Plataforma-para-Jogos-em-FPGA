@@ -47,23 +47,32 @@ always @(posedge clk or posedge rst) begin
         state <= next_state;
 end
 
+reg start_read_next;
+
 always @(*) begin
-    // valores padrão
-    start_read = 1'b0;
+    start_read_next = 1'b0;
     next_state = state;
 
     case (state)
         START_READ: begin
-            start_read = 1'b1;
+            start_read_next = 1'b1;
             next_state = WAIT_READY;
         end
 
         WAIT_READY: begin
             if (ready)
-                next_state = START_READ; // Quando dado chega, faz nova leitura
+                next_state = START_READ;
         end
     endcase
 end
+
+always @(posedge clk or posedge rst) begin
+    if (rst)
+        start_read <= 1'b0;
+    else
+        start_read <= start_read_next;
+end
+
 
 // ------------------------
 // Instância do Program Counter
@@ -85,7 +94,7 @@ IF_ID_Register register (
     .clk(clk),
     .rst(rst),
     .enable(ready && ~HD_Hold_IF_ID),
-    .inPC(nextPC_internal),
+    .inPC(pc_plus_4),
     .inInstruction(read_data),
     .IF_Flush(IF_Flush),
     .outPC(outPC),

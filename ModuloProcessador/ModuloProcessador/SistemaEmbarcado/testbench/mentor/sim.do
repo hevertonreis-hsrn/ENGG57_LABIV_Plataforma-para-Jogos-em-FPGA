@@ -8,7 +8,7 @@
 # # generated the IP script, relative to the directory from which you launch
 # # the simulator.
 # #
-set QSYS_SIMDIR "C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench"
+set QSYS_SIMDIR "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench"
 # #
 # # Source the generated IP simulation script.
 # source $QSYS_SIMDIR/mentor/msim_setup.tcl
@@ -57,8 +57,8 @@ vlog -sv   "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon
 vlog -sv   "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_clock_source.sv"        -L altera_common_sv_packages -work SistemaEmbarcado_inst_clk_bfm            
 vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado.v"                                                -work SistemaEmbarcado_inst                    
 vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v"                                                                                                       
-vlog "C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModuloProcessador.v"
-vlog "C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModuloProcessador_tb.v"
+vlog "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v"
+vlog "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v"
 # #
 # # Set the top-level simulation or testbench module/entity name, which is
 # # used by the elab command to elaborate the top level.

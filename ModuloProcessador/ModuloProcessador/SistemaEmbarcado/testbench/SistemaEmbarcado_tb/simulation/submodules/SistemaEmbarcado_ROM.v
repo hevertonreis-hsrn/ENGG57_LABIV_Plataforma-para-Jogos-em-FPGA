@@ -37,7 +37,7 @@ module SistemaEmbarcado_ROM (
                             )
 ;
 
-  parameter INIT_FILE = "C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/instruction_memory.mif";
+  parameter INIT_FILE = "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/instruction_memory.mif";
 
 
   output  [ 31: 0] readdata;

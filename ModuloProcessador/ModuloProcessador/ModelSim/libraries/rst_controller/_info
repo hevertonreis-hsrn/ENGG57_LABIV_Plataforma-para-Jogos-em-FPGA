@@ -7,46 +7,46 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim
+dC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim
 valtera_reset_controller
-!s110 1745789828
+Z0 !s110 1745800932
 !i10b 1
 !s100 z[H_hRO9gO=:^2E3_jWH03
-I::d4i8M3?@OP0e4gFC=4_0
+ITn:3MdjEVA4?zE5W[C5nJ3
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z2 w1745788900
-8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v
-FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v
+Z2 dC:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModelSim
+Z3 w1745795069
+8C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v
+FC:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v
 L0 42
-Z3 OV;L;10.5b;63
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1745789828.000000
-!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v|
-!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
+Z5 !s108 1745800932.000000
+!s107 C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
 !i113 1
-Z5 o-work rst_controller
-Z6 tCvgOpt 0
+Z6 o-work rst_controller
+Z7 tCvgOpt 0
 valtera_reset_synchronizer
-!s110 1745789829
+R0
 !i10b 1
 !s100 oWLYmSO[EOX[G0PgQhZ2=0
-IPLB=69L>n4zKSUMW_m[EQ0
+ILJ@K@EOC3cJc7I7OT0fM;3
 R1
-R0
 R2
-8C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v
-FC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v
-L0 24
 R3
+8C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v
+FC:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v
+L0 24
+R4
 r1
 !s85 0
 31
-R4
-!s107 C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v|
-!s90 -reportprogress|300|C:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
-!i113 1
 R5
+!s107 C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
+!i113 1
 R6
+R7
