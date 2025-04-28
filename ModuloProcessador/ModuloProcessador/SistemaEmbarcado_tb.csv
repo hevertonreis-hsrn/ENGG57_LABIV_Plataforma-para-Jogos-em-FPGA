@@ -1,12 +1,12 @@
-# system info SistemaEmbarcado_tb on 2025.04.27.18:21:40
+# system info SistemaEmbarcado_tb on 2025.04.28.13:47:28
 system_info:
 name,value
 DEVICE,EP4CE115F29C7
 DEVICE_FAMILY,Cyclone IV E
-GENERATION_ID,1745788857
+GENERATION_ID,1745858829
 #
 #
-# Files generated for SistemaEmbarcado_tb on 2025.04.27.18:21:40
+# Files generated for SistemaEmbarcado_tb on 2025.04.28.13:47:28
 files:
 filepath,kind,attributes,module,is_top
 SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v,VERILOG,,SistemaEmbarcado_tb,true
@@ -31,6 +31,7 @@ SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/PLL.vhd,VHD
 SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/RegFile.v,VERILOG,,CPU,false
 SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v,VERILOG,,CPU,false
 SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v,VERILOG,,CPU,false
+SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/MemoryStallUnit.v,VERILOG,,CPU,false
 SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_RAM.v,VERILOG,,SistemaEmbarcado_RAM,false
 SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_ROM.v,VERILOG,,SistemaEmbarcado_ROM,false
 SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0.v,VERILOG,,SistemaEmbarcado_mm_interconnect_0,false

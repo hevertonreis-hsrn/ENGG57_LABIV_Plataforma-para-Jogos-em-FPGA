@@ -87,6 +87,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
+		(pt 0 176)
+		(input)
+		(text "MemoryStall" (rect 0 0 50 12)(font "Arial" ))
+		(text "MemoryStall" (rect 21 171 71 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
 		(pt 280 32)
 		(output)
 		(text "r1[4..0]" (rect 0 0 28 12)(font "Arial" ))

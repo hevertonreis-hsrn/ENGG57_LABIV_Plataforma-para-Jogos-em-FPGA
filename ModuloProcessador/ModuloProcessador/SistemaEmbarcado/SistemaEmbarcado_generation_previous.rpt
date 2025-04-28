@@ -1,0 +1,59 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Workspace\Outros\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloProcessador\ModuloProcessador\SistemaEmbarcado.qsys --block-symbol-file --output-directory=C:\Workspace\Outros\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloProcessador\ModuloProcessador\SistemaEmbarcado --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading ModuloProcessador/SistemaEmbarcado.qsys
+Progress: Reading input file
+Progress: Adding ProcessadorCentral [ProcessadorCentral 1.0]
+Progress: Parameterizing module ProcessadorCentral
+Progress: Adding RAM [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module RAM
+Progress: Adding ROM [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module ROM
+Progress: Adding clock [clock_source 18.1]
+Progress: Parameterizing module clock
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Workspace\Outros\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloProcessador\ModuloProcessador\SistemaEmbarcado.qsys --synthesis=VERILOG --output-directory=C:\Workspace\Outros\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloProcessador\ModuloProcessador\SistemaEmbarcado\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading ModuloProcessador/SistemaEmbarcado.qsys
+Progress: Reading input file
+Progress: Adding ProcessadorCentral [ProcessadorCentral 1.0]
+Progress: Parameterizing module ProcessadorCentral
+Progress: Adding RAM [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module RAM
+Progress: Adding ROM [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module ROM
+Progress: Adding clock [clock_source 18.1]
+Progress: Parameterizing module clock
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SistemaEmbarcado: Generating SistemaEmbarcado "SistemaEmbarcado" for QUARTUS_SYNTH
+Info: Interconnect is inserted between master ProcessadorCentral.data_master and slave RAM.s1 because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.data_master and slave RAM.s1 because the master has read signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.data_master and slave RAM.s1 because the master has address signal 32 bit wide, but the slave is 10 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.instruction_master and slave ROM.s1 because the master has address signal 32 bit wide, but the slave is 10 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.instruction_master and slave ROM.s1 because the master has read signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master ProcessadorCentral.instruction_master and slave ROM.s1 because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: ProcessadorCentral: "SistemaEmbarcado" instantiated ProcessadorCentral "ProcessadorCentral"
+Info: RAM: Starting RTL generation for module 'SistemaEmbarcado_RAM'
+Info: RAM:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcado_RAM --dir=C:/Users/HEVERT~1.REI/AppData/Local/Temp/alt0206_6422109121072876816.dir/0013_RAM_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/HEVERT~1.REI/AppData/Local/Temp/alt0206_6422109121072876816.dir/0013_RAM_gen//SistemaEmbarcado_RAM_component_configuration.pl  --do_build_sim=0  ]
+Info: RAM: Done RTL generation for module 'SistemaEmbarcado_RAM'
+Info: RAM: "SistemaEmbarcado" instantiated altera_avalon_onchip_memory2 "RAM"
+Info: ROM: Starting RTL generation for module 'SistemaEmbarcado_ROM'
+Info: ROM:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcado_ROM --dir=C:/Users/HEVERT~1.REI/AppData/Local/Temp/alt0206_6422109121072876816.dir/0014_ROM_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/HEVERT~1.REI/AppData/Local/Temp/alt0206_6422109121072876816.dir/0014_ROM_gen//SistemaEmbarcado_ROM_component_configuration.pl  --do_build_sim=0  ]
+Info: ROM: Done RTL generation for module 'SistemaEmbarcado_ROM'
+Info: ROM: "SistemaEmbarcado" instantiated altera_avalon_onchip_memory2 "ROM"
+Info: mm_interconnect_0: "SistemaEmbarcado" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: mm_interconnect_1: "SistemaEmbarcado" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: rst_controller: "SistemaEmbarcado" instantiated altera_reset_controller "rst_controller"
+Info: ProcessadorCentral_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "ProcessadorCentral_data_master_translator"
+Info: RAM_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "RAM_s1_translator"
+Info: SistemaEmbarcado: Done "SistemaEmbarcado" with 9 modules, 26 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

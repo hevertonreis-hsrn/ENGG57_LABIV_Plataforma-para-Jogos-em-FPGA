@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.04.27.18:21:42
+# ACDS 18.1 625 win32 2025.04.28.13:47:29
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -106,7 +106,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.04.27.18:21:42
+# ACDS 18.1 625 win32 2025.04.28.13:47:29
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="SistemaEmbarcado_tb"
@@ -227,6 +227,7 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/RegFile.v"                            -work ProcessadorCentral                        -cdslib ./cds_libs/ProcessadorCentral.cds.lib                       
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v"                          -work ProcessadorCentral                        -cdslib ./cds_libs/ProcessadorCentral.cds.lib                       
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v"                           -work ProcessadorCentral                        -cdslib ./cds_libs/ProcessadorCentral.cds.lib                       
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/MemoryStallUnit.v"                    -work ProcessadorCentral                        -cdslib ./cds_libs/ProcessadorCentral.cds.lib                       
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_reset_source.sv"        -work SistemaEmbarcado_inst_reset_bfm           -cdslib ./cds_libs/SistemaEmbarcado_inst_reset_bfm.cds.lib          
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_clock_source.sv"        -work SistemaEmbarcado_inst_clk_bfm             -cdslib ./cds_libs/SistemaEmbarcado_inst_clk_bfm.cds.lib            
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado.v"                   -work SistemaEmbarcado_inst                     -cdslib ./cds_libs/SistemaEmbarcado_inst.cds.lib                    

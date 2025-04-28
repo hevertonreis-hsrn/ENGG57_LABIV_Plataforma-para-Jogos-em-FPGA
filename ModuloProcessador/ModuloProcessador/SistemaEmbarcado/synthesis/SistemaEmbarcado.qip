@@ -2,7 +2,7 @@ set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -na
 set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "SistemaEmbarcado" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../SistemaEmbarcado.sopcinfo"]
-set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name SLD_INFO "QSYS_NAME SistemaEmbarcado HAS_SOPCINFO 1 GENERATION_ID 1745788931"
+set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name SLD_INFO "QSYS_NAME SistemaEmbarcado HAS_SOPCINFO 1 GENERATION_ID 1745858879"
 set_global_assignment -library "SistemaEmbarcado" -name MISC_FILE [file join $::quartus(qip_path) "../SistemaEmbarcado.cmp"]
 set_global_assignment -library "SistemaEmbarcado" -name SLD_FILE [file join $::quartus(qip_path) "SistemaEmbarcado.debuginfo"]
 set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_TARGETED_DEVICE_FAMILY "Cyclone IV E"
@@ -15,7 +15,7 @@ set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -na
 set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc0NTc4ODkzMQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc0NTg1ODg3OQ==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0Q0UxMTVGMjlDNw==::QXV0byBERVZJQ0U="
 set_global_assignment -entity "SistemaEmbarcado" -library "SistemaEmbarcado" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -293,6 +293,7 @@ set_global_assignment -library "SistemaEmbarcado" -name VHDL_FILE [file join $::
 set_global_assignment -library "SistemaEmbarcado" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/RegFile.v"]
 set_global_assignment -library "SistemaEmbarcado" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ResetSync.v"]
 set_global_assignment -library "SistemaEmbarcado" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/WB_STAGE.v"]
+set_global_assignment -library "SistemaEmbarcado" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/MemoryStallUnit.v"]
 
 set_global_assignment -entity "altera_reset_controller" -library "SistemaEmbarcado" -name IP_TOOL_NAME "altera_reset_controller"
 set_global_assignment -entity "altera_reset_controller" -library "SistemaEmbarcado" -name IP_TOOL_VERSION "18.1"

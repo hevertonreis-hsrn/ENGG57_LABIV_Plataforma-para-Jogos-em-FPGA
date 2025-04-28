@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.04.27.18:21:42
+# ACDS 18.1 625 win32 2025.04.28.13:47:30
 # ----------------------------------------
 # Auto-generated simulation script rivierapro_setup.tcl
 # ----------------------------------------
@@ -266,6 +266,7 @@ alias com {
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/RegFile.v"                                                         -work ProcessadorCentral                       
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v"                                                       -work ProcessadorCentral                       
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v"                                                        -work ProcessadorCentral                       
+  eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/MemoryStallUnit.v"                                                 -work ProcessadorCentral                       
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_reset_source.sv"        -l altera_common_sv_packages -work SistemaEmbarcado_inst_reset_bfm          
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_clock_source.sv"        -l altera_common_sv_packages -work SistemaEmbarcado_inst_clk_bfm            
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado.v"                                                -work SistemaEmbarcado_inst                    

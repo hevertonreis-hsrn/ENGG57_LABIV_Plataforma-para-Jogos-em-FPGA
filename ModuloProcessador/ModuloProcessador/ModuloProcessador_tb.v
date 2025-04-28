@@ -18,9 +18,8 @@ initial begin
 	#102;
 	SW = 1;
 	
-	#1000 
+	#1000; 
 	
-	$stop; 
 end
 
 

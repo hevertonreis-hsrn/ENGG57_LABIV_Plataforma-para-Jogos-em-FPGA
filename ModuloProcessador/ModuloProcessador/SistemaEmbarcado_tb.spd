@@ -106,6 +106,10 @@
    type="VERILOG"
    library="ProcessadorCentral" />
  <file
+   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/MemoryStallUnit.v"
+   type="VERILOG"
+   library="ProcessadorCentral" />
+ <file
    path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_reset_source.sv"
    type="SYSTEM_VERILOG"
    library="SistemaEmbarcado_inst_reset_bfm" />

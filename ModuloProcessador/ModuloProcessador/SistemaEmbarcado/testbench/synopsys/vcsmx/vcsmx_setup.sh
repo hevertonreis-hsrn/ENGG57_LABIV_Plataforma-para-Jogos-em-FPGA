@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.04.27.18:21:42
+# ACDS 18.1 625 win32 2025.04.28.13:47:29
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.04.27.18:21:42
+# ACDS 18.1 625 win32 2025.04.28.13:47:29
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="SistemaEmbarcado_tb"
@@ -230,6 +230,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/RegFile.v"                            -work ProcessadorCentral                       
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v"                          -work ProcessadorCentral                       
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v"                           -work ProcessadorCentral                       
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/MemoryStallUnit.v"                    -work ProcessadorCentral                       
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_reset_source.sv"        -work SistemaEmbarcado_inst_reset_bfm          
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_clock_source.sv"        -work SistemaEmbarcado_inst_clk_bfm            
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado.v"                   -work SistemaEmbarcado_inst                    

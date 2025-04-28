@@ -9,65 +9,86 @@ z2
 cModel Technology
 dC:/Users/Heverton Reis/Documents/LAB04/ModuloProcessador/ModelSim
 vModuloProcessador
-Z0 !s110 1745800935
+Z0 !s110 1745861748
 !i10b 1
 !s100 ^5NbkYN81Z94>IVW4IXVL1
-IbO>^S@[Pl3YRM<CX=Hn8_1
+I_[0_RL7NZQ;D]i>Cn1IX71
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModelSim
-Z3 w1745795069
-8C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v
-FC:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v
+Z2 dC:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModelSim
+w1745840388
+8C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v
+FC:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v
 L0 19
-Z4 OV;L;10.5b;63
+Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1745800935.000000
-!s107 C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v|
-!s90 -reportprogress|300|C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v|
+Z4 !s108 1745861748.000000
+!s107 C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v|
+!s90 -reportprogress|300|C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v|
 !i113 1
-Z6 tCvgOpt 0
+Z5 tCvgOpt 0
 n@modulo@processador
 vModuloProcessador_tb
-R0
+!s110 1745861749
 !i10b 1
-!s100 HVH^Q^^@jnl5dC2ET44@V2
-Id?I9?3ZknZZak=GS6S7C20
+!s100 `eYM^0m4ih5;;<?d6eDY`2
+Il9?@S2@<2ho>AR52cKI900
 R1
 R2
-R3
-8C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v
-FC:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v
+w1745844403
+8C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v
+FC:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v
 L0 2
-R4
+R3
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v|
-!s90 -reportprogress|300|C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v|
+R4
+!s107 C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v|
+!s90 -reportprogress|300|C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v|
 !i113 1
-R6
+R5
 n@modulo@processador_tb
 vSistemaEmbarcado_tb
 R0
 !i10b 1
 !s100 ;bFG:Rk6@`YYXjJ4E8VKd0
-IbaoU`IB^oRAoafAAQiPBg2
+IBP:993:[81`?5`iYeT7BB1
 R1
 R2
-R3
-8C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v
-FC:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v
+w1745858833
+8C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v
+FC:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v
 L0 6
-R4
+R3
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v|
-!s90 -reportprogress|300|C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v|
+R4
+!s107 C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v|
+!s90 -reportprogress|300|C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v|
 !i113 1
-R6
+R5
 n@sistema@embarcado_tb
+vWB_STAGE
+R0
+!i10b 1
+!s100 jgln12`OJXL]O747a1MCz0
+IW@VVolGN[b0O3_UPKZQN;3
+R1
+R2
+w1745858841
+8C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v
+FC:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v|
+!s90 -reportprogress|300|C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v|
+!i113 1
+R5
+n@w@b_@s@t@a@g@e

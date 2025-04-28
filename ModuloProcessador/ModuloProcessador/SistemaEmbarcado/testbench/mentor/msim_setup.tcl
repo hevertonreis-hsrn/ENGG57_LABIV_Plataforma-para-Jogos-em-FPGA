@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.04.27.18:21:42
+# ACDS 18.1 625 win32 2025.04.28.13:47:29
 
 # ----------------------------------------
 # Initialize variables
@@ -260,6 +260,7 @@ alias com {
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/RegFile.v"                                                         -work ProcessadorCentral                       
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v"                                                       -work ProcessadorCentral                       
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v"                                                        -work ProcessadorCentral                       
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/MemoryStallUnit.v"                                                 -work ProcessadorCentral                       
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_reset_source.sv"        -L altera_common_sv_packages -work SistemaEmbarcado_inst_reset_bfm          
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_clock_source.sv"        -L altera_common_sv_packages -work SistemaEmbarcado_inst_clk_bfm            
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado.v"                                                -work SistemaEmbarcado_inst                    

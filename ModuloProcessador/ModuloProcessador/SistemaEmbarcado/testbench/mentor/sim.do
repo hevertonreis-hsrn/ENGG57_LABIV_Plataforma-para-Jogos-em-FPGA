@@ -8,7 +8,9 @@
 # # generated the IP script, relative to the directory from which you launch
 # # the simulator.
 # #
-set QSYS_SIMDIR "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench"
+# # set QSYS_SIMDIR "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench"
+set QSYS_SIMDIR "C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/SistemaEmbarcado/testbench"
+
 # #
 # # Source the generated IP simulation script.
 # source $QSYS_SIMDIR/mentor/msim_setup.tcl
@@ -52,13 +54,17 @@ vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/MEM_STAGE.v" 
 vcom       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/PLL.vhd"                                                           -work ProcessadorCentral                       
 vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/RegFile.v"                                                         -work ProcessadorCentral                       
 vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/ResetSync.v"                                                       -work ProcessadorCentral                       
-vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v"                                                        -work ProcessadorCentral                       
+vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/WB_STAGE.v"
+vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/MemoryStallUnit.v"                                                        -work ProcessadorCentral                       
 vlog -sv   "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_reset_source.sv"        -L altera_common_sv_packages -work SistemaEmbarcado_inst_reset_bfm          
 vlog -sv   "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_clock_source.sv"        -L altera_common_sv_packages -work SistemaEmbarcado_inst_clk_bfm            
 vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado.v"                                                -work SistemaEmbarcado_inst                    
 vlog       "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v"                                                                                                       
-vlog "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v"
-vlog "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v"
+# # vlog "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v"
+# # vlog "C:/Users/Heverton/Documents/LAB04/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v"
+vlog "C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador.v"
+vlog "C:/Workspace/Outros/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloProcessador/ModuloProcessador/ModuloProcessador_tb.v"
+
 # #
 # # Set the top-level simulation or testbench module/entity name, which is
 # # used by the elab command to elaborate the top level.

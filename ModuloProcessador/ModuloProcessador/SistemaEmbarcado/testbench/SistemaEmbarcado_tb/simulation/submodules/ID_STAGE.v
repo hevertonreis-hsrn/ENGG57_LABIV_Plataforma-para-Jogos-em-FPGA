@@ -1,15 +1,16 @@
 module ID_STAGE(
-	 input wire clk_50,
+    input wire clk_50,
     input wire clk,
     input wire rst,
-	 input wire [31:0] IF_ID_PC,
+    input wire [31:0] IF_ID_PC,
     input wire [31:0] IF_ID_Inst,
     input wire HD_HoldControl,
-	 input wire RegWrite,
-	 input wire [4:0] WriteReg,
-    input wire [31:0] WriteData, 
-	 
-	 output wire [4:0] r1,
+    input wire RegWrite,
+    input wire [4:0] WriteReg,
+    input wire [31:0] WriteData,
+    input wire MemoryStall, 
+    
+    output wire [4:0] r1,
     output wire [4:0] r2,
     output wire ID_EX_MemToReg,
     output wire ID_EX_RegWrite,
@@ -22,10 +23,8 @@ module ID_STAGE(
     output wire [31:0] ID_EX_ReadData1,
     output wire [31:0] ID_EX_ReadData2,
     output wire [31:0] ID_EX_SignExtImm,
-    
-	 
-	 output wire [4:0] ID_EX_WriteReg,
-	 output wire [4:0] ID_EX_Rs
+    output wire [4:0] ID_EX_WriteReg,
+    output wire [4:0] ID_EX_Rs
 );
 
 //=== Internal Wires ===//
@@ -37,6 +36,8 @@ wire [31:0] branchRegValue;
 wire [31:0] branchTarget;
 wire [31:0] readData1, readData2;
 wire [31:0] stackPCOut;
+wire push;
+wire pop;
 
 wire branchMode, branchSrc;
 wire branch, memRead, memToReg, memWrite, aluSrc, regWriteControl;
@@ -46,17 +47,41 @@ wire hold_branchMode, hold_branchSrc;
 wire hold_branch, hold_memRead, hold_memToReg, hold_memWrite, hold_aluSrc, hold_regWrite;
 wire [5:0] hold_aluOp;
 
-//=== Decode Instruction Fields ===//
-assign opcode = IF_ID_Inst[31:26];
-assign r1 = IF_ID_Inst[25:21];
-assign r2 = IF_ID_Inst[20:16];
-assign immediate = IF_ID_Inst[15:0];
+wire ID_Hold;
+
+//=== Hold logic: stall se MemoryStall OU Hazard ===//
+assign ID_Hold = MemoryStall | HD_HoldControl;
+
+//=== Instruction Decode (with hold) ===//
+reg [5:0] hold_opcode;
+reg [4:0] hold_r1;
+reg [4:0] hold_r2;
+reg [15:0] hold_immediate;
+
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        hold_opcode <= 6'b010101;
+        hold_r1 <= 5'b0;
+        hold_r2 <= 5'b0;
+        hold_immediate <= 16'b0;
+    end else if (!ID_Hold) begin
+        hold_opcode <= IF_ID_Inst[31:26];
+        hold_r1 <= IF_ID_Inst[25:21];
+        hold_r2 <= IF_ID_Inst[20:16];
+        hold_immediate <= IF_ID_Inst[15:0];
+    end
+end
+
+assign opcode = hold_opcode;
+assign r1 = hold_r1;
+assign r2 = hold_r2;
+assign immediate = hold_immediate;
 
 //=== Control Unit ===//
 Control control_unit(
     .opcode(opcode),
-    .StackPush(), // Não usado diretamente aqui
-    .StackPop(),  // Não usado diretamente aqui
+    .StackPush(push), // Não usado
+    .StackPop(pop),  // Não usado
     .BranchMode(branchMode),
     .BranchSrc(branchSrc),
     .Branch(branch),
@@ -84,45 +109,54 @@ RegFile regfile(
 //=== Sign Extend (16 bits para 32 bits) ===//
 assign signExtImm = {{16{immediate[15]}}, immediate};
 
-//=== Stack for PC (Push/Pop mechanism) ===//
+//=== Stack para Branch com PUSH/POP ===//
 Stack stack_pc(
     .clk(clk),
     .rst(rst),
-    .push(), // Ligação posterior caso necessário
-    .pop(),
+    .push(push),
+    .pop(pop),
     .data_in(IF_ID_PC),
     .data_out(stackPCOut)
 );
 
-//=== Mux 2: Escolhe entre readData1 e PC stack estendido ===//
+//=== Branch Target Calculation ===//
 assign branchRegValue = (branchSrc) ? stackPCOut : readData1;
 
-//=== Branch Address Calculation ===//
-assign branchTarget = branchRegValue + signExtImm;
+BranchFormat branchFormat(
+    .clk(clk),
+    .rst(rst),
+    .hold(ID_Hold),
+    .PC(IF_ID_PC),
+    .BranchMode(branchMode),
+    .RegValue(branchRegValue),
+    .ImmExt(signExtImm),
+    .BranchTarget(branchTarget)
+);
 
-//=== Control Mux: Segura sinais durante hazard ===//
-assign hold_branchMode  = (HD_HoldControl) ? 1'b0 : branchMode;
-assign hold_branchSrc   = (HD_HoldControl) ? 1'b0 : branchSrc;
-assign hold_branch      = (HD_HoldControl) ? 1'b0 : branch;
-assign hold_memRead     = (HD_HoldControl) ? 1'b0 : memRead;
-assign hold_memToReg    = (HD_HoldControl) ? 1'b0 : memToReg;
-assign hold_memWrite    = (HD_HoldControl) ? 1'b0 : memWrite;
-assign hold_aluSrc      = (HD_HoldControl) ? 1'b0 : aluSrc;
-assign hold_regWrite    = (HD_HoldControl) ? 1'b0 : regWriteControl;
-assign hold_aluOp       = (HD_HoldControl) ? 6'b0 : aluOp;
+//=== Control Hold Mux ===//
+assign hold_branchMode  = (ID_Hold) ? 1'b0 : branchMode;
+assign hold_branchSrc   = (ID_Hold) ? 1'b0 : branchSrc;
+assign hold_branch      = (ID_Hold) ? 1'b0 : branch;
+assign hold_memRead     = (ID_Hold) ? 1'b0 : memRead;
+assign hold_memToReg    = (ID_Hold) ? 1'b0 : memToReg;
+assign hold_memWrite    = (ID_Hold) ? 1'b0 : memWrite;
+assign hold_aluSrc      = (ID_Hold) ? 1'b0 : aluSrc;
+assign hold_regWrite    = (ID_Hold) ? 1'b0 : regWriteControl;
+assign hold_aluOp       = (ID_Hold) ? 6'b010101 : aluOp;
 
 //=== ID/EX Pipeline Register ===//
 ID_EX_Register id_ex_reg(
     .clk(clk),
     .rst(rst),
+    .hold(ID_Hold), // <=== Adicionado aqui para congelar o pipeline
     .inMemToReg(hold_memToReg),
     .inRegWrite(hold_regWrite),
     .inBranch(hold_branch),
+    .inBranchTarget(branchTarget),
     .inMemRead(hold_memRead),
     .inMemWrite(hold_memWrite),
     .inALUSrc(hold_aluSrc),
     .inALUOp(hold_aluOp),
-    .inBranchTarget(branchTarget),
     .inReadData1(readData1),
     .inReadData2(readData2),
     .inRegSrc1(r1),
@@ -131,17 +165,43 @@ ID_EX_Register id_ex_reg(
     .outMemToReg(ID_EX_MemToReg),
     .outRegWrite(ID_EX_RegWrite),
     .outBranch(ID_EX_Branch),
+    .outBranchTarget(ID_EX_BranchTarget),
     .outMemRead(ID_EX_MemRead),
     .outMemWrite(ID_EX_MemWrite),
     .outALUSrc(ID_EX_ALUSrc),
     .outALUOp(ID_EX_ALUOp),
-    .outBranchTarget(ID_EX_BranchTarget),
     .outReadData1(ID_EX_ReadData1),
     .outReadData2(ID_EX_ReadData2),
     .outRegSrc1(ID_EX_Rs),
     .outSignExtImm(ID_EX_SignExtImm),
     .outWriteReg(ID_EX_WriteReg)
 );
+
+endmodule
+
+
+module BranchFormat(
+    input wire clk,
+    input wire rst,
+    input wire hold,
+    input wire [31:0] PC,
+    input wire BranchMode,
+    input wire [31:0] RegValue,
+    input wire [31:0] ImmExt,
+    output reg [31:0] BranchTarget
+);
+
+    always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        BranchTarget <= 32'd0;
+    end else if (!hold) begin
+        if (BranchMode) begin
+            BranchTarget <= RegValue;
+        end else begin
+            BranchTarget <= PC + ImmExt;
+        end
+    end
+end
 
 endmodule
 
@@ -184,6 +244,7 @@ endmodule
 module ID_EX_Register (
     input wire clk,
     input wire rst,
+	 input wire hold,
 	 input wire inMemToReg,
 	 input wire inRegWrite,
 	 input wire [31:0] inBranchTarget,
@@ -228,7 +289,7 @@ module ID_EX_Register (
             outALUSrc <= 1'b0;
 			   outWriteReg <= 5'b0;
 				outRegSrc1 <= 5'b0;
-        end else begin
+        end else if (!hold) begin
             outMemToReg <= inMemToReg;
 				outRegWrite <= inRegWrite;
 				outBranch <= inBranch;
