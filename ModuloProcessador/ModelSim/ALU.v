@@ -55,7 +55,6 @@ module ALU(
                 Result = MUL_Result[31:0];
                 if ((MUL_Result > 64'sd2147483647) || (MUL_Result < -64'sd2147483648)) begin
                     RFlags[6] = 1'b1; // Overflow
-                    RFlags[0] = 1'b1; // Error
                 end
 
             end
