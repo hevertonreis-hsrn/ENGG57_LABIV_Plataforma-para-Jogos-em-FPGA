@@ -1,14 +1,14 @@
 # Makefile para simular seu projeto VGA no Verilator com SDL
 
 # Flags do Verilator
-VFLAGS = -Wall -O3 --x-assign fast --x-initial fast --noassert
+VFLAGS = -Wall -O3 --x-assign fast --x-initial fast --noassert --Wno-WIDTH --Wno-UNUSED
 
 # SDL2 flags
 SDL_CFLAGS = $(shell sdl2-config --cflags)
 SDL_LDFLAGS = $(shell sdl2-config --libs)
 
 # Arquivos Verilog do seu projeto
-VERILOG_SOURCES = vgaController.v hCounter.v vCounter.v clockDivider.v
+VERILOG_SOURCES = top.v vgaController.v clockDivider.v doubleBuffer.v
 
 # Nome do executável
 EXEC = simvga

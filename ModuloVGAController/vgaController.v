@@ -1,41 +1,97 @@
 // Controlador VGA considerando uma tela de 640 x 480 a 60Hz.
 
 module vgaController(
-	input clk,
-	output hSync, vSync,									// Sinais de sincronismo.
-	output blankN, syncN,         					// Saidas padrao vga controller (pouco usadas).
-	output [7:0] outRed, outGreen, outBlue,		// Saidas das cores.
-	output [9:0] hPos, vPos								// Saidas para os contadores.
+	// Buffer.
+	input  [7:0] inRed, inGreen, inBlue,
+	output [9:0] outX, outY,
+	output outRequest,  
+
+	// VGA DAC.
+	output [7:0] outRed, outGreen, outBlue,		// Saidas das cores.	
+	output reg hs, vs,									// Sinais de sincronismo.     											
+	output vgaClk, vgaBlankN, vgaSyncN,				// Outros.
+
+	// Sinais de Controle.
+	input clk25, rstN
 	);
+	
+// Registradores Internos.
+reg  [9:0] hCount, vCount;
 
-wire enableVerticalCounter;
-wire [9:0] hCount, vCount;
-wire clk25Mhz;
-reg reset = 0; // Para o PLL.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Parametros Horizontais.
+parameter hFront   = 16;
+parameter hSync    = 96;
+parameter hBack    = 48;
+parameter hDisplay = 640;
+parameter hBlank = hFront + hSync + hBack;					// 16 + 96 + 48 = 160.
+parameter hTotal = hFront + hSync + hBack + hDisplay; 	// 160 + 640 	 = 800.
 
-// Divisor de clock (requer 25 MHz)
-// clkDivider cd (.areset(reset), .inclk0(clk), .c0(clk25Mhz));
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Parametros Verticais.
+parameter vFront   = 10;											// Exemplo Terasic (DE2_115_TV) usa 11.
+parameter vSync    = 2;
+parameter vBack    = 33;											// Exemplo Terasic (DE2_115_TV) usa 31.
+parameter vDisplay = 480;
+parameter vBlank = vFront + vSync + vBack;					// 10 + 2 + 33 = 45.
+parameter vTotal = vFront + vSync + vBack + vDisplay;		// 45 + 480 	= 525.
 
-// Divisor simples de clock para simular.
-clockDivider pll (.clk(clk), .reset(reset), .clk_out(clk25Mhz));  // Clock de saída dividido por 2
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Outras Saidas.
+assign vgaSyncN = 1'b1; 														// Pode ser ignorado.
+assign vgaClk = ~clk25;
+assign vgaBlankN = ~((hCount < hBlank) || (vCount < vBlank));
+assign outRequest = ((hCount >= hBlank) && (hCount < hTotal) && ((vCount >= vBlank) && (vCount < vTotal)));
+// Posicao.
+assign outX = (hCount >= hBlank) ? hCount - hBlank : 9'h0;
+assign outY = (vCount >= vBlank) ? vCount - vBlank : 9'h0;
+// Cores.
+//assign outRed   = inRed;
+//assign outGreen = inGreen;
+//assign outBlue  = inBlue;
+assign outRed   = outRequest ? 8'hFF : 8'hFF;
+assign outGreen = outRequest ? 8'h00 : 8'hFF;
+assign outBlue  = outRequest ? 8'hFF : 8'h00;
 
-// Contagem.
-hCounter vgaH (.clk25MHz(clk25Mhz), .counter(hCount), .jumpLine(enableVerticalCounter));
-vCounter vgaV (.clk25MHz(clk25Mhz), .enable(enableVerticalCounter), .counter(vCount));
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Contagem e Sincronismo. FRONT > SYNC > BACK > DISPLAY > FRONT > ...
+always @(posedge clk25) begin // Horizontal.
+	if(!rstN) begin
+		hCount <=	0;
+		hs		 <=	1;
+	end
+	else begin
+		// Contando.
+		if (hCount < hTotal)
+			hCount <= hCount + 1'b1; 				// Continua incrementando.
+		else
+			hCount <= 0;								// Reinicia contagem.
+		// Sincronismo.
+		if (hCount == hFront - 1) 					// hCount == 15.
+			hs <= 1'b0; 								// Habilitado em nivel logico baixo.
+		if (hCount == hFront + hSync - 1) 		// hCount == 95.
+			hs <= 1'b1;
+	end
+	
+end
 
-// Sincronizando.
-assign hSync = (hCount < 96) ? 1'b0 : 1'b1; 
-assign vSync = (vCount < 2) ? 1'b0 : 1'b1;
-
-// Outras saidas.
-assign blankN = (hCount < 784 && hCount > 143 && vCount < 515 && vCount > 34); // Ativado quando dentro da area visivel.
-assign syncN = 1'b1; // Sinal legado de sincronismo composto (nao usado).
-assign hPos = hCount;
-assign vPos = vCount;
-
-// Colorindo. (Por hora exibiria uma tela em branco)
-assign outRed = (blankN == 1) ? 8'hFF : 8'h00;
-assign outGreen = (blankN == 1) ? 8'hFF : 8'h00;
-assign outBlue = (blankN == 1) ? 8'hFF : 8'h00;
+always @(posedge hs) begin // Vertical: Dependente do sync horizontal.
+	if(!rstN) begin
+		vCount <=	0;
+		vs		 <=	1;
+	end
+	else begin
+		// Contando.
+		if (vCount < vTotal)
+			vCount <= vCount + 1'b1;
+		else
+			vCount <= 0;
+		// Sincronismo.
+		if (vCount == vFront - 1)
+			vs <= 1'b0;								// Habilitado em nivel logico baixo.
+		if (vCount == vFront + vSync - 1)
+			vs <= 1'b1;
+	end
+end
 
 endmodule

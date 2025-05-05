@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <SDL.h>
 #include <verilated.h>
-#include "VvgaController.h"  // Mudamos para o seu módulo!
+#include "Vtop.h"  // Mudamos para o seu módulo!
 
 const int H_RES = 640;
 const int V_RES = 480;
@@ -49,10 +49,10 @@ int main(int argc, char* argv[]) {
     }
 
     const Uint8* keyb_state = SDL_GetKeyboardState(NULL);
-
+    
     printf("Simulation running. Press 'Q' to quit.\n");
 
-    VvgaController* top = new VvgaController;
+    Vtop* top = new Vtop;
 
     top->clk = 0;
     top->eval();
@@ -66,32 +66,31 @@ int main(int argc, char* argv[]) {
         top->clk = 0;
         top->eval();
 
-        // if (top->blankN) { // Só desenha se dentro da área visível
-        //     if (top->hPos < H_RES && top->vPos < V_RES) {
-        //         Pixel* p = &screenbuffer[top->vPos * H_RES + top->hPos];
-        //         p->a = 0xFF;
-        //         p->r = top->outRed;
-        //         p->g = top->outGreen;
-        //         p->b = top->outBlue;
-        //     }
-        // }
-        const int H_DISPLAY_START = 144; // exemplo para 640x480 a 60Hz
-        const int V_DISPLAY_START = 35;  // exemplo para 640x480 a 60Hz
-
-        if (top->blankN) {
-            int telaX = top->hPos - H_DISPLAY_START;
-            int telaY = top->vPos - V_DISPLAY_START;
-            if (telaX >= 0 && telaX < H_RES && telaY >= 0 && telaY < V_RES) {
-                Pixel* p = &screenbuffer[telaY * H_RES + telaX];
+        if (top->vgaRequest) { // Só desenha se dentro da área visível
+            if (top->xPos < H_RES && top->yPos < V_RES) {
+                Pixel* p = &screenbuffer[top->yPos * H_RES + top->xPos];
                 p->a = 0xFF;
                 p->r = top->outRed;
                 p->g = top->outGreen;
                 p->b = top->outBlue;
             }
         }
+        // const int H_DISPLAY_START = 144; // exemplo para 640x480 a 60Hz
+        // const int V_DISPLAY_START = 35;  // exemplo para 640x480 a 60Hz
+        // if (top->vgaRequest) {
+        //     int telaX = top->xPos - H_DISPLAY_START;
+        //     int telaY = top->yPos - V_DISPLAY_START;
+        //     if (telaX >= 0 && telaX < H_RES && telaY >= 0 && telaY < V_RES) {
+        //         Pixel* p = &screenbuffer[telaY * H_RES + telaX];
+        //         p->a = 0xFF;
+        //         p->r = top->outRed;
+        //         p->g = top->outGreen;
+        //         p->b = top->outBlue;
+        //     }
+        // }
 
         // Quando terminar uma linha completa da tela
-        if (top->vPos == V_RES && top->hPos == 0) {
+        if (top->yPos == V_RES && top->xPos == 0) {
             SDL_Event e;
             if (SDL_PollEvent(&e)) {
                 if (e.type == SDL_QUIT) break;
