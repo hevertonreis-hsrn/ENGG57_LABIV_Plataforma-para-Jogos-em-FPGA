@@ -1,0 +1,33 @@
+# system info EmbarcadoVGA_tb on 2025.05.08.13:20:30
+system_info:
+name,value
+DEVICE,EP4CE115F29C7
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1746721226
+#
+#
+# Files generated for EmbarcadoVGA_tb on 2025.05.08.13:20:30
+files:
+filepath,kind,attributes,module,is_top
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/EmbarcadoVGA_tb.v,VERILOG,,EmbarcadoVGA_tb,true
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA.v,VERILOG,,EmbarcadoVGA,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_clock_source,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_clock_source.sv,SYSTEM_VERILOG,,altera_avalon_clock_source,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_reset_source,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_reset_source.sv,SYSTEM_VERILOG,,altera_avalon_reset_source,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v,VERILOG,,altera_sdram_partner_module,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v,VERILOG,,EmbarcadoVGA_sdram_controller,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v,VERILOG,,EmbarcadoVGA_sdram_controller,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v,VERILOG,,altera_reset_controller,false
+EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.sdc,SDC,,altera_reset_controller,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+EmbarcadoVGA_tb.EmbarcadoVGA_inst,EmbarcadoVGA
+EmbarcadoVGA_tb.EmbarcadoVGA_inst.sdram_controller,EmbarcadoVGA_sdram_controller
+EmbarcadoVGA_tb.EmbarcadoVGA_inst.rst_controller,altera_reset_controller
+EmbarcadoVGA_tb.EmbarcadoVGA_inst_clk_bfm,altera_avalon_clock_source
+EmbarcadoVGA_tb.EmbarcadoVGA_inst_reset_bfm,altera_avalon_reset_source
+EmbarcadoVGA_tb.sdram_controller_my_partner,altera_sdram_partner_module

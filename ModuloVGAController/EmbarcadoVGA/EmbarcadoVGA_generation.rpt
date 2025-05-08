@@ -1,0 +1,44 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA.qsys --block-symbol-file --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading ModuloVGAController/EmbarcadoVGA.qsys
+Progress: Reading input file
+Progress: Adding clk [clock_source 18.1]
+Progress: Parameterizing module clk
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding sdram_controller [altera_avalon_new_sdram_controller 18.1]
+Progress: Parameterizing module sdram_controller
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: EmbarcadoVGA.sdram_controller: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Warning: EmbarcadoVGA.sdram_controller: sdram_controller.s1 must be connected to an Avalon-MM master
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA.qsys --synthesis=VERILOG --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading ModuloVGAController/EmbarcadoVGA.qsys
+Progress: Reading input file
+Progress: Adding clk [clock_source 18.1]
+Progress: Parameterizing module clk
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding sdram_controller [altera_avalon_new_sdram_controller 18.1]
+Progress: Parameterizing module sdram_controller
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: EmbarcadoVGA.sdram_controller: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Warning: EmbarcadoVGA.sdram_controller: sdram_controller.s1 must be connected to an Avalon-MM master
+Info: EmbarcadoVGA: Generating EmbarcadoVGA "EmbarcadoVGA" for QUARTUS_SYNTH
+Info: sdram_controller: Starting RTL generation for module 'EmbarcadoVGA_sdram_controller'
+Info: sdram_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0216_3913507940685396476.dir/0008_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0216_3913507940685396476.dir/0008_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram_controller: Done RTL generation for module 'EmbarcadoVGA_sdram_controller'
+Info: sdram_controller: "EmbarcadoVGA" instantiated altera_avalon_new_sdram_controller "sdram_controller"
+Info: rst_controller: "EmbarcadoVGA" instantiated altera_reset_controller "rst_controller"
+Info: EmbarcadoVGA: Done "EmbarcadoVGA" with 3 modules, 6 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
