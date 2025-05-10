@@ -10,7 +10,10 @@ module EmbarcadoVGA (
 	sdram_dq,
 	sdram_dqm,
 	sdram_ras_n,
-	sdram_we_n);	
+	sdram_we_n,
+	master_conduit_fifo_full,
+	master_conduit_fifo_wr_en,
+	master_conduit_exportdata);	
 
 	input		clk_clk;
 	input		reset_reset_n;
@@ -23,4 +26,7 @@ module EmbarcadoVGA (
 	output	[3:0]	sdram_dqm;
 	output		sdram_ras_n;
 	output		sdram_we_n;
+	input		master_conduit_fifo_full;
+	output		master_conduit_fifo_wr_en;
+	output	[31:0]	master_conduit_exportdata;
 endmodule

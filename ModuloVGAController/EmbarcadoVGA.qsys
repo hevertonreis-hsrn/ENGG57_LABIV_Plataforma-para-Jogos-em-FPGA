@@ -6,7 +6,7 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element clk
@@ -17,11 +17,11 @@
          type = "int";
       }
    }
-   element jtag_uart
+   element master_interface
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "2";
          type = "int";
       }
    }
@@ -29,8 +29,16 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "1";
          type = "int";
+      }
+   }
+   element sdram_controller.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
       }
    }
 }
@@ -47,7 +55,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName" value="vgaController.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -55,6 +63,11 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
+ <interface
+   name="master_conduit"
+   internal="master_interface.conduit"
+   type="conduit"
+   dir="end" />
  <interface name="reset" internal="clk.clk_in_reset" type="reset" dir="end" />
  <interface
    name="sdram"
@@ -68,24 +81,10 @@
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
  <module
-   name="jtag_uart"
-   kind="altera_avalon_jtag_uart"
-   version="18.1"
-   enabled="0">
-  <parameter name="allowMultipleConnections" value="false" />
-  <parameter name="avalonSpec" value="2.0" />
-  <parameter name="clkFreq" value="50000000" />
-  <parameter name="hubInstanceID" value="0" />
-  <parameter name="readBufferDepth" value="64" />
-  <parameter name="readIRQThreshold" value="8" />
-  <parameter name="simInputCharacterStream" value="" />
-  <parameter name="simInteractiveOptions">NO_INTERACTIVE_WINDOWS</parameter>
-  <parameter name="useRegistersForReadBuffer" value="false" />
-  <parameter name="useRegistersForWriteBuffer" value="false" />
-  <parameter name="useRelativePathForSimFile" value="false" />
-  <parameter name="writeBufferDepth" value="64" />
-  <parameter name="writeIRQThreshold" value="8" />
- </module>
+   name="master_interface"
+   kind="master_interface"
+   version="1.0"
+   enabled="1" />
  <module
    name="sdram_controller"
    kind="altera_avalon_new_sdram_controller"
@@ -115,22 +114,35 @@
   <parameter name="registerDataIn" value="true" />
   <parameter name="rowWidth" value="13" />
  </module>
- <connection kind="clock" version="18.1" start="clk.clk" end="jtag_uart.clk" />
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="master_interface.avalon"
+   end="sdram_controller.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection
    kind="clock"
    version="18.1"
    start="clk.clk"
    end="sdram_controller.clk" />
  <connection
-   kind="reset"
+   kind="clock"
    version="18.1"
-   start="clk.clk_reset"
-   end="jtag_uart.reset" />
+   start="clk.clk"
+   end="master_interface.clock" />
  <connection
    kind="reset"
    version="18.1"
    start="clk.clk_reset"
    end="sdram_controller.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk.clk_reset"
+   end="master_interface.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

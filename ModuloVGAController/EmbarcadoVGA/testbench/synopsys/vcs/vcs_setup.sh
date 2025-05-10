@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.05.08.13:20:33
+# ACDS 18.1 625 win32 2025.05.10.00:43:11
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.05.08.13:20:33
+# ACDS 18.1 625 win32 2025.05.10.00:43:11
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="EmbarcadoVGA_tb"
@@ -138,12 +138,17 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneive_atoms.v \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_translator.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_translator.sv \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0.v \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/Master_Interface.v \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_reset_source.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_conduit_bfm.sv \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_clock_source.sv \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA.v \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/EmbarcadoVGA_tb.v \

@@ -6,30 +6,36 @@
 module EmbarcadoVGA_tb (
 	);
 
-	wire         embarcadovga_inst_clk_bfm_clk_clk;       // EmbarcadoVGA_inst_clk_bfm:clk -> [EmbarcadoVGA_inst:clk_clk, EmbarcadoVGA_inst_reset_bfm:clk, sdram_controller_my_partner:clk]
-	wire         embarcadovga_inst_sdram_cs_n;            // EmbarcadoVGA_inst:sdram_cs_n -> sdram_controller_my_partner:zs_cs_n
-	wire   [3:0] embarcadovga_inst_sdram_dqm;             // EmbarcadoVGA_inst:sdram_dqm -> sdram_controller_my_partner:zs_dqm
-	wire         embarcadovga_inst_sdram_cas_n;           // EmbarcadoVGA_inst:sdram_cas_n -> sdram_controller_my_partner:zs_cas_n
-	wire         embarcadovga_inst_sdram_ras_n;           // EmbarcadoVGA_inst:sdram_ras_n -> sdram_controller_my_partner:zs_ras_n
-	wire         embarcadovga_inst_sdram_we_n;            // EmbarcadoVGA_inst:sdram_we_n -> sdram_controller_my_partner:zs_we_n
-	wire  [12:0] embarcadovga_inst_sdram_addr;            // EmbarcadoVGA_inst:sdram_addr -> sdram_controller_my_partner:zs_addr
-	wire         embarcadovga_inst_sdram_cke;             // EmbarcadoVGA_inst:sdram_cke -> sdram_controller_my_partner:zs_cke
-	wire  [31:0] embarcadovga_inst_sdram_dq;              // [] -> [EmbarcadoVGA_inst:sdram_dq, sdram_controller_my_partner:zs_dq]
-	wire   [1:0] embarcadovga_inst_sdram_ba;              // EmbarcadoVGA_inst:sdram_ba -> sdram_controller_my_partner:zs_ba
-	wire         embarcadovga_inst_reset_bfm_reset_reset; // EmbarcadoVGA_inst_reset_bfm:reset -> EmbarcadoVGA_inst:reset_reset_n
+	wire         embarcadovga_inst_clk_bfm_clk_clk;                      // EmbarcadoVGA_inst_clk_bfm:clk -> [EmbarcadoVGA_inst:clk_clk, EmbarcadoVGA_inst_master_conduit_bfm:clk, EmbarcadoVGA_inst_reset_bfm:clk, sdram_controller_my_partner:clk]
+	wire  [31:0] embarcadovga_inst_master_conduit_exportdata;            // EmbarcadoVGA_inst:master_conduit_exportdata -> EmbarcadoVGA_inst_master_conduit_bfm:sig_exportdata
+	wire   [0:0] embarcadovga_inst_master_conduit_bfm_conduit_fifo_full; // EmbarcadoVGA_inst_master_conduit_bfm:sig_fifo_full -> EmbarcadoVGA_inst:master_conduit_fifo_full
+	wire         embarcadovga_inst_master_conduit_fifo_wr_en;            // EmbarcadoVGA_inst:master_conduit_fifo_wr_en -> EmbarcadoVGA_inst_master_conduit_bfm:sig_fifo_wr_en
+	wire         embarcadovga_inst_sdram_cs_n;                           // EmbarcadoVGA_inst:sdram_cs_n -> sdram_controller_my_partner:zs_cs_n
+	wire   [3:0] embarcadovga_inst_sdram_dqm;                            // EmbarcadoVGA_inst:sdram_dqm -> sdram_controller_my_partner:zs_dqm
+	wire         embarcadovga_inst_sdram_cas_n;                          // EmbarcadoVGA_inst:sdram_cas_n -> sdram_controller_my_partner:zs_cas_n
+	wire         embarcadovga_inst_sdram_ras_n;                          // EmbarcadoVGA_inst:sdram_ras_n -> sdram_controller_my_partner:zs_ras_n
+	wire         embarcadovga_inst_sdram_we_n;                           // EmbarcadoVGA_inst:sdram_we_n -> sdram_controller_my_partner:zs_we_n
+	wire  [12:0] embarcadovga_inst_sdram_addr;                           // EmbarcadoVGA_inst:sdram_addr -> sdram_controller_my_partner:zs_addr
+	wire         embarcadovga_inst_sdram_cke;                            // EmbarcadoVGA_inst:sdram_cke -> sdram_controller_my_partner:zs_cke
+	wire  [31:0] embarcadovga_inst_sdram_dq;                             // [] -> [EmbarcadoVGA_inst:sdram_dq, sdram_controller_my_partner:zs_dq]
+	wire   [1:0] embarcadovga_inst_sdram_ba;                             // EmbarcadoVGA_inst:sdram_ba -> sdram_controller_my_partner:zs_ba
+	wire         embarcadovga_inst_reset_bfm_reset_reset;                // EmbarcadoVGA_inst_reset_bfm:reset -> [EmbarcadoVGA_inst:reset_reset_n, EmbarcadoVGA_inst_master_conduit_bfm:reset]
 
 	EmbarcadoVGA embarcadovga_inst (
-		.clk_clk       (embarcadovga_inst_clk_bfm_clk_clk),       //   clk.clk
-		.reset_reset_n (embarcadovga_inst_reset_bfm_reset_reset), // reset.reset_n
-		.sdram_addr    (embarcadovga_inst_sdram_addr),            // sdram.addr
-		.sdram_ba      (embarcadovga_inst_sdram_ba),              //      .ba
-		.sdram_cas_n   (embarcadovga_inst_sdram_cas_n),           //      .cas_n
-		.sdram_cke     (embarcadovga_inst_sdram_cke),             //      .cke
-		.sdram_cs_n    (embarcadovga_inst_sdram_cs_n),            //      .cs_n
-		.sdram_dq      (embarcadovga_inst_sdram_dq),              //      .dq
-		.sdram_dqm     (embarcadovga_inst_sdram_dqm),             //      .dqm
-		.sdram_ras_n   (embarcadovga_inst_sdram_ras_n),           //      .ras_n
-		.sdram_we_n    (embarcadovga_inst_sdram_we_n)             //      .we_n
+		.clk_clk                   (embarcadovga_inst_clk_bfm_clk_clk),                      //            clk.clk
+		.master_conduit_fifo_full  (embarcadovga_inst_master_conduit_bfm_conduit_fifo_full), // master_conduit.fifo_full
+		.master_conduit_fifo_wr_en (embarcadovga_inst_master_conduit_fifo_wr_en),            //               .fifo_wr_en
+		.master_conduit_exportdata (embarcadovga_inst_master_conduit_exportdata),            //               .exportdata
+		.reset_reset_n             (embarcadovga_inst_reset_bfm_reset_reset),                //          reset.reset_n
+		.sdram_addr                (embarcadovga_inst_sdram_addr),                           //          sdram.addr
+		.sdram_ba                  (embarcadovga_inst_sdram_ba),                             //               .ba
+		.sdram_cas_n               (embarcadovga_inst_sdram_cas_n),                          //               .cas_n
+		.sdram_cke                 (embarcadovga_inst_sdram_cke),                            //               .cke
+		.sdram_cs_n                (embarcadovga_inst_sdram_cs_n),                           //               .cs_n
+		.sdram_dq                  (embarcadovga_inst_sdram_dq),                             //               .dq
+		.sdram_dqm                 (embarcadovga_inst_sdram_dqm),                            //               .dqm
+		.sdram_ras_n               (embarcadovga_inst_sdram_ras_n),                          //               .ras_n
+		.sdram_we_n                (embarcadovga_inst_sdram_we_n)                            //               .we_n
 	);
 
 	altera_avalon_clock_source #(
@@ -37,6 +43,14 @@ module EmbarcadoVGA_tb (
 		.CLOCK_UNIT (1)
 	) embarcadovga_inst_clk_bfm (
 		.clk (embarcadovga_inst_clk_bfm_clk_clk)  // clk.clk
+	);
+
+	altera_conduit_bfm embarcadovga_inst_master_conduit_bfm (
+		.clk            (embarcadovga_inst_clk_bfm_clk_clk),                      //     clk.clk
+		.reset          (~embarcadovga_inst_reset_bfm_reset_reset),               //   reset.reset
+		.sig_exportdata (embarcadovga_inst_master_conduit_exportdata),            // conduit.exportdata
+		.sig_fifo_full  (embarcadovga_inst_master_conduit_bfm_conduit_fifo_full), //        .fifo_full
+		.sig_fifo_wr_en (embarcadovga_inst_master_conduit_fifo_wr_en)             //        .fifo_wr_en
 	);
 
 	altera_avalon_reset_source #(

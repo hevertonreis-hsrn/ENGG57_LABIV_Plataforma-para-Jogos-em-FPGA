@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.05.08.13:20:33
+# ACDS 18.1 625 win32 2025.05.10.00:43:11
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.05.08.13:20:33
+# ACDS 18.1 625 win32 2025.05.10.00:43:11
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="EmbarcadoVGA_tb"
@@ -148,10 +148,15 @@ fi
 # create compilation libraries
 mkdir -p ./libraries/work/
 mkdir -p ./libraries/altera_common_sv_packages/
+mkdir -p ./libraries/sdram_controller_s1_translator/
+mkdir -p ./libraries/master_interface_avalon_translator/
 mkdir -p ./libraries/rst_controller/
+mkdir -p ./libraries/mm_interconnect_0/
 mkdir -p ./libraries/sdram_controller/
+mkdir -p ./libraries/master_interface/
 mkdir -p ./libraries/sdram_controller_my_partner/
 mkdir -p ./libraries/EmbarcadoVGA_inst_reset_bfm/
+mkdir -p ./libraries/EmbarcadoVGA_inst_master_conduit_bfm/
 mkdir -p ./libraries/EmbarcadoVGA_inst_clk_bfm/
 mkdir -p ./libraries/EmbarcadoVGA_inst/
 mkdir -p ./libraries/altera_ver/
@@ -178,16 +183,21 @@ fi
 # ----------------------------------------
 # compile design files in correct order
 if [ $SKIP_COM -eq 0 ]; then
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv"                               -work altera_common_sv_packages  
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v"                      -work rst_controller             
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v"                    -work rst_controller             
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v"                -work sdram_controller           
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v" -work sdram_controller           
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v"                  -work sdram_controller_my_partner
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_reset_source.sv"                  -work EmbarcadoVGA_inst_reset_bfm
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_clock_source.sv"                  -work EmbarcadoVGA_inst_clk_bfm  
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA.v"                                 -work EmbarcadoVGA_inst          
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/EmbarcadoVGA_tb.v"                                                                          
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv"                               -work altera_common_sv_packages           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_translator.sv"              -work sdram_controller_s1_translator      
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_translator.sv"             -work master_interface_avalon_translator  
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v"                      -work rst_controller                      
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v"                    -work rst_controller                      
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0.v"               -work mm_interconnect_0                   
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v"                -work sdram_controller                    
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v" -work sdram_controller                    
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/Master_Interface.v"                             -work master_interface                    
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v"                  -work sdram_controller_my_partner         
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_reset_source.sv"                  -work EmbarcadoVGA_inst_reset_bfm         
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_conduit_bfm.sv"                          -work EmbarcadoVGA_inst_master_conduit_bfm
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_clock_source.sv"                  -work EmbarcadoVGA_inst_clk_bfm           
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA.v"                                 -work EmbarcadoVGA_inst                   
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/EmbarcadoVGA_tb.v"                                                                                   
 fi
 
 # ----------------------------------------

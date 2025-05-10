@@ -4,42 +4,97 @@
 
 `timescale 1 ps / 1 ps
 module EmbarcadoVGA (
-		input  wire        clk_clk,       //   clk.clk
-		input  wire        reset_reset_n, // reset.reset_n
-		output wire [12:0] sdram_addr,    // sdram.addr
-		output wire [1:0]  sdram_ba,      //      .ba
-		output wire        sdram_cas_n,   //      .cas_n
-		output wire        sdram_cke,     //      .cke
-		output wire        sdram_cs_n,    //      .cs_n
-		inout  wire [31:0] sdram_dq,      //      .dq
-		output wire [3:0]  sdram_dqm,     //      .dqm
-		output wire        sdram_ras_n,   //      .ras_n
-		output wire        sdram_we_n     //      .we_n
+		input  wire        clk_clk,                   //            clk.clk
+		input  wire        master_conduit_fifo_full,  // master_conduit.fifo_full
+		output wire        master_conduit_fifo_wr_en, //               .fifo_wr_en
+		output wire [31:0] master_conduit_exportdata, //               .exportdata
+		input  wire        reset_reset_n,             //          reset.reset_n
+		output wire [12:0] sdram_addr,                //          sdram.addr
+		output wire [1:0]  sdram_ba,                  //               .ba
+		output wire        sdram_cas_n,               //               .cas_n
+		output wire        sdram_cke,                 //               .cke
+		output wire        sdram_cs_n,                //               .cs_n
+		inout  wire [31:0] sdram_dq,                  //               .dq
+		output wire [3:0]  sdram_dqm,                 //               .dqm
+		output wire        sdram_ras_n,               //               .ras_n
+		output wire        sdram_we_n                 //               .we_n
 	);
 
-	wire    rst_controller_reset_out_reset; // rst_controller:reset_out -> sdram_controller:reset_n
+	wire         master_interface_avalon_chipselect;                  // master_interface:chipselect -> mm_interconnect_0:master_interface_avalon_chipselect
+	wire         master_interface_avalon_waitrequest;                 // mm_interconnect_0:master_interface_avalon_waitrequest -> master_interface:waitrequest
+	wire  [31:0] master_interface_avalon_readdata;                    // mm_interconnect_0:master_interface_avalon_readdata -> master_interface:readdata
+	wire         master_interface_avalon_read;                        // master_interface:read -> mm_interconnect_0:master_interface_avalon_read
+	wire   [3:0] master_interface_avalon_byteenable;                  // master_interface:byteenable -> mm_interconnect_0:master_interface_avalon_byteenable
+	wire  [29:0] master_interface_avalon_address;                     // master_interface:address -> mm_interconnect_0:master_interface_avalon_address
+	wire         master_interface_avalon_readdatavalid;               // mm_interconnect_0:master_interface_avalon_readdatavalid -> master_interface:readdatavalid
+	wire         mm_interconnect_0_sdram_controller_s1_chipselect;    // mm_interconnect_0:sdram_controller_s1_chipselect -> sdram_controller:az_cs
+	wire  [31:0] mm_interconnect_0_sdram_controller_s1_readdata;      // sdram_controller:za_data -> mm_interconnect_0:sdram_controller_s1_readdata
+	wire         mm_interconnect_0_sdram_controller_s1_waitrequest;   // sdram_controller:za_waitrequest -> mm_interconnect_0:sdram_controller_s1_waitrequest
+	wire  [24:0] mm_interconnect_0_sdram_controller_s1_address;       // mm_interconnect_0:sdram_controller_s1_address -> sdram_controller:az_addr
+	wire         mm_interconnect_0_sdram_controller_s1_read;          // mm_interconnect_0:sdram_controller_s1_read -> sdram_controller:az_rd_n
+	wire   [3:0] mm_interconnect_0_sdram_controller_s1_byteenable;    // mm_interconnect_0:sdram_controller_s1_byteenable -> sdram_controller:az_be_n
+	wire         mm_interconnect_0_sdram_controller_s1_readdatavalid; // sdram_controller:za_valid -> mm_interconnect_0:sdram_controller_s1_readdatavalid
+	wire         mm_interconnect_0_sdram_controller_s1_write;         // mm_interconnect_0:sdram_controller_s1_write -> sdram_controller:az_wr_n
+	wire  [31:0] mm_interconnect_0_sdram_controller_s1_writedata;     // mm_interconnect_0:sdram_controller_s1_writedata -> sdram_controller:az_data
+	wire         rst_controller_reset_out_reset;                      // rst_controller:reset_out -> [master_interface:reset_n, mm_interconnect_0:master_interface_reset_reset_bridge_in_reset_reset, sdram_controller:reset_n]
+
+	Master_Interface master_interface (
+		.clk           (clk_clk),                               //   clock.clk
+		.reset_n       (~rst_controller_reset_out_reset),       //   reset.reset_n
+		.waitrequest   (master_interface_avalon_waitrequest),   //  avalon.waitrequest
+		.readdatavalid (master_interface_avalon_readdatavalid), //        .readdatavalid
+		.readdata      (master_interface_avalon_readdata),      //        .readdata
+		.read          (master_interface_avalon_read),          //        .read
+		.chipselect    (master_interface_avalon_chipselect),    //        .chipselect
+		.byteenable    (master_interface_avalon_byteenable),    //        .byteenable
+		.address       (master_interface_avalon_address),       //        .address
+		.fifo_full     (master_conduit_fifo_full),              // conduit.fifo_full
+		.fifo_wr_en    (master_conduit_fifo_wr_en),             //        .fifo_wr_en
+		.exportdata    (master_conduit_exportdata)              //        .exportdata
+	);
 
 	EmbarcadoVGA_sdram_controller sdram_controller (
-		.clk            (clk_clk),                         //   clk.clk
-		.reset_n        (~rst_controller_reset_out_reset), // reset.reset_n
-		.az_addr        (),                                //    s1.address
-		.az_be_n        (),                                //      .byteenable_n
-		.az_cs          (),                                //      .chipselect
-		.az_data        (),                                //      .writedata
-		.az_rd_n        (),                                //      .read_n
-		.az_wr_n        (),                                //      .write_n
-		.za_data        (),                                //      .readdata
-		.za_valid       (),                                //      .readdatavalid
-		.za_waitrequest (),                                //      .waitrequest
-		.zs_addr        (sdram_addr),                      //  wire.export
-		.zs_ba          (sdram_ba),                        //      .export
-		.zs_cas_n       (sdram_cas_n),                     //      .export
-		.zs_cke         (sdram_cke),                       //      .export
-		.zs_cs_n        (sdram_cs_n),                      //      .export
-		.zs_dq          (sdram_dq),                        //      .export
-		.zs_dqm         (sdram_dqm),                       //      .export
-		.zs_ras_n       (sdram_ras_n),                     //      .export
-		.zs_we_n        (sdram_we_n)                       //      .export
+		.clk            (clk_clk),                                             //   clk.clk
+		.reset_n        (~rst_controller_reset_out_reset),                     // reset.reset_n
+		.az_addr        (mm_interconnect_0_sdram_controller_s1_address),       //    s1.address
+		.az_be_n        (~mm_interconnect_0_sdram_controller_s1_byteenable),   //      .byteenable_n
+		.az_cs          (mm_interconnect_0_sdram_controller_s1_chipselect),    //      .chipselect
+		.az_data        (mm_interconnect_0_sdram_controller_s1_writedata),     //      .writedata
+		.az_rd_n        (~mm_interconnect_0_sdram_controller_s1_read),         //      .read_n
+		.az_wr_n        (~mm_interconnect_0_sdram_controller_s1_write),        //      .write_n
+		.za_data        (mm_interconnect_0_sdram_controller_s1_readdata),      //      .readdata
+		.za_valid       (mm_interconnect_0_sdram_controller_s1_readdatavalid), //      .readdatavalid
+		.za_waitrequest (mm_interconnect_0_sdram_controller_s1_waitrequest),   //      .waitrequest
+		.zs_addr        (sdram_addr),                                          //  wire.export
+		.zs_ba          (sdram_ba),                                            //      .export
+		.zs_cas_n       (sdram_cas_n),                                         //      .export
+		.zs_cke         (sdram_cke),                                           //      .export
+		.zs_cs_n        (sdram_cs_n),                                          //      .export
+		.zs_dq          (sdram_dq),                                            //      .export
+		.zs_dqm         (sdram_dqm),                                           //      .export
+		.zs_ras_n       (sdram_ras_n),                                         //      .export
+		.zs_we_n        (sdram_we_n)                                           //      .export
+	);
+
+	EmbarcadoVGA_mm_interconnect_0 mm_interconnect_0 (
+		.clk_clk_clk                                        (clk_clk),                                             //                                      clk_clk.clk
+		.master_interface_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                      // master_interface_reset_reset_bridge_in_reset.reset
+		.master_interface_avalon_address                    (master_interface_avalon_address),                     //                      master_interface_avalon.address
+		.master_interface_avalon_waitrequest                (master_interface_avalon_waitrequest),                 //                                             .waitrequest
+		.master_interface_avalon_byteenable                 (master_interface_avalon_byteenable),                  //                                             .byteenable
+		.master_interface_avalon_chipselect                 (master_interface_avalon_chipselect),                  //                                             .chipselect
+		.master_interface_avalon_read                       (master_interface_avalon_read),                        //                                             .read
+		.master_interface_avalon_readdata                   (master_interface_avalon_readdata),                    //                                             .readdata
+		.master_interface_avalon_readdatavalid              (master_interface_avalon_readdatavalid),               //                                             .readdatavalid
+		.sdram_controller_s1_address                        (mm_interconnect_0_sdram_controller_s1_address),       //                          sdram_controller_s1.address
+		.sdram_controller_s1_write                          (mm_interconnect_0_sdram_controller_s1_write),         //                                             .write
+		.sdram_controller_s1_read                           (mm_interconnect_0_sdram_controller_s1_read),          //                                             .read
+		.sdram_controller_s1_readdata                       (mm_interconnect_0_sdram_controller_s1_readdata),      //                                             .readdata
+		.sdram_controller_s1_writedata                      (mm_interconnect_0_sdram_controller_s1_writedata),     //                                             .writedata
+		.sdram_controller_s1_byteenable                     (mm_interconnect_0_sdram_controller_s1_byteenable),    //                                             .byteenable
+		.sdram_controller_s1_readdatavalid                  (mm_interconnect_0_sdram_controller_s1_readdatavalid), //                                             .readdatavalid
+		.sdram_controller_s1_waitrequest                    (mm_interconnect_0_sdram_controller_s1_waitrequest),   //                                             .waitrequest
+		.sdram_controller_s1_chipselect                     (mm_interconnect_0_sdram_controller_s1_chipselect)     //                                             .chipselect
 	);
 
 	altera_reset_controller #(

@@ -25,6 +25,14 @@
          type = "int";
       }
    }
+   element EmbarcadoVGA_inst_master_conduit_bfm
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
    element EmbarcadoVGA_inst_reset_bfm
    {
       datum _sortIndex
@@ -37,7 +45,7 @@
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "4";
          type = "int";
       }
    }
@@ -55,7 +63,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName" value="vgaController.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="EmbarcadoVGA" />
@@ -83,6 +91,17 @@
    enabled="1">
   <parameter name="CLOCK_RATE" value="50000000" />
   <parameter name="CLOCK_UNIT" value="1" />
+ </module>
+ <module
+   name="EmbarcadoVGA_inst_master_conduit_bfm"
+   kind="altera_conduit_bfm"
+   version="18.1"
+   enabled="1">
+  <parameter name="CLOCKED_SIGNAL" value="true" />
+  <parameter name="ENABLE_RESET" value="true" />
+  <parameter name="SIGNAL_DIRECTIONS" value="input,output,input" />
+  <parameter name="SIGNAL_ROLES">exportdata,fifo_full,fifo_wr_en</parameter>
+  <parameter name="SIGNAL_WIDTHS" value="32,1,1" />
  </module>
  <module
    name="EmbarcadoVGA_inst_reset_bfm"
@@ -121,7 +140,23 @@
    kind="clock"
    version="18.1"
    start="EmbarcadoVGA_inst_clk_bfm.clk"
+   end="EmbarcadoVGA_inst_master_conduit_bfm.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="EmbarcadoVGA_inst_clk_bfm.clk"
    end="sdram_controller_my_partner.clk" />
+ <connection
+   kind="conduit"
+   version="18.1"
+   start="EmbarcadoVGA_inst_master_conduit_bfm.conduit"
+   end="EmbarcadoVGA_inst.master_conduit">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
  <connection
    kind="conduit"
    version="18.1"
@@ -138,6 +173,11 @@
    version="18.1"
    start="EmbarcadoVGA_inst_reset_bfm.reset"
    end="EmbarcadoVGA_inst.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="EmbarcadoVGA_inst_reset_bfm.reset"
+   end="EmbarcadoVGA_inst_master_conduit_bfm.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

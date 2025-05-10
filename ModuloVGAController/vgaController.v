@@ -1,15 +1,19 @@
 // Controlador VGA considerando uma tela de 640 x 480 a 60Hz.
 
 module vgaController(
-	// Buffer.
-	input  [7:0] inRed, inGreen, inBlue,
+	// FIFO Interface
+	input  [31:0] fifo_data,       // Dados vindos do FIFO
+	input         fifo_empty,      // FIFO está vazio?
+	output reg    fifo_rd_en,      // Solicita leitura do próximo dado do FIFO
+
+	// Saídas de posição e controle
 	output [9:0] outX, outY,
-	output outRequest,  
+	output outRequest,
 
 	// VGA DAC.
-	output [7:0] outRed, outGreen, outBlue,		// Saidas das cores.	
-	output reg hs, vs,									// Sinais de sincronismo.     											
-	output vgaClk, vgaBlankN, vgaSyncN,				// Outros.
+	output [7:0] outRed, outGreen, outBlue,	 // Saidas das cores.	
+	output reg hs, vs,									     // Sinais de sincronismo.     											
+	output vgaClk, vgaBlankN, vgaSyncN,			 // Outros.
 
 	// Sinais de Controle.
 	input clk25, rstN
@@ -17,7 +21,8 @@ module vgaController(
 	
 	// Registradores Internos.
 	reg  [9:0] hCount, vCount;
-
+	wire preRequest;
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Parametros Horizontais.
 	parameter hFront   = 16;
@@ -42,16 +47,19 @@ module vgaController(
 	assign vgaClk = ~clk25;
 	assign vgaBlankN = ~((hCount < hBlank) || (vCount < vBlank));
 	assign outRequest = ((hCount >= hBlank) && (hCount < hTotal) && ((vCount >= vBlank) && (vCount < vTotal)));
+	assign preRequest = ((hCount >= hBlank - 1) && (hCount < hTotal - 1) &&
+                       (vCount >= vBlank) && (vCount < vTotal));
 	// Posicao.
 	assign outX = (hCount >= hBlank) ? hCount - hBlank : 9'h0;
 	assign outY = (vCount >= vBlank) ? vCount - vBlank : 9'h0;
-	// Cores.
-	assign outRed   = inRed;
-	assign outGreen = inGreen;
-	assign outBlue  = inBlue;
-	//assign outRed   = outRequest ? 8'hFF : 8'hFF;
-	//assign outGreen = outRequest ? 8'h00 : 8'hFF;
-	//assign outBlue  = outRequest ? 8'hFF : 8'h00;
+	
+	// FIFO Pipeline
+	reg [31:0] current_pixel;
+
+	// VGA Outputs
+	assign outRed   = current_pixel[23:16];
+	assign outGreen = current_pixel[15:8];
+	assign outBlue  = current_pixel[7:0];
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Contagem e Sincronismo. FRONT > SYNC > BACK > DISPLAY > FRONT > ...
@@ -87,43 +95,21 @@ module vgaController(
 		end
 	end
 	
-//	always @(posedge clk25) begin // Horizontal.
-//		if(!rstN) begin
-//			hCount <=	0;
-//			hs		 <=	1;
-//		end
-//		else begin
-//			// Contando.
-//			if (hCount < hTotal)
-//				hCount <= hCount + 1'b1; 				// Continua incrementando.
-//			else
-//				hCount <= 0;								// Reinicia contagem.
-//			// Sincronismo.
-//			if (hCount == hFront - 1) 					// hCount == 15.
-//				hs <= 1'b0; 								// Habilitado em nivel logico baixo.
-//			if (hCount == hFront + hSync - 1) 		// hCount == 95.
-//				hs <= 1'b1;
-//		end
-//		
-//	end
-//
-//	always @(posedge hs) begin // Vertical: Dependente do sync horizontal.
-//		if(!rstN) begin
-//			vCount <=	0;
-//			vs		 <=	1;
-//		end
-//		else begin
-//			// Contando.
-//			if (vCount < vTotal)
-//				vCount <= vCount + 1'b1;
-//			else
-//				vCount <= 0;
-//			// Sincronismo.
-//			if (vCount == vFront - 1)
-//				vs <= 1'b0;								// Habilitado em nivel logico baixo.
-//			if (vCount == vFront + vSync - 1)
-//				vs <= 1'b1;
-//		end
-//	end
+	// Leitura do FIFO com pipeline de 1 ciclo
+	always @(posedge clk25 or negedge rstN) begin
+		if (!rstN) begin
+			current_pixel <= 32'h0;
+			fifo_rd_en    <= 0;
+		end else begin
+			fifo_rd_en <= 0;
 
+			if (preRequest && !fifo_empty) begin
+				fifo_rd_en <= 1;  // Ativa leitura do FIFO antes de outRequest
+			end
+
+			if (outRequest) begin
+				current_pixel <= fifo_data;  // Usa o dado lido 1 ciclo antes
+			end
+		end
+	end
 endmodule
