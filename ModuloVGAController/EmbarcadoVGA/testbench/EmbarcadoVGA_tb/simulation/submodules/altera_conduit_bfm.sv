@@ -28,7 +28,7 @@
 // This BFM's HDL is been generated through terp file in Qsys/SOPC Builder.
 // Generation parameters:
 // output_name:                                       altera_conduit_bfm
-// role:width:direction:                              exportdata:32:input,fifo_full:1:output,fifo_wr_en:1:input
+// role:width:direction:                              exportdata:32:input,fifo_full:1:output,fifo_wr_en:1:input,pll_locked:1:output
 // 1
 //-----------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
@@ -40,7 +40,8 @@ module altera_conduit_bfm
    reset_n,
    sig_exportdata,
    sig_fifo_full,
-   sig_fifo_wr_en
+   sig_fifo_wr_en,
+   sig_pll_locked
 );
 
    //--------------------------------------------------------------------------
@@ -53,6 +54,7 @@ module altera_conduit_bfm
    input [31 : 0] sig_exportdata;
    output sig_fifo_full;
    input sig_fifo_wr_en;
+   output sig_pll_locked;
 
    // synthesis translate_off
    import verbosity_pkg::*;
@@ -60,6 +62,7 @@ module altera_conduit_bfm
    typedef logic [31 : 0] ROLE_exportdata_t;
    typedef logic ROLE_fifo_full_t;
    typedef logic ROLE_fifo_wr_en_t;
+   typedef logic ROLE_pll_locked_t;
 
    logic [31 : 0] sig_exportdata_in;
    logic [31 : 0] sig_exportdata_local;
@@ -67,6 +70,8 @@ module altera_conduit_bfm
    reg sig_fifo_full_out;
    logic [0 : 0] sig_fifo_wr_en_in;
    logic [0 : 0] sig_fifo_wr_en_local;
+   reg sig_pll_locked_temp;
+   reg sig_pll_locked_out;
 
    //--------------------------------------------------------------------------
    // =head1 Public Methods API
@@ -135,13 +140,30 @@ module altera_conduit_bfm
       
    endfunction
 
+   // -------------------------------------------------------
+   // pll_locked
+   // -------------------------------------------------------
+
+   function automatic void set_pll_locked (
+      ROLE_pll_locked_t new_value
+   );
+      // Drive the new value to pll_locked.
+      
+      $sformat(message, "%m: method called arg0 %0d", new_value); 
+      print(VERBOSITY_DEBUG, message);
+      
+      sig_pll_locked_temp = new_value;
+   endfunction
+
    always @(posedge clk) begin
       sig_exportdata_in <= sig_exportdata;
       sig_fifo_full_out <= sig_fifo_full_temp;
       sig_fifo_wr_en_in <= sig_fifo_wr_en;
+      sig_pll_locked_out <= sig_pll_locked_temp;
    end
    
    assign sig_fifo_full = sig_fifo_full_out;
+   assign sig_pll_locked = sig_pll_locked_out;
 
    always @(posedge reset or negedge reset_n) begin
       -> signal_reset_asserted;

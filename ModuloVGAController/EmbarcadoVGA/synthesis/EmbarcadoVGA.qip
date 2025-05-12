@@ -2,7 +2,7 @@ set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_TO
 set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "EmbarcadoVGA" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../EmbarcadoVGA.sopcinfo"]
-set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name SLD_INFO "QSYS_NAME EmbarcadoVGA HAS_SOPCINFO 1 GENERATION_ID 1746848607"
+set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name SLD_INFO "QSYS_NAME EmbarcadoVGA HAS_SOPCINFO 1 GENERATION_ID 1747019254"
 set_global_assignment -library "EmbarcadoVGA" -name MISC_FILE [file join $::quartus(qip_path) "../EmbarcadoVGA.cmp"]
 set_global_assignment -library "EmbarcadoVGA" -name SLD_FILE [file join $::quartus(qip_path) "EmbarcadoVGA.debuginfo"]
 set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_TARGETED_DEVICE_FAMILY "Cyclone IV E"
@@ -15,7 +15,7 @@ set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_CO
 set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc0Njg0ODYwNw==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc0NzAxOTI1NA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0Q0UxMTVGMjlDNw==::QXV0byBERVZJQ0U="
 set_global_assignment -entity "EmbarcadoVGA" -library "EmbarcadoVGA" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -215,7 +215,7 @@ set_global_assignment -entity "Master_Interface" -library "EmbarcadoVGA" -name I
 set_global_assignment -entity "Master_Interface" -library "EmbarcadoVGA" -name IP_COMPONENT_DISPLAY_NAME "TWFzdGVyIEludGVyZmFjZQ=="
 set_global_assignment -entity "Master_Interface" -library "EmbarcadoVGA" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
 set_global_assignment -entity "Master_Interface" -library "EmbarcadoVGA" -name IP_COMPONENT_INTERNAL "Off"
-set_global_assignment -entity "Master_Interface" -library "EmbarcadoVGA" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "Master_Interface" -library "EmbarcadoVGA" -name IP_COMPONENT_VERSION "MS4x"
 
 set_global_assignment -library "EmbarcadoVGA" -name VERILOG_FILE [file join $::quartus(qip_path) "EmbarcadoVGA.v"]
 set_global_assignment -library "EmbarcadoVGA" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]

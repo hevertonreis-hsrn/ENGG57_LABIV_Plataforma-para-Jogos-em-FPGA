@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.05.10.00:43:11
+# ACDS 18.1 625 win32 2025.05.12.00:07:24
 
 # ----------------------------------------
 # Initialize variables
@@ -164,30 +164,30 @@ if ![ string match "*ModelSim ALTERA*" [ vsim -version ] ] {
   ensure_lib                  ./libraries/cycloneive_ver/  
   vmap       cycloneive_ver   ./libraries/cycloneive_ver/  
 }
-ensure_lib                                      ./libraries/altera_common_sv_packages/           
-vmap       altera_common_sv_packages            ./libraries/altera_common_sv_packages/           
-ensure_lib                                      ./libraries/sdram_controller_s1_translator/      
-vmap       sdram_controller_s1_translator       ./libraries/sdram_controller_s1_translator/      
-ensure_lib                                      ./libraries/master_interface_avalon_translator/  
-vmap       master_interface_avalon_translator   ./libraries/master_interface_avalon_translator/  
-ensure_lib                                      ./libraries/rst_controller/                      
-vmap       rst_controller                       ./libraries/rst_controller/                      
-ensure_lib                                      ./libraries/mm_interconnect_0/                   
-vmap       mm_interconnect_0                    ./libraries/mm_interconnect_0/                   
-ensure_lib                                      ./libraries/sdram_controller/                    
-vmap       sdram_controller                     ./libraries/sdram_controller/                    
-ensure_lib                                      ./libraries/master_interface/                    
-vmap       master_interface                     ./libraries/master_interface/                    
-ensure_lib                                      ./libraries/sdram_controller_my_partner/         
-vmap       sdram_controller_my_partner          ./libraries/sdram_controller_my_partner/         
-ensure_lib                                      ./libraries/EmbarcadoVGA_inst_reset_bfm/         
-vmap       EmbarcadoVGA_inst_reset_bfm          ./libraries/EmbarcadoVGA_inst_reset_bfm/         
-ensure_lib                                      ./libraries/EmbarcadoVGA_inst_master_conduit_bfm/
-vmap       EmbarcadoVGA_inst_master_conduit_bfm ./libraries/EmbarcadoVGA_inst_master_conduit_bfm/
-ensure_lib                                      ./libraries/EmbarcadoVGA_inst_clk_bfm/           
-vmap       EmbarcadoVGA_inst_clk_bfm            ./libraries/EmbarcadoVGA_inst_clk_bfm/           
-ensure_lib                                      ./libraries/EmbarcadoVGA_inst/                   
-vmap       EmbarcadoVGA_inst                    ./libraries/EmbarcadoVGA_inst/                   
+ensure_lib                                        ./libraries/altera_common_sv_packages/             
+vmap       altera_common_sv_packages              ./libraries/altera_common_sv_packages/             
+ensure_lib                                        ./libraries/sdram_controller_s1_translator/        
+vmap       sdram_controller_s1_translator         ./libraries/sdram_controller_s1_translator/        
+ensure_lib                                        ./libraries/master_interface_avalon_translator/    
+vmap       master_interface_avalon_translator     ./libraries/master_interface_avalon_translator/    
+ensure_lib                                        ./libraries/rst_controller/                        
+vmap       rst_controller                         ./libraries/rst_controller/                        
+ensure_lib                                        ./libraries/mm_interconnect_0/                     
+vmap       mm_interconnect_0                      ./libraries/mm_interconnect_0/                     
+ensure_lib                                        ./libraries/sdram_controller/                      
+vmap       sdram_controller                       ./libraries/sdram_controller/                      
+ensure_lib                                        ./libraries/master_interface/                      
+vmap       master_interface                       ./libraries/master_interface/                      
+ensure_lib                                        ./libraries/sdram_controller_my_partner/           
+vmap       sdram_controller_my_partner            ./libraries/sdram_controller_my_partner/           
+ensure_lib                                        ./libraries/EmbarcadoVGA_inst_reset_bfm/           
+vmap       EmbarcadoVGA_inst_reset_bfm            ./libraries/EmbarcadoVGA_inst_reset_bfm/           
+ensure_lib                                        ./libraries/EmbarcadoVGA_inst_master_conduit_1_bfm/
+vmap       EmbarcadoVGA_inst_master_conduit_1_bfm ./libraries/EmbarcadoVGA_inst_master_conduit_1_bfm/
+ensure_lib                                        ./libraries/EmbarcadoVGA_inst_clk_bfm/             
+vmap       EmbarcadoVGA_inst_clk_bfm              ./libraries/EmbarcadoVGA_inst_clk_bfm/             
+ensure_lib                                        ./libraries/EmbarcadoVGA_inst/                     
+vmap       EmbarcadoVGA_inst                      ./libraries/EmbarcadoVGA_inst/                     
 
 # ----------------------------------------
 # Compile device library files
@@ -207,35 +207,35 @@ alias dev_com {
 # Compile the design files in correct order
 alias com {
   echo "\[exec\] com"
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv"                                                            -work altera_common_sv_packages           
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_translator.sv"              -L altera_common_sv_packages -work sdram_controller_s1_translator      
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_translator.sv"             -L altera_common_sv_packages -work master_interface_avalon_translator  
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v"                                                   -work rst_controller                      
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v"                                                 -work rst_controller                      
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0.v"                                            -work mm_interconnect_0                   
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v"                                             -work sdram_controller                    
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v"                              -work sdram_controller                    
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/Master_Interface.v"                                                          -work master_interface                    
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v"                                               -work sdram_controller_my_partner         
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_reset_source.sv"                  -L altera_common_sv_packages -work EmbarcadoVGA_inst_reset_bfm         
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_conduit_bfm.sv"                          -L altera_common_sv_packages -work EmbarcadoVGA_inst_master_conduit_bfm
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_clock_source.sv"                  -L altera_common_sv_packages -work EmbarcadoVGA_inst_clk_bfm           
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA.v"                                                              -work EmbarcadoVGA_inst                   
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/EmbarcadoVGA_tb.v"                                                                                                                
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv"                                                            -work altera_common_sv_packages             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_translator.sv"              -L altera_common_sv_packages -work sdram_controller_s1_translator        
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_translator.sv"             -L altera_common_sv_packages -work master_interface_avalon_translator    
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v"                                                   -work rst_controller                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v"                                                 -work rst_controller                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0.v"                                            -work mm_interconnect_0                     
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v"                                             -work sdram_controller                      
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v"                              -work sdram_controller                      
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/Master_Interface.v"                                                          -work master_interface                      
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v"                                               -work sdram_controller_my_partner           
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_reset_source.sv"                  -L altera_common_sv_packages -work EmbarcadoVGA_inst_reset_bfm           
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_conduit_bfm.sv"                          -L altera_common_sv_packages -work EmbarcadoVGA_inst_master_conduit_1_bfm
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_clock_source.sv"                  -L altera_common_sv_packages -work EmbarcadoVGA_inst_clk_bfm             
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA.v"                                                              -work EmbarcadoVGA_inst                     
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/EmbarcadoVGA_tb.v"                                                                                                                  
 }
 
 # ----------------------------------------
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L sdram_controller_s1_translator -L master_interface_avalon_translator -L rst_controller -L mm_interconnect_0 -L sdram_controller -L master_interface -L sdram_controller_my_partner -L EmbarcadoVGA_inst_reset_bfm -L EmbarcadoVGA_inst_master_conduit_bfm -L EmbarcadoVGA_inst_clk_bfm -L EmbarcadoVGA_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L sdram_controller_s1_translator -L master_interface_avalon_translator -L rst_controller -L mm_interconnect_0 -L sdram_controller -L master_interface -L sdram_controller_my_partner -L EmbarcadoVGA_inst_reset_bfm -L EmbarcadoVGA_inst_master_conduit_1_bfm -L EmbarcadoVGA_inst_clk_bfm -L EmbarcadoVGA_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L sdram_controller_s1_translator -L master_interface_avalon_translator -L rst_controller -L mm_interconnect_0 -L sdram_controller -L master_interface -L sdram_controller_my_partner -L EmbarcadoVGA_inst_reset_bfm -L EmbarcadoVGA_inst_master_conduit_bfm -L EmbarcadoVGA_inst_clk_bfm -L EmbarcadoVGA_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L sdram_controller_s1_translator -L master_interface_avalon_translator -L rst_controller -L mm_interconnect_0 -L sdram_controller -L master_interface -L sdram_controller_my_partner -L EmbarcadoVGA_inst_reset_bfm -L EmbarcadoVGA_inst_master_conduit_1_bfm -L EmbarcadoVGA_inst_clk_bfm -L EmbarcadoVGA_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

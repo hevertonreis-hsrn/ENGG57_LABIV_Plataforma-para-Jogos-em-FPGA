@@ -49,6 +49,7 @@ ENTITY fifo_dualClock IS
 		wrreq		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
 		rdempty		: OUT STD_LOGIC ;
+		rdfull		: OUT STD_LOGIC ;
 		wrfull		: OUT STD_LOGIC 
 	);
 END fifo_dualClock;
@@ -59,6 +60,7 @@ ARCHITECTURE SYN OF fifo_dualclock IS
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (31 DOWNTO 0);
 	SIGNAL sub_wire1	: STD_LOGIC ;
 	SIGNAL sub_wire2	: STD_LOGIC ;
+	SIGNAL sub_wire3	: STD_LOGIC ;
 
 
 
@@ -84,6 +86,7 @@ ARCHITECTURE SYN OF fifo_dualclock IS
 			wrreq	: IN STD_LOGIC ;
 			q	: OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
 			rdempty	: OUT STD_LOGIC ;
+			rdfull	: OUT STD_LOGIC ;
 			wrfull	: OUT STD_LOGIC 
 	);
 	END COMPONENT;
@@ -91,7 +94,8 @@ ARCHITECTURE SYN OF fifo_dualclock IS
 BEGIN
 	q    <= sub_wire0(31 DOWNTO 0);
 	rdempty    <= sub_wire1;
-	wrfull    <= sub_wire2;
+	rdfull    <= sub_wire2;
+	wrfull    <= sub_wire3;
 
 	dcfifo_component : dcfifo
 	GENERIC MAP (
@@ -115,7 +119,8 @@ BEGIN
 		wrreq => wrreq,
 		q => sub_wire0,
 		rdempty => sub_wire1,
-		wrfull => sub_wire2
+		rdfull => sub_wire2,
+		wrfull => sub_wire3
 	);
 
 
@@ -150,7 +155,7 @@ END SYN;
 -- Retrieval info: PRIVATE: msb_usedw NUMERIC "0"
 -- Retrieval info: PRIVATE: output_width NUMERIC "32"
 -- Retrieval info: PRIVATE: rsEmpty NUMERIC "1"
--- Retrieval info: PRIVATE: rsFull NUMERIC "0"
+-- Retrieval info: PRIVATE: rsFull NUMERIC "1"
 -- Retrieval info: PRIVATE: rsUsedW NUMERIC "0"
 -- Retrieval info: PRIVATE: sc_aclr NUMERIC "0"
 -- Retrieval info: PRIVATE: sc_sclr NUMERIC "0"
@@ -173,6 +178,7 @@ END SYN;
 -- Retrieval info: USED_PORT: q 0 0 32 0 OUTPUT NODEFVAL "q[31..0]"
 -- Retrieval info: USED_PORT: rdclk 0 0 0 0 INPUT NODEFVAL "rdclk"
 -- Retrieval info: USED_PORT: rdempty 0 0 0 0 OUTPUT NODEFVAL "rdempty"
+-- Retrieval info: USED_PORT: rdfull 0 0 0 0 OUTPUT NODEFVAL "rdfull"
 -- Retrieval info: USED_PORT: rdreq 0 0 0 0 INPUT NODEFVAL "rdreq"
 -- Retrieval info: USED_PORT: wrclk 0 0 0 0 INPUT NODEFVAL "wrclk"
 -- Retrieval info: USED_PORT: wrfull 0 0 0 0 OUTPUT NODEFVAL "wrfull"
@@ -184,6 +190,7 @@ END SYN;
 -- Retrieval info: CONNECT: @wrreq 0 0 0 0 wrreq 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 32 0 @q 0 0 32 0
 -- Retrieval info: CONNECT: rdempty 0 0 0 0 @rdempty 0 0 0 0
+-- Retrieval info: CONNECT: rdfull 0 0 0 0 @rdfull 0 0 0 0
 -- Retrieval info: CONNECT: wrfull 0 0 0 0 @wrfull 0 0 0 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL fifo_dualClock.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL fifo_dualClock.inc FALSE

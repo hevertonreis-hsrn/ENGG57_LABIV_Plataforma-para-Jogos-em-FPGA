@@ -4,20 +4,21 @@
 
 `timescale 1 ps / 1 ps
 module EmbarcadoVGA (
-		input  wire        clk_clk,                   //            clk.clk
-		input  wire        master_conduit_fifo_full,  // master_conduit.fifo_full
-		output wire        master_conduit_fifo_wr_en, //               .fifo_wr_en
-		output wire [31:0] master_conduit_exportdata, //               .exportdata
-		input  wire        reset_reset_n,             //          reset.reset_n
-		output wire [12:0] sdram_addr,                //          sdram.addr
-		output wire [1:0]  sdram_ba,                  //               .ba
-		output wire        sdram_cas_n,               //               .cas_n
-		output wire        sdram_cke,                 //               .cke
-		output wire        sdram_cs_n,                //               .cs_n
-		inout  wire [31:0] sdram_dq,                  //               .dq
-		output wire [3:0]  sdram_dqm,                 //               .dqm
-		output wire        sdram_ras_n,               //               .ras_n
-		output wire        sdram_we_n                 //               .we_n
+		input  wire        clk_clk,                     //              clk.clk
+		input  wire        master_conduit_1_fifo_full,  // master_conduit_1.fifo_full
+		output wire        master_conduit_1_fifo_wr_en, //                 .fifo_wr_en
+		output wire [31:0] master_conduit_1_exportdata, //                 .exportdata
+		input  wire        master_conduit_1_pll_locked, //                 .pll_locked
+		input  wire        reset_reset_n,               //            reset.reset_n
+		output wire [12:0] sdram_addr,                  //            sdram.addr
+		output wire [1:0]  sdram_ba,                    //                 .ba
+		output wire        sdram_cas_n,                 //                 .cas_n
+		output wire        sdram_cke,                   //                 .cke
+		output wire        sdram_cs_n,                  //                 .cs_n
+		inout  wire [31:0] sdram_dq,                    //                 .dq
+		output wire [3:0]  sdram_dqm,                   //                 .dqm
+		output wire        sdram_ras_n,                 //                 .ras_n
+		output wire        sdram_we_n                   //                 .we_n
 	);
 
 	wire         master_interface_avalon_chipselect;                  // master_interface:chipselect -> mm_interconnect_0:master_interface_avalon_chipselect
@@ -48,9 +49,10 @@ module EmbarcadoVGA (
 		.chipselect    (master_interface_avalon_chipselect),    //        .chipselect
 		.byteenable    (master_interface_avalon_byteenable),    //        .byteenable
 		.address       (master_interface_avalon_address),       //        .address
-		.fifo_full     (master_conduit_fifo_full),              // conduit.fifo_full
-		.fifo_wr_en    (master_conduit_fifo_wr_en),             //        .fifo_wr_en
-		.exportdata    (master_conduit_exportdata)              //        .exportdata
+		.fifo_full     (master_conduit_1_fifo_full),            // conduit.fifo_full
+		.fifo_wr_en    (master_conduit_1_fifo_wr_en),           //        .fifo_wr_en
+		.exportdata    (master_conduit_1_exportdata),           //        .exportdata
+		.pll_locked    (master_conduit_1_pll_locked)            //        .pll_locked
 	);
 
 	EmbarcadoVGA_sdram_controller sdram_controller (

@@ -6,5 +6,6 @@ fifo_dualClock_inst : fifo_dualClock PORT MAP (
 		wrreq	 => wrreq_sig,
 		q	 => q_sig,
 		rdempty	 => rdempty_sig,
+		rdfull	 => rdfull_sig,
 		wrfull	 => wrfull_sig
 	);

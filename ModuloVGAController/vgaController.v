@@ -4,6 +4,7 @@ module vgaController(
 	// FIFO Interface
 	input  [31:0] fifo_data,       // Dados vindos do FIFO
 	input         fifo_empty,      // FIFO está vazio?
+	input					fifo_full,
 	output reg    fifo_rd_en,      // Solicita leitura do próximo dado do FIFO
 
 	// Saídas de posição e controle
@@ -20,8 +21,9 @@ module vgaController(
 	);
 	
 	// Registradores Internos.
+	reg        started;
 	reg  [9:0] hCount, vCount;
-	wire preRequest;
+	wire 			 preRequest;
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Parametros Horizontais.
@@ -60,37 +62,48 @@ module vgaController(
 	assign outRed   = current_pixel[23:16];
 	assign outGreen = current_pixel[15:8];
 	assign outBlue  = current_pixel[7:0];
-
+	
+	// init
+	always @(posedge clk25 or negedge rstN) begin
+		if (!rstN) begin
+			started <= 0;
+		end else if (!started && fifo_full) begin
+			started <= 1; // Libera a contagem
+		end
+	end
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Contagem e Sincronismo. FRONT > SYNC > BACK > DISPLAY > FRONT > ...
-	always @(posedge clk25) begin
+	always @(posedge clk25 or negedge rstN) begin
 		if (!rstN) begin
 			hCount <= 0;
 			vCount <= 0;
 			hs     <= 1;
 			vs     <= 1;
 		end else begin
-			// Horizontal
-			if (hCount < hTotal)
-				hCount <= hCount + 1'b1;
-			else
-				hCount <= 0;
-
-			// Gerar hs
-			if (hCount == hFront - 1)
-				hs <= 0;
-			else if (hCount == hFront + hSync - 1) begin
-				hs <= 1;
-				// Contando.
-				if (vCount < vTotal)
-					vCount <= vCount + 1'b1;
+			if (started) begin
+				// Horizontal
+				if (hCount < hTotal)
+					hCount <= hCount + 1'b1;
 				else
-					vCount <= 0;
-				// Gerar vs
-				if (vCount == vFront - 1)
-					vs <= 0;
-				else if (vCount == vFront + vSync - 1)
-					vs <= 1;
+					hCount <= 0;
+
+				// Gerar hs
+				if (hCount == hFront - 1)
+					hs <= 0;
+				else if (hCount == hFront + hSync - 1) begin
+					hs <= 1;
+					// Contando.
+					if (vCount < vTotal)
+						vCount <= vCount + 1'b1;
+					else
+						vCount <= 0;
+					// Gerar vs
+					if (vCount == vFront - 1)
+						vs <= 0;
+					else if (vCount == vFront + vSync - 1)
+						vs <= 1;
+				end
 			end
 		end
 	end
@@ -101,14 +114,16 @@ module vgaController(
 			current_pixel <= 32'h0;
 			fifo_rd_en    <= 0;
 		end else begin
-			fifo_rd_en <= 0;
+			if (started) begin
+				fifo_rd_en <= 0;
 
-			if (preRequest && !fifo_empty) begin
-				fifo_rd_en <= 1;  // Ativa leitura do FIFO antes de outRequest
-			end
+				if (preRequest && !fifo_empty) begin
+					fifo_rd_en <= 1;  // Ativa leitura do FIFO antes de outRequest
+				end
 
-			if (outRequest) begin
-				current_pixel <= fifo_data;  // Usa o dado lido 1 ciclo antes
+				if (outRequest) begin
+					current_pixel <= fifo_data;  // Usa o dado lido 1 ciclo antes
+				end
 			end
 		end
 	end

@@ -40,16 +40,23 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "clk25" (rect 0 0 20 12)(font "Arial" ))
-		(text "clk25" (rect 21 59 41 71)(font "Arial" ))
+		(text "fifo_full" (rect 0 0 29 12)(font "Arial" ))
+		(text "fifo_full" (rect 21 59 50 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 1))
 	)
 	(port
 		(pt 0 80)
 		(input)
-		(text "rstN" (rect 0 0 17 12)(font "Arial" ))
-		(text "rstN" (rect 21 75 38 87)(font "Arial" ))
+		(text "clk25" (rect 0 0 20 12)(font "Arial" ))
+		(text "clk25" (rect 21 75 41 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "rstN" (rect 0 0 17 12)(font "Arial" ))
+		(text "rstN" (rect 21 91 38 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
 	)
 	(port
 		(pt 216 32)

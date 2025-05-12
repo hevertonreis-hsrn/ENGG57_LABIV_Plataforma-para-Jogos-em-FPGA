@@ -15,7 +15,10 @@ module Master_Interface (
 	
 	// FIFO (Conduit)
 	input  wire        fifo_full,
-	output reg         fifo_wr_en
+	output reg         fifo_wr_en,
+	
+	// PLL (Conduit)
+	input  wire        pll_locked
 );
 
 	localparam ADDR_SDRAM   = 30'h0000_0000;
@@ -25,7 +28,16 @@ module Master_Interface (
 
 	reg [29:0] addr_counter;
 	reg [2:0 ] state;
-
+	reg 			started;
+	
+	always @(posedge clk or negedge reset_n) begin
+		if (!reset_n) begin
+			started <= 0;
+		end else if (!started && pll_locked) begin
+			started <= 1; // Libera início da leitura após PLL estar pronto
+		end
+	end
+	
 	localparam IDLE       = 3'd0,
 						 WAIT_READ  = 3'd1,
 						 WRITE_FIFO = 3'd2;
@@ -48,7 +60,7 @@ module Master_Interface (
 
 			case (state)
 				IDLE: begin
-					if (!fifo_full) begin
+					if (started && !fifo_full) begin
 						address    <= ADDR_SDRAM + addr_counter;
 						chipselect <= 1;
 						read       <= 1;

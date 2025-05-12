@@ -52,7 +52,7 @@
  <file
    path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_conduit_bfm.sv"
    type="SYSTEM_VERILOG"
-   library="EmbarcadoVGA_inst_master_conduit_bfm" />
+   library="EmbarcadoVGA_inst_master_conduit_1_bfm" />
  <file
    path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_clock_source.sv"
    type="SYSTEM_VERILOG"

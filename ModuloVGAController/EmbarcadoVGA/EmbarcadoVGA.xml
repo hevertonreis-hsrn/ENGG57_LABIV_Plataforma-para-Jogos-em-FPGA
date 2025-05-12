@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2025.05.10.00:43:30"
+ date="2025.05.12.00:07:37"
  outputDirectory="C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/">
  <perimeter>
   <parameter
@@ -57,24 +57,29 @@
    <property name="ptfSchematicName" value="" />
    <port name="clk_clk" direction="input" role="clk" width="1" />
   </interface>
-  <interface name="master_conduit" kind="conduit" start="0">
+  <interface name="master_conduit_1" kind="conduit" start="0">
    <property name="associatedClock" value="clk" />
    <property name="associatedReset" value="reset" />
    <port
-       name="master_conduit_fifo_full"
+       name="master_conduit_1_fifo_full"
        direction="input"
        role="fifo_full"
        width="1" />
    <port
-       name="master_conduit_fifo_wr_en"
+       name="master_conduit_1_fifo_wr_en"
        direction="output"
        role="fifo_wr_en"
        width="1" />
    <port
-       name="master_conduit_exportdata"
+       name="master_conduit_1_exportdata"
        direction="output"
        role="exportdata"
        width="32" />
+   <port
+       name="master_conduit_1_pll_locked"
+       direction="input"
+       role="pll_locked"
+       width="1" />
   </interface>
   <interface name="reset" kind="reset" start="0">
    <property name="associatedClock" value="" />
@@ -97,13 +102,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="EmbarcadoVGA:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1746848607,AUTO_UNIQUE_ID=(clock_source:18.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(master_interface:1.0:)(altera_avalon_new_sdram_controller:18.1:TAC=5.5,TMRD=3,TRCD=20.0,TRFC=70.0,TRP=20.0,TWR=14.0,addressWidth=25,bankWidth=2,casLatency=3,clockRate=50000000,columnWidth=10,componentName=EmbarcadoVGA_sdram_controller,dataWidth=32,generateSimulationModel=true,initNOPDelay=0.0,initRefreshCommands=2,masteredTristateBridgeSlave=0,model=single_Micron_MT48LC4M32B2_7_chip,numberOfBanks=4,numberOfChipSelects=1,pinsSharedViaTriState=false,powerUpDelay=100.0,refreshPeriod=15.625,registerDataIn=true,rowWidth=13,size=134217728)(avalon:18.1:arbitrationPriority=1,baseAddress=0x0000,defaultConnection=false)(clock:18.1:)(clock:18.1:)(reset:18.1:)(reset:18.1:)"
+   parameterizationKey="EmbarcadoVGA:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1747019254,AUTO_UNIQUE_ID=(clock_source:18.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(master_interface:1.1:)(altera_avalon_new_sdram_controller:18.1:TAC=5.5,TMRD=3,TRCD=20.0,TRFC=70.0,TRP=20.0,TWR=14.0,addressWidth=25,bankWidth=2,casLatency=3,clockRate=50000000,columnWidth=10,componentName=EmbarcadoVGA_sdram_controller,dataWidth=32,generateSimulationModel=true,initNOPDelay=0.0,initRefreshCommands=2,masteredTristateBridgeSlave=0,model=single_Micron_MT48LC4M32B2_7_chip,numberOfBanks=4,numberOfChipSelects=1,pinsSharedViaTriState=false,powerUpDelay=100.0,refreshPeriod=15.625,registerDataIn=true,rowWidth=13,size=134217728)(avalon:18.1:arbitrationPriority=1,baseAddress=0x0000,defaultConnection=false)(clock:18.1:)(clock:18.1:)(reset:18.1:)(reset:18.1:)"
    instancePathKey="EmbarcadoVGA"
    kind="EmbarcadoVGA"
    version="1.0"
    name="EmbarcadoVGA">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1746848607" />
+  <parameter name="AUTO_GENERATION_ID" value="1747019254" />
   <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -242,7 +247,7 @@
    <message level="Info" culprit="master_interface"><![CDATA["<b>EmbarcadoVGA</b>" instantiated <b>master_interface</b> "<b>master_interface</b>"]]></message>
    <message level="Debug" culprit="EmbarcadoVGA">queue size: 2 starting:altera_avalon_new_sdram_controller "submodules/EmbarcadoVGA_sdram_controller"</message>
    <message level="Info" culprit="sdram_controller">Starting RTL generation for module 'EmbarcadoVGA_sdram_controller'</message>
-   <message level="Info" culprit="sdram_controller">  Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0218_4734538074937288278.dir/0015_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0218_4734538074937288278.dir/0015_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="sdram_controller">  Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0014_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0014_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=0  ]</message>
    <message level="Info" culprit="sdram_controller">Done RTL generation for module 'EmbarcadoVGA_sdram_controller'</message>
    <message level="Info" culprit="sdram_controller"><![CDATA["<b>EmbarcadoVGA</b>" instantiated <b>altera_avalon_new_sdram_controller</b> "<b>sdram_controller</b>"]]></message>
    <message level="Debug" culprit="EmbarcadoVGA">queue size: 1 starting:altera_mm_interconnect "submodules/EmbarcadoVGA_mm_interconnect_0"</message>
@@ -296,10 +301,10 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="master_interface:1.0:"
+   parameterizationKey="master_interface:1.1:"
    instancePathKey="EmbarcadoVGA:.:master_interface"
    kind="master_interface"
-   version="1.0"
+   version="1.1"
    name="Master_Interface">
   <generatedFiles>
    <file
@@ -371,7 +376,7 @@
   <messages>
    <message level="Debug" culprit="EmbarcadoVGA">queue size: 2 starting:altera_avalon_new_sdram_controller "submodules/EmbarcadoVGA_sdram_controller"</message>
    <message level="Info" culprit="sdram_controller">Starting RTL generation for module 'EmbarcadoVGA_sdram_controller'</message>
-   <message level="Info" culprit="sdram_controller">  Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0218_4734538074937288278.dir/0015_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0218_4734538074937288278.dir/0015_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="sdram_controller">  Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0014_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0014_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=0  ]</message>
    <message level="Info" culprit="sdram_controller">Done RTL generation for module 'EmbarcadoVGA_sdram_controller'</message>
    <message level="Info" culprit="sdram_controller"><![CDATA["<b>EmbarcadoVGA</b>" instantiated <b>altera_avalon_new_sdram_controller</b> "<b>sdram_controller</b>"]]></message>
   </messages>

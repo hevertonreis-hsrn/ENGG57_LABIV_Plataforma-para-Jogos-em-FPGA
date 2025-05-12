@@ -1,15 +1,1 @@
-C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/vgaController.v {1 {vlog -work work -stats=none C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/vgaController.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module vgaController
 
-Top level modules:
-	vgaController
-
-} {} {}} C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/ModelSim/vgaController_TB.v {1 {vlog -work work -stats=none C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/ModelSim/vgaController_TB.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module tb_vgaController
-
-Top level modules:
-	tb_vgaController
-
-} {} {}}

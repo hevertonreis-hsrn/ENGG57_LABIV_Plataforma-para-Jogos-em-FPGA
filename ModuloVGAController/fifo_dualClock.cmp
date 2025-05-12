@@ -23,6 +23,7 @@ component fifo_dualClock
 		wrreq		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
 		rdempty		: OUT STD_LOGIC ;
+		rdfull		: OUT STD_LOGIC ;
 		wrfull		: OUT STD_LOGIC 
 	);
 end component;

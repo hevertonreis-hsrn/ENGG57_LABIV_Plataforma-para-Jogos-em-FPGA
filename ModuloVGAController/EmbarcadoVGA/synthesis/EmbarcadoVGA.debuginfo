@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="EmbarcadoVGA" kind="system" version="18.1" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2025.05.10.00:43:30 -->
+ <!-- 2025.05.12.00:07:37 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1746848607</value>
+  <value>1747019254</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -472,7 +472,7 @@ parameters are a RESULT of the module parameters. -->
  <module
    name="master_interface"
    kind="master_interface"
-   version="1.0"
+   version="1.1"
    path="master_interface">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -950,6 +950,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>32</width>
     <role>exportdata</role>
+   </port>
+   <port>
+    <name>pll_locked</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>pll_locked</role>
    </port>
   </interface>
  </module>
@@ -3546,7 +3552,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>Master Interface</displayName>
-  <version>1.0</version>
+  <version>1.1</version>
  </plugin>
  <plugin>
   <instanceCount>4</instanceCount>
@@ -3653,5 +3659,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 625</reportVersion>
- <uniqueIdentifier>BE3898325AB900000196B84A7013</uniqueIdentifier>
+ <uniqueIdentifier>BE3898325AB900000196C2764F99</uniqueIdentifier>
 </EnsembleReport>
