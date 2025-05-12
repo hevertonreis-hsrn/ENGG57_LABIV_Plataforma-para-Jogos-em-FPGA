@@ -10,6 +10,7 @@
 # # the simulator.
 # #
 set QSYS_SIMDIR C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/
+cd $QSYS_SIMDIR
 # #
 # # Source the generated IP simulation script.
 source $QSYS_SIMDIR/mentor/msim_setup.tcl

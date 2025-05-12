@@ -1,0 +1,31 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules
+valtera_sdram_partner_module
+!s110 1747061919
+!i10b 1
+!s100 ;oA5b9FfTK2f7:TEUofY51
+Ij<n7Nh5@VRJ90>i_oG?2R3
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1747019242
+8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v
+FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v
+L0 21
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1747061919.000000
+!s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v|
+!s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v|-work|sdram_controller_my_partner|
+!i113 1
+o-work sdram_controller_my_partner
+tCvgOpt 0

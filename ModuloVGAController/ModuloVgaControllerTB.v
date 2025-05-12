@@ -52,14 +52,8 @@ module ModuloVgaControllerTB;
     rst_n = 0; #100;
     rst_n = 1;
 
-    // opcional: aguarde alguns ciclos para preencher FIFO
-    #10000;
-
-    // depois verifique alguns pixels para ver se VGA_B/G/R seguem
-    // o padrão carregado em EmbarcadoVGA_sdram_controller_test_component.dat
-
-    // fim da simulação
-    #1_000_000;
+    // simulacao
+    #40_000_000;
     $finish;
   end
 endmodule
