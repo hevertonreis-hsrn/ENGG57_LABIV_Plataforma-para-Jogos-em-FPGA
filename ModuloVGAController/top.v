@@ -1,12 +1,12 @@
 module top(
-    input clk,
-	 input writeEnable,
-	 input [7:0] inRed, inGreen, inBlue,
-    output hs, vs,
-	 output vgaRequest,
-    output vgaClk, vgaBlankN, vgaSyncN,
-    output [7:0] outRed, outGreen, outBlue,
-    output [9:0] xPos, yPos
+	input clk,
+	input writeEnable,
+	input [7:0] inRed, inGreen, inBlue,
+	output hs, vs,
+	output vgaRequest,
+	output vgaClk, vgaBlankN, vgaSyncN,
+	output [7:0] outRed, outGreen, outBlue,
+	output [9:0] xPos, yPos
 );
 
 // Sinais para comunicação entre modulos.

@@ -1,0 +1,33 @@
+
+WORK > DEFAULT
+DEFAULT:                                ./libraries/work/                                  
+work:                                   ./libraries/work/                                  
+altera_common_sv_packages:              ./libraries/altera_common_sv_packages/             
+error_adapter_0:                        ./libraries/error_adapter_0/                       
+avalon_st_adapter:                      ./libraries/avalon_st_adapter/                     
+rsp_mux:                                ./libraries/rsp_mux/                               
+cmd_mux:                                ./libraries/cmd_mux/                               
+cmd_demux:                              ./libraries/cmd_demux/                             
+sdram_controller_s1_burst_adapter:      ./libraries/sdram_controller_s1_burst_adapter/     
+router_001:                             ./libraries/router_001/                            
+router:                                 ./libraries/router/                                
+sdram_controller_s1_agent_rsp_fifo:     ./libraries/sdram_controller_s1_agent_rsp_fifo/    
+sdram_controller_s1_agent:              ./libraries/sdram_controller_s1_agent/             
+master_interface_avalon_agent:          ./libraries/master_interface_avalon_agent/         
+sdram_controller_s1_translator:         ./libraries/sdram_controller_s1_translator/        
+master_interface_avalon_translator:     ./libraries/master_interface_avalon_translator/    
+rst_controller:                         ./libraries/rst_controller/                        
+mm_interconnect_0:                      ./libraries/mm_interconnect_0/                     
+sdram_controller:                       ./libraries/sdram_controller/                      
+master_interface:                       ./libraries/master_interface/                      
+sdram_controller_my_partner:            ./libraries/sdram_controller_my_partner/           
+EmbarcadoVGA_inst_reset_bfm:            ./libraries/EmbarcadoVGA_inst_reset_bfm/           
+EmbarcadoVGA_inst_master_conduit_1_bfm: ./libraries/EmbarcadoVGA_inst_master_conduit_1_bfm/
+EmbarcadoVGA_inst_clk_bfm:              ./libraries/EmbarcadoVGA_inst_clk_bfm/             
+EmbarcadoVGA_inst:                      ./libraries/EmbarcadoVGA_inst/                     
+altera_ver:                             ./libraries/altera_ver/                            
+lpm_ver:                                ./libraries/lpm_ver/                               
+sgate_ver:                              ./libraries/sgate_ver/                             
+altera_mf_ver:                          ./libraries/altera_mf_ver/                         
+altera_lnsim_ver:                       ./libraries/altera_lnsim_ver/                      
+cycloneive_ver:                         ./libraries/cycloneive_ver/                        

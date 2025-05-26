@@ -1,0 +1,185 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 448 432)
+	(text "EmbarcadoVGA" (rect 176 -1 246 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 416 20 428)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 192 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "master_conduit_1_fifo_full" (rect 0 0 106 12)(font "Arial" (font_size 8)))
+		(text "master_conduit_1_fifo_full" (rect 4 101 160 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 192 112)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "master_conduit_1_pll_locked" (rect 0 0 114 12)(font "Arial" (font_size 8)))
+		(text "master_conduit_1_pll_locked" (rect 4 149 166 160)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 192 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "master_conduit_1_fifo_used[8..0]" (rect 0 0 134 12)(font "Arial" (font_size 8)))
+		(text "master_conduit_1_fifo_used[8..0]" (rect 4 165 196 176)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 192 176)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "master_conduit_1_fifo_empty" (rect 0 0 121 12)(font "Arial" (font_size 8)))
+		(text "master_conduit_1_fifo_empty" (rect 4 181 166 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 192 192)(line_width 1))
+	)
+	(port
+		(pt 0 232)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 221 82 232)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 192 232)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(output)
+		(text "master_conduit_1_fifo_wr_en" (rect 0 0 120 12)(font "Arial" (font_size 8)))
+		(text "master_conduit_1_fifo_wr_en" (rect 4 117 166 128)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 192 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(output)
+		(text "master_conduit_1_exportdata[15..0]" (rect 0 0 141 12)(font "Arial" (font_size 8)))
+		(text "master_conduit_1_exportdata[15..0]" (rect 4 133 208 144)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 192 144)(line_width 3))
+	)
+	(port
+		(pt 0 272)
+		(output)
+		(text "sdram_addr[12..0]" (rect 0 0 73 12)(font "Arial" (font_size 8)))
+		(text "sdram_addr[12..0]" (rect 4 261 106 272)(font "Arial" (font_size 8)))
+		(line (pt 0 272)(pt 192 272)(line_width 3))
+	)
+	(port
+		(pt 0 288)
+		(output)
+		(text "sdram_ba[1..0]" (rect 0 0 60 12)(font "Arial" (font_size 8)))
+		(text "sdram_ba[1..0]" (rect 4 277 88 288)(font "Arial" (font_size 8)))
+		(line (pt 0 288)(pt 192 288)(line_width 3))
+	)
+	(port
+		(pt 0 304)
+		(output)
+		(text "sdram_cas_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "sdram_cas_n" (rect 4 293 70 304)(font "Arial" (font_size 8)))
+		(line (pt 0 304)(pt 192 304)(line_width 1))
+	)
+	(port
+		(pt 0 320)
+		(output)
+		(text "sdram_cke" (rect 0 0 46 12)(font "Arial" (font_size 8)))
+		(text "sdram_cke" (rect 4 309 58 320)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 192 320)(line_width 1))
+	)
+	(port
+		(pt 0 336)
+		(output)
+		(text "sdram_cs_n" (rect 0 0 51 12)(font "Arial" (font_size 8)))
+		(text "sdram_cs_n" (rect 4 325 64 336)(font "Arial" (font_size 8)))
+		(line (pt 0 336)(pt 192 336)(line_width 1))
+	)
+	(port
+		(pt 0 368)
+		(output)
+		(text "sdram_dqm[1..0]" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "sdram_dqm[1..0]" (rect 4 357 94 368)(font "Arial" (font_size 8)))
+		(line (pt 0 368)(pt 192 368)(line_width 3))
+	)
+	(port
+		(pt 0 384)
+		(output)
+		(text "sdram_ras_n" (rect 0 0 55 12)(font "Arial" (font_size 8)))
+		(text "sdram_ras_n" (rect 4 373 70 384)(font "Arial" (font_size 8)))
+		(line (pt 0 384)(pt 192 384)(line_width 1))
+	)
+	(port
+		(pt 0 400)
+		(output)
+		(text "sdram_we_n" (rect 0 0 53 12)(font "Arial" (font_size 8)))
+		(text "sdram_we_n" (rect 4 389 64 400)(font "Arial" (font_size 8)))
+		(line (pt 0 400)(pt 192 400)(line_width 1))
+	)
+	(port
+		(pt 0 352)
+		(bidir)
+		(text "sdram_dq[15..0]" (rect 0 0 64 12)(font "Arial" (font_size 8)))
+		(text "sdram_dq[15..0]" (rect 4 341 94 352)(font "Arial" (font_size 8)))
+		(line (pt 0 352)(pt 192 352)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 177 43 372 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 197 67 412 144)(font "Arial" (color 0 0 0)))
+		(text "master_conduit_1" (rect 90 83 276 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "fifo_full" (rect 197 107 448 224)(font "Arial" (color 0 0 0)))
+		(text "fifo_wr_en" (rect 197 123 454 256)(font "Arial" (color 0 0 0)))
+		(text "exportdata" (rect 197 139 454 288)(font "Arial" (color 0 0 0)))
+		(text "pll_locked" (rect 197 155 454 320)(font "Arial" (color 0 0 0)))
+		(text "fifo_used" (rect 197 171 448 352)(font "Arial" (color 0 0 0)))
+		(text "fifo_empty" (rect 197 187 454 384)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 163 203 356 419)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 197 227 436 464)(font "Arial" (color 0 0 0)))
+		(text "sdram" (rect 156 243 342 499)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "addr" (rect 197 267 418 544)(font "Arial" (color 0 0 0)))
+		(text "ba" (rect 197 283 406 576)(font "Arial" (color 0 0 0)))
+		(text "cas_n" (rect 197 299 424 608)(font "Arial" (color 0 0 0)))
+		(text "cke" (rect 197 315 412 640)(font "Arial" (color 0 0 0)))
+		(text "cs_n" (rect 197 331 418 672)(font "Arial" (color 0 0 0)))
+		(text "dq" (rect 197 347 406 704)(font "Arial" (color 0 0 0)))
+		(text "dqm" (rect 197 363 412 736)(font "Arial" (color 0 0 0)))
+		(text "ras_n" (rect 197 379 424 768)(font "Arial" (color 0 0 0)))
+		(text "we_n" (rect 197 395 418 800)(font "Arial" (color 0 0 0)))
+		(text " EmbarcadoVGA " (rect 373 416 830 842)(font "Arial" ))
+		(line (pt 192 32)(pt 256 32)(line_width 1))
+		(line (pt 256 32)(pt 256 416)(line_width 1))
+		(line (pt 192 416)(pt 256 416)(line_width 1))
+		(line (pt 192 32)(pt 192 416)(line_width 1))
+		(line (pt 193 52)(pt 193 76)(line_width 1))
+		(line (pt 194 52)(pt 194 76)(line_width 1))
+		(line (pt 193 92)(pt 193 196)(line_width 1))
+		(line (pt 194 92)(pt 194 196)(line_width 1))
+		(line (pt 193 212)(pt 193 236)(line_width 1))
+		(line (pt 194 212)(pt 194 236)(line_width 1))
+		(line (pt 193 252)(pt 193 404)(line_width 1))
+		(line (pt 194 252)(pt 194 404)(line_width 1))
+		(line (pt 0 0)(pt 448 0)(line_width 1))
+		(line (pt 448 0)(pt 448 432)(line_width 1))
+		(line (pt 0 432)(pt 448 432)(line_width 1))
+		(line (pt 0 0)(pt 0 432)(line_width 1))
+	)
+)
