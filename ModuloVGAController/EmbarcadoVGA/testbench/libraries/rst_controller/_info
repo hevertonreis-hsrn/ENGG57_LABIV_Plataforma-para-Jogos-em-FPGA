@@ -7,46 +7,46 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench
+dC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench
 valtera_reset_controller
-Z1 !s110 1747066256
+Z0 !s110 1748187663
 !i10b 1
 !s100 z[H_hRO9gO=:^2E3_jWH03
-IIZWR2J:klCA614`f9Pnz]0
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z3 w1747019243
-8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v
-FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v
+IME[o1h7Jcm^no74]KENBg1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench
+Z3 w1748114492
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v
 L0 42
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1747066256.000000
-!s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v|
-!s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
+Z5 !s108 1748187663.000000
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
 !i113 1
 Z6 o-work rst_controller
 Z7 tCvgOpt 0
 valtera_reset_synchronizer
-R1
+R0
 !i10b 1
 !s100 oWLYmSO[EOX[G0PgQhZ2=0
-IK7CSZ=ZOhkC7o^246iL_Y1
+I?<L2Rn0:^XZ2jd28?<LAS3
+R1
 R2
-R0
 R3
-8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v
-FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v
 L0 24
 R4
 r1
 !s85 0
 31
 R5
-!s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v|
-!s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
 !i113 1
 R6
 R7

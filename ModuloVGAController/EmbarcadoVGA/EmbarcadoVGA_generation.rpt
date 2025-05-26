@@ -1,10 +1,10 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA.qsys --block-symbol-file --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA.qsys --block-symbol-file --output-directory=C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading ModuloVGAController/EmbarcadoVGA.qsys
 Progress: Reading input file
 Progress: Adding clk [clock_source 18.1]
 Progress: Parameterizing module clk
-Progress: Adding master_interface [master_interface 1.1]
+Progress: Adding master_interface [master_interface 2.0]
 Progress: Parameterizing module master_interface
 Progress: Adding sdram_controller [altera_avalon_new_sdram_controller 18.1]
 Progress: Parameterizing module sdram_controller
@@ -17,12 +17,12 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA.qsys --synthesis=VERILOG --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA.qsys --synthesis=VERILOG --output-directory=C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading ModuloVGAController/EmbarcadoVGA.qsys
 Progress: Reading input file
 Progress: Adding clk [clock_source 18.1]
 Progress: Parameterizing module clk
-Progress: Adding master_interface [master_interface 1.1]
+Progress: Adding master_interface [master_interface 2.0]
 Progress: Parameterizing module master_interface
 Progress: Adding sdram_controller [altera_avalon_new_sdram_controller 18.1]
 Progress: Parameterizing module sdram_controller
@@ -33,15 +33,30 @@ Progress: Done reading input file
 Info: EmbarcadoVGA.sdram_controller: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Info: EmbarcadoVGA: Generating EmbarcadoVGA "EmbarcadoVGA" for QUARTUS_SYNTH
 Info: Interconnect is inserted between master master_interface.avalon and slave sdram_controller.s1 because the master has address signal 30 bit wide, but the slave is 25 bit wide.
+Info: Interconnect is inserted between master master_interface.avalon and slave sdram_controller.s1 because the master has burstcount signal 5 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master master_interface.avalon and slave sdram_controller.s1 because the master has beginbursttransfer signal 1 bit wide, but the slave is 0 bit wide.
 Info: master_interface: "EmbarcadoVGA" instantiated master_interface "master_interface"
 Info: sdram_controller: Starting RTL generation for module 'EmbarcadoVGA_sdram_controller'
-Info: sdram_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0014_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0014_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0234_5653210892993583000.dir/0023_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0234_5653210892993583000.dir/0023_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram_controller: Done RTL generation for module 'EmbarcadoVGA_sdram_controller'
 Info: sdram_controller: "EmbarcadoVGA" instantiated altera_avalon_new_sdram_controller "sdram_controller"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "EmbarcadoVGA" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: rst_controller: "EmbarcadoVGA" instantiated altera_reset_controller "rst_controller"
 Info: master_interface_avalon_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "master_interface_avalon_translator"
 Info: sdram_controller_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "sdram_controller_s1_translator"
-Info: EmbarcadoVGA: Done "EmbarcadoVGA" with 7 modules, 10 files
+Info: master_interface_avalon_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "master_interface_avalon_agent"
+Info: sdram_controller_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "sdram_controller_s1_agent"
+Info: sdram_controller_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "sdram_controller_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: sdram_controller_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sdram_controller_s1_burst_adapter"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: EmbarcadoVGA: Done "EmbarcadoVGA" with 18 modules, 32 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

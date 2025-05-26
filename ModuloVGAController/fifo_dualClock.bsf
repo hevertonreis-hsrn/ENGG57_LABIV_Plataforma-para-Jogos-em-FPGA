@@ -26,8 +26,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "data[31..0]" (rect 0 0 60 14)(font "Arial" (font_size 8)))
-		(text "data[31..0]" (rect 20 41 69 54)(font "Arial" (font_size 8)))
+		(text "data[15..0]" (rect 0 0 60 14)(font "Arial" (font_size 8)))
+		(text "data[15..0]" (rect 20 41 69 54)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
@@ -66,10 +66,24 @@ refer to the applicable agreement for further details.
 		(line (pt 176 56)(pt 160 56))
 	)
 	(port
+		(pt 176 72)
+		(output)
+		(text "wrempty" (rect 0 0 50 14)(font "Arial" (font_size 8)))
+		(text "wrempty" (rect 114 65 155 78)(font "Arial" (font_size 8)))
+		(line (pt 176 72)(pt 160 72))
+	)
+	(port
+		(pt 176 88)
+		(output)
+		(text "wrusedw[8..0]" (rect 0 0 84 14)(font "Arial" (font_size 8)))
+		(text "wrusedw[8..0]" (rect 85 81 155 94)(font "Arial" (font_size 8)))
+		(line (pt 176 88)(pt 160 88)(line_width 3))
+	)
+	(port
 		(pt 176 112)
 		(output)
-		(text "q[31..0]" (rect 0 0 42 14)(font "Arial" (font_size 8)))
-		(text "q[31..0]" (rect 121 105 155 118)(font "Arial" (font_size 8)))
+		(text "q[15..0]" (rect 0 0 42 14)(font "Arial" (font_size 8)))
+		(text "q[15..0]" (rect 121 105 155 118)(font "Arial" (font_size 8)))
 		(line (pt 176 112)(pt 160 112)(line_width 3))
 	)
 	(port
@@ -87,7 +101,7 @@ refer to the applicable agreement for further details.
 		(line (pt 176 152)(pt 160 152))
 	)
 	(drawing
-		(text "32 bits x 512 words" (rect 78 173 235 357)(font "Arial" ))
+		(text "16 bits x 512 words" (rect 78 173 235 357)(font "Arial" ))
 		(line (pt 16 100)(pt 160 100))
 		(line (pt 16 164)(pt 160 164))
 		(line (pt 16 32)(pt 160 32))

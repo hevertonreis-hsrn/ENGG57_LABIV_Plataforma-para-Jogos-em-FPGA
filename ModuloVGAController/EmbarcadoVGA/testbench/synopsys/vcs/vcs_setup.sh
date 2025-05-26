@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.05.12.00:07:24
+# ACDS 18.1 625 win32 2025.05.25.22:55:06
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.05.12.00:07:24
+# ACDS 18.1 625 win32 2025.05.25.22:55:06
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="EmbarcadoVGA_tb"
@@ -138,6 +138,28 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneive_atoms.v \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter.v \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_rsp_mux.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_cmd_mux.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_cmd_demux.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_13_1.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_new.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_incr_burst_converter.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_wrap_burst_converter.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_default_burst_converter.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_address_alignment.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_stage.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_base.v \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router_001.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_sc_fifo.v \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_agent.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv \
+  $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_agent.sv \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_translator.sv \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_translator.sv \
   $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v \

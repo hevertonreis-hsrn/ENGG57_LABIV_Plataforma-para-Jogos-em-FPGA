@@ -9,7 +9,7 @@
 # # generated the IP script, relative to the directory from which you launch
 # # the simulator.
 # #
-set QSYS_SIMDIR C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/
+set QSYS_SIMDIR C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench
 cd $QSYS_SIMDIR
 # #
 # # Source the generated IP simulation script.
@@ -33,8 +33,11 @@ com
 vcom $QSYS_SIMDIR/../../clkDivider.vhd
 vcom $QSYS_SIMDIR/../../fifo_dualClock.vhd
 vlog $QSYS_SIMDIR/../../vgaController.v
+vlog $QSYS_SIMDIR/../../rgb16toRgb24.v
+vlog $QSYS_SIMDIR/../../fifoToRgbStream.v
 vlog $QSYS_SIMDIR/../../ModuloVgaController.v
 vlog $QSYS_SIMDIR/../../ModuloVgaControllerTB.v
+vlog $QSYS_SIMDIR/../../Master_Interface.v
 # #
 # # Set the top-level simulation or testbench module/entity name, which is
 # # used by the elab command to elaborate the top level.

@@ -7,52 +7,60 @@ module EmbarcadoVGA (
 		input  wire        clk_clk,                     //              clk.clk
 		input  wire        master_conduit_1_fifo_full,  // master_conduit_1.fifo_full
 		output wire        master_conduit_1_fifo_wr_en, //                 .fifo_wr_en
-		output wire [31:0] master_conduit_1_exportdata, //                 .exportdata
+		output wire [15:0] master_conduit_1_exportdata, //                 .exportdata
 		input  wire        master_conduit_1_pll_locked, //                 .pll_locked
+		input  wire [8:0]  master_conduit_1_fifo_used,  //                 .fifo_used
+		input  wire        master_conduit_1_fifo_empty, //                 .fifo_empty
 		input  wire        reset_reset_n,               //            reset.reset_n
 		output wire [12:0] sdram_addr,                  //            sdram.addr
 		output wire [1:0]  sdram_ba,                    //                 .ba
 		output wire        sdram_cas_n,                 //                 .cas_n
 		output wire        sdram_cke,                   //                 .cke
 		output wire        sdram_cs_n,                  //                 .cs_n
-		inout  wire [31:0] sdram_dq,                    //                 .dq
-		output wire [3:0]  sdram_dqm,                   //                 .dqm
+		inout  wire [15:0] sdram_dq,                    //                 .dq
+		output wire [1:0]  sdram_dqm,                   //                 .dqm
 		output wire        sdram_ras_n,                 //                 .ras_n
 		output wire        sdram_we_n                   //                 .we_n
 	);
 
 	wire         master_interface_avalon_chipselect;                  // master_interface:chipselect -> mm_interconnect_0:master_interface_avalon_chipselect
+	wire         master_interface_avalon_beginbursttransfer;          // master_interface:beginbursttransfer -> mm_interconnect_0:master_interface_avalon_beginbursttransfer
 	wire         master_interface_avalon_waitrequest;                 // mm_interconnect_0:master_interface_avalon_waitrequest -> master_interface:waitrequest
-	wire  [31:0] master_interface_avalon_readdata;                    // mm_interconnect_0:master_interface_avalon_readdata -> master_interface:readdata
+	wire  [15:0] master_interface_avalon_readdata;                    // mm_interconnect_0:master_interface_avalon_readdata -> master_interface:readdata
 	wire         master_interface_avalon_read;                        // master_interface:read -> mm_interconnect_0:master_interface_avalon_read
-	wire   [3:0] master_interface_avalon_byteenable;                  // master_interface:byteenable -> mm_interconnect_0:master_interface_avalon_byteenable
+	wire   [1:0] master_interface_avalon_byteenable;                  // master_interface:byteenable -> mm_interconnect_0:master_interface_avalon_byteenable
 	wire  [29:0] master_interface_avalon_address;                     // master_interface:address -> mm_interconnect_0:master_interface_avalon_address
 	wire         master_interface_avalon_readdatavalid;               // mm_interconnect_0:master_interface_avalon_readdatavalid -> master_interface:readdatavalid
+	wire   [4:0] master_interface_avalon_burstcount;                  // master_interface:burstcount -> mm_interconnect_0:master_interface_avalon_burstcount
 	wire         mm_interconnect_0_sdram_controller_s1_chipselect;    // mm_interconnect_0:sdram_controller_s1_chipselect -> sdram_controller:az_cs
-	wire  [31:0] mm_interconnect_0_sdram_controller_s1_readdata;      // sdram_controller:za_data -> mm_interconnect_0:sdram_controller_s1_readdata
+	wire  [15:0] mm_interconnect_0_sdram_controller_s1_readdata;      // sdram_controller:za_data -> mm_interconnect_0:sdram_controller_s1_readdata
 	wire         mm_interconnect_0_sdram_controller_s1_waitrequest;   // sdram_controller:za_waitrequest -> mm_interconnect_0:sdram_controller_s1_waitrequest
 	wire  [24:0] mm_interconnect_0_sdram_controller_s1_address;       // mm_interconnect_0:sdram_controller_s1_address -> sdram_controller:az_addr
 	wire         mm_interconnect_0_sdram_controller_s1_read;          // mm_interconnect_0:sdram_controller_s1_read -> sdram_controller:az_rd_n
-	wire   [3:0] mm_interconnect_0_sdram_controller_s1_byteenable;    // mm_interconnect_0:sdram_controller_s1_byteenable -> sdram_controller:az_be_n
+	wire   [1:0] mm_interconnect_0_sdram_controller_s1_byteenable;    // mm_interconnect_0:sdram_controller_s1_byteenable -> sdram_controller:az_be_n
 	wire         mm_interconnect_0_sdram_controller_s1_readdatavalid; // sdram_controller:za_valid -> mm_interconnect_0:sdram_controller_s1_readdatavalid
 	wire         mm_interconnect_0_sdram_controller_s1_write;         // mm_interconnect_0:sdram_controller_s1_write -> sdram_controller:az_wr_n
-	wire  [31:0] mm_interconnect_0_sdram_controller_s1_writedata;     // mm_interconnect_0:sdram_controller_s1_writedata -> sdram_controller:az_data
+	wire  [15:0] mm_interconnect_0_sdram_controller_s1_writedata;     // mm_interconnect_0:sdram_controller_s1_writedata -> sdram_controller:az_data
 	wire         rst_controller_reset_out_reset;                      // rst_controller:reset_out -> [master_interface:reset_n, mm_interconnect_0:master_interface_reset_reset_bridge_in_reset_reset, sdram_controller:reset_n]
 
 	Master_Interface master_interface (
-		.clk           (clk_clk),                               //   clock.clk
-		.reset_n       (~rst_controller_reset_out_reset),       //   reset.reset_n
-		.waitrequest   (master_interface_avalon_waitrequest),   //  avalon.waitrequest
-		.readdatavalid (master_interface_avalon_readdatavalid), //        .readdatavalid
-		.readdata      (master_interface_avalon_readdata),      //        .readdata
-		.read          (master_interface_avalon_read),          //        .read
-		.chipselect    (master_interface_avalon_chipselect),    //        .chipselect
-		.byteenable    (master_interface_avalon_byteenable),    //        .byteenable
-		.address       (master_interface_avalon_address),       //        .address
-		.fifo_full     (master_conduit_1_fifo_full),            // conduit.fifo_full
-		.fifo_wr_en    (master_conduit_1_fifo_wr_en),           //        .fifo_wr_en
-		.exportdata    (master_conduit_1_exportdata),           //        .exportdata
-		.pll_locked    (master_conduit_1_pll_locked)            //        .pll_locked
+		.clk                (clk_clk),                                    //   clock.clk
+		.reset_n            (~rst_controller_reset_out_reset),            //   reset.reset_n
+		.waitrequest        (master_interface_avalon_waitrequest),        //  avalon.waitrequest
+		.readdatavalid      (master_interface_avalon_readdatavalid),      //        .readdatavalid
+		.readdata           (master_interface_avalon_readdata),           //        .readdata
+		.read               (master_interface_avalon_read),               //        .read
+		.chipselect         (master_interface_avalon_chipselect),         //        .chipselect
+		.byteenable         (master_interface_avalon_byteenable),         //        .byteenable
+		.address            (master_interface_avalon_address),            //        .address
+		.burstcount         (master_interface_avalon_burstcount),         //        .burstcount
+		.beginbursttransfer (master_interface_avalon_beginbursttransfer), //        .beginbursttransfer
+		.fifo_full          (master_conduit_1_fifo_full),                 // conduit.fifo_full
+		.fifo_wr_en         (master_conduit_1_fifo_wr_en),                //        .fifo_wr_en
+		.exportdata         (master_conduit_1_exportdata),                //        .exportdata
+		.pll_locked         (master_conduit_1_pll_locked),                //        .pll_locked
+		.fifo_used          (master_conduit_1_fifo_used),                 //        .fifo_used
+		.fifo_empty         (master_conduit_1_fifo_empty)                 //        .fifo_empty
 	);
 
 	EmbarcadoVGA_sdram_controller sdram_controller (
@@ -83,7 +91,9 @@ module EmbarcadoVGA (
 		.master_interface_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                      // master_interface_reset_reset_bridge_in_reset.reset
 		.master_interface_avalon_address                    (master_interface_avalon_address),                     //                      master_interface_avalon.address
 		.master_interface_avalon_waitrequest                (master_interface_avalon_waitrequest),                 //                                             .waitrequest
+		.master_interface_avalon_burstcount                 (master_interface_avalon_burstcount),                  //                                             .burstcount
 		.master_interface_avalon_byteenable                 (master_interface_avalon_byteenable),                  //                                             .byteenable
+		.master_interface_avalon_beginbursttransfer         (master_interface_avalon_beginbursttransfer),          //                                             .beginbursttransfer
 		.master_interface_avalon_chipselect                 (master_interface_avalon_chipselect),                  //                                             .chipselect
 		.master_interface_avalon_read                       (master_interface_avalon_read),                        //                                             .read
 		.master_interface_avalon_readdata                   (master_interface_avalon_readdata),                    //                                             .readdata

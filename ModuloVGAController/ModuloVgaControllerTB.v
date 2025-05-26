@@ -8,9 +8,9 @@ module ModuloVgaControllerTB;
   // sinais SDRAM
   wire [12:0] zs_addr;
   wire [1:0]  zs_ba;
-  wire        zs_cas_n, zs_cke, zs_cs_n, zs_ras_n, zs_we_n;
-  wire [3:0]  zs_dqm;
-  wire [31:0] zs_dq;
+  wire        zs_cas_n, zs_cke, zs_cs_n, zs_ras_n, zs_we_n, sdram_clk;
+  wire [1:0]  zs_dqm;
+  wire [15:0] zs_dq;
 
   // sinais VGA / FIFO / Avalon
   wire        outRequest;
@@ -32,15 +32,22 @@ module ModuloVgaControllerTB;
 		.DRAM_CKE(zs_cke),
     .DRAM_CS_N(zs_cs_n),
 		.DRAM_RAS_N(zs_ras_n),
-    .DRAM_WE_N(zs_we_n), .DRAM_ADDR(zs_addr),
-    .DRAM_BA(zs_ba), .DRAM_DQ(zs_dq), .DRAM_DQM(zs_dqm),
-    .outX(outX), .outY(outY),
-    .VGA_B(VGA_B), .VGA_G(VGA_G), .VGA_R(VGA_R)
+    .DRAM_WE_N(zs_we_n),
+		.DRAM_CLK(sdram_clk),
+		.DRAM_ADDR(zs_addr),
+    .DRAM_BA(zs_ba),
+		.DRAM_DQ(zs_dq),
+		.DRAM_DQM(zs_dqm),
+    .outX(outX),
+		.outY(outY),
+    .VGA_B(VGA_B),
+		.VGA_G(VGA_G),
+		.VGA_R(VGA_R)
   );
 
   // Instancia modelo SDRAM de simulação
   EmbarcadoVGA_sdram_controller_test_component sdram_sim (
-    .clk(clk50),
+    .clk(sdram_clk),
     .zs_addr(zs_addr), .zs_ba(zs_ba),
     .zs_cas_n(zs_cas_n), .zs_cke(zs_cke), .zs_cs_n(zs_cs_n),
     .zs_dqm(zs_dqm), .zs_ras_n(zs_ras_n), .zs_we_n(zs_we_n),
@@ -53,7 +60,7 @@ module ModuloVgaControllerTB;
     rst_n = 1;
 
     // simulacao
-    #40_000_000;
+    #90_000_000;
     $finish;
   end
 endmodule

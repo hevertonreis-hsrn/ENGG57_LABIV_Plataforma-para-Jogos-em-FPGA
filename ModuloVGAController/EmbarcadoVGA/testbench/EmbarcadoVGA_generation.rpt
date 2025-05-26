@@ -1,11 +1,11 @@
 Info: Starting: Create testbench Platform Designer system
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA.ipx
-Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA.qsys --testbench=STANDARD --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA.ipx
+Info: qsys-generate C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA.qsys --testbench=STANDARD --output-directory=C:\Users\felip\Downloads\ModuloVGAController --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading ModuloVGAController/EmbarcadoVGA.qsys
 Progress: Reading input file
 Progress: Adding clk [clock_source 18.1]
 Progress: Parameterizing module clk
-Progress: Adding master_interface [master_interface 1.1]
+Progress: Adding master_interface [master_interface 2.0]
 Progress: Parameterizing module master_interface
 Progress: Adding sdram_controller [altera_avalon_new_sdram_controller 18.1]
 Progress: Parameterizing module sdram_controller
@@ -25,34 +25,34 @@ Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx: Loadi
 Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx
 Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0.00 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.00 seconds
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/ip/**/* matched 0 files in 0.00 seconds
-Info: Reading index C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA\testbench\EmbarcadoVGA.ipx
+Info: C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA\testbench\EmbarcadoVGA.ipx
 Progress: Loading ModuloVGAController/EmbarcadoVGA.qsys
 Progress: Loading ModuloVGAController/master_interface_hw.tcl
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/* matched 49 files in 0.03 seconds
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/ip/**/* matched 0 files in 0.00 seconds
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/*/* matched 179 files in 0.02 seconds
-Info: C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA\testbench\EmbarcadoVGA.ipx described 0 plugins, 3 paths, in 0.05 seconds
+Info: C:/Users/felip/Downloads/ModuloVGAController/* matched 54 files in 0.03 seconds
+Info: C:/Users/felip/Downloads/ModuloVGAController/ip/**/* matched 0 files in 0.00 seconds
+Info: C:/Users/felip/Downloads/ModuloVGAController/*/* matched 234 files in 0.02 seconds
+Info: C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA\testbench\EmbarcadoVGA.ipx described 0 plugins, 3 paths, in 0.06 seconds
 Progress: Loading testbench/EmbarcadoVGA_tb.qsys
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/* matched 12 files in 0.06 seconds
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/*/* matched 11 files in 0.00 seconds
+Info: C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/* matched 20 files in 0.08 seconds
+Info: C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/*/* matched 41 files in 0.00 seconds
 Info: C:/Users/felip/.altera.quartus/ip/18.1/**/* matched 0 files in 0.00 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0.00 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0.00 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0.00 seconds
 Info: Reading index C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx
-Info: C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0.07 seconds
-Info: C:/intelfpga_lite/18.1/ip/**/* matched 139 files in 0.08 seconds
+Info: C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0.08 seconds
+Info: C:/intelfpga_lite/18.1/ip/**/* matched 139 files in 0.10 seconds
 Info: C:/intelfpga_lite/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx
 Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0.00 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/**/* matched 8 files in 0.01 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/**/* matched 8 files in 0.00 seconds
 Info: Reading index C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx
-Info: C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0.01 seconds
-Info: C:/intelfpga_lite/18.1/quartus/common/librarian/factories/**/* matched 4 files in 0.01 seconds
+Info: C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0.02 seconds
+Info: C:/intelfpga_lite/18.1/quartus/common/librarian/factories/**/* matched 4 files in 0.02 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
-Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0.15 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.15 seconds
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0.19 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.19 seconds
 Progress: 
 Progress: 
 Progress: 
@@ -96,16 +96,16 @@ Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_
 Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_class: 'altera_sdram_partner_module'
 Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_version: ''
 Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_version: ''
-Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_param.CAS_LATENCY: '3'
-Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_param.CAS_LATENCY: '3'
+Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_param.CAS_LATENCY: '2'
+Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_param.CAS_LATENCY: '2'
 Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_param.CONTR_NAME: 'EmbarcadoVGA_sdram_controller'
 Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_param.CONTR_NAME: 'EmbarcadoVGA_sdram_controller'
 Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_BANK_WIDTH: '2'
 Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_BANK_WIDTH: '2'
 Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_COL_WIDTH: '10'
 Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_COL_WIDTH: '10'
-Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_DATA_WIDTH: '32'
-Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_DATA_WIDTH: '32'
+Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_DATA_WIDTH: '16'
+Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_DATA_WIDTH: '16'
 Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_NUM_CHIPSELECTS: '1'
 Info: TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_NUM_CHIPSELECTS: '1'
 Info: send_message Info TB_Gen: Interface 'sdram_controller_my_partner' partner_param.SDRAM_ROW_WIDTH: '13'
@@ -146,8 +146,8 @@ Info: send_message Info TB_Gen: Implicit assignment 'sdram_controller_my_partner
 Info: TB_Gen: Implicit assignment 'sdram_controller_my_partner' partner_implicit_name: 'sdram_controller_my_partner'
 Info: send_message Info TB_Gen: Implicit assignment 'sdram_controller_my_partner' partner_implicit_clks: 'clk'
 Info: TB_Gen: Implicit assignment 'sdram_controller_my_partner' partner_implicit_clks: 'clk'
-Info: send_message Info TB_Gen: Implicit assignment 'sdram_controller_my_partner' clk.partner_implicit_clk_rate: '50000000.0'
-Info: TB_Gen: Implicit assignment 'sdram_controller_my_partner' clk.partner_implicit_clk_rate: '50000000.0'
+Info: send_message Info TB_Gen: Implicit assignment 'sdram_controller_my_partner' clk.partner_implicit_clk_rate: '100000000.0'
+Info: TB_Gen: Implicit assignment 'sdram_controller_my_partner' clk.partner_implicit_clk_rate: '100000000.0'
 Info: send_message Info TB_Gen: Implicit assignment 'sdram_controller_my_partner' clk.partner_implicit_clk_export: 'clk'
 Info: TB_Gen: Implicit assignment 'sdram_controller_my_partner' clk.partner_implicit_clk_export: 'clk'
 Info: get_instance_property sdram_controller CLASS_NAME
@@ -168,7 +168,7 @@ Info: get_instance_interface_property EmbarcadoVGA_inst clk CLASS_NAME
 Info: add_instance EmbarcadoVGA_inst_clk_bfm altera_avalon_clock_source 
 Info: get_instance_property EmbarcadoVGA_inst_clk_bfm CLASS_NAME
 Info: get_instance_interface_parameter_value EmbarcadoVGA_inst clk clockRate
-Info: set_instance_parameter_value EmbarcadoVGA_inst_clk_bfm CLOCK_RATE 50000000.0
+Info: set_instance_parameter_value EmbarcadoVGA_inst_clk_bfm CLOCK_RATE 100000000.0
 Info: set_instance_parameter_value EmbarcadoVGA_inst_clk_bfm CLOCK_UNIT 1
 Info: get_instance_property EmbarcadoVGA_inst_clk_bfm CLASS_NAME
 Info: get_instance_interface_property EmbarcadoVGA_inst clk CLASS_NAME
@@ -214,9 +214,15 @@ Info: get_instance_interface_ports EmbarcadoVGA_inst master_conduit_1
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_exportdata ROLE
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_exportdata WIDTH
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_exportdata DIRECTION
+Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_empty ROLE
+Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_empty WIDTH
+Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_empty DIRECTION
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_full ROLE
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_full WIDTH
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_full DIRECTION
+Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_used ROLE
+Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_used WIDTH
+Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_used DIRECTION
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_wr_en ROLE
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_wr_en WIDTH
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_fifo_wr_en DIRECTION
@@ -225,9 +231,9 @@ Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 ma
 Info: get_instance_interface_port_property EmbarcadoVGA_inst master_conduit_1 master_conduit_1_pll_locked DIRECTION
 Info: set_instance_parameter_value EmbarcadoVGA_inst_master_conduit_1_bfm CLOCKED_SIGNAL 1
 Info: set_instance_parameter_value EmbarcadoVGA_inst_master_conduit_1_bfm ENABLE_RESET 1
-Info: set_instance_parameter_value EmbarcadoVGA_inst_master_conduit_1_bfm SIGNAL_ROLES exportdata fifo_full fifo_wr_en pll_locked
-Info: set_instance_parameter_value EmbarcadoVGA_inst_master_conduit_1_bfm SIGNAL_WIDTHS 32 1 1 1
-Info: set_instance_parameter_value EmbarcadoVGA_inst_master_conduit_1_bfm SIGNAL_DIRECTIONS input output input output
+Info: set_instance_parameter_value EmbarcadoVGA_inst_master_conduit_1_bfm SIGNAL_ROLES exportdata fifo_empty fifo_full fifo_used fifo_wr_en pll_locked
+Info: set_instance_parameter_value EmbarcadoVGA_inst_master_conduit_1_bfm SIGNAL_WIDTHS 16 1 1 9 1 1
+Info: set_instance_parameter_value EmbarcadoVGA_inst_master_conduit_1_bfm SIGNAL_DIRECTIONS input output output output input output
 Info: get_instance_property EmbarcadoVGA_inst_master_conduit_1_bfm CLASS_NAME
 Info: get_instance_interfaces EmbarcadoVGA_inst_master_conduit_1_bfm
 Info: get_instance_interface_property EmbarcadoVGA_inst_master_conduit_1_bfm clk CLASS_NAME
@@ -260,11 +266,11 @@ Info: get_instance_interface_property EmbarcadoVGA_inst sdram CLASS_NAME
 Info: send_message Info TB_Gen: conduit_end (for partner module) found: sdram
 Info: TB_Gen: conduit_end (for partner module) found: sdram
 Info: add_instance sdram_controller_my_partner altera_sdram_partner_module 
-Info: set_instance_parameter_value sdram_controller_my_partner CAS_LATENCY 3
+Info: set_instance_parameter_value sdram_controller_my_partner CAS_LATENCY 2
 Info: set_instance_parameter_value sdram_controller_my_partner CONTR_NAME EmbarcadoVGA_sdram_controller
 Info: set_instance_parameter_value sdram_controller_my_partner SDRAM_BANK_WIDTH 2
 Info: set_instance_parameter_value sdram_controller_my_partner SDRAM_COL_WIDTH 10
-Info: set_instance_parameter_value sdram_controller_my_partner SDRAM_DATA_WIDTH 32
+Info: set_instance_parameter_value sdram_controller_my_partner SDRAM_DATA_WIDTH 16
 Info: set_instance_parameter_value sdram_controller_my_partner SDRAM_NUM_CHIPSELECTS 1
 Info: set_instance_parameter_value sdram_controller_my_partner SDRAM_ROW_WIDTH 13
 Info: get_instance_interface_property EmbarcadoVGA_inst sdram CLASS_NAME
@@ -283,9 +289,9 @@ Info: TB_Gen: Saving testbench system: EmbarcadoVGA_tb.qsys
 Info: save_system EmbarcadoVGA_tb.qsys
 Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
 Info: TB_Gen: TBGEN SUCCESSFUL
-Info: Testbench system: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb.qsys
+Info: Testbench system: C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb.qsys
 Info: Done
-Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA\testbench\EmbarcadoVGA_tb\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA\testbench\EmbarcadoVGA_tb\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading testbench/EmbarcadoVGA_tb.qsys
 Progress: Reading input file
 Progress: Adding EmbarcadoVGA_inst [EmbarcadoVGA 1.0]
@@ -312,44 +318,59 @@ Info: EmbarcadoVGA_tb.EmbarcadoVGA_inst_reset_bfm:            $Date: 2018/07/18 
 Info: EmbarcadoVGA_tb.EmbarcadoVGA_inst_reset_bfm: Reset is negatively asserted.
 Info: EmbarcadoVGA_tb: Generating EmbarcadoVGA_tb "EmbarcadoVGA_tb" for SIM_VERILOG
 Info: Interconnect is inserted between master master_interface.avalon and slave sdram_controller.s1 because the master has address signal 30 bit wide, but the slave is 25 bit wide.
+Info: Interconnect is inserted between master master_interface.avalon and slave sdram_controller.s1 because the master has burstcount signal 5 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master master_interface.avalon and slave sdram_controller.s1 because the master has beginbursttransfer signal 1 bit wide, but the slave is 0 bit wide.
 Info: EmbarcadoVGA_inst: "EmbarcadoVGA_tb" instantiated EmbarcadoVGA "EmbarcadoVGA_inst"
 Info: EmbarcadoVGA_inst_clk_bfm: "EmbarcadoVGA_tb" instantiated altera_avalon_clock_source "EmbarcadoVGA_inst_clk_bfm"
 Info: EmbarcadoVGA_inst_master_conduit_1_bfm: "EmbarcadoVGA_tb" instantiated altera_conduit_bfm "EmbarcadoVGA_inst_master_conduit_1_bfm"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv
 Info: EmbarcadoVGA_inst_reset_bfm: "EmbarcadoVGA_tb" instantiated altera_avalon_reset_source "EmbarcadoVGA_inst_reset_bfm"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv
 Info: sdram_controller_my_partner: Starting RTL generation for partner module 'altera_sdram_partner_module'
-Info: sdram_controller_my_partner:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/ip/altera/alt_mem_if/alt_mem_if_mem_models/altera_sdram_partner_module/ -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_sdram_partner_module -- C:/intelfpga_lite/18.1/ip/altera/alt_mem_if/alt_mem_if_mem_models/altera_sdram_partner_module//em_altera_sodimm.pl --output_dir=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0006_sopcgen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --language=verilog --sdram_data_width=32 --sdram_bank_width=2 --sdram_col_width=10 --sdram_row_width=13 --sdram_num_chipselects=1 --module_name=altera_sdram_partner_module --cas_latency=3]
-Info: sdram_controller_my_partner: # 2025.05.12 00:07:22 (*) Starting SDRAM Simulation Partner Module generation
+Info: sdram_controller_my_partner:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/ip/altera/alt_mem_if/alt_mem_if_mem_models/altera_sdram_partner_module/ -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_sdram_partner_module -- C:/intelfpga_lite/18.1/ip/altera/alt_mem_if/alt_mem_if_mem_models/altera_sdram_partner_module//em_altera_sodimm.pl --output_dir=C:/Users/felip/AppData/Local/Temp/alt0234_5653210892993583000.dir/0005_sopcgen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --language=verilog --sdram_data_width=16 --sdram_bank_width=2 --sdram_col_width=10 --sdram_row_width=13 --sdram_num_chipselects=1 --module_name=altera_sdram_partner_module --cas_latency=2]
+Info: sdram_controller_my_partner: # 2025.05.25 22:55:00 (*) Starting SDRAM Simulation Partner Module generation
 Info: sdram_controller_my_partner: Done RTL generation for module 'altera_sdram_partner_module'
 Info: sdram_controller_my_partner: "EmbarcadoVGA_tb" instantiated altera_sdram_partner_module "sdram_controller_my_partner"
 Info: master_interface: "EmbarcadoVGA_inst" instantiated master_interface "master_interface"
 Info: sdram_controller: Starting RTL generation for module 'EmbarcadoVGA_sdram_controller'
-Info: sdram_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0008_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0008_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/felip/AppData/Local/Temp/alt0220_2007703709687381887.dir/0008_sdram_controller_gen/  ]
+Info: sdram_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0234_5653210892993583000.dir/0007_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0234_5653210892993583000.dir/0007_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/felip/AppData/Local/Temp/alt0234_5653210892993583000.dir/0007_sdram_controller_gen/  ]
 Info: sdram_controller: Done RTL generation for module 'EmbarcadoVGA_sdram_controller'
 Info: sdram_controller: "EmbarcadoVGA_inst" instantiated altera_avalon_new_sdram_controller "sdram_controller"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "EmbarcadoVGA_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: rst_controller: "EmbarcadoVGA_inst" instantiated altera_reset_controller "rst_controller"
 Info: master_interface_avalon_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "master_interface_avalon_translator"
 Info: sdram_controller_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "sdram_controller_s1_translator"
-Info: EmbarcadoVGA_tb: Done "EmbarcadoVGA_tb" with 12 modules, 16 files
+Info: master_interface_avalon_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "master_interface_avalon_agent"
+Info: sdram_controller_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "sdram_controller_s1_agent"
+Info: sdram_controller_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "sdram_controller_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: sdram_controller_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sdram_controller_s1_burst_adapter"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: EmbarcadoVGA_tb: Done "EmbarcadoVGA_tb" with 23 modules, 38 files
 Info: qsys-generate succeeded.
-Info: sim-script-gen --spd=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA_tb.spd --output-directory=C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/ --use-relative-paths=true
-Info: Doing: ip-make-simscript --spd=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA_tb.spd --output-directory=C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/ --use-relative-paths=true
-Info: Generating the following file(s) for MODELSIM simulator in C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
+Info: sim-script-gen --spd=C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA_tb.spd --output-directory=C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\felip\Downloads\ModuloVGAController\EmbarcadoVGA_tb.spd --output-directory=C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
 Info: 	mentor/msim_setup.tcl
-Info: Generating the following file(s) for VCS simulator in C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
+Info: Generating the following file(s) for VCS simulator in C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
 Info: 	synopsys/vcs/vcs_setup.sh
-Info: Generating the following file(s) for VCSMX simulator in C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
 Info: 	synopsys/vcsmx/synopsys_sim.setup
 Info: 	synopsys/vcsmx/vcsmx_setup.sh
-Info: Generating the following file(s) for NCSIM simulator in C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: 	12 .cds.lib files in cadence/cds_libs/ directory
-Info: Generating the following file(s) for RIVIERA simulator in C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
+Info: 	23 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/ directory:
 Info: 	aldec/rivierapro_setup.tcl
-Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/.
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/felip/Downloads/ModuloVGAController/EmbarcadoVGA/testbench/.
 Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
 Info: Finished: Create testbench Platform Designer system

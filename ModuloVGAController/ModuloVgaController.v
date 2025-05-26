@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Mon May 12 00:09:30 2025"
+// CREATED		"Sat May 24 15:58:00 2025"
 
 module ModuloVgaController(
 	CLOCK_50,
@@ -30,6 +30,7 @@ module ModuloVgaController(
 	DRAM_CS_N,
 	DRAM_RAS_N,
 	DRAM_WE_N,
+	DRAM_CLK,
 	DRAM_ADDR,
 	DRAM_BA,
 	DRAM_DQ,
@@ -55,10 +56,11 @@ output wire	DRAM_CKE;
 output wire	DRAM_CS_N;
 output wire	DRAM_RAS_N;
 output wire	DRAM_WE_N;
+output wire	DRAM_CLK;
 output wire	[12:0] DRAM_ADDR;
 output wire	[1:0] DRAM_BA;
-inout wire	[31:0] DRAM_DQ;
-output wire	[3:0] DRAM_DQM;
+inout wire	[15:0] DRAM_DQ;
+output wire	[1:0] DRAM_DQM;
 output wire	[9:0] outX;
 output wire	[9:0] outY;
 output wire	[7:0] VGA_B;
@@ -66,15 +68,22 @@ output wire	[7:0] VGA_G;
 output wire	[7:0] VGA_R;
 
 wire	SYNTHESIZED_WIRE_0;
-wire	SYNTHESIZED_WIRE_1;
-wire	SYNTHESIZED_WIRE_12;
-wire	[31:0] SYNTHESIZED_WIRE_3;
-wire	SYNTHESIZED_WIRE_13;
-wire	SYNTHESIZED_WIRE_5;
+wire	SYNTHESIZED_WIRE_20;
+wire	[7:0] SYNTHESIZED_WIRE_2;
+wire	[7:0] SYNTHESIZED_WIRE_3;
+wire	[7:0] SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_21;
 wire	SYNTHESIZED_WIRE_6;
 wire	SYNTHESIZED_WIRE_7;
-wire	SYNTHESIZED_WIRE_9;
-wire	[31:0] SYNTHESIZED_WIRE_11;
+wire	SYNTHESIZED_WIRE_8;
+wire	[8:0] SYNTHESIZED_WIRE_9;
+wire	SYNTHESIZED_WIRE_10;
+wire	SYNTHESIZED_WIRE_12;
+wire	[15:0] SYNTHESIZED_WIRE_14;
+wire	SYNTHESIZED_WIRE_16;
+wire	SYNTHESIZED_WIRE_17;
+wire	SYNTHESIZED_WIRE_18;
+wire	[15:0] SYNTHESIZED_WIRE_19;
 
 
 
@@ -82,19 +91,21 @@ wire	[31:0] SYNTHESIZED_WIRE_11;
 
 clkDivider	b2v_inst(
 	.inclk0(CLOCK_50),
-	.c0(SYNTHESIZED_WIRE_13),
-	.c1(SYNTHESIZED_WIRE_12),
-	.locked(SYNTHESIZED_WIRE_6));
+	.c0(DRAM_CLK),
+	.c1(SYNTHESIZED_WIRE_20),
+	.c2(SYNTHESIZED_WIRE_21),
+	.locked(SYNTHESIZED_WIRE_7));
 
 
 vgaController	b2v_inst1(
-	.fifo_empty(SYNTHESIZED_WIRE_0),
-	.fifo_full(SYNTHESIZED_WIRE_1),
-	.clk25(SYNTHESIZED_WIRE_12),
+	.fifo_full(SYNTHESIZED_WIRE_0),
+	.clk25(SYNTHESIZED_WIRE_20),
 	.rstN(KEY),
-	.fifo_data(SYNTHESIZED_WIRE_3),
-	.fifo_rd_en(SYNTHESIZED_WIRE_9),
+	.inBlue(SYNTHESIZED_WIRE_2),
+	.inGreen(SYNTHESIZED_WIRE_3),
+	.inRed(SYNTHESIZED_WIRE_4),
 	.outRequest(outRequest),
+	.preRequest(SYNTHESIZED_WIRE_18),
 	.hs(VGA_HS),
 	.vs(VGA_VS),
 	.vgaClk(VGA_CLK),
@@ -116,18 +127,20 @@ vgaController	b2v_inst1(
 
 
 EmbarcadoVGA	b2v_inst2(
-	.clk_clk(SYNTHESIZED_WIRE_13),
-	.master_conduit_1_fifo_full(SYNTHESIZED_WIRE_5),
-	.master_conduit_1_pll_locked(SYNTHESIZED_WIRE_6),
+	.clk_clk(SYNTHESIZED_WIRE_21),
+	.master_conduit_1_fifo_full(SYNTHESIZED_WIRE_6),
+	.master_conduit_1_pll_locked(SYNTHESIZED_WIRE_7),
+	.master_conduit_1_fifo_empty(SYNTHESIZED_WIRE_8),
 	.reset_reset_n(KEY),
+	.master_conduit_1_fifo_used(SYNTHESIZED_WIRE_9),
 	.sdram_dq(DRAM_DQ),
-	.master_conduit_1_fifo_wr_en(SYNTHESIZED_WIRE_7),
+	.master_conduit_1_fifo_wr_en(SYNTHESIZED_WIRE_10),
 	.sdram_cas_n(DRAM_CAS_N),
 	.sdram_cke(DRAM_CKE),
 	.sdram_cs_n(DRAM_CS_N),
 	.sdram_ras_n(DRAM_RAS_N),
 	.sdram_we_n(DRAM_WE_N),
-	.master_conduit_1_exportdata(SYNTHESIZED_WIRE_11),
+	.master_conduit_1_exportdata(SYNTHESIZED_WIRE_14),
 	.sdram_addr(DRAM_ADDR),
 	.sdram_ba(DRAM_BA),
 	
@@ -135,15 +148,31 @@ EmbarcadoVGA	b2v_inst2(
 
 
 fifo_dualClock	b2v_inst3(
-	.wrreq(SYNTHESIZED_WIRE_7),
-	.wrclk(SYNTHESIZED_WIRE_13),
-	.rdreq(SYNTHESIZED_WIRE_9),
-	.rdclk(SYNTHESIZED_WIRE_12),
-	.data(SYNTHESIZED_WIRE_11),
-	.wrfull(SYNTHESIZED_WIRE_5),
-	.rdfull(SYNTHESIZED_WIRE_1),
-	.rdempty(SYNTHESIZED_WIRE_0),
-	.q(SYNTHESIZED_WIRE_3));
+	.wrreq(SYNTHESIZED_WIRE_10),
+	.wrclk(SYNTHESIZED_WIRE_21),
+	.rdreq(SYNTHESIZED_WIRE_12),
+	.rdclk(SYNTHESIZED_WIRE_20),
+	.data(SYNTHESIZED_WIRE_14),
+	.wrfull(SYNTHESIZED_WIRE_6),
+	.wrempty(SYNTHESIZED_WIRE_8),
+	.rdfull(SYNTHESIZED_WIRE_17),
+	.rdempty(SYNTHESIZED_WIRE_16),
+	.q(SYNTHESIZED_WIRE_19),
+	.wrusedw(SYNTHESIZED_WIRE_9));
+
+
+fifoToRgbStream	b2v_inst4(
+	.clk(SYNTHESIZED_WIRE_20),
+	.rstN(KEY),
+	.fifo_empty(SYNTHESIZED_WIRE_16),
+	.fifo_full(SYNTHESIZED_WIRE_17),
+	.vga_request(SYNTHESIZED_WIRE_18),
+	.fifo_data(SYNTHESIZED_WIRE_19),
+	.w_fifo_full(SYNTHESIZED_WIRE_0),
+	.fifo_rd_en(SYNTHESIZED_WIRE_12),
+	.outBlue(SYNTHESIZED_WIRE_2),
+	.outGreen(SYNTHESIZED_WIRE_3),
+	.outRed(SYNTHESIZED_WIRE_4));
 
 
 endmodule

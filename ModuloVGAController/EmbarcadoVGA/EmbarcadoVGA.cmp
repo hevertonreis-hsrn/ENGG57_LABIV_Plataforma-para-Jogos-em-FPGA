@@ -3,16 +3,18 @@
 			clk_clk                     : in    std_logic                     := 'X';             -- clk
 			master_conduit_1_fifo_full  : in    std_logic                     := 'X';             -- fifo_full
 			master_conduit_1_fifo_wr_en : out   std_logic;                                        -- fifo_wr_en
-			master_conduit_1_exportdata : out   std_logic_vector(31 downto 0);                    -- exportdata
+			master_conduit_1_exportdata : out   std_logic_vector(15 downto 0);                    -- exportdata
 			master_conduit_1_pll_locked : in    std_logic                     := 'X';             -- pll_locked
+			master_conduit_1_fifo_used  : in    std_logic_vector(8 downto 0)  := (others => 'X'); -- fifo_used
+			master_conduit_1_fifo_empty : in    std_logic                     := 'X';             -- fifo_empty
 			reset_reset_n               : in    std_logic                     := 'X';             -- reset_n
 			sdram_addr                  : out   std_logic_vector(12 downto 0);                    -- addr
 			sdram_ba                    : out   std_logic_vector(1 downto 0);                     -- ba
 			sdram_cas_n                 : out   std_logic;                                        -- cas_n
 			sdram_cke                   : out   std_logic;                                        -- cke
 			sdram_cs_n                  : out   std_logic;                                        -- cs_n
-			sdram_dq                    : inout std_logic_vector(31 downto 0) := (others => 'X'); -- dq
-			sdram_dqm                   : out   std_logic_vector(3 downto 0);                     -- dqm
+			sdram_dq                    : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
+			sdram_dqm                   : out   std_logic_vector(1 downto 0);                     -- dqm
 			sdram_ras_n                 : out   std_logic;                                        -- ras_n
 			sdram_we_n                  : out   std_logic                                         -- we_n
 		);

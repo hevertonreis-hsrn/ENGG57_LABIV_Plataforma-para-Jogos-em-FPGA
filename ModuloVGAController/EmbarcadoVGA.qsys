@@ -17,6 +17,38 @@
          type = "String";
       }
    }
+   element EmbarcadoVGA
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element EmbarcadoVGA
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element EmbarcadoVGA
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element EmbarcadoVGA
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
    element clk
    {
       datum _sortIndex
@@ -83,7 +115,7 @@
    type="conduit"
    dir="end" />
  <module name="clk" kind="clock_source" version="18.1" enabled="1">
-  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequency" value="100000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
@@ -91,7 +123,7 @@
  <module
    name="master_interface"
    kind="master_interface"
-   version="1.1"
+   version="2.0"
    enabled="1" />
  <module
    name="sdram_controller"
@@ -104,11 +136,11 @@
   <parameter name="TRFC" value="70.0" />
   <parameter name="TRP" value="20.0" />
   <parameter name="TWR" value="14.0" />
-  <parameter name="casLatency" value="3" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="casLatency" value="2" />
+  <parameter name="clockRate" value="100000000" />
   <parameter name="columnWidth" value="10" />
   <parameter name="componentName">$${FILENAME}_sdram_controller</parameter>
-  <parameter name="dataWidth" value="32" />
+  <parameter name="dataWidth" value="16" />
   <parameter name="generateSimulationModel" value="true" />
   <parameter name="initNOPDelay" value="0.0" />
   <parameter name="initRefreshCommands" value="2" />
@@ -117,8 +149,8 @@
   <parameter name="numberOfBanks" value="4" />
   <parameter name="numberOfChipSelects" value="1" />
   <parameter name="pinsSharedViaTriState" value="false" />
-  <parameter name="powerUpDelay" value="100.0" />
-  <parameter name="refreshPeriod" value="15.625" />
+  <parameter name="powerUpDelay" value="200.0" />
+  <parameter name="refreshPeriod" value="7.8125" />
   <parameter name="registerDataIn" value="true" />
   <parameter name="rowWidth" value="13" />
  </module>

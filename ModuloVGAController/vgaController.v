@@ -1,15 +1,12 @@
 // Controlador VGA considerando uma tela de 640 x 480 a 60Hz.
 
 module vgaController(
-	// FIFO Interface
-	input  [31:0] fifo_data,       // Dados vindos do FIFO
-	input         fifo_empty,      // FIFO está vazio?
-	input					fifo_full,
-	output reg    fifo_rd_en,      // Solicita leitura do próximo dado do FIFO
-
+	// Reader
+	input  [7:0] inRed, inGreen, inBlue,
+	input        fifo_full,
 	// Saídas de posição e controle
 	output [9:0] outX, outY,
-	output outRequest,
+	output outRequest, preRequest,
 
 	// VGA DAC.
 	output [7:0] outRed, outGreen, outBlue,	 // Saidas das cores.	
@@ -23,7 +20,6 @@ module vgaController(
 	// Registradores Internos.
 	reg        started;
 	reg  [9:0] hCount, vCount;
-	wire 			 preRequest;
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Parametros Horizontais.
@@ -49,19 +45,16 @@ module vgaController(
 	assign vgaClk = ~clk25;
 	assign vgaBlankN = ~((hCount < hBlank) || (vCount < vBlank));
 	assign outRequest = ((hCount >= hBlank) && (hCount < hTotal) && ((vCount >= vBlank) && (vCount < vTotal)));
-	assign preRequest = ((hCount >= hBlank - 1) && (hCount < hTotal - 1) &&
+	assign preRequest = ((hCount >= hBlank - 2) && (hCount < hTotal - 2) &&
                        (vCount >= vBlank) && (vCount < vTotal));
 	// Posicao.
 	assign outX = (hCount >= hBlank) ? hCount - hBlank : 9'h0;
 	assign outY = (vCount >= vBlank) ? vCount - vBlank : 9'h0;
-	
-	// FIFO Pipeline
-	reg [31:0] current_pixel;
 
 	// VGA Outputs
-	assign outRed   = current_pixel[23:16];
-	assign outGreen = current_pixel[15:8];
-	assign outBlue  = current_pixel[7:0];
+	assign outRed   = outRequest ? inRed   : 8'hFF;	
+	assign outGreen = outRequest ? inGreen : 8'hFF;
+	assign outBlue  = outRequest ? inBlue  : 8'h00;
 	
 	// init
 	always @(posedge clk25 or negedge rstN) begin
@@ -74,57 +67,44 @@ module vgaController(
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Contagem e Sincronismo. FRONT > SYNC > BACK > DISPLAY > FRONT > ...
-	always @(posedge clk25 or negedge rstN) begin
-		if (!rstN) begin
-			hCount <= 0;
-			vCount <= 0;
-			hs     <= 1;
-			vs     <= 1;
-		end else begin
-			if (started) begin
-				// Horizontal
+	always @(posedge clk25) begin // Horizontal.
+		if(!rstN) begin
+			hCount <=	0;
+			hs		 <=	1;
+		end
+		else begin
+			if(started) begin
+				// Contando.
 				if (hCount < hTotal)
-					hCount <= hCount + 1'b1;
+					hCount <= hCount + 1'b1; 				// Continua incrementando.
 				else
-					hCount <= 0;
-
-				// Gerar hs
-				if (hCount == hFront - 1)
-					hs <= 0;
-				else if (hCount == hFront + hSync - 1) begin
-					hs <= 1;
-					// Contando.
-					if (vCount < vTotal)
-						vCount <= vCount + 1'b1;
-					else
-						vCount <= 0;
-					// Gerar vs
-					if (vCount == vFront - 1)
-						vs <= 0;
-					else if (vCount == vFront + vSync - 1)
-						vs <= 1;
-				end
+					hCount <= 0;								// Reinicia contagem.
+				// Sincronismo.
+				if (hCount == hFront - 1) 					// hCount == 15.
+					hs <= 1'b0; 								// Habilitado em nivel logico baixo.
+				if (hCount == hFront + hSync - 1) 		// hCount == 95.
+					hs <= 1'b1;
 			end
 		end
+		
 	end
-	
-	// Leitura do FIFO com pipeline de 1 ciclo
-	always @(posedge clk25 or negedge rstN) begin
-		if (!rstN) begin
-			current_pixel <= 32'h0;
-			fifo_rd_en    <= 0;
-		end else begin
-			if (started) begin
-				fifo_rd_en <= 0;
 
-				if (preRequest && !fifo_empty) begin
-					fifo_rd_en <= 1;  // Ativa leitura do FIFO antes de outRequest
-				end
-
-				if (outRequest) begin
-					current_pixel <= fifo_data;  // Usa o dado lido 1 ciclo antes
-				end
-			end
+	always @(posedge hs) begin // Vertical: Dependente do sync horizontal.
+		if(!rstN) begin
+			vCount <=	0;
+			vs		 <=	1;
+		end
+		else begin
+			// Contando.
+			if (vCount < vTotal)
+				vCount <= vCount + 1'b1;
+			else
+				vCount <= 0;
+			// Sincronismo.
+			if (vCount == vFront - 1)
+				vs <= 1'b0;								// Habilitado em nivel logico baixo.
+			if (vCount == vFront + vSync - 1)
+				vs <= 1'b1;
 		end
 	end
 endmodule

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="EmbarcadoVGA" kind="EmbarcadoVGA" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2025.05.12.00:07:34 -->
+ <!-- 2025.05.25.22:55:50 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1747019254</value>
+  <value>1748224550</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -100,7 +100,7 @@
 the requested settings for a module instance. -->
   <parameter name="clockFrequency">
    <type>long</type>
-   <value>50000000</value>
+   <value>100000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -198,7 +198,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>java.lang.Long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -276,7 +276,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -408,7 +408,7 @@ parameters are a RESULT of the module parameters. -->
  <module
    name="master_interface"
    kind="master_interface"
-   version="1.1"
+   version="2.0"
    path="master_interface">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -795,7 +795,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>readdata</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>16</width>
     <role>readdata</role>
    </port>
    <port>
@@ -813,7 +813,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>byteenable</name>
     <direction>Output</direction>
-    <width>4</width>
+    <width>2</width>
     <role>byteenable</role>
    </port>
    <port>
@@ -822,13 +822,25 @@ parameters are a RESULT of the module parameters. -->
     <width>30</width>
     <role>address</role>
    </port>
+   <port>
+    <name>burstcount</name>
+    <direction>Output</direction>
+    <width>5</width>
+    <role>burstcount</role>
+   </port>
+   <port>
+    <name>beginbursttransfer</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>beginbursttransfer</role>
+   </port>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>sdram_controller</moduleName>
     <slaveName>s1</slaveName>
     <name>sdram_controller.s1</name>
     <baseAddress>0</baseAddress>
-    <span>134217728</span>
+    <span>67108864</span>
    </memoryBlock>
   </interface>
   <interface name="conduit" kind="conduit_end" version="18.1">
@@ -884,7 +896,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>exportdata</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>16</width>
     <role>exportdata</role>
    </port>
    <port>
@@ -892,6 +904,18 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>1</width>
     <role>pll_locked</role>
+   </port>
+   <port>
+    <name>fifo_used</name>
+    <direction>Input</direction>
+    <width>9</width>
+    <role>fifo_used</role>
+   </port>
+   <port>
+    <name>fifo_empty</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>fifo_empty</role>
    </port>
   </interface>
  </module>
@@ -904,7 +928,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <assignment>
    <name>embeddedsw.CMacro.CAS_LATENCY</name>
-   <value>3</value>
+   <value>2</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CONTENTS_INFO</name>
@@ -924,11 +948,11 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.POWERUP_DELAY</name>
-   <value>100.0</value>
+   <value>200.0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.REFRESH_PERIOD</name>
-   <value>15.625</value>
+   <value>7.8125</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.REGISTER_DATA_IN</name>
@@ -948,7 +972,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SDRAM_DATA_WIDTH</name>
-   <value>32</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SDRAM_NUM_BANKS</name>
@@ -1012,7 +1036,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.memoryInfo.MEM_INIT_DATA_WIDTH</name>
-   <value>32</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>postgeneration.simulation.init_file.param_name</name>
@@ -1040,7 +1064,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>testbench.partner.my_partner.parameter.CAS_LATENCY</name>
-   <value>3</value>
+   <value>2</value>
   </assignment>
   <assignment>
    <name>testbench.partner.my_partner.parameter.CONTR_NAME</name>
@@ -1056,7 +1080,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>testbench.partner.my_partner.parameter.SDRAM_DATA_WIDTH</name>
-   <value>32</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>testbench.partner.my_partner.parameter.SDRAM_NUM_CHIPSELECTS</name>
@@ -1108,7 +1132,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="casLatency">
    <type>int</type>
-   <value>3</value>
+   <value>2</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1124,7 +1148,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataWidth">
    <type>int</type>
-   <value>32</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1180,7 +1204,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="powerUpDelay">
    <type>double</type>
-   <value>100.0</value>
+   <value>200.0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1188,7 +1212,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="refreshPeriod">
    <type>double</type>
-   <value>15.625</value>
+   <value>7.8125</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1236,7 +1260,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="clockRate">
    <type>long</type>
-   <value>50000000</value>
+   <value>100000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1255,7 +1279,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="size">
    <type>long</type>
-   <value>134217728</value>
+   <value>67108864</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1339,7 +1363,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>java.lang.Long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -1437,7 +1461,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>134217728</value>
+    <value>67108864</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -1742,7 +1766,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>az_be_n</name>
     <direction>Input</direction>
-    <width>4</width>
+    <width>2</width>
     <role>byteenable_n</role>
    </port>
    <port>
@@ -1754,7 +1778,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>az_data</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>16</width>
     <role>writedata</role>
    </port>
    <port>
@@ -1772,7 +1796,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>za_data</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>16</width>
     <role>readdata</role>
    </port>
    <port>
@@ -1859,13 +1883,13 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>zs_dq</name>
     <direction>Bidir</direction>
-    <width>32</width>
+    <width>16</width>
     <role>export</role>
    </port>
    <port>
     <name>zs_dqm</name>
     <direction>Output</direction>
-    <width>4</width>
+    <width>2</width>
     <role>export</role>
    </port>
    <port>
@@ -2087,7 +2111,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>Master Interface</displayName>
-  <version>1.1</version>
+  <version>2.0</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
