@@ -1,15 +1,23 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
+preplace inst EmbarcadoVGA.processor.cpu -pg 1
 preplace inst EmbarcadoVGA -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst EmbarcadoVGA.sdram_controller -pg 1 -lvl 3 -y 30
-preplace inst EmbarcadoVGA.master_interface -pg 1 -lvl 2 -y 30
-preplace inst EmbarcadoVGA.clk -pg 1 -lvl 1 -y 110
-preplace netloc EXPORT<net_container>EmbarcadoVGA</net_container>(SLAVE)sdram_controller.wire,(SLAVE)EmbarcadoVGA.sdram) 1 0 3 NJ 100 NJ 160 NJ
-preplace netloc POINT_TO_POINT<net_container>EmbarcadoVGA</net_container>(MASTER)master_interface.avalon,(SLAVE)sdram_controller.s1) 1 2 1 590
-preplace netloc EXPORT<net_container>EmbarcadoVGA</net_container>(SLAVE)EmbarcadoVGA.reset,(SLAVE)clk.clk_in_reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>EmbarcadoVGA</net_container>(SLAVE)master_interface.conduit,(SLAVE)EmbarcadoVGA.master_conduit_1) 1 0 2 NJ 60 NJ
-preplace netloc FAN_OUT<net_container>EmbarcadoVGA</net_container>(SLAVE)master_interface.clock,(MASTER)clk.clk,(SLAVE)sdram_controller.clk) 1 1 2 320 120 NJ
-preplace netloc FAN_OUT<net_container>EmbarcadoVGA</net_container>(SLAVE)sdram_controller.reset,(MASTER)clk.clk_reset,(SLAVE)master_interface.reset) 1 1 2 360 140 NJ
+preplace inst EmbarcadoVGA.key -pg 1 -lvl 3 -y 100
+preplace inst EmbarcadoVGA.processor.clock_bridge -pg 1
+preplace inst EmbarcadoVGA.ram -pg 1 -lvl 3 -y 200
+preplace inst EmbarcadoVGA.processor -pg 1 -lvl 2 -y 100
+preplace inst EmbarcadoVGA.sdram_controller -pg 1 -lvl 3 -y 450
+preplace inst EmbarcadoVGA.processor.reset_bridge -pg 1
+preplace inst EmbarcadoVGA.master_interface -pg 1 -lvl 2 -y 450
+preplace inst EmbarcadoVGA.clk -pg 1 -lvl 1 -y 530
+preplace netloc EXPORT<net_container>EmbarcadoVGA</net_container>(SLAVE)sdram_controller.wire,(SLAVE)EmbarcadoVGA.sdram) 1 0 3 NJ 440 NJ 440 NJ
+preplace netloc EXPORT<net_container>EmbarcadoVGA</net_container>(SLAVE)clk.clk_in_reset,(SLAVE)EmbarcadoVGA.reset) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>EmbarcadoVGA</net_container>(SLAVE)sdram_controller.s1,(MASTER)master_interface.read_master) 1 2 1 730
+preplace netloc FAN_OUT<net_container>EmbarcadoVGA</net_container>(SLAVE)sdram_controller.clk,(SLAVE)master_interface.clock,(SLAVE)ram.clk1,(SLAVE)processor.clk,(SLAVE)key.clk,(MASTER)clk.clk) 1 1 2 310 240 730
+preplace netloc EXPORT<net_container>EmbarcadoVGA</net_container>(SLAVE)key.external_connection,(SLAVE)EmbarcadoVGA.sw_conduit) 1 0 3 NJ 40 NJ 40 NJ
+preplace netloc EXPORT<net_container>EmbarcadoVGA</net_container>(SLAVE)EmbarcadoVGA.master_conduit,(SLAVE)master_interface.conduit) 1 0 2 NJ 480 NJ
 preplace netloc EXPORT<net_container>EmbarcadoVGA</net_container>(SLAVE)EmbarcadoVGA.clk,(SLAVE)clk.clk_in) 1 0 1 NJ
-levelinfo -pg 1 0 110 810
-levelinfo -hier EmbarcadoVGA 120 150 440 690 800
+preplace netloc INTERCONNECT<net_container>EmbarcadoVGA</net_container>(SLAVE)sdram_controller.reset,(SLAVE)master_interface.reset,(MASTER)processor.debug_reset_request,(MASTER)clk.clk_reset,(SLAVE)ram.reset1,(SLAVE)key.reset,(SLAVE)processor.reset) 1 1 2 330 260 770
+preplace netloc INTERCONNECT<net_container>EmbarcadoVGA</net_container>(MASTER)processor.instruction_master,(SLAVE)processor.debug_mem_slave,(SLAVE)ram.s1,(MASTER)processor.data_master,(SLAVE)master_interface.slave,(SLAVE)key.s1) 1 1 2 350 60 790
+levelinfo -pg 1 0 100 1020
+levelinfo -hier EmbarcadoVGA 110 140 490 860 1010

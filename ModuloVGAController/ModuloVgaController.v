@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Sat May 24 15:58:00 2025"
+// CREATED		"Fri May 30 16:37:46 2025"
 
 module ModuloVgaController(
 	CLOCK_50,
@@ -44,7 +44,7 @@ module ModuloVgaController(
 
 
 input wire	CLOCK_50;
-input wire	[0:0] KEY;
+input wire	[2:0] KEY;
 output wire	outRequest;
 output wire	VGA_HS;
 output wire	VGA_VS;
@@ -100,7 +100,7 @@ clkDivider	b2v_inst(
 vgaController	b2v_inst1(
 	.fifo_full(SYNTHESIZED_WIRE_0),
 	.clk25(SYNTHESIZED_WIRE_20),
-	.rstN(KEY),
+	.rstN(KEY[0]),
 	.inBlue(SYNTHESIZED_WIRE_2),
 	.inGreen(SYNTHESIZED_WIRE_3),
 	.inRed(SYNTHESIZED_WIRE_4),
@@ -128,19 +128,20 @@ vgaController	b2v_inst1(
 
 EmbarcadoVGA	b2v_inst2(
 	.clk_clk(SYNTHESIZED_WIRE_21),
-	.master_conduit_1_fifo_full(SYNTHESIZED_WIRE_6),
-	.master_conduit_1_pll_locked(SYNTHESIZED_WIRE_7),
-	.master_conduit_1_fifo_empty(SYNTHESIZED_WIRE_8),
-	.reset_reset_n(KEY),
-	.master_conduit_1_fifo_used(SYNTHESIZED_WIRE_9),
+	.master_conduit_fifo_full(SYNTHESIZED_WIRE_6),
+	.master_conduit_pll_locked(SYNTHESIZED_WIRE_7),
+	.master_conduit_fifo_empty(SYNTHESIZED_WIRE_8),
+	.reset_reset_n(KEY[0]),
+	.master_conduit_fifo_used(SYNTHESIZED_WIRE_9),
 	.sdram_dq(DRAM_DQ),
-	.master_conduit_1_fifo_wr_en(SYNTHESIZED_WIRE_10),
+	.sw_conduit_export(KEY[2:1]),
+	.master_conduit_fifo_wr_en(SYNTHESIZED_WIRE_10),
 	.sdram_cas_n(DRAM_CAS_N),
 	.sdram_cke(DRAM_CKE),
 	.sdram_cs_n(DRAM_CS_N),
 	.sdram_ras_n(DRAM_RAS_N),
 	.sdram_we_n(DRAM_WE_N),
-	.master_conduit_1_exportdata(SYNTHESIZED_WIRE_14),
+	.master_conduit_exportdata(SYNTHESIZED_WIRE_14),
 	.sdram_addr(DRAM_ADDR),
 	.sdram_ba(DRAM_BA),
 	
@@ -163,7 +164,7 @@ fifo_dualClock	b2v_inst3(
 
 fifoToRgbStream	b2v_inst4(
 	.clk(SYNTHESIZED_WIRE_20),
-	.rstN(KEY),
+	.rstN(KEY[0]),
 	.fifo_empty(SYNTHESIZED_WIRE_16),
 	.fifo_full(SYNTHESIZED_WIRE_17),
 	.vga_request(SYNTHESIZED_WIRE_18),

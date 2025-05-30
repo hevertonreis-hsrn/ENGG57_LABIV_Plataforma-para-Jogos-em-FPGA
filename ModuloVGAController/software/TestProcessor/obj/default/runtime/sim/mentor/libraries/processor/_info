@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/software/TestProcessor/obj/default/runtime/sim/mentor
+vEmbarcadoVGA_processor
+!s110 1748634573
+!i10b 1
+!s100 :PH;W`0DekS]9TP^;DE3g2
+IPm>6:43]b1[`YiVadN?hd1
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1748634329
+8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor.v
+FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor.v
+L0 9
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1748634573.000000
+!s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor.v|
+!s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor.v|-work|processor|
+!i113 1
+o-work processor
+tCvgOpt 0
+n@embarcado@v@g@a_processor

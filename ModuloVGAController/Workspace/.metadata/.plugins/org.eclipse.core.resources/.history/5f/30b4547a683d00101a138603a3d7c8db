@@ -1,0 +1,36 @@
+#include <io.h>
+#include <system.h>
+#include <unistd.h>  // usleep
+
+// Registradores internos do master_interface
+#define REG_FRAME_MODE        0  // offset 0
+#define REG_OFFSET_H          4  // offset 4 (em bytes)
+#define FRAME_MODE_COLOR      1  // por exemplo
+
+int main() {
+    int offset = 0;
+    int last_btn = 0;
+
+    // Envia modo inicial de frame
+    IOWR_16DIRECT(MASTER_INTERFACE_BASE, REG_FRAME_MODE, FRAME_MODE_COLOR);
+
+    while (1) {
+        int btns = IORD_16DIRECT(KEY_BASE, 0);
+
+        // Detecta borda de botão pressionado (para evitar repetição)
+        if (btns != last_btn) {
+            if ((btns & 0x01) != 0) {  // botão 0 (esquerda)
+                offset = 111;
+            } else if ((btns & 0x02) != 0) {  // botão 1 (direita)
+                offset = 222;
+            }
+
+            // Atualiza offset no master_interface
+            IOWR_16DIRECT(MASTER_INTERFACE_BASE, REG_OFFSET_H, offset);
+        }
+
+        last_btn = btns;
+    }
+
+    return 0;
+}

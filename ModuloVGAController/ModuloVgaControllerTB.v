@@ -18,10 +18,17 @@ module ModuloVgaControllerTB;
   wire [9:0]  outX, outY;
   wire [7:0]  VGA_R, VGA_G, VGA_B;
 	
+	//test keys
+	reg rightKey = 1, leftKey = 1;
+	reg  [2:0] keys;
+	
+	// aux
+	integer i;
+	
   // Instancia DUT
   ModuloVgaController dut (
     .CLOCK_50(clk50),
-    .KEY(rst_n),
+    .KEY(keys),
     .outRequest(outRequest),
     .VGA_HS(VGA_HS), 
 		.VGA_VS(VGA_VS),
@@ -45,7 +52,7 @@ module ModuloVgaControllerTB;
 		.VGA_R(VGA_R)
   );
 
-  // Instancia modelo SDRAM de simulação
+  // Instancia modelo SDRAM de simulacao
   EmbarcadoVGA_sdram_controller_test_component sdram_sim (
     .clk(sdram_clk),
     .zs_addr(zs_addr), .zs_ba(zs_ba),
@@ -53,11 +60,36 @@ module ModuloVgaControllerTB;
     .zs_dqm(zs_dqm), .zs_ras_n(zs_ras_n), .zs_we_n(zs_we_n),
     .zs_dq(zs_dq)
   );
+	
+	always @* keys = {leftKey, rightKey, rst_n};
+	
+	// TASKS para simular apertos de botoes
+  task press_right_button;
+    begin
+      rightKey = 0; #500;
+      rightKey = 1; #1000;
+    end
+  endtask
 
+  task press_left_button;
+    begin
+      leftKey = 0; #500;
+      leftKey = 1; #1000;
+    end
+  endtask
+	
   initial begin
     // reset
     rst_n = 0; #100;
     rst_n = 1;
+		
+		#400_000; // tempo para o processador executar a primeira escrita no master
+		
+		 // Loop: pressiona alternadamente os botoes
+    for (i = 0; i < 10; i = i + 1) begin
+      press_right_button();
+      press_left_button();
+    end
 
     // simulacao
     #90_000_000;

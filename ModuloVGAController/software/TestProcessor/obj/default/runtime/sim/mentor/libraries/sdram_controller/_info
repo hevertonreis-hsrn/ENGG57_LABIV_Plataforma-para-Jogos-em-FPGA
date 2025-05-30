@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/software/TestProcessor/obj/default/runtime/sim/mentor
+vEmbarcadoVGA_sdram_controller
+Z1 !s110 1748634573
+!i10b 1
+!s100 S9DHm8H7FeCKaXV]^XGAb0
+Ih98IGXkCgdDko3Kia:m8:2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1748634329
+Z4 8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v
+Z5 FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v
+L0 159
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1748634573.000000
+Z8 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v|
+Z9 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v|-work|sdram_controller|
+!i113 1
+Z10 o-work sdram_controller
+Z11 tCvgOpt 0
+n@embarcado@v@g@a_sdram_controller
+vEmbarcadoVGA_sdram_controller_input_efifo_module
+R1
+!i10b 1
+!s100 z^B64Q8BS]o6NEF?U3c8f2
+IP0ZAcl_j1]]QX0UkY]HUj1
+R2
+R0
+R3
+R4
+R5
+Z12 L0 21
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@embarcado@v@g@a_sdram_controller_input_efifo_module
+vEmbarcadoVGA_sdram_controller_test_component
+R1
+!i10b 1
+!s100 Zk19ZaK;W>ZHI]iiZEE1c1
+IeJ:camU5=VPGNn30;X>:41
+R2
+R0
+R3
+Z13 8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v
+Z14 FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v
+L0 114
+R6
+r1
+!s85 0
+31
+R7
+Z15 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v|
+Z16 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v|-work|sdram_controller|
+!i113 1
+R10
+R11
+n@embarcado@v@g@a_sdram_controller_test_component
+vEmbarcadoVGA_sdram_controller_test_component_ram_module
+R1
+!i10b 1
+!s100 EU8Dem_`E2d54NNYA`PO63
+IhC0Se_>S^YU`l[>YBOSKA1
+R2
+R0
+R3
+R13
+R14
+R12
+R6
+r1
+!s85 0
+31
+R7
+R15
+R16
+!i113 1
+R10
+R11
+n@embarcado@v@g@a_sdram_controller_test_component_ram_module
