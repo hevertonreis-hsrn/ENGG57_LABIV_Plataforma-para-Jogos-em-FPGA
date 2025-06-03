@@ -6,18 +6,10 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element ProcessadorCentral
-   {
-      datum _sortIndex
-      {
-         value = "1";
-         type = "int";
-      }
-   }
-   element RAM
+   element ProcessadorCentral_0
    {
       datum _sortIndex
       {
@@ -25,12 +17,54 @@
          type = "int";
       }
    }
-   element ROM
+   element RAM
    {
       datum _sortIndex
       {
          value = "2";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
+   element RAM.s1
+   {
+      datum baseAddress
+      {
+         value = "4096";
+         type = "String";
+      }
+   }
+   element ROM
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element ROM.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element SistemaEmbarcado
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
       }
    }
    element clock
@@ -55,7 +89,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName">ModuloProcessador.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -65,9 +99,9 @@
  <interface name="clk" internal="clock.clk_in" type="clock" dir="end" />
  <interface name="reset" internal="clock.clk_in_reset" type="reset" dir="end" />
  <module
-   name="ProcessadorCentral"
+   name="ProcessadorCentral_0"
    kind="ProcessadorCentral"
-   version="1.0"
+   version="1.1"
    enabled="1" />
  <module
    name="RAM"
@@ -142,8 +176,8 @@
  <connection
    kind="avalon"
    version="18.1"
-   start="ProcessadorCentral.data_master"
-   end="RAM.s1">
+   start="ProcessadorCentral_0.data_master"
+   end="ROM.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -151,7 +185,16 @@
  <connection
    kind="avalon"
    version="18.1"
-   start="ProcessadorCentral.instruction_master"
+   start="ProcessadorCentral_0.data_master"
+   end="RAM.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x1000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="ProcessadorCentral_0.instruction_master"
    end="ROM.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
@@ -163,12 +206,12 @@
    kind="clock"
    version="18.1"
    start="clock.clk"
-   end="ProcessadorCentral.clock" />
+   end="ProcessadorCentral_0.clock" />
  <connection
    kind="reset"
    version="18.1"
    start="clock.clk_reset"
-   end="ProcessadorCentral.reset" />
+   end="ProcessadorCentral_0.reset" />
  <connection kind="reset" version="18.1" start="clock.clk_reset" end="ROM.reset1" />
  <connection kind="reset" version="18.1" start="clock.clk_reset" end="RAM.reset1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />

@@ -87,6 +87,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 1))
 	)
 	(port
+		(pt 0 176)
+		(input)
+		(text "interruption[4..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "interruption[4..0]" (rect 21 171 84 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
 		(pt 256 32)
 		(output)
 		(text "outPC[31..0]" (rect 0 0 48 12)(font "Arial" ))
@@ -114,6 +121,16 @@ refer to the applicable agreement for further details.
 		(text "start_read" (rect 194 75 235 87)(font "Arial" ))
 		(line (pt 256 80)(pt 240 80)(line_width 1))
 	)
+	(parameter
+		"no_interruption"
+		"00000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"control_interruption"
+		"00001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"WAIT_READY"
 		"0"

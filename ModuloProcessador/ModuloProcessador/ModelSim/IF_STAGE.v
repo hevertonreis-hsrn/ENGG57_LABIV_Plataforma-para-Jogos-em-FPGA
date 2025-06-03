@@ -27,20 +27,14 @@ reg [31:0] interruption_addr;
 // PC + 4
 assign pc_plus_4 = actualPC + 32'd4;
 
-parameter no_interruption        = 5'b00000,
-			 reset_interruption     = 5'b00001,
-			 timer_interruption     = 5'b00010,
-			 collision_interruption = 5'b00011,
-			 overlap_interruption   = 5'b01000;
+parameter no_interruption       = 5'b00000,
+          control_interruption  = 5'b00001;
 
 always @(*) begin
 	case (interruption)
-		no_interruption: interruption_addr        = 32'b0;
-		reset_interruption: interruption_addr     = 32'h00000080;
-		timer_interruption: interruption_addr     = 32'h00000800;
-		collision_interruption: interruption_addr = 32'h00800000;
-		overlap_interruption: interruption_addr   = 32'h00000008;
-		default: interruption_addr                = 32'b0;
+		no_interruption: interruption_addr = 32'b0;
+		control_interruption: interruption_addr = 32'h00000080;
+		default: interruption_addr = 32'b0;
 	endcase
 
 	if (interruption) begin
