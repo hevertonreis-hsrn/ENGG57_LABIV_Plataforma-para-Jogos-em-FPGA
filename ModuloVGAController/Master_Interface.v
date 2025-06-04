@@ -5,17 +5,17 @@ module Master_Interface (
   // Avalon Interface
   input  wire        waitrequest,
   input  wire        readdatavalid,
-  input  wire [15:0] readdata,
-	input  wire [15:0] slave_writedata,
+  input  wire [31:0] readdata,
+	input  wire [31:0] slave_writedata,
 	input  wire      	 slave_write,
 	input  wire [7:0 ] slave_address, 
   output reg         read,
   output reg         chipselect,
-  output reg  [1:0 ] byteenable,
+  output reg  [3:0 ] byteenable,
   output reg  [29:0] address,
 	output reg  [4:0 ] burstcount,      // NOVO
 	output reg 				 beginbursttransfer,
-  output reg  [15:0] exportdata,
+  output reg  [31:0] exportdata,
 
   // FIFO (Conduit)
   input  wire        fifo_full,
@@ -44,15 +44,15 @@ module Master_Interface (
   reg [29:0] addr_counter;
   reg        started;
 	reg [4:0 ] burst_word_counter;
-	reg [15:0] data_d;
+	reg [31:0] data_d;
 	reg [15:0] init_counter;
 	
-	reg [15:0] bg_width;
-  reg [15:0] bg_height;
-  reg [15:0] offset_x;
-  reg [15:0] offset_y;
-	reg [15:0] next_offset_x;
-	reg [15:0] next_offset_y;
+	reg [31:0] bg_width;
+  reg [31:0] bg_height;
+  reg [31:0] offset_x;
+  reg [31:0] offset_y;
+	reg [31:0] next_offset_x;
+	reg [31:0] next_offset_y;
   reg        start_config;
 	
 	// Address calculation using visible pixel and offset
@@ -98,8 +98,16 @@ module Master_Interface (
             burst_word_counter <= burst_word_counter + 1;
             if (addr_counter >= TOTAL_PIXELS - 1) begin
 							addr_counter <= 30'd0;
-							offset_x     <= next_offset_x;
-							offset_y     <= next_offset_y;
+							// Overflow and underflow protection 
+							if ((next_offset_x + IMG_WIDTH) >= bg_width)
+									offset_x <= bg_width - IMG_WIDTH;
+							else
+									offset_x <= next_offset_x;
+
+							if ((next_offset_y + IMG_HEIGHT) >= bg_height)
+									offset_y <= bg_height - IMG_HEIGHT;
+							else
+									offset_y <= next_offset_y;
 						end else begin
 							addr_counter <= addr_counter + 1;
 						end
@@ -151,10 +159,11 @@ module Master_Interface (
 		read        			 = 1'b0;
 		chipselect   			 = 1'b0;
 		fifo_wr_en   			 = 1'b0;
-		byteenable   			 = 2'b11;
+		byteenable   			 = 4'b1111;
 		burstcount   			 = BURST_LEN;
-		address      			 = ADDR_SDRAM + (real_bg_index << 1);
+		address      			 = ADDR_SDRAM + (real_bg_index << 2);
 		beginbursttransfer = 0;
+		exportdata         = 31'b0;
 		
 		case (state)
 			IDLE: begin
@@ -168,7 +177,7 @@ module Master_Interface (
 				if (!waitrequest) begin
 					chipselect         = 1'b1;
 					read               = 1'b1;
-					beginbursttransfer = 1'b1;
+					beginbursttransfer = 4'b1;
 				end
 			end
 
@@ -184,30 +193,76 @@ module Master_Interface (
 
 	always @(posedge clk) begin
 		if (!reset_n)
-			data_d <= 16'd0;
+			data_d <= 31'd0;
 		else
 			data_d <= readdata;
 	end
 	
-	// Write Slave Pipeline
-  always @(posedge clk) begin
-    if (!reset_n) begin
-      bg_width      <= 0;
-      bg_height     <= 0;
-			next_offset_x <= 0;
-      next_offset_y <= 0;
-      start_config  <= 0;
-    end else begin
-      if (slave_write) begin
-        case (slave_address)
-          4'h0: bg_width      <= slave_writedata;
-          4'h1: bg_height     <= slave_writedata;
-          4'h2: next_offset_x <= slave_writedata;
-          4'h3: next_offset_y <= slave_writedata;
-          4'h4: start_config  <= slave_writedata[0];
-          default: ;
-        endcase
-      end
-    end
+	
+	// WR Mode
+	// States
+	localparam S_IDLE  = 1'b0;
+	localparam S_WRITE = 1'b1;
+
+	reg state_slave, nstate_slave;
+
+	// FSM - Sequential block
+	always @(posedge clk or negedge reset_n) begin
+		if (!reset_n)
+			state_slave <= S_IDLE;
+		else
+			state_slave <= nstate_slave;
 	end
+
+	// FSM - Combinational block
+	always @* begin
+		nstate_slave = state_slave;
+		case (state_slave)
+			S_IDLE: begin
+				nstate_slave = S_WRITE;
+			end 
+
+			S_WRITE: begin
+				nstate_slave = S_WRITE;
+			end
+
+			default: nstate_slave = S_IDLE;
+		endcase
+	end
+	
+	always @(posedge clk or negedge reset_n) begin
+		if (!reset_n) begin
+			bg_width      <= 0;
+			bg_height     <= 0;
+			next_offset_x <= 0;
+			next_offset_y <= 0;
+			start_config  <= 0;
+		end else begin
+			case (state_slave)
+				S_IDLE: begin
+					bg_width      <= 0;
+					bg_height     <= 0;
+					next_offset_x <= 0;
+					next_offset_y <= 0;
+					start_config  <= 0;
+				end
+
+				S_WRITE: begin
+					if (slave_write) begin
+						case (slave_address)
+							4'h0: bg_width      <= slave_writedata;
+							4'h1: bg_height     <= slave_writedata;
+							4'h2: next_offset_x <= slave_writedata;
+							4'h3: next_offset_y <= slave_writedata;
+							4'h4: start_config  <= slave_writedata[0];
+							default: ;
+						endcase
+					end
+				end
+
+				default: nstate_slave = S_IDLE;
+			endcase
+		end
+	end
+
 endmodule

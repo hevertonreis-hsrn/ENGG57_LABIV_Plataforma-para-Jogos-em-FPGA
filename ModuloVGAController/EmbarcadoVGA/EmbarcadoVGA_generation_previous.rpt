@@ -1,6 +1,6 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA.qsys --block-symbol-file --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA --family="Cyclone IV E" --part=EP4CE115F29C7
-Progress: Loading ModuloVGAController/EmbarcadoVGA.qsys
+Info: qsys-generate C:\Projects\Quartus\ModuloVGAController32b\EmbarcadoVGA.qsys --block-symbol-file --output-directory=C:\Projects\Quartus\ModuloVGAController32b\EmbarcadoVGA --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading ModuloVGAController32b/EmbarcadoVGA.qsys
 Progress: Reading input file
 Progress: Adding clk [clock_source 18.1]
 Progress: Parameterizing module clk
@@ -24,8 +24,8 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA.qsys --synthesis=VERILOG --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
-Progress: Loading ModuloVGAController/EmbarcadoVGA.qsys
+Info: qsys-generate C:\Projects\Quartus\ModuloVGAController32b\EmbarcadoVGA.qsys --synthesis=VERILOG --output-directory=C:\Projects\Quartus\ModuloVGAController32b\EmbarcadoVGA\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading ModuloVGAController32b/EmbarcadoVGA.qsys
 Progress: Reading input file
 Progress: Adding clk [clock_source 18.1]
 Progress: Parameterizing module clk
@@ -50,17 +50,17 @@ Info: Interconnect is inserted between master master_interface.read_master and s
 Info: Interconnect is inserted between master master_interface.read_master and slave sdram_controller.s1 because the master has burstcount signal 5 bit wide, but the slave is 0 bit wide.
 Info: Interconnect is inserted between master master_interface.read_master and slave sdram_controller.s1 because the master has beginbursttransfer signal 1 bit wide, but the slave is 0 bit wide.
 Info: key: Starting RTL generation for module 'EmbarcadoVGA_key'
-Info: key:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=EmbarcadoVGA_key --dir=C:/Users/felip/AppData/Local/Temp/alt0238_3230267233268517192.dir/0041_key_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0238_3230267233268517192.dir/0041_key_gen//EmbarcadoVGA_key_component_configuration.pl  --do_build_sim=0  ]
+Info: key:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=EmbarcadoVGA_key --dir=C:/Users/felip/AppData/Local/Temp/alt0242_751685088368805444.dir/0041_key_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0242_751685088368805444.dir/0041_key_gen//EmbarcadoVGA_key_component_configuration.pl  --do_build_sim=0  ]
 Info: key: Done RTL generation for module 'EmbarcadoVGA_key'
 Info: key: "EmbarcadoVGA" instantiated altera_avalon_pio "key"
 Info: master_interface: "EmbarcadoVGA" instantiated master_interface "master_interface"
 Info: processor: "EmbarcadoVGA" instantiated altera_nios2_gen2 "processor"
 Info: ram: Starting RTL generation for module 'EmbarcadoVGA_ram'
-Info: ram:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=EmbarcadoVGA_ram --dir=C:/Users/felip/AppData/Local/Temp/alt0238_3230267233268517192.dir/0043_ram_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0238_3230267233268517192.dir/0043_ram_gen//EmbarcadoVGA_ram_component_configuration.pl  --do_build_sim=0  ]
+Info: ram:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=EmbarcadoVGA_ram --dir=C:/Users/felip/AppData/Local/Temp/alt0242_751685088368805444.dir/0043_ram_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0242_751685088368805444.dir/0043_ram_gen//EmbarcadoVGA_ram_component_configuration.pl  --do_build_sim=0  ]
 Info: ram: Done RTL generation for module 'EmbarcadoVGA_ram'
 Info: ram: "EmbarcadoVGA" instantiated altera_avalon_onchip_memory2 "ram"
 Info: sdram_controller: Starting RTL generation for module 'EmbarcadoVGA_sdram_controller'
-Info: sdram_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0238_3230267233268517192.dir/0044_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0238_3230267233268517192.dir/0044_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=EmbarcadoVGA_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0242_751685088368805444.dir/0044_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0242_751685088368805444.dir/0044_sdram_controller_gen//EmbarcadoVGA_sdram_controller_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram_controller: Done RTL generation for module 'EmbarcadoVGA_sdram_controller'
 Info: sdram_controller: "EmbarcadoVGA" instantiated altera_avalon_new_sdram_controller "sdram_controller"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -73,19 +73,19 @@ Info: mm_interconnect_1: "EmbarcadoVGA" instantiated altera_mm_interconnect "mm_
 Info: irq_mapper: "EmbarcadoVGA" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "EmbarcadoVGA" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'EmbarcadoVGA_processor_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=EmbarcadoVGA_processor_cpu --dir=C:/Users/felip/AppData/Local/Temp/alt0238_3230267233268517192.dir/0047_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0238_3230267233268517192.dir/0047_cpu_gen//EmbarcadoVGA_processor_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2025.05.30 16:35:38 (*) Starting Nios II generation
-Info: cpu: # 2025.05.30 16:35:38 (*)   Checking for plaintext license.
-Info: cpu: # 2025.05.30 16:35:38 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2025.05.30 16:35:38 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2025.05.30 16:35:38 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2025.05.30 16:35:38 (*)   Plaintext license not found.
-Info: cpu: # 2025.05.30 16:35:38 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2025.05.30 16:35:38 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2025.05.30 16:35:38 (*)   Creating all objects for CPU
-Info: cpu: # 2025.05.30 16:35:39 (*)   Generating RTL from CPU objects
-Info: cpu: # 2025.05.30 16:35:39 (*)   Creating plain-text RTL
-Info: cpu: # 2025.05.30 16:35:40 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=EmbarcadoVGA_processor_cpu --dir=C:/Users/felip/AppData/Local/Temp/alt0242_751685088368805444.dir/0047_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0242_751685088368805444.dir/0047_cpu_gen//EmbarcadoVGA_processor_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2025.06.03 17:44:03 (*) Starting Nios II generation
+Info: cpu: # 2025.06.03 17:44:03 (*)   Checking for plaintext license.
+Info: cpu: # 2025.06.03 17:44:04 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2025.06.03 17:44:04 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2025.06.03 17:44:04 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2025.06.03 17:44:04 (*)   Plaintext license not found.
+Info: cpu: # 2025.06.03 17:44:04 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2025.06.03 17:44:04 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2025.06.03 17:44:04 (*)   Creating all objects for CPU
+Info: cpu: # 2025.06.03 17:44:05 (*)   Generating RTL from CPU objects
+Info: cpu: # 2025.06.03 17:44:05 (*)   Creating plain-text RTL
+Info: cpu: # 2025.06.03 17:44:05 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'EmbarcadoVGA_processor_cpu'
 Info: cpu: "processor" instantiated altera_nios2_gen2_unit "cpu"
 Info: processor_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "processor_data_master_translator"
@@ -97,32 +97,26 @@ Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
-Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
-Info: master_interface_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "master_interface_slave_burst_adapter"
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Projects/Quartus/ModuloVGAController32b/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Projects/Quartus/ModuloVGAController32b/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: master_interface_slave_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "master_interface_slave_rsp_width_adapter"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file C:/Projects/Quartus/ModuloVGAController32b/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
-Info: avalon_st_adapter_003: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_003"
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
+Info: sdram_controller_s1_burst_adapter: "mm_interconnect_1" instantiated altera_merlin_burst_adapter "sdram_controller_s1_burst_adapter"
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Projects/Quartus/ModuloVGAController32b/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Projects/Quartus/ModuloVGAController32b/EmbarcadoVGA/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: error_adapter_0: "avalon_st_adapter_003" instantiated error_adapter "error_adapter_0"
-Info: EmbarcadoVGA: Done "EmbarcadoVGA" with 39 modules, 62 files
+Info: EmbarcadoVGA: Done "EmbarcadoVGA" with 35 modules, 58 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

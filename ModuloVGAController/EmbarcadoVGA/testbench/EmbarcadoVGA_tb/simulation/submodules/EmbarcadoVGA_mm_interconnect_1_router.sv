@@ -49,14 +49,14 @@ module EmbarcadoVGA_mm_interconnect_1_router_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 0 
    )
-  (output [71 - 71 : 0] default_destination_id,
+  (output [90 - 90 : 0] default_destination_id,
    output [1-1 : 0] default_wr_channel,
    output [1-1 : 0] default_rd_channel,
    output [1-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[71 - 71 : 0];
+    DEFAULT_DESTID[90 - 90 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
@@ -93,7 +93,7 @@ module EmbarcadoVGA_mm_interconnect_1_router
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [85-1 : 0]    sink_data,
+    input  [104-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,7 +102,7 @@ module EmbarcadoVGA_mm_interconnect_1_router
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [85-1    : 0] src_data,
+    output reg [104-1    : 0] src_data,
     output reg [1-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
@@ -112,18 +112,18 @@ module EmbarcadoVGA_mm_interconnect_1_router
     // -------------------------------------------------------
     // Local parameters and variables
     // -------------------------------------------------------
-    localparam PKT_ADDR_H = 47;
-    localparam PKT_ADDR_L = 18;
-    localparam PKT_DEST_ID_H = 71;
-    localparam PKT_DEST_ID_L = 71;
-    localparam PKT_PROTECTION_H = 75;
-    localparam PKT_PROTECTION_L = 73;
-    localparam ST_DATA_W = 85;
+    localparam PKT_ADDR_H = 65;
+    localparam PKT_ADDR_L = 36;
+    localparam PKT_DEST_ID_H = 90;
+    localparam PKT_DEST_ID_L = 90;
+    localparam PKT_PROTECTION_H = 94;
+    localparam PKT_PROTECTION_L = 92;
+    localparam ST_DATA_W = 104;
     localparam ST_CHANNEL_W = 1;
     localparam DECODER_TYPE = 0;
 
-    localparam PKT_TRANS_WRITE = 50;
-    localparam PKT_TRANS_READ  = 51;
+    localparam PKT_TRANS_WRITE = 68;
+    localparam PKT_TRANS_READ  = 69;
 
     localparam PKT_ADDR_W = PKT_ADDR_H-PKT_ADDR_L + 1;
     localparam PKT_DEST_ID_W = PKT_DEST_ID_H-PKT_DEST_ID_L + 1;
@@ -134,13 +134,13 @@ module EmbarcadoVGA_mm_interconnect_1_router
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h4000000 - 64'h0); 
+    localparam PAD0 = log2ceil(64'h8000000 - 64'h0); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h4000000;
+    localparam ADDR_RANGE = 64'h8000000;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -184,7 +184,7 @@ module EmbarcadoVGA_mm_interconnect_1_router
         // --------------------------------------------------
            
          
-          // ( 0 .. 4000000 )
+          // ( 0 .. 8000000 )
           src_channel = 1'b1;
           src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
 	     

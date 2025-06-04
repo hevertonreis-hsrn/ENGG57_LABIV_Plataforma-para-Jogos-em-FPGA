@@ -109,7 +109,7 @@
   <parameter name="ENABLE_RESET" value="true" />
   <parameter name="SIGNAL_DIRECTIONS">input,output,output,output,input,output</parameter>
   <parameter name="SIGNAL_ROLES">exportdata,fifo_empty,fifo_full,fifo_used,fifo_wr_en,pll_locked</parameter>
-  <parameter name="SIGNAL_WIDTHS" value="16,1,1,9,1,1" />
+  <parameter name="SIGNAL_WIDTHS" value="32,1,1,9,1,1" />
  </module>
  <module
    name="EmbarcadoVGA_inst_reset_bfm"
@@ -128,7 +128,7 @@
   <parameter name="ENABLE_RESET" value="false" />
   <parameter name="SIGNAL_DIRECTIONS" value="output" />
   <parameter name="SIGNAL_ROLES" value="export" />
-  <parameter name="SIGNAL_WIDTHS" value="2" />
+  <parameter name="SIGNAL_WIDTHS" value="4" />
  </module>
  <module
    name="sdram_controller_my_partner"
@@ -137,11 +137,11 @@
    enabled="1">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
-  <parameter name="CAS_LATENCY" value="2" />
+  <parameter name="CAS_LATENCY" value="3" />
   <parameter name="CONTR_NAME">EmbarcadoVGA_sdram_controller</parameter>
   <parameter name="SDRAM_BANK_WIDTH" value="2" />
   <parameter name="SDRAM_COL_WIDTH" value="10" />
-  <parameter name="SDRAM_DATA_WIDTH" value="16" />
+  <parameter name="SDRAM_DATA_WIDTH" value="32" />
   <parameter name="SDRAM_NUM_CHIPSELECTS" value="1" />
   <parameter name="SDRAM_ROW_WIDTH" value="13" />
  </module>

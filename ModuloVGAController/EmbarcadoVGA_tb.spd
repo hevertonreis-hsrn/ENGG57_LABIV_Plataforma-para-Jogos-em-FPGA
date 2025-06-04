@@ -6,10 +6,6 @@
    library="altera_common_sv_packages"
    systemVerilogPackageName="avalon_vip_verbosity_pkg" />
  <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter_003_error_adapter_0.sv"
-   type="SYSTEM_VERILOG"
-   library="error_adapter_0" />
- <file
    path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv"
    type="SYSTEM_VERILOG"
    library="error_adapter_0" />
@@ -34,6 +30,46 @@
    type="SYSTEM_VERILOG"
    library="cmd_demux" />
  <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter.sv"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_13_1.sv"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_new.sv"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_incr_burst_converter.sv"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_wrap_burst_converter.sv"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_default_burst_converter.sv"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_address_alignment.sv"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_stage.sv"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
+   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_base.v"
+   type="SYSTEM_VERILOG"
+   library="sdram_controller_s1_burst_adapter" />
+ <file
    path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_1_router_001.sv"
    type="SYSTEM_VERILOG"
    library="router_001" />
@@ -42,25 +78,9 @@
    type="SYSTEM_VERILOG"
    library="router" />
  <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter_003.v"
-   type="VERILOG"
-   library="avalon_st_adapter_003" />
- <file
    path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter.v"
    type="VERILOG"
    library="avalon_st_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_width_adapter.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_rsp_width_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_address_alignment.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_rsp_width_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_rsp_width_adapter" />
  <file
    path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_rsp_mux_001.sv"
    type="SYSTEM_VERILOG"
@@ -105,50 +125,6 @@
    path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_cmd_demux.sv"
    type="SYSTEM_VERILOG"
    library="cmd_demux" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_13_1.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_new.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_incr_burst_converter.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_wrap_burst_converter.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_default_burst_converter.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_address_alignment.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_stage.sv"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_base.v"
-   type="SYSTEM_VERILOG"
-   library="master_interface_slave_burst_adapter" />
- <file
-   path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router_005.sv"
-   type="SYSTEM_VERILOG"
-   library="router_005" />
  <file
    path="EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router_003.sv"
    type="SYSTEM_VERILOG"

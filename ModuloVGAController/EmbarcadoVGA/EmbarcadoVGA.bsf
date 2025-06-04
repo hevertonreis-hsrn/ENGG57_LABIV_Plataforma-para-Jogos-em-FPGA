@@ -68,8 +68,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 440)
 		(input)
-		(text "sw_conduit_export[1..0]" (rect 0 0 93 12)(font "Arial" (font_size 8)))
-		(text "sw_conduit_export[1..0]" (rect 4 429 142 440)(font "Arial" (font_size 8)))
+		(text "sw_conduit_export[3..0]" (rect 0 0 94 12)(font "Arial" (font_size 8)))
+		(text "sw_conduit_export[3..0]" (rect 4 429 142 440)(font "Arial" (font_size 8)))
 		(line (pt 0 440)(pt 176 440)(line_width 3))
 	)
 	(port
@@ -82,8 +82,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 144)
 		(output)
-		(text "master_conduit_exportdata[15..0]" (rect 0 0 132 12)(font "Arial" (font_size 8)))
-		(text "master_conduit_exportdata[15..0]" (rect 4 133 196 144)(font "Arial" (font_size 8)))
+		(text "master_conduit_exportdata[31..0]" (rect 0 0 132 12)(font "Arial" (font_size 8)))
+		(text "master_conduit_exportdata[31..0]" (rect 4 133 196 144)(font "Arial" (font_size 8)))
 		(line (pt 0 144)(pt 176 144)(line_width 3))
 	)
 	(port
@@ -124,8 +124,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 368)
 		(output)
-		(text "sdram_dqm[1..0]" (rect 0 0 68 12)(font "Arial" (font_size 8)))
-		(text "sdram_dqm[1..0]" (rect 4 357 94 368)(font "Arial" (font_size 8)))
+		(text "sdram_dqm[3..0]" (rect 0 0 69 12)(font "Arial" (font_size 8)))
+		(text "sdram_dqm[3..0]" (rect 4 357 94 368)(font "Arial" (font_size 8)))
 		(line (pt 0 368)(pt 176 368)(line_width 3))
 	)
 	(port
@@ -145,8 +145,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 352)
 		(bidir)
-		(text "sdram_dq[15..0]" (rect 0 0 64 12)(font "Arial" (font_size 8)))
-		(text "sdram_dq[15..0]" (rect 4 341 94 352)(font "Arial" (font_size 8)))
+		(text "sdram_dq[31..0]" (rect 0 0 64 12)(font "Arial" (font_size 8)))
+		(text "sdram_dq[31..0]" (rect 4 341 94 352)(font "Arial" (font_size 8)))
 		(line (pt 0 352)(pt 176 352)(line_width 3))
 	)
 	(drawing

@@ -14,11 +14,12 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Fri May 30 16:37:46 2025"
+// CREATED		"Tue Jun 03 20:39:50 2025"
 
 module ModuloVgaController(
 	CLOCK_50,
 	KEY,
+	SW,
 	outRequest,
 	VGA_HS,
 	VGA_VS,
@@ -44,7 +45,8 @@ module ModuloVgaController(
 
 
 input wire	CLOCK_50;
-input wire	[2:0] KEY;
+input wire	[3:0] KEY;
+input wire	[0:0] SW;
 output wire	outRequest;
 output wire	VGA_HS;
 output wire	VGA_VS;
@@ -59,8 +61,8 @@ output wire	DRAM_WE_N;
 output wire	DRAM_CLK;
 output wire	[12:0] DRAM_ADDR;
 output wire	[1:0] DRAM_BA;
-inout wire	[15:0] DRAM_DQ;
-output wire	[1:0] DRAM_DQM;
+inout wire	[31:0] DRAM_DQ;
+output wire	[3:0] DRAM_DQM;
 output wire	[9:0] outX;
 output wire	[9:0] outY;
 output wire	[7:0] VGA_B;
@@ -79,11 +81,11 @@ wire	SYNTHESIZED_WIRE_8;
 wire	[8:0] SYNTHESIZED_WIRE_9;
 wire	SYNTHESIZED_WIRE_10;
 wire	SYNTHESIZED_WIRE_12;
-wire	[15:0] SYNTHESIZED_WIRE_14;
+wire	[31:0] SYNTHESIZED_WIRE_14;
 wire	SYNTHESIZED_WIRE_16;
 wire	SYNTHESIZED_WIRE_17;
 wire	SYNTHESIZED_WIRE_18;
-wire	[15:0] SYNTHESIZED_WIRE_19;
+wire	[31:0] SYNTHESIZED_WIRE_19;
 
 
 
@@ -100,7 +102,7 @@ clkDivider	b2v_inst(
 vgaController	b2v_inst1(
 	.fifo_full(SYNTHESIZED_WIRE_0),
 	.clk25(SYNTHESIZED_WIRE_20),
-	.rstN(KEY[0]),
+	.rstN(SW),
 	.inBlue(SYNTHESIZED_WIRE_2),
 	.inGreen(SYNTHESIZED_WIRE_3),
 	.inRed(SYNTHESIZED_WIRE_4),
@@ -131,10 +133,10 @@ EmbarcadoVGA	b2v_inst2(
 	.master_conduit_fifo_full(SYNTHESIZED_WIRE_6),
 	.master_conduit_pll_locked(SYNTHESIZED_WIRE_7),
 	.master_conduit_fifo_empty(SYNTHESIZED_WIRE_8),
-	.reset_reset_n(KEY[0]),
+	.reset_reset_n(SW),
 	.master_conduit_fifo_used(SYNTHESIZED_WIRE_9),
 	.sdram_dq(DRAM_DQ),
-	.sw_conduit_export(KEY[2:1]),
+	.sw_conduit_export(KEY),
 	.master_conduit_fifo_wr_en(SYNTHESIZED_WIRE_10),
 	.sdram_cas_n(DRAM_CAS_N),
 	.sdram_cke(DRAM_CKE),
@@ -164,7 +166,7 @@ fifo_dualClock	b2v_inst3(
 
 fifoToRgbStream	b2v_inst4(
 	.clk(SYNTHESIZED_WIRE_20),
-	.rstN(KEY[0]),
+	.rstN(SW),
 	.fifo_empty(SYNTHESIZED_WIRE_16),
 	.fifo_full(SYNTHESIZED_WIRE_17),
 	.vga_request(SYNTHESIZED_WIRE_18),

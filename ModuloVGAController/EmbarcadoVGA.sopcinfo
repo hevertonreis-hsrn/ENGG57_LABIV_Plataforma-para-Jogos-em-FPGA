@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="EmbarcadoVGA" kind="EmbarcadoVGA" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2025.05.30.16:45:46 -->
+ <!-- 2025.06.03.20:38:39 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1748634346</value>
+  <value>1748993919</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -440,7 +440,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_WIDTH</name>
-   <value>2</value>
+   <value>4</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DO_TEST_BENCH_WIRING</name>
@@ -492,7 +492,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,gpio-bank-width</name>
-   <value>2</value>
+   <value>4</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.resetvalue</name>
@@ -584,7 +584,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width">
    <type>int</type>
-   <value>2</value>
+   <value>4</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1174,7 +1174,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>in_port</name>
     <direction>Input</direction>
-    <width>2</width>
+    <width>4</width>
     <role>export</role>
    </port>
   </interface>
@@ -1345,7 +1345,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>exportdata</name>
     <direction>Output</direction>
-    <width>16</width>
+    <width>32</width>
     <role>exportdata</role>
    </port>
    <port>
@@ -1644,7 +1644,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>readdata</name>
     <direction>Input</direction>
-    <width>16</width>
+    <width>32</width>
     <role>readdata</role>
    </port>
    <port>
@@ -1662,7 +1662,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>byteenable</name>
     <direction>Output</direction>
-    <width>2</width>
+    <width>4</width>
     <role>byteenable</role>
    </port>
    <port>
@@ -1689,7 +1689,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>sdram_controller.s1</name>
     <baseAddress>0</baseAddress>
-    <span>67108864</span>
+    <span>134217728</span>
    </memoryBlock>
   </interface>
   <interface name="slave" kind="avalon_slave" version="18.1">
@@ -1730,7 +1730,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>512</value>
+    <value>1024</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -2029,7 +2029,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>slave_writedata</name>
     <direction>Input</direction>
-    <width>16</width>
+    <width>32</width>
     <role>writedata</role>
    </port>
    <port>
@@ -3661,7 +3661,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='master_interface.slave' start='0x0' end='0x200' type='master_interface.slave' /><slave name='ram.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='processor.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='key.s1' start='0x5000' end='0x5010' type='altera_avalon_pio.s1' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='ram.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='processor.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='master_interface.slave' start='0x5000' end='0x5400' type='master_interface.slave' /><slave name='key.s1' start='0x5400' end='0x5410' type='altera_avalon_pio.s1' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4340,7 +4340,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>key</moduleName>
     <slaveName>s1</slaveName>
     <name>key.s1</name>
-    <baseAddress>20480</baseAddress>
+    <baseAddress>21504</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4356,8 +4356,8 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>master_interface</moduleName>
     <slaveName>slave</slaveName>
     <name>master_interface.slave</name>
-    <baseAddress>0</baseAddress>
-    <span>512</span>
+    <baseAddress>20480</baseAddress>
+    <span>1024</span>
    </memoryBlock>
   </interface>
   <interface name="instruction_master" kind="avalon_master" version="18.1">
@@ -6134,7 +6134,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <assignment>
    <name>embeddedsw.CMacro.CAS_LATENCY</name>
-   <value>2</value>
+   <value>3</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CONTENTS_INFO</name>
@@ -6178,7 +6178,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SDRAM_DATA_WIDTH</name>
-   <value>16</value>
+   <value>32</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SDRAM_NUM_BANKS</name>
@@ -6242,7 +6242,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.memoryInfo.MEM_INIT_DATA_WIDTH</name>
-   <value>16</value>
+   <value>32</value>
   </assignment>
   <assignment>
    <name>postgeneration.simulation.init_file.param_name</name>
@@ -6270,7 +6270,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>testbench.partner.my_partner.parameter.CAS_LATENCY</name>
-   <value>2</value>
+   <value>3</value>
   </assignment>
   <assignment>
    <name>testbench.partner.my_partner.parameter.CONTR_NAME</name>
@@ -6286,7 +6286,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>testbench.partner.my_partner.parameter.SDRAM_DATA_WIDTH</name>
-   <value>16</value>
+   <value>32</value>
   </assignment>
   <assignment>
    <name>testbench.partner.my_partner.parameter.SDRAM_NUM_CHIPSELECTS</name>
@@ -6338,7 +6338,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="casLatency">
    <type>int</type>
-   <value>2</value>
+   <value>3</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6354,7 +6354,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataWidth">
    <type>int</type>
-   <value>16</value>
+   <value>32</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6485,7 +6485,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="size">
    <type>long</type>
-   <value>67108864</value>
+   <value>134217728</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -6667,7 +6667,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>67108864</value>
+    <value>134217728</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -6972,7 +6972,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>az_be_n</name>
     <direction>Input</direction>
-    <width>2</width>
+    <width>4</width>
     <role>byteenable_n</role>
    </port>
    <port>
@@ -6984,7 +6984,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>az_data</name>
     <direction>Input</direction>
-    <width>16</width>
+    <width>32</width>
     <role>writedata</role>
    </port>
    <port>
@@ -7002,7 +7002,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>za_data</name>
     <direction>Output</direction>
-    <width>16</width>
+    <width>32</width>
     <role>readdata</role>
    </port>
    <port>
@@ -7089,13 +7089,13 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>zs_dq</name>
     <direction>Bidir</direction>
-    <width>16</width>
+    <width>32</width>
     <role>export</role>
    </port>
    <port>
     <name>zs_dqm</name>
     <direction>Output</direction>
-    <width>2</width>
+    <width>4</width>
     <role>export</role>
    </port>
    <port>
@@ -7179,7 +7179,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x5000</value>
+   <value>0x5400</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -7281,7 +7281,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0000</value>
+   <value>0x5000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

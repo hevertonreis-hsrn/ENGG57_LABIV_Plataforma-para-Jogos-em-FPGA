@@ -7,7 +7,7 @@ module EmbarcadoVGA (
 		input  wire        clk_clk,                   //            clk.clk
 		input  wire        master_conduit_fifo_full,  // master_conduit.fifo_full
 		output wire        master_conduit_fifo_wr_en, //               .fifo_wr_en
-		output wire [15:0] master_conduit_exportdata, //               .exportdata
+		output wire [31:0] master_conduit_exportdata, //               .exportdata
 		input  wire        master_conduit_pll_locked, //               .pll_locked
 		input  wire [8:0]  master_conduit_fifo_used,  //               .fifo_used
 		input  wire        master_conduit_fifo_empty, //               .fifo_empty
@@ -17,11 +17,11 @@ module EmbarcadoVGA (
 		output wire        sdram_cas_n,               //               .cas_n
 		output wire        sdram_cke,                 //               .cke
 		output wire        sdram_cs_n,                //               .cs_n
-		inout  wire [15:0] sdram_dq,                  //               .dq
-		output wire [1:0]  sdram_dqm,                 //               .dqm
+		inout  wire [31:0] sdram_dq,                  //               .dq
+		output wire [3:0]  sdram_dqm,                 //               .dqm
 		output wire        sdram_ras_n,               //               .ras_n
 		output wire        sdram_we_n,                //               .we_n
-		input  wire [1:0]  sw_conduit_export          //     sw_conduit.export
+		input  wire [3:0]  sw_conduit_export          //     sw_conduit.export
 	);
 
 	wire  [31:0] processor_data_master_readdata;                          // mm_interconnect_0:processor_data_master_readdata -> processor:d_readdata
@@ -55,25 +55,25 @@ module EmbarcadoVGA (
 	wire         mm_interconnect_0_ram_s1_clken;                          // mm_interconnect_0:ram_s1_clken -> ram:clken
 	wire   [7:0] mm_interconnect_0_master_interface_slave_address;        // mm_interconnect_0:master_interface_slave_address -> master_interface:slave_address
 	wire         mm_interconnect_0_master_interface_slave_write;          // mm_interconnect_0:master_interface_slave_write -> master_interface:slave_write
-	wire  [15:0] mm_interconnect_0_master_interface_slave_writedata;      // mm_interconnect_0:master_interface_slave_writedata -> master_interface:slave_writedata
+	wire  [31:0] mm_interconnect_0_master_interface_slave_writedata;      // mm_interconnect_0:master_interface_slave_writedata -> master_interface:slave_writedata
 	wire         master_interface_read_master_chipselect;                 // master_interface:chipselect -> mm_interconnect_1:master_interface_read_master_chipselect
 	wire         master_interface_read_master_beginbursttransfer;         // master_interface:beginbursttransfer -> mm_interconnect_1:master_interface_read_master_beginbursttransfer
 	wire         master_interface_read_master_waitrequest;                // mm_interconnect_1:master_interface_read_master_waitrequest -> master_interface:waitrequest
-	wire  [15:0] master_interface_read_master_readdata;                   // mm_interconnect_1:master_interface_read_master_readdata -> master_interface:readdata
+	wire  [31:0] master_interface_read_master_readdata;                   // mm_interconnect_1:master_interface_read_master_readdata -> master_interface:readdata
 	wire         master_interface_read_master_read;                       // master_interface:read -> mm_interconnect_1:master_interface_read_master_read
-	wire   [1:0] master_interface_read_master_byteenable;                 // master_interface:byteenable -> mm_interconnect_1:master_interface_read_master_byteenable
+	wire   [3:0] master_interface_read_master_byteenable;                 // master_interface:byteenable -> mm_interconnect_1:master_interface_read_master_byteenable
 	wire  [29:0] master_interface_read_master_address;                    // master_interface:address -> mm_interconnect_1:master_interface_read_master_address
 	wire         master_interface_read_master_readdatavalid;              // mm_interconnect_1:master_interface_read_master_readdatavalid -> master_interface:readdatavalid
 	wire   [4:0] master_interface_read_master_burstcount;                 // master_interface:burstcount -> mm_interconnect_1:master_interface_read_master_burstcount
 	wire         mm_interconnect_1_sdram_controller_s1_chipselect;        // mm_interconnect_1:sdram_controller_s1_chipselect -> sdram_controller:az_cs
-	wire  [15:0] mm_interconnect_1_sdram_controller_s1_readdata;          // sdram_controller:za_data -> mm_interconnect_1:sdram_controller_s1_readdata
+	wire  [31:0] mm_interconnect_1_sdram_controller_s1_readdata;          // sdram_controller:za_data -> mm_interconnect_1:sdram_controller_s1_readdata
 	wire         mm_interconnect_1_sdram_controller_s1_waitrequest;       // sdram_controller:za_waitrequest -> mm_interconnect_1:sdram_controller_s1_waitrequest
 	wire  [24:0] mm_interconnect_1_sdram_controller_s1_address;           // mm_interconnect_1:sdram_controller_s1_address -> sdram_controller:az_addr
 	wire         mm_interconnect_1_sdram_controller_s1_read;              // mm_interconnect_1:sdram_controller_s1_read -> sdram_controller:az_rd_n
-	wire   [1:0] mm_interconnect_1_sdram_controller_s1_byteenable;        // mm_interconnect_1:sdram_controller_s1_byteenable -> sdram_controller:az_be_n
+	wire   [3:0] mm_interconnect_1_sdram_controller_s1_byteenable;        // mm_interconnect_1:sdram_controller_s1_byteenable -> sdram_controller:az_be_n
 	wire         mm_interconnect_1_sdram_controller_s1_readdatavalid;     // sdram_controller:za_valid -> mm_interconnect_1:sdram_controller_s1_readdatavalid
 	wire         mm_interconnect_1_sdram_controller_s1_write;             // mm_interconnect_1:sdram_controller_s1_write -> sdram_controller:az_wr_n
-	wire  [15:0] mm_interconnect_1_sdram_controller_s1_writedata;         // mm_interconnect_1:sdram_controller_s1_writedata -> sdram_controller:az_data
+	wire  [31:0] mm_interconnect_1_sdram_controller_s1_writedata;         // mm_interconnect_1:sdram_controller_s1_writedata -> sdram_controller:az_data
 	wire  [31:0] processor_irq_irq;                                       // irq_mapper:sender_irq -> processor:irq
 	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [key:reset_n, master_interface:reset_n, mm_interconnect_0:key_reset_reset_bridge_in_reset_reset, mm_interconnect_1:master_interface_reset_reset_bridge_in_reset_reset, sdram_controller:reset_n]
 	wire         rst_controller_001_reset_out_reset;                      // rst_controller_001:reset_out -> [irq_mapper:reset, mm_interconnect_0:processor_reset_reset_bridge_in_reset_reset, processor:reset_n, ram:reset]

@@ -3,7 +3,7 @@
 			clk_clk                   : in    std_logic                     := 'X';             -- clk
 			master_conduit_fifo_full  : in    std_logic                     := 'X';             -- fifo_full
 			master_conduit_fifo_wr_en : out   std_logic;                                        -- fifo_wr_en
-			master_conduit_exportdata : out   std_logic_vector(15 downto 0);                    -- exportdata
+			master_conduit_exportdata : out   std_logic_vector(31 downto 0);                    -- exportdata
 			master_conduit_pll_locked : in    std_logic                     := 'X';             -- pll_locked
 			master_conduit_fifo_used  : in    std_logic_vector(8 downto 0)  := (others => 'X'); -- fifo_used
 			master_conduit_fifo_empty : in    std_logic                     := 'X';             -- fifo_empty
@@ -13,11 +13,11 @@
 			sdram_cas_n               : out   std_logic;                                        -- cas_n
 			sdram_cke                 : out   std_logic;                                        -- cke
 			sdram_cs_n                : out   std_logic;                                        -- cs_n
-			sdram_dq                  : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
-			sdram_dqm                 : out   std_logic_vector(1 downto 0);                     -- dqm
+			sdram_dq                  : inout std_logic_vector(31 downto 0) := (others => 'X'); -- dq
+			sdram_dqm                 : out   std_logic_vector(3 downto 0);                     -- dqm
 			sdram_ras_n               : out   std_logic;                                        -- ras_n
 			sdram_we_n                : out   std_logic;                                        -- we_n
-			sw_conduit_export         : in    std_logic_vector(1 downto 0)  := (others => 'X')  -- export
+			sw_conduit_export         : in    std_logic_vector(3 downto 0)  := (others => 'X')  -- export
 		);
 	end component EmbarcadoVGA;
 

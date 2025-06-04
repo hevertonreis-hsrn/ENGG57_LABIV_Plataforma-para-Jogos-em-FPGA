@@ -4,7 +4,7 @@
  * Machine generated for CPU 'processor' in SOPC Builder design 'EmbarcadoVGA'
  * SOPC Builder design path: ../../EmbarcadoVGA.sopcinfo
  *
- * Generated: Fri May 30 10:33:02 BRT 2025
+ * Generated: Tue Jun 03 20:44:14 BRT 2025
  */
 
 /*
@@ -185,11 +185,11 @@
  */
 
 #define ALT_MODULE_CLASS_key altera_avalon_pio
-#define KEY_BASE 0x5000
+#define KEY_BASE 0x5400
 #define KEY_BIT_CLEARING_EDGE_REGISTER 0
 #define KEY_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define KEY_CAPTURE 0
-#define KEY_DATA_WIDTH 2
+#define KEY_DATA_WIDTH 4
 #define KEY_DO_TEST_BENCH_WIRING 0
 #define KEY_DRIVEN_SIM_VALUE 0
 #define KEY_EDGE_TYPE "NONE"
@@ -212,11 +212,11 @@
  */
 
 #define ALT_MODULE_CLASS_master_interface master_interface
-#define MASTER_INTERFACE_BASE 0x0
+#define MASTER_INTERFACE_BASE 0x5000
 #define MASTER_INTERFACE_IRQ -1
 #define MASTER_INTERFACE_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define MASTER_INTERFACE_NAME "/dev/master_interface"
-#define MASTER_INTERFACE_SPAN 512
+#define MASTER_INTERFACE_SPAN 1024
 #define MASTER_INTERFACE_TYPE "master_interface"
 
 

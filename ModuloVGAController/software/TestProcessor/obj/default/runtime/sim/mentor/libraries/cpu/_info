@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/software/TestProcessor/obj/default/runtime/sim/mentor
 vEmbarcadoVGA_processor_cpu
-Z1 !s110 1748634573
+Z1 !s110 1748877239
 !i10b 1
 !s100 UAo_PC^QGJd6=^z]=Nhg=1
 I64=;gomd1MEMe9N4Y4EEz3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1748634338
+Z3 w1748834183
 Z4 8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu.v
 Z5 FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu.v
 L0 2834
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1748634572.000000
+Z7 !s108 1748877239.000000
 Z8 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu.v|
 Z9 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu.v|-work|cpu|
 !i113 1
@@ -45,7 +45,7 @@ R6
 r1
 !s85 0
 31
-Z13 !s108 1748634573.000000
+R7
 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_debug_slave_sysclk.v|
 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_debug_slave_sysclk.v|-work|cpu|
 !i113 1
@@ -67,7 +67,7 @@ R6
 r1
 !s85 0
 31
-R13
+R7
 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_debug_slave_tck.v|
 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_debug_slave_tck.v|-work|cpu|
 !i113 1
@@ -89,7 +89,7 @@ R6
 r1
 !s85 0
 31
-R13
+R7
 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_debug_slave_wrapper.v|
 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_debug_slave_wrapper.v|-work|cpu|
 !i113 1
@@ -97,7 +97,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_debug_slave_wrapper
 vEmbarcadoVGA_processor_cpu_nios2_avalon_reg
-Z14 !s110 1748634572
+R1
 !i10b 1
 !s100 bO4h37e3H]:bZcoYKK4TZ3
 IGZmL3M@fW[hB_4?AQanK?1
@@ -119,7 +119,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_avalon_reg
 vEmbarcadoVGA_processor_cpu_nios2_oci
-R14
+R1
 !i10b 1
 !s100 ]4cl4gZXGga5TRAJL<zfo0
 I4Yn40=iWkR7L:JLb5lHd?2
@@ -141,7 +141,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci
 vEmbarcadoVGA_processor_cpu_nios2_oci_break
-R14
+R1
 !i10b 1
 !s100 XBKKSo__kjzgYlkb99;;F3
 IG^z3_GPHJXPaM;Oc:M=4;1
@@ -163,7 +163,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_break
 vEmbarcadoVGA_processor_cpu_nios2_oci_compute_input_tm_cnt
-R14
+R1
 !i10b 1
 !s100 NO4NFzD8P1G8FOV[fZeAR3
 IKHcRD1B1OJ6_9CHR9ibN70
@@ -185,7 +185,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_compute_input_tm_cnt
 vEmbarcadoVGA_processor_cpu_nios2_oci_dbrk
-R14
+R1
 !i10b 1
 !s100 =`=Hh9da>M5WH^lm;0oTP0
 Ib3ge2XhDYO6ckdSM?=?6@2
@@ -207,7 +207,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_dbrk
 vEmbarcadoVGA_processor_cpu_nios2_oci_debug
-R14
+R1
 !i10b 1
 !s100 DcIk[2<`>E6;XhX9J]8do2
 IY]oLA>3a_62CAVVPJ`LUC3
@@ -229,7 +229,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_debug
 vEmbarcadoVGA_processor_cpu_nios2_oci_dtrace
-R14
+R1
 !i10b 1
 !s100 bW;`VfKOLTiIP@KZGlNhV2
 IgXoNQ5n0Ag<Hi:bggTG[J3
@@ -251,7 +251,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_dtrace
 vEmbarcadoVGA_processor_cpu_nios2_oci_fifo
-R14
+R1
 !i10b 1
 !s100 LhaV<dR@J2JVJWo1^fib;1
 IT_>7@KQd`HhjNkoI1ncl`1
@@ -273,7 +273,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_fifo
 vEmbarcadoVGA_processor_cpu_nios2_oci_fifo_cnt_inc
-R14
+R1
 !i10b 1
 !s100 VKT0ob:ONIJKoC3GzTZjk2
 IaGY`b]El?VG=1hik=BjZ82
@@ -295,7 +295,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_fifo_cnt_inc
 vEmbarcadoVGA_processor_cpu_nios2_oci_fifo_wrptr_inc
-R14
+R1
 !i10b 1
 !s100 ;cgK6W0S<H>T4c0zI_AZP3
 IL?l2<5>kc_nS?gOE_B>aX3
@@ -317,7 +317,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_fifo_wrptr_inc
 vEmbarcadoVGA_processor_cpu_nios2_oci_im
-R14
+R1
 !i10b 1
 !s100 iJB=]EDa5VP16IjVl7[4:2
 Ioad>k0<]W[_=90j0J]HKV1
@@ -339,7 +339,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_im
 vEmbarcadoVGA_processor_cpu_nios2_oci_itrace
-R14
+R1
 !i10b 1
 !s100 cRamhl>0dz53C`iOe<_880
 IYEc`lzW8D@GPGnJaAi:MS2
@@ -361,7 +361,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_itrace
 vEmbarcadoVGA_processor_cpu_nios2_oci_pib
-R14
+R1
 !i10b 1
 !s100 2m5joEUBDDiR8>BHB7>j?0
 IlPoBIoGI;o28IB<3J5nKQ0
@@ -383,7 +383,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_pib
 vEmbarcadoVGA_processor_cpu_nios2_oci_td_mode
-R14
+R1
 !i10b 1
 !s100 h2bBHNm@ilMNez_aYgWPJ3
 Ik;]K?cdVCN0RGc4hJk`3=1
@@ -405,7 +405,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_td_mode
 vEmbarcadoVGA_processor_cpu_nios2_oci_xbrk
-R14
+R1
 !i10b 1
 !s100 jT:kfU8oiGj^RG89lRM?Y0
 I;V38]Mzd=]aelD]<6^PJN2
@@ -427,7 +427,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_oci_xbrk
 vEmbarcadoVGA_processor_cpu_nios2_ocimem
-R14
+R1
 !i10b 1
 !s100 J1[O>;]XX]5<4jRnS@ahV0
 IfYR5YR1Vmh:OY?EIMY8Vd0
@@ -449,7 +449,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_ocimem
 vEmbarcadoVGA_processor_cpu_nios2_performance_monitors
-R14
+R1
 !i10b 1
 !s100 mW_UZhMZH0>z>HEVNgWhA1
 Ignbkb@f6B9e26O]zl6hC^2
@@ -471,7 +471,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_nios2_performance_monitors
 vEmbarcadoVGA_processor_cpu_ociram_sp_ram_module
-R14
+R1
 !i10b 1
 !s100 ^ZB?[PRlEK5c;41hBJ4nC2
 IZ5m>Qg1d[HGgVdV?Z24h>1
@@ -493,7 +493,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_ociram_sp_ram_module
 vEmbarcadoVGA_processor_cpu_register_bank_a_module
-R14
+R1
 !i10b 1
 !s100 D3j4_aE8Za@n[[OZW@V5H2
 IU;CZR0cc:>ZKfjVj5nYhg3
@@ -515,7 +515,7 @@ R10
 R11
 n@embarcado@v@g@a_processor_cpu_register_bank_a_module
 vEmbarcadoVGA_processor_cpu_register_bank_b_module
-R14
+R1
 !i10b 1
 !s100 kfzJm;ZK8X0INS3SjiCoB3
 I;`LT<7N^`Z<QH3VhgRaED1
@@ -551,7 +551,7 @@ R6
 r1
 !s85 0
 31
-R13
+R7
 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_test_bench.v|
 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_test_bench.v|-work|cpu|
 !i113 1

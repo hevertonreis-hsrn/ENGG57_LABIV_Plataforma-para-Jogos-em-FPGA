@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 30, 2025 4:49:01 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1748634541269</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\software\TestProcessor_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Jun 3, 2025 10:21:38 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1749000098449</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Projects\Quartus\ModuloVGAController32b\software\TestProcessor_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\EmbarcadoVGA.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
@@ -875,20 +875,20 @@
                 <Group>none</Group>
         </Setting>
         <MemoryMap>
-                <slaveDescriptor>master_interface</slaveDescriptor>
-                <addressRange>0x00000000 - 0x000001FF</addressRange>
-                <addressSpan>512</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>ram</slaveDescriptor>
                 <addressRange>0x00002000 - 0x00003FFF</addressRange>
                 <addressSpan>8192</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>master_interface</slaveDescriptor>
+                <addressRange>0x00005000 - 0x000053FF</addressRange>
+                <addressSpan>1024</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>key</slaveDescriptor>
-                <addressRange>0x00005000 - 0x0000500F</addressRange>
+                <addressRange>0x00005400 - 0x0000540F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>

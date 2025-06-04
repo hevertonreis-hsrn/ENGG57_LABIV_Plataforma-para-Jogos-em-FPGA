@@ -22,7 +22,7 @@ module EmbarcadoVGA (
 	input		clk_clk;
 	input		master_conduit_fifo_full;
 	output		master_conduit_fifo_wr_en;
-	output	[15:0]	master_conduit_exportdata;
+	output	[31:0]	master_conduit_exportdata;
 	input		master_conduit_pll_locked;
 	input	[8:0]	master_conduit_fifo_used;
 	input		master_conduit_fifo_empty;
@@ -32,9 +32,9 @@ module EmbarcadoVGA (
 	output		sdram_cas_n;
 	output		sdram_cke;
 	output		sdram_cs_n;
-	inout	[15:0]	sdram_dq;
-	output	[1:0]	sdram_dqm;
+	inout	[31:0]	sdram_dq;
+	output	[3:0]	sdram_dqm;
 	output		sdram_ras_n;
 	output		sdram_we_n;
-	input	[1:0]	sw_conduit_export;
+	input	[3:0]	sw_conduit_export;
 endmodule

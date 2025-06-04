@@ -83,13 +83,16 @@ module ModuloVgaControllerTB;
     rst_n = 0; #100;
     rst_n = 1;
 		
-		#400_000; // tempo para o processador executar a primeira escrita no master
+		#700_000; // tempo para o processador executar a primeira escrita no master
 		
-		 // Loop: pressiona alternadamente os botoes
-    for (i = 0; i < 10; i = i + 1) begin
-      press_right_button();
-      press_left_button();
-    end
+//		 // Loop: pressiona alternadamente os botoes
+//    for (i = 0; i < 10; i = i + 1) begin
+//      press_right_button();
+//      //press_left_button();
+//    end
+
+		rightKey = 0; #2500;
+		rightKey = 1;
 
     // simulacao
     #90_000_000;
