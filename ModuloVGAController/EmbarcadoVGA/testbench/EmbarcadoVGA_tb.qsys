@@ -25,7 +25,7 @@
          type = "int";
       }
    }
-   element EmbarcadoVGA_inst_master_conduit_1_bfm
+   element EmbarcadoVGA_inst_master_conduit_bfm
    {
       datum _sortIndex
       {
@@ -41,11 +41,19 @@
          type = "int";
       }
    }
-   element sdram_controller_my_partner
+   element EmbarcadoVGA_inst_sw_conduit_bfm
    {
       datum _sortIndex
       {
          value = "4";
+         type = "int";
+      }
+   }
+   element sdram_controller_my_partner
+   {
+      datum _sortIndex
+      {
+         value = "5";
          type = "int";
       }
    }
@@ -93,7 +101,7 @@
   <parameter name="CLOCK_UNIT" value="1" />
  </module>
  <module
-   name="EmbarcadoVGA_inst_master_conduit_1_bfm"
+   name="EmbarcadoVGA_inst_master_conduit_bfm"
    kind="altera_conduit_bfm"
    version="18.1"
    enabled="1">
@@ -101,7 +109,7 @@
   <parameter name="ENABLE_RESET" value="true" />
   <parameter name="SIGNAL_DIRECTIONS">input,output,output,output,input,output</parameter>
   <parameter name="SIGNAL_ROLES">exportdata,fifo_empty,fifo_full,fifo_used,fifo_wr_en,pll_locked</parameter>
-  <parameter name="SIGNAL_WIDTHS" value="16,1,1,9,1,1" />
+  <parameter name="SIGNAL_WIDTHS" value="32,1,1,9,1,1" />
  </module>
  <module
    name="EmbarcadoVGA_inst_reset_bfm"
@@ -112,17 +120,28 @@
   <parameter name="INITIAL_RESET_CYCLES" value="50" />
  </module>
  <module
+   name="EmbarcadoVGA_inst_sw_conduit_bfm"
+   kind="altera_conduit_bfm"
+   version="18.1"
+   enabled="1">
+  <parameter name="CLOCKED_SIGNAL" value="false" />
+  <parameter name="ENABLE_RESET" value="false" />
+  <parameter name="SIGNAL_DIRECTIONS" value="output" />
+  <parameter name="SIGNAL_ROLES" value="export" />
+  <parameter name="SIGNAL_WIDTHS" value="4" />
+ </module>
+ <module
    name="sdram_controller_my_partner"
    kind="altera_sdram_partner_module"
    version="11.0"
    enabled="1">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
-  <parameter name="CAS_LATENCY" value="2" />
+  <parameter name="CAS_LATENCY" value="3" />
   <parameter name="CONTR_NAME">EmbarcadoVGA_sdram_controller</parameter>
   <parameter name="SDRAM_BANK_WIDTH" value="2" />
   <parameter name="SDRAM_COL_WIDTH" value="10" />
-  <parameter name="SDRAM_DATA_WIDTH" value="16" />
+  <parameter name="SDRAM_DATA_WIDTH" value="32" />
   <parameter name="SDRAM_NUM_CHIPSELECTS" value="1" />
   <parameter name="SDRAM_ROW_WIDTH" value="13" />
  </module>
@@ -140,7 +159,7 @@
    kind="clock"
    version="18.1"
    start="EmbarcadoVGA_inst_clk_bfm.clk"
-   end="EmbarcadoVGA_inst_master_conduit_1_bfm.clk" />
+   end="EmbarcadoVGA_inst_master_conduit_bfm.clk" />
  <connection
    kind="clock"
    version="18.1"
@@ -149,8 +168,8 @@
  <connection
    kind="conduit"
    version="18.1"
-   start="EmbarcadoVGA_inst_master_conduit_1_bfm.conduit"
-   end="EmbarcadoVGA_inst.master_conduit_1">
+   start="EmbarcadoVGA_inst_master_conduit_bfm.conduit"
+   end="EmbarcadoVGA_inst.master_conduit">
   <parameter name="endPort" value="" />
   <parameter name="endPortLSB" value="0" />
   <parameter name="startPort" value="" />
@@ -169,6 +188,17 @@
   <parameter name="width" value="0" />
  </connection>
  <connection
+   kind="conduit"
+   version="18.1"
+   start="EmbarcadoVGA_inst_sw_conduit_bfm.conduit"
+   end="EmbarcadoVGA_inst.sw_conduit">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
    kind="reset"
    version="18.1"
    start="EmbarcadoVGA_inst_reset_bfm.reset"
@@ -177,7 +207,7 @@
    kind="reset"
    version="18.1"
    start="EmbarcadoVGA_inst_reset_bfm.reset"
-   end="EmbarcadoVGA_inst_master_conduit_1_bfm.reset" />
+   end="EmbarcadoVGA_inst_master_conduit_bfm.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

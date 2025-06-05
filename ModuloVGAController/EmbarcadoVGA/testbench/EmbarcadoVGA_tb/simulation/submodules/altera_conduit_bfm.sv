@@ -28,7 +28,7 @@
 // This BFM's HDL is been generated through terp file in Qsys/SOPC Builder.
 // Generation parameters:
 // output_name:                                       altera_conduit_bfm
-// role:width:direction:                              exportdata:16:input,fifo_empty:1:output,fifo_full:1:output,fifo_used:9:output,fifo_wr_en:1:input,pll_locked:1:output
+// role:width:direction:                              exportdata:32:input,fifo_empty:1:output,fifo_full:1:output,fifo_used:9:output,fifo_wr_en:1:input,pll_locked:1:output
 // 1
 //-----------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
@@ -53,7 +53,7 @@ module altera_conduit_bfm
    input clk;
    input reset;
    input reset_n;
-   input [15 : 0] sig_exportdata;
+   input [31 : 0] sig_exportdata;
    output sig_fifo_empty;
    output sig_fifo_full;
    output [8 : 0] sig_fifo_used;
@@ -63,15 +63,15 @@ module altera_conduit_bfm
    // synthesis translate_off
    import verbosity_pkg::*;
    
-   typedef logic [15 : 0] ROLE_exportdata_t;
+   typedef logic [31 : 0] ROLE_exportdata_t;
    typedef logic ROLE_fifo_empty_t;
    typedef logic ROLE_fifo_full_t;
    typedef logic [8 : 0] ROLE_fifo_used_t;
    typedef logic ROLE_fifo_wr_en_t;
    typedef logic ROLE_pll_locked_t;
 
-   logic [15 : 0] sig_exportdata_in;
-   logic [15 : 0] sig_exportdata_local;
+   logic [31 : 0] sig_exportdata_in;
+   logic [31 : 0] sig_exportdata_local;
    reg sig_fifo_empty_temp;
    reg sig_fifo_empty_out;
    reg sig_fifo_full_temp;

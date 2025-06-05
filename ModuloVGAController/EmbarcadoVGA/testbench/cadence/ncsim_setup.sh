@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.05.25.22:55:06
+# ACDS 18.1 625 win32 2025.06.03.20:38:10
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -106,7 +106,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.05.25.22:55:06
+# ACDS 18.1 625 win32 2025.06.03.20:38:10
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="EmbarcadoVGA_tb"
@@ -148,25 +148,38 @@ fi
 mkdir -p ./libraries/work/
 mkdir -p ./libraries/altera_common_sv_packages/
 mkdir -p ./libraries/error_adapter_0/
-mkdir -p ./libraries/avalon_st_adapter/
 mkdir -p ./libraries/rsp_mux/
 mkdir -p ./libraries/cmd_mux/
 mkdir -p ./libraries/cmd_demux/
 mkdir -p ./libraries/sdram_controller_s1_burst_adapter/
 mkdir -p ./libraries/router_001/
 mkdir -p ./libraries/router/
-mkdir -p ./libraries/sdram_controller_s1_agent_rsp_fifo/
-mkdir -p ./libraries/sdram_controller_s1_agent/
-mkdir -p ./libraries/master_interface_avalon_agent/
-mkdir -p ./libraries/sdram_controller_s1_translator/
-mkdir -p ./libraries/master_interface_avalon_translator/
+mkdir -p ./libraries/avalon_st_adapter/
+mkdir -p ./libraries/rsp_mux_001/
+mkdir -p ./libraries/rsp_demux_001/
+mkdir -p ./libraries/cmd_mux_001/
+mkdir -p ./libraries/cmd_demux_001/
+mkdir -p ./libraries/router_003/
+mkdir -p ./libraries/router_002/
+mkdir -p ./libraries/processor_debug_mem_slave_agent_rsp_fifo/
+mkdir -p ./libraries/processor_debug_mem_slave_agent/
+mkdir -p ./libraries/processor_data_master_agent/
+mkdir -p ./libraries/processor_debug_mem_slave_translator/
+mkdir -p ./libraries/processor_data_master_translator/
+mkdir -p ./libraries/cpu/
 mkdir -p ./libraries/rst_controller/
+mkdir -p ./libraries/irq_mapper/
+mkdir -p ./libraries/mm_interconnect_1/
 mkdir -p ./libraries/mm_interconnect_0/
 mkdir -p ./libraries/sdram_controller/
+mkdir -p ./libraries/ram/
+mkdir -p ./libraries/processor/
 mkdir -p ./libraries/master_interface/
+mkdir -p ./libraries/key/
 mkdir -p ./libraries/sdram_controller_my_partner/
+mkdir -p ./libraries/EmbarcadoVGA_inst_sw_conduit_bfm/
 mkdir -p ./libraries/EmbarcadoVGA_inst_reset_bfm/
-mkdir -p ./libraries/EmbarcadoVGA_inst_master_conduit_1_bfm/
+mkdir -p ./libraries/EmbarcadoVGA_inst_master_conduit_bfm/
 mkdir -p ./libraries/EmbarcadoVGA_inst_clk_bfm/
 mkdir -p ./libraries/EmbarcadoVGA_inst/
 mkdir -p ./libraries/altera_ver/
@@ -178,6 +191,18 @@ mkdir -p ./libraries/cycloneive_ver/
 
 # ----------------------------------------
 # copy RAM/ROM files to simulation directory
+if [ $SKIP_FILE_COPY -eq 0 ]; then
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_ociram_default_contents.dat ./
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_ociram_default_contents.hex ./
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_ociram_default_contents.mif ./
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_rf_ram_a.dat ./
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_rf_ram_a.hex ./
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_rf_ram_a.mif ./
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_rf_ram_b.dat ./
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_rf_ram_b.hex ./
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_rf_ram_b.mif ./
+  cp -f $QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_ram.hex ./
+fi
 
 # ----------------------------------------
 # compile device library files
@@ -193,44 +218,70 @@ fi
 # ----------------------------------------
 # compile design files in correct order
 if [ $SKIP_COM -eq 0 ]; then
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv"                                                    -work altera_common_sv_packages              -cdslib ./cds_libs/altera_common_sv_packages.cds.lib             
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -work error_adapter_0                        -cdslib ./cds_libs/error_adapter_0.cds.lib                       
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter.v"                  -work avalon_st_adapter                      -cdslib ./cds_libs/avalon_st_adapter.cds.lib                     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                                -cdslib ./cds_libs/rsp_mux.cds.lib                               
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                         -work rsp_mux                                -cdslib ./cds_libs/rsp_mux.cds.lib                               
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_cmd_mux.sv"                           -work cmd_mux                                -cdslib ./cds_libs/cmd_mux.cds.lib                               
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                         -work cmd_mux                                -cdslib ./cds_libs/cmd_mux.cds.lib                               
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_cmd_demux.sv"                         -work cmd_demux                              -cdslib ./cds_libs/cmd_demux.cds.lib                             
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter.sv"                                      -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv"                               -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_13_1.sv"                                 -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_new.sv"                                  -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_incr_burst_converter.sv"                                      -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_wrap_burst_converter.sv"                                      -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_default_burst_converter.sv"                                   -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_address_alignment.sv"                                  -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_stage.sv"                                  -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_base.v"                                    -work sdram_controller_s1_burst_adapter      -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib     
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router_001.sv"                        -work router_001                             -cdslib ./cds_libs/router_001.cds.lib                            
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router.sv"                            -work router                                 -cdslib ./cds_libs/router.cds.lib                                
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                             -work sdram_controller_s1_agent_rsp_fifo     -cdslib ./cds_libs/sdram_controller_s1_agent_rsp_fifo.cds.lib    
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                        -work sdram_controller_s1_agent              -cdslib ./cds_libs/sdram_controller_s1_agent.cds.lib             
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                 -work sdram_controller_s1_agent              -cdslib ./cds_libs/sdram_controller_s1_agent.cds.lib             
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_agent.sv"                                       -work master_interface_avalon_agent          -cdslib ./cds_libs/master_interface_avalon_agent.cds.lib         
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_translator.sv"                                   -work sdram_controller_s1_translator         -cdslib ./cds_libs/sdram_controller_s1_translator.cds.lib        
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_translator.sv"                                  -work master_interface_avalon_translator     -cdslib ./cds_libs/master_interface_avalon_translator.cds.lib    
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v"                                           -work rst_controller                         -cdslib ./cds_libs/rst_controller.cds.lib                        
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v"                                         -work rst_controller                         -cdslib ./cds_libs/rst_controller.cds.lib                        
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0.v"                                    -work mm_interconnect_0                      -cdslib ./cds_libs/mm_interconnect_0.cds.lib                     
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v"                                     -work sdram_controller                       -cdslib ./cds_libs/sdram_controller.cds.lib                      
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v"                      -work sdram_controller                       -cdslib ./cds_libs/sdram_controller.cds.lib                      
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/Master_Interface.v"                                                  -work master_interface                       -cdslib ./cds_libs/master_interface.cds.lib                      
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v"                                       -work sdram_controller_my_partner            -cdslib ./cds_libs/sdram_controller_my_partner.cds.lib           
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_reset_source.sv"                                       -work EmbarcadoVGA_inst_reset_bfm            -cdslib ./cds_libs/EmbarcadoVGA_inst_reset_bfm.cds.lib           
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_conduit_bfm.sv"                                               -work EmbarcadoVGA_inst_master_conduit_1_bfm -cdslib ./cds_libs/EmbarcadoVGA_inst_master_conduit_1_bfm.cds.lib
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_clock_source.sv"                                       -work EmbarcadoVGA_inst_clk_bfm              -cdslib ./cds_libs/EmbarcadoVGA_inst_clk_bfm.cds.lib             
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA.v"                                                      -work EmbarcadoVGA_inst                      -cdslib ./cds_libs/EmbarcadoVGA_inst.cds.lib                     
-  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/EmbarcadoVGA_tb.v"                                                                                                                                                                            
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/verbosity_pkg.sv"                                                    -work altera_common_sv_packages                -cdslib ./cds_libs/altera_common_sv_packages.cds.lib               
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -work error_adapter_0                          -cdslib ./cds_libs/error_adapter_0.cds.lib                         
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_1_rsp_mux.sv"                           -work rsp_mux                                  -cdslib ./cds_libs/rsp_mux.cds.lib                                 
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                         -work rsp_mux                                  -cdslib ./cds_libs/rsp_mux.cds.lib                                 
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_1_cmd_mux.sv"                           -work cmd_mux                                  -cdslib ./cds_libs/cmd_mux.cds.lib                                 
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                         -work cmd_mux                                  -cdslib ./cds_libs/cmd_mux.cds.lib                                 
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_1_cmd_demux.sv"                         -work cmd_demux                                -cdslib ./cds_libs/cmd_demux.cds.lib                               
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter.sv"                                      -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv"                               -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_13_1.sv"                                 -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_adapter_new.sv"                                  -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_incr_burst_converter.sv"                                      -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_wrap_burst_converter.sv"                                      -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_default_burst_converter.sv"                                   -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_address_alignment.sv"                                  -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_stage.sv"                                  -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_st_pipeline_base.v"                                    -work sdram_controller_s1_burst_adapter        -cdslib ./cds_libs/sdram_controller_s1_burst_adapter.cds.lib       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_1_router_001.sv"                        -work router_001                               -cdslib ./cds_libs/router_001.cds.lib                              
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_1_router.sv"                            -work router                                   -cdslib ./cds_libs/router.cds.lib                                  
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_avalon_st_adapter.v"                  -work avalon_st_adapter                        -cdslib ./cds_libs/avalon_st_adapter.cds.lib                       
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_rsp_mux_001.sv"                       -work rsp_mux_001                              -cdslib ./cds_libs/rsp_mux_001.cds.lib                             
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                         -work rsp_mux_001                              -cdslib ./cds_libs/rsp_mux_001.cds.lib                             
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                                  -cdslib ./cds_libs/rsp_mux.cds.lib                                 
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                         -work rsp_mux                                  -cdslib ./cds_libs/rsp_mux.cds.lib                                 
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_rsp_demux_001.sv"                     -work rsp_demux_001                            -cdslib ./cds_libs/rsp_demux_001.cds.lib                           
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_cmd_mux_001.sv"                       -work cmd_mux_001                              -cdslib ./cds_libs/cmd_mux_001.cds.lib                             
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                         -work cmd_mux_001                              -cdslib ./cds_libs/cmd_mux_001.cds.lib                             
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_cmd_mux.sv"                           -work cmd_mux                                  -cdslib ./cds_libs/cmd_mux.cds.lib                                 
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                         -work cmd_mux                                  -cdslib ./cds_libs/cmd_mux.cds.lib                                 
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_cmd_demux_001.sv"                     -work cmd_demux_001                            -cdslib ./cds_libs/cmd_demux_001.cds.lib                           
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_cmd_demux.sv"                         -work cmd_demux                                -cdslib ./cds_libs/cmd_demux.cds.lib                               
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router_003.sv"                        -work router_003                               -cdslib ./cds_libs/router_003.cds.lib                              
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router_002.sv"                        -work router_002                               -cdslib ./cds_libs/router_002.cds.lib                              
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router_001.sv"                        -work router_001                               -cdslib ./cds_libs/router_001.cds.lib                              
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0_router.sv"                            -work router                                   -cdslib ./cds_libs/router.cds.lib                                  
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                             -work processor_debug_mem_slave_agent_rsp_fifo -cdslib ./cds_libs/processor_debug_mem_slave_agent_rsp_fifo.cds.lib
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                        -work processor_debug_mem_slave_agent          -cdslib ./cds_libs/processor_debug_mem_slave_agent.cds.lib         
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                 -work processor_debug_mem_slave_agent          -cdslib ./cds_libs/processor_debug_mem_slave_agent.cds.lib         
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_agent.sv"                                       -work processor_data_master_agent              -cdslib ./cds_libs/processor_data_master_agent.cds.lib             
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_slave_translator.sv"                                   -work processor_debug_mem_slave_translator     -cdslib ./cds_libs/processor_debug_mem_slave_translator.cds.lib    
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_merlin_master_translator.sv"                                  -work processor_data_master_translator         -cdslib ./cds_libs/processor_data_master_translator.cds.lib        
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu.v"                                        -work cpu                                      -cdslib ./cds_libs/cpu.cds.lib                                     
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_debug_slave_sysclk.v"                     -work cpu                                      -cdslib ./cds_libs/cpu.cds.lib                                     
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_debug_slave_tck.v"                        -work cpu                                      -cdslib ./cds_libs/cpu.cds.lib                                     
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_debug_slave_wrapper.v"                    -work cpu                                      -cdslib ./cds_libs/cpu.cds.lib                                     
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor_cpu_test_bench.v"                             -work cpu                                      -cdslib ./cds_libs/cpu.cds.lib                                     
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_controller.v"                                           -work rst_controller                           -cdslib ./cds_libs/rst_controller.cds.lib                          
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_reset_synchronizer.v"                                         -work rst_controller                           -cdslib ./cds_libs/rst_controller.cds.lib                          
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_irq_mapper.sv"                                          -work irq_mapper                               -cdslib ./cds_libs/irq_mapper.cds.lib                              
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_1.v"                                    -work mm_interconnect_1                        -cdslib ./cds_libs/mm_interconnect_1.cds.lib                       
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_mm_interconnect_0.v"                                    -work mm_interconnect_0                        -cdslib ./cds_libs/mm_interconnect_0.cds.lib                       
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller.v"                                     -work sdram_controller                         -cdslib ./cds_libs/sdram_controller.cds.lib                        
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_sdram_controller_test_component.v"                      -work sdram_controller                         -cdslib ./cds_libs/sdram_controller.cds.lib                        
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_ram.v"                                                  -work ram                                      -cdslib ./cds_libs/ram.cds.lib                                     
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_processor.v"                                            -work processor                                -cdslib ./cds_libs/processor.cds.lib                               
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/Master_Interface.v"                                                  -work master_interface                         -cdslib ./cds_libs/master_interface.cds.lib                        
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA_key.v"                                                  -work key                                      -cdslib ./cds_libs/key.cds.lib                                     
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_sdram_partner_module.v"                                       -work sdram_controller_my_partner              -cdslib ./cds_libs/sdram_controller_my_partner.cds.lib             
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_conduit_bfm_0002.sv"                                          -work EmbarcadoVGA_inst_sw_conduit_bfm         -cdslib ./cds_libs/EmbarcadoVGA_inst_sw_conduit_bfm.cds.lib        
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_reset_source.sv"                                       -work EmbarcadoVGA_inst_reset_bfm              -cdslib ./cds_libs/EmbarcadoVGA_inst_reset_bfm.cds.lib             
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_conduit_bfm.sv"                                               -work EmbarcadoVGA_inst_master_conduit_bfm     -cdslib ./cds_libs/EmbarcadoVGA_inst_master_conduit_bfm.cds.lib    
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/altera_avalon_clock_source.sv"                                       -work EmbarcadoVGA_inst_clk_bfm                -cdslib ./cds_libs/EmbarcadoVGA_inst_clk_bfm.cds.lib               
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/submodules/EmbarcadoVGA.v"                                                      -work EmbarcadoVGA_inst                        -cdslib ./cds_libs/EmbarcadoVGA_inst.cds.lib                       
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/EmbarcadoVGA_tb/simulation/EmbarcadoVGA_tb.v"                                                                                                                                                                                
 fi
 
 # ----------------------------------------

@@ -9,7 +9,7 @@
 # # generated the IP script, relative to the directory from which you launch
 # # the simulator.
 # #
-set QSYS_SIMDIR C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/testeFelipe23-05/ModuloVGAController/EmbarcadoVGA/testbench
+set QSYS_SIMDIR C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench
 cd $QSYS_SIMDIR
 # #
 # # Source the generated IP simulation script.

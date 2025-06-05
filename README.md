@@ -3,7 +3,7 @@
 Este projeto utiliza simulações via ModelSim (Mentor Graphics).  
 Para que a simulação funcione corretamente, **você precisa ajustar o caminho da variável `QSYS_SIMDIR` no arquivo `mentor.do`**.
 
-O arquivo se encontra em: "CAMINHO DO USUARIO"\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA\testbench\mentor
+O arquivo se encontra em: "CAMINHO DO USUARIO"\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\ModuloVGAController\EmbarcadoVGA\simulation_nios2
 
 Você encontrará uma linha parecida com esta:
 
@@ -15,7 +15,12 @@ Altere para:
 set QSYS_SIMDIR "CAMINHO DO USUARIO"/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/
 ```
 
-No ModelSim, basta executar:
+Para a simulação, deve-se copiar o mento.do e os demais arquivos contidos em simulation_nios2 para: `“...ModuloVGAController\software\TestProcessor\obj\default\runtime\sim\mentor”`
+
+Após a copia dos arquivos, execute no nios2 dentro do Workspace do ModuloVGAController: `Run -> Run as -> Nios II ModelSim` **(apenas aparece se TestProcessor estiver selecionado em Project Explorer)**.
+
+No ModelSim, execute:
+
 ```tcl
-do "CAMINHO DO USUARIO"/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/ModuloVGAController/EmbarcadoVGA/testbench/mentor/mentor.do
+do mentor.do
 ```

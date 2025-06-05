@@ -2,7 +2,7 @@ module fifoToRgbStream (
   input clk,
   input rstN,
   
-  input [15:0] fifo_data,
+  input [31:0] fifo_data,
   input        fifo_empty,
 	input				 fifo_full,
 	output wire  w_fifo_full,					
@@ -12,19 +12,18 @@ module fifoToRgbStream (
   output reg [7:0] outRed, outGreen, outBlue
 );
 
-	wire [4:0] red16   = fifo_data[15:11];
-	wire [5:0] green16 = fifo_data[10:5];
-	wire [4:0] blue16  = fifo_data[4:0];
+//	wire [4:0] red16   = fifo_data[15:11];
+//	wire [5:0] green16 = fifo_data[10:5];
+//	wire [4:0] blue16  = fifo_data[4:0];
 	
 	assign w_fifo_full = fifo_full;
 	
 	
 	always @(*) begin
-	// Replicar os MSBs nos LSBs melhora a fidelidade ao expandir de 5/6 para 8 bits.
-	outRed   = {red16, red16[4:2]};     // 5 → 8 bits
-	outGreen = {green16, green16[5:4]}; // 6 → 8 bits
-	outBlue  = {blue16, blue16[4:2]};   // 5 → 8 bits
-end
+		outRed   = fifo_data[23:16];
+		outGreen = fifo_data[15:8 ];
+		outBlue  = fifo_data[7:0  ];
+	end
 
 
   always @(posedge clk) begin
