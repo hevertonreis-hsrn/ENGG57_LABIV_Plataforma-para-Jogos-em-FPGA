@@ -28,16 +28,15 @@ module ControleStateMachine(
 // PINO 6 -> B [0, 2, 4, 6] e A [1, 3, 5, 7]
 // PINO 9 -> C [0, 2, 4, 6] e START [1, 3, 5, 7]
 
-localparam AGUARDAR_ATIVACAO = 10'b00000_00001,
-			  ESTADO_0 			  = 10'b00000_00010,
-			  ESTADO_1          = 10'b00000_00100,
-			  ESTADO_2          = 10'b00000_01000,
-			  ESTADO_3          = 10'b00000_10000,
-			  ESTADO_4          = 10'b00001_00000,
-			  ESTADO_5          = 10'b00010_00000,
-			  ESTADO_6          = 10'b00100_00000,
-			  ESTADO_7          = 10'b01000_00000,
-			  DONE              = 10'b10000_00000,
+localparam AGUARDAR_ATIVACAO = 9'b0000_00001,
+			  ESTADO_0 			  = 9'b0000_00010,
+			  ESTADO_1          = 9'b0000_00100,
+			  ESTADO_2          = 9'b0000_01000,
+			  ESTADO_3          = 9'b0000_10000,
+			  ESTADO_4          = 9'b0001_00000,
+			  ESTADO_5          = 9'b0010_00000,
+			  ESTADO_6          = 9'b0100_00000,
+			  ESTADO_7          = 9'b1000_00000;
 			  
 localparam CONTROLLER_STATE_UP_DOWN_LEFT_RIGHT_B_C = 3'b000,
 			  CONTROLLER_STATE_UP_DOWN_A_START        = 3'b001,
@@ -66,8 +65,7 @@ always @(*) begin
 		ESTADO_4 : nstate = contador > 13'd5000 ? ESTADO_5 : ESTADO_4;
 		ESTADO_5 : nstate = contador > 13'd6000 ? ESTADO_6 : ESTADO_5;
 		ESTADO_6 : nstate = contador > 13'd7000 ? ESTADO_7 : ESTADO_6;
-		ESTADO_7 : nstate = contador > 13'd8000 ? DONE : ESTADO_7;
-		DONE : nstate = AGUARDAR_ATIVACAO;
+		ESTADO_7 : nstate = contador > 13'd8000 ? AGUARDAR_ATIVACAO : ESTADO_7;
 		default: nstate = AGUARDAR_ATIVACAO;
 	endcase
 end
@@ -97,7 +95,7 @@ always@(*) begin
 			select = SELECT_LOW;
 			done = NOT_DONE;
 		end
-		ESTADO_5, ESTADO_7: begin
+		ESTADO_5: begin
 			buttons = CONTROLLER_STATE_A_START;
 			select = SELECT_LOW;
 			done = NOT_DONE;
@@ -107,10 +105,10 @@ always@(*) begin
 			select = SELECT_HIGH;
 			done = NOT_DONE;
 		end
-		DONE: begin
-			buttons = CONTROLLER_STATE_A_START;
+		ESTADO_7: begin
+			buttons = CONTROLLER_STATE_ZEROS;
 			select = SELECT_LOW;
-			done = DONE;
+			done = NOT_DONE;
 		end
 		default: begin
 			buttons = CONTROLLER_STATE_ZEROS;
