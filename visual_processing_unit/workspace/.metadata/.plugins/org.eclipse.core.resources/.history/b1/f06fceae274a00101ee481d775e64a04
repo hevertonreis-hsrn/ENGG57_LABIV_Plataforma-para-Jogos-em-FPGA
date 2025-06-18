@@ -1,0 +1,130 @@
+#include <io.h>
+#include <system.h>
+#include <stdint.h>
+
+// Master Interface register offsets (in bytes)
+#define REG_BG_WIDTH        0   // Background width (e.g., 1920)
+#define REG_BG_HEIGHT       4   // Background height (e.g., 1440)
+#define REG_OFFSET_X        8   // Horizontal offset
+#define REG_OFFSET_Y        12   // Vertical offset
+#define REG_OFFSET_START    16   // Trigger configuration latch (write '1')
+
+// Composer register
+#define REG_COMP_OFFSET_X   32
+#define REG_COMP_OFFSET_Y   33
+#define REG_COMP_WORLD_TYPE 34
+#define REG_COMP_READY      35
+
+// Display dimensions
+#define BG_WIDTH            1920
+#define BG_HEIGHT           1440
+
+// Viewport size (visible region)
+#define VIEW_WIDTH          640
+#define VIEW_HEIGHT         480
+
+#define MAX_SPRITES 32
+
+// Estrutura de sprite
+typedef struct {
+    uint8_t  tile_id;
+    uint16_t pos_x;
+    uint16_t pos_y;
+    uint8_t  z_index;
+} Sprite;
+
+// Monta o registro 32 bits no formato esperado pelo Verilog
+uint32_t build_sprite_reg(uint8_t tile_id, uint16_t pos_x, uint16_t pos_y, uint8_t z_index) {
+    return ((uint32_t)tile_id << 23) |
+           ((uint32_t)pos_x   << 13) |
+           ((uint32_t)pos_y   << 4)  |
+           (uint32_t)z_index;
+}
+
+// Envia os sprites para o sprite_composer
+void send_sprites_to_composer(Sprite sprites[], int count) {
+    int i;
+    uint32_t reg;
+
+    // Envia os sprites ativos
+    for (i = 0; i < count; i++) {
+        reg = build_sprite_reg(sprites[i].tile_id, sprites[i].pos_x, sprites[i].pos_y, sprites[i].z_index);
+        IOWR_32DIRECT(COMPOSER_BASE, i * 4, reg);
+    }
+
+    // Zera os registros restantes
+    for (i = count; i < MAX_SPRITES; i++) {
+        IOWR_32DIRECT(COMPOSER_BASE, i * 4, 0);
+    }
+
+    // Indica que os dados foram enviados
+    IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_OFFSET_X * 4, 1);
+    IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_OFFSET_Y * 4, 1);
+    IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_WORLD_TYPE * 4, 1);
+    IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_READY * 4, 1);
+}
+
+int main() {
+	int offset_x = 0;
+	int offset_y = 0;
+	int last_btn = 0;
+
+	Sprite sprites[MAX_SPRITES];
+	int active_sprites = 5;  // Exemplo: 5 sprites ativos
+
+	// Inicializa sprites ativos (exemplo simples)
+	for (int i = 0; i < active_sprites; i++) {
+		sprites[i].tile_id = i + 1;      // tile_id nunca 0 (0 = sprite vazio)
+		sprites[i].pos_x   = 10 * i;     // posi  o X
+		sprites[i].pos_y   = 20 * i;     // posi  o Y
+		sprites[i].z_index = i % 16;     // prioridade z entre 0 e 15
+	}
+
+	// Zera os restantes (n o obrigatoriamente, mas boa pr tica)
+	for (int i = active_sprites; i < MAX_SPRITES; i++) {
+		sprites[i].tile_id = 0;
+		sprites[i].pos_x = 0;
+		sprites[i].pos_y = 0;
+		sprites[i].z_index = 0;
+	}
+
+	// Initial setup: send full BG dimensions and latch config
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_BG_WIDTH, BG_WIDTH);
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_BG_HEIGHT, BG_HEIGHT);
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_START, 1);
+
+	// Envia os sprites para o hardware
+	send_sprites_to_composer(sprites, active_sprites);
+
+	while (1) {
+        int btns = IORD_32DIRECT(KEY_BASE, 0);
+
+        // Trigger only on edge (change from last state)
+		if (btns != last_btn) {
+			if ((btns & 0x02) != 0) {  // Button 0: move right
+				if (offset_x + VIEW_WIDTH < BG_WIDTH)
+					offset_x += 10;
+			}
+			if ((btns & 0x01) != 0) {  // Button 1: move left
+				if (offset_x >= 10)
+					offset_x -= 10;
+			}
+			if ((btns & 0x04) != 0) {  // Button 2: move down
+				if (offset_y + VIEW_HEIGHT < BG_HEIGHT)
+					offset_y += 10;
+			}
+			if ((btns & 0x08) != 0) {  // Button 3: move up
+				if (offset_y >= 10)
+					offset_y -= 10;
+			}
+
+			// Send updated offsets to Master Interface
+			IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_X, offset_x);
+			IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_Y, offset_y);
+		}
+
+        last_btn = btns;
+    }
+
+    return 0;
+}
