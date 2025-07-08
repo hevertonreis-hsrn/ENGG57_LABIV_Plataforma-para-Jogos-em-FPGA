@@ -29,27 +29,27 @@ module ControleStateMachine(
 // PINO 9 -> C [0, 2, 4, 6] e START [1, 3, 5, 7]
 
 localparam AGUARDAR_ATIVACAO = 9'b0000_00001,
-			  ESTADO_0 			  = 9'b0000_00010,
-			  ESTADO_1          = 9'b0000_00100,
-			  ESTADO_2          = 9'b0000_01000,
-			  ESTADO_3          = 9'b0000_10000,
-			  ESTADO_4          = 9'b0001_00000,
-			  ESTADO_5          = 9'b0010_00000,
-			  ESTADO_6          = 9'b0100_00000,
-			  ESTADO_7          = 9'b1000_00000;
-			  
+		   ESTADO_0 			  = 9'b0000_00010,
+		   ESTADO_1          = 9'b0000_00100,
+		   ESTADO_2          = 9'b0000_01000,
+		   ESTADO_3          = 9'b0000_10000,
+		   ESTADO_4          = 9'b0001_00000,
+		   ESTADO_5          = 9'b0010_00000,
+		   ESTADO_6          = 9'b0100_00000,
+		   ESTADO_7          = 9'b1000_00000;
+
 localparam CONTROLLER_STATE_UP_DOWN_LEFT_RIGHT_B_C = 3'b000,
-			  CONTROLLER_STATE_UP_DOWN_A_START        = 3'b001,
-			  CONTROLLER_STATE_A_START                = 3'b010,
-			  CONTROLLER_STATE_Z_Y_X_MODE_B_C         = 3'b011,
-			  CONTROLLER_STATE_ZEROS                  = 3'b100;
+		   CONTROLLER_STATE_UP_DOWN_A_START        = 3'b001,
+		   CONTROLLER_STATE_A_START                = 3'b010,
+		   CONTROLLER_STATE_Z_Y_X_MODE_B_C         = 3'b011,
+		   CONTROLLER_STATE_ZEROS                  = 3'b100;
 
 localparam SELECT_HIGH = 1'b1,
-			  SELECT_LOW  = 1'b0;
-			  
+		   SELECT_LOW  = 1'b0;
+
 localparam DONE        = 1'b1,
-			  NOT_DONE    = 1'b0;
-			  
+		   NOT_DONE    = 1'b0;
+
 reg [12:0] contador;	
 reg [8:0] state, nstate;
 
@@ -71,7 +71,7 @@ always @(*) begin
 end
 
 always@(negedge clock) begin
-	if !(reset_n) begin
+	if (!reset_n) begin
 		state <= AGUARDAR_ATIVACAO;
 	end else begin
 		state <= nstate;
@@ -108,7 +108,7 @@ always@(*) begin
 		ESTADO_7: begin
 			buttons = CONTROLLER_STATE_ZEROS;
 			select = SELECT_LOW;
-			done = NOT_DONE;
+			done = DONE;
 		end
 		default: begin
 			buttons = CONTROLLER_STATE_ZEROS;
@@ -125,7 +125,7 @@ always @(posedge clock) begin
 	end else begin
 		case (state)
 			AGUARDAR_ATIVACAO: contador <= 13'b0;
-			default: contador <= contador + 13'b0;
+			default: contador <= contador + 13'd1;
 		endcase
 	end
 end
