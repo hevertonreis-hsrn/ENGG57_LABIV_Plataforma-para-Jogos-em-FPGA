@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jun 17, 2025 7:54:29 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1750200869372</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Projects\Quartus\visual_processing_unit\software\nios2_processor_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Jul 12, 2025 5:24:46 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1752351887002</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\software\nios2_processor_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\embedded_vpu.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
@@ -875,27 +875,39 @@
                 <Group>none</Group>
         </Setting>
         <MemoryMap>
-                <slaveDescriptor>key</slaveDescriptor>
-                <addressRange>0x00000000 - 0x0000000F</addressRange>
-                <addressSpan>16</addressSpan>
+                <slaveDescriptor>background_loader</slaveDescriptor>
+                <addressRange>0x08200000 - 0x082003FF</addressRange>
+                <addressSpan>1024</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>composer</slaveDescriptor>
+                <addressRange>0x08300000 - 0x083003FF</addressRange>
+                <addressSpan>1024</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ram_data</slaveDescriptor>
-                <addressRange>0x00004000 - 0x00007FFF</addressRange>
-                <addressSpan>16384</addressSpan>
+                <addressRange>0x08500000 - 0x0850FFFF</addressRange>
+                <addressSpan>65536</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>composer</slaveDescriptor>
-                <addressRange>0x00009000 - 0x000093FF</addressRange>
-                <addressSpan>1024</addressSpan>
+                <slaveDescriptor>key</slaveDescriptor>
+                <addressRange>0x08700000 - 0x0870000F</addressRange>
+                <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>background_loader</slaveDescriptor>
-                <addressRange>0x00009400 - 0x000097FF</addressRange>
-                <addressSpan>1024</addressSpan>
+                <slaveDescriptor>leds</slaveDescriptor>
+                <addressRange>0x08800000 - 0x0880000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>gamepad_pins</slaveDescriptor>
+                <addressRange>0x08900000 - 0x0890000F</addressRange>
+                <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <LinkerSection>

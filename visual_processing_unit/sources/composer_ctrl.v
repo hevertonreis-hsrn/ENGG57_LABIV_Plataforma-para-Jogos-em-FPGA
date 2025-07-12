@@ -1,10 +1,10 @@
 module composer_ctrl(
-  input  wire        clk,      // clk_sys
+  input  wire        clk,           // clk_sys
   input  wire        rst_n,
 
   // handshakes / status
   input  wire        bg_valid,      // vindo do BG FIFO
-  input  wire        fetch_busy,    // sprite_pixel_fetcher.busy
+  input  wire        fetch_done,    // sprite_pixel_fetcher.busy
   input  wire        new_frame,     // pixel_counter sinalizou fim de frame
 	input  wire				 sprites_ready,
   input  wire [9:0]  pixel_x,
@@ -13,9 +13,9 @@ module composer_ctrl(
 
   // controles para blocos
   output reg         bg_rdreq,
-//  output reg         start_fetch,   // conectado a fetcher.bg_fetch_request
-  output reg         pc_enable,     // pixel_counter.enable
-  output reg         wrreq          // pixel_composer.wrreq
+  output reg         start_fetch,
+  output reg         pc_enable,
+  output reg         wrreq
 );
 
 	localparam S_IDLE 			= 0,
@@ -37,7 +37,7 @@ module composer_ctrl(
   always @(*) begin
     // default de-asserts
     bg_rdreq       = 1'b0;
-//    start_fetch    = 1'b0;
+    start_fetch    = 1'b0;
     pc_enable      = 1'b0;
     wrreq          = 1'b0;
     next           = state;
@@ -52,19 +52,13 @@ module composer_ctrl(
       S_REQ_BG: begin
         if (!wrfull && bg_valid) begin         // evita solicitar se FIFO de saída estiver cheia
           bg_rdreq = 1;
+					start_fetch = 1;
           next = S_WAIT_FETCH;
         end
       end
 
-//      S_WAIT_BG: begin
-//        if (bg_valid) begin        // chegou pixel de BG
-//          start_fetch = 1;         // dispara sprite_pixel_fetcher
-//          next = S_WAIT_FETCH;
-//        end
-//      end
-
       S_WAIT_FETCH: begin
-        if (!fetch_busy) begin     // pixel do sprite pronto
+        if (fetch_done) begin     // pixel do sprite pronto
           next = S_COMPOSE;
         end
       end

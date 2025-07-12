@@ -4,6 +4,7 @@ module pixel_counter (
 	input  wire        enable,
 	input  wire        bg_fifo_empty,
 	output reg				 new_frame,
+	output reg new_frame2,
 	output reg [9:0]   pixel_x,         // 0–639
 	output reg [8:0]   pixel_y          // 0–479
 );
@@ -12,6 +13,8 @@ module pixel_counter (
 	localparam V_MAX = 480;
 
 	reg started;
+	reg new_frame_d;  // Registrador para detectar borda do new_frame
+
 
   always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -23,6 +26,17 @@ module pixel_counter (
 				started <= 1'b0;
     end
   end
+  
+	// Pulso de new_frame2 (detecção de borda de new_frame)
+	always @(posedge clk or negedge rst_n) begin
+		if (!rst_n) begin
+			new_frame2 <= 0;
+			new_frame_d <= 0;
+		end else begin
+			new_frame_d <= new_frame;
+			new_frame2 <= new_frame & ~new_frame_d;  // Gera pulso de 1 ciclo
+		end
+	end
 	
 	always @(posedge clk or negedge rst_n) begin
 		if (!rst_n) begin
@@ -31,6 +45,8 @@ module pixel_counter (
 			new_frame <= 0;
 		end else if (enable && started) begin
 			new_frame <= 0;
+
+			
 			if (pixel_x == H_MAX - 1) begin
 				pixel_x <= 0;
 				if (pixel_y == V_MAX - 1) begin

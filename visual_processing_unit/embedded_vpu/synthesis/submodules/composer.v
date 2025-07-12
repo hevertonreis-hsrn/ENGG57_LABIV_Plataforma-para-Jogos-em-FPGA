@@ -4,7 +4,7 @@ module composer (
 
     // Avalon interface (resumo)
     input  wire        avalon_write,
-    input  wire [7:0]  avalon_address,
+    input  wire [7:0 ] avalon_address,
     input  wire [31:0] avalon_writedata,
 
     // Background FIFO interface
@@ -16,7 +16,19 @@ module composer (
     // Saída para FIFO final de vídeo
     input  wire        wrfull,
     output wire        wrreq,
-    output wire [23:0] pixel_out
+    output wire [23:0] pixel_out,
+		
+		// Interface SRAM externa
+    input  wire        master_readdatavalid,
+		input  wire        master_waitrequest,
+    input  wire [31:0] master_readdata,
+    output wire [31:0] master_address,
+    output wire        master_read,
+		output wire [3:0 ] master_byteenable,
+		output wire 			 master_chipselect,
+		
+		output wire        new_frame_test,
+		output wire        new_frame_int
 );
 
     //-----------------------------
@@ -27,13 +39,18 @@ module composer (
 		wire       new_frame;
     wire       pc_enable;
 		wire 			 sprites_ready;
-		
+		wire new_frame2;
+			
+		assign new_frame_test = new_frame2;
+		assign new_frame_int  = new_frame;
+	
     pixel_counter pc_inst (
         .clk(clk),
         .rst_n(rst_n),
         .enable(pc_enable),
 				.bg_fifo_empty(bg_fifo_empty),
 				.new_frame(new_frame),
+				.new_frame2(new_frame2),
         .pixel_x(pixel_x),
         .pixel_y(pixel_y)
     );
@@ -66,7 +83,7 @@ module composer (
     //-----------------------------
     // TOP4 SELECTOR
     //-----------------------------
-    wire [17:0] h0, h1, h2, h3;
+    wire [22:0] h0, h1, h2, h3;
 
     top4_sprite_selector selector (
         .s0_in(vis_out[0]),  .s1_in(vis_out[1]),  .s2_in(vis_out[2]),  .s3_in(vis_out[3]),
@@ -86,27 +103,86 @@ module composer (
     wire [15:0] rom_addr[3:0];
     wire [23:0] rom_data[3:0];
     wire [23:0] spixel[3:0];
-    wire        fetch_busy;
-    wire        fetch_bg;
-
-    sprite_rom_4port rom (
-        .clk(clk),
-        .addr0_in(rom_addr[0]), .addr1_in(rom_addr[1]),
-        .addr2_in(rom_addr[2]), .addr3_in(rom_addr[3]),
-        .data0_out(rom_data[0]), .data1_out(rom_data[1]),
-        .data2_out(rom_data[2]), .data3_out(rom_data[3])
-    );
+		wire [23:0] selected_pixel;
+    wire        fetch_done;
+		wire        start_fetch;
+		wire [23:0] sprite_output;
+		
+	assign sprite_output = {master_readdata[15:8 ], // RR
+												  master_readdata[23:16],  // GG
+												  master_readdata[31:24]}; // BB
+		
 
     sprite_pixel_fetcher fetcher (
-        .clk(clk), .rst_n(rst_n),
-        .h0_in(h0), .h1_in(h1), .h2_in(h2), .h3_in(h3),
-        .rom_addr0(rom_addr[0]), .rom_addr1(rom_addr[1]),
-        .rom_addr2(rom_addr[2]), .rom_addr3(rom_addr[3]),
-        .rom_data0(rom_data[0]), .rom_data1(rom_data[1]),
-        .rom_data2(rom_data[2]), .rom_data3(rom_data[3]),
-        .h0_pixel_out(spixel[0]), .h1_pixel_out(spixel[1]),
-        .h2_pixel_out(spixel[2]), .h3_pixel_out(spixel[3]),
-        .busy(fetch_busy)
+        .clk(clk),
+				.rst_n(rst_n),
+				.start(start_fetch),
+        .h0_in(h0),
+				.h1_in(h1),
+				.h2_in(h2),
+				.h3_in(h3),
+        .readdatavalid(master_readdatavalid),
+				.waitrequest(master_waitrequest),
+        .rom_data(sprite_output),
+        .rom_addr(master_address),
+        .read_request(master_read),
+			.chipselect(master_chipselect),
+        .pixel_out(selected_pixel),
+		  .byteenable(master_byteenable),
+        .done(fetch_done)
+    );
+	 
+	 
+	//-----------------------------
+	// COLLISION SPRITE ANALYZER
+	//-----------------------------
+	
+	wire collision;
+	
+	collision_sprite_analyzer collision_sprite(
+		.clk(clk),
+		.rst_n(rst_n),
+		.new_pixel(fetch_done),
+		.new_frame(new_frame2),
+		.h0_in(h0),
+		.h1_in(h1),
+		.h2_in(h2),
+		.h3_in(h3),
+		.collision(collision) // ainda não implementado
+	);
+	 
+	 
+    //-----------------------------
+    // BORDER ANALYZER
+    //-----------------------------
+		
+		wire r_comp;
+		wire g_comp;
+		wire b_comp;
+		wire side_val;
+		wire selector_val;
+		wire min_val;
+		wire max_val;
+		wire pixel_between;
+		
+    border_analyzer border_inst (
+        .clk(clk),
+        .rst_n(rst_n),
+		  .new_pixel(fetch_done),
+		  .new_frame(new_frame2),
+        .bg_pixel(bg_fifo_q),
+        .h0_in(h0),
+        .h1_in(h1),
+        .h2_in(h2),
+        .h3_in(h3),
+        .r_in(r_comp),
+        .g_in(g_comp),
+        .b_in(b_comp),
+        .side_in(side_val),
+        .selector_in(selector_val),
+        .reg_min_in(min_val),
+        .reg_max_in(max_val),
+        .between(pixel_between)
     );
 
     //-----------------------------
@@ -115,8 +191,7 @@ module composer (
     pixel_composer compositor (
         .clk(clk), .rst_n(rst_n),
         .bg_pixel(bg_fifo_q),
-        .h0_pixel(spixel[0]), .h1_pixel(spixel[1]),
-        .h2_pixel(spixel[2]), .h3_pixel(spixel[3]),
+        .selected_pixel(selected_pixel),
         .pixel_out(pixel_out)
     );
 
@@ -127,13 +202,14 @@ module composer (
 			.clk           (clk),
 			.rst_n         (rst_n),
 			.bg_valid      (!bg_fifo_empty),
-			.fetch_busy    (fetch_busy),
+			.fetch_done    (fetch_done),
 			.new_frame     (new_frame),
 			.sprites_ready (sprites_ready),
 			.pixel_x       (pixel_x),
 			.pixel_y       (pixel_y),
 			.wrfull        (wrfull),
 			.bg_rdreq      (bg_fifo_rdreq),
+			.start_fetch   (start_fetch),
 			.pc_enable     (pc_enable),
 			.wrreq         (wrreq)
 		);

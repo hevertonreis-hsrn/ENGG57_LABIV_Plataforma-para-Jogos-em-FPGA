@@ -9,7 +9,7 @@
 # # generated the IP script, relative to the directory from which you launch
 # # the simulator.
 # #
-set QSYS_SIMDIR C:/Projects/Quartus/visual_processing_unit/embedded_vpu/testbench
+set QSYS_SIMDIR C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit_sram/embedded_vpu/testbench
 # #
 # # Add commands to compile all design files and testbench files, including
 # # the top level. (These are all the files required for simulation other
@@ -22,7 +22,7 @@ vlog $QSYS_SIMDIR/../../sources/vga_controller.v
 vlog $QSYS_SIMDIR/../../sources/pixel_reader.v
 vlog $QSYS_SIMDIR/../../sources/top4_sprite_selector.v
 vlog $QSYS_SIMDIR/../../sources/sprite_visibility_checker.v
-vlog $QSYS_SIMDIR/../../sources/sprite_rom_4port.v
+vlog $QSYS_SIMDIR/../../sources/border_analyzer.v
 vlog $QSYS_SIMDIR/../../sources/sprite_pixel_fetcher.v
 vlog $QSYS_SIMDIR/../../sources/pixel_counter.v
 vlog $QSYS_SIMDIR/../../sources/pixel_composer.v
