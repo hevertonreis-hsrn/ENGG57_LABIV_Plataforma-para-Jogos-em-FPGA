@@ -18,17 +18,8 @@ module composer (
     output wire        wrreq,
     output wire [23:0] pixel_out,
 		
-		// Interface SRAM externa
-    input  wire        master_readdatavalid,
-		input  wire        master_waitrequest,
-    input  wire [31:0] master_readdata,
-    output wire [31:0] master_address,
-    output wire        master_read,
-		output wire [3:0 ] master_byteenable,
-		output wire 			 master_chipselect,
-		
-		output wire        new_frame_test,
-		output wire        new_frame_int
+		output wire        new_frame_test
+		//output wire        new_frame_int
 );
 
     //-----------------------------
@@ -42,7 +33,7 @@ module composer (
 		wire new_frame2;
 			
 		assign new_frame_test = new_frame2;
-		assign new_frame_int  = new_frame;
+		//assign new_frame_int  = new_frame;
 	
     pixel_counter pc_inst (
         .clk(clk),
@@ -100,38 +91,32 @@ module composer (
     //-----------------------------
     // SPRITE ROM + FETCHER
     //-----------------------------
-    wire [15:0] rom_addr[3:0];
-    wire [23:0] rom_data[3:0];
     wire [23:0] spixel[3:0];
-		wire [23:0] selected_pixel;
+		wire [23:0] selected_pixel, sprite_data;
+		wire [15:0] sprite_addr;
+		wire [7:0 ] red24, green24, blue24;
     wire        fetch_done;
 		wire        start_fetch;
-		wire [23:0] sprite_output;
 		
-	assign sprite_output = {master_readdata[15:8 ], // RR
-												  master_readdata[23:16],  // GG
-												  master_readdata[31:24]}; // BB
+		rom_sprites rom_sprites_inst (
+			.address(sprite_addr),
+			.clock(clk),
+			.q(sprite_data)
+		);
 		
-
     sprite_pixel_fetcher fetcher (
-        .clk(clk),
-				.rst_n(rst_n),
-				.start(start_fetch),
-        .h0_in(h0),
-				.h1_in(h1),
-				.h2_in(h2),
-				.h3_in(h3),
-        .readdatavalid(master_readdatavalid),
-				.waitrequest(master_waitrequest),
-        .rom_data(sprite_output),
-        .rom_addr(master_address),
-        .read_request(master_read),
-			.chipselect(master_chipselect),
-        .pixel_out(selected_pixel),
-		  .byteenable(master_byteenable),
-        .done(fetch_done)
+			.clk(clk),
+			.rst_n(rst_n),
+			.start(start_fetch),
+			.h0_in(h0),
+			.h1_in(h1),
+			.h2_in(h2),
+			.h3_in(h3),
+			.rom_data(sprite_data),      // Saída da ROM (q)
+			.pixel_out(selected_pixel),
+			.rom_addr(sprite_addr),      // Endereço da ROM
+			.done(fetch_done)
     );
-	 
 	 
 	//-----------------------------
 	// COLLISION SPRITE ANALYZER

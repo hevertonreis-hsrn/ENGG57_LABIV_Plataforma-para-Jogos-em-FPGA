@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
-newSoftwareExampleWizardPage.defaultLocation=C\:\\Projects\\Quartus\\visual_processing_unit_gamepad\\software\\nios2_processor
-newSoftwareExampleWizardPage.sopcinfoFile=C\:\\Projects\\Quartus\\visual_processing_unit_gamepad\\embedded_vpu.sopcinfo
-newSoftwareExampleWizardPage2.newBspLocation=C\:\\Projects\\Quartus\\visual_processing_unit_gamepad\\software\\nios2_processor_bsp
+newSoftwareExampleWizardPage.defaultLocation=C\:\\Projects\\Quartus\\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\\visual_processing_unit\\software\\nios2_processor
+newSoftwareExampleWizardPage.sopcinfoFile=C\:\\Projects\\Quartus\\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\\visual_processing_unit\\embedded_vpu.sopcinfo
+newSoftwareExampleWizardPage2.newBspLocation=C\:\\Projects\\Quartus\\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\\visual_processing_unit\\software\\nios2_processor_bsp

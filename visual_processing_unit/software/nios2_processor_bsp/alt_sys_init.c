@@ -4,7 +4,7 @@
  * Machine generated for CPU 'processor' in SOPC Builder design 'embedded_vpu'
  * SOPC Builder design path: ../../embedded_vpu.sopcinfo
  *
- * Generated: Wed Jul 09 23:41:54 BRT 2025
+ * Generated: Sun Jul 13 23:31:37 BRT 2025
  */
 
 /*

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'processor' in SOPC Builder design 'embedded_vpu'
  * SOPC Builder design path: ../../embedded_vpu.sopcinfo
  *
- * Generated: Fri Jul 11 00:36:02 BRT 2025
+ * Generated: Mon Jul 14 11:46:50 BRT 2025
  */
 
 /*
@@ -62,7 +62,7 @@
 
 #define ALT_CPU_ARCHITECTURE "altera_nios2_gen2"
 #define ALT_CPU_BIG_ENDIAN 0
-#define ALT_CPU_BREAK_ADDR 0x08600020
+#define ALT_CPU_BREAK_ADDR 0x08220020
 #define ALT_CPU_CPU_ARCH_NIOS2_R1
 #define ALT_CPU_CPU_FREQ 100000000u
 #define ALT_CPU_CPU_ID_SIZE 1
@@ -72,7 +72,7 @@
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
-#define ALT_CPU_EXCEPTION_ADDR 0x08500020
+#define ALT_CPU_EXCEPTION_ADDR 0x08210020
 #define ALT_CPU_FLASH_ACCELERATOR_LINES 0
 #define ALT_CPU_FLASH_ACCELERATOR_LINE_SIZE 0
 #define ALT_CPU_FLUSHDA_SUPPORTED
@@ -90,7 +90,7 @@
 #define ALT_CPU_INST_ADDR_WIDTH 0x1c
 #define ALT_CPU_NAME "processor"
 #define ALT_CPU_OCI_VERSION 1
-#define ALT_CPU_RESET_ADDR 0x08500000
+#define ALT_CPU_RESET_ADDR 0x08210000
 
 
 /*
@@ -99,7 +99,7 @@
  */
 
 #define NIOS2_BIG_ENDIAN 0
-#define NIOS2_BREAK_ADDR 0x08600020
+#define NIOS2_BREAK_ADDR 0x08220020
 #define NIOS2_CPU_ARCH_NIOS2_R1
 #define NIOS2_CPU_FREQ 100000000u
 #define NIOS2_CPU_ID_SIZE 1
@@ -109,7 +109,7 @@
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
-#define NIOS2_EXCEPTION_ADDR 0x08500020
+#define NIOS2_EXCEPTION_ADDR 0x08210020
 #define NIOS2_FLASH_ACCELERATOR_LINES 0
 #define NIOS2_FLASH_ACCELERATOR_LINE_SIZE 0
 #define NIOS2_FLUSHDA_SUPPORTED
@@ -125,7 +125,7 @@
 #define NIOS2_ICACHE_SIZE 0
 #define NIOS2_INST_ADDR_WIDTH 0x1c
 #define NIOS2_OCI_VERSION 1
-#define NIOS2_RESET_ADDR 0x08500000
+#define NIOS2_RESET_ADDR 0x08210000
 
 
 /*
@@ -189,7 +189,7 @@
  */
 
 #define ALT_MODULE_CLASS_composer composer
-#define COMPOSER_BASE 0x8300000
+#define COMPOSER_BASE 0x8200400
 #define COMPOSER_IRQ -1
 #define COMPOSER_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define COMPOSER_NAME "/dev/composer"
@@ -236,60 +236,6 @@
 
 
 /*
- * key configuration
- *
- */
-
-#define ALT_MODULE_CLASS_key altera_avalon_pio
-#define KEY_BASE 0x8700000
-#define KEY_BIT_CLEARING_EDGE_REGISTER 0
-#define KEY_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define KEY_CAPTURE 0
-#define KEY_DATA_WIDTH 4
-#define KEY_DO_TEST_BENCH_WIRING 0
-#define KEY_DRIVEN_SIM_VALUE 0
-#define KEY_EDGE_TYPE "NONE"
-#define KEY_FREQ 100000000
-#define KEY_HAS_IN 1
-#define KEY_HAS_OUT 0
-#define KEY_HAS_TRI 0
-#define KEY_IRQ -1
-#define KEY_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define KEY_IRQ_TYPE "NONE"
-#define KEY_NAME "/dev/key"
-#define KEY_RESET_VALUE 0
-#define KEY_SPAN 16
-#define KEY_TYPE "altera_avalon_pio"
-
-
-/*
- * leds configuration
- *
- */
-
-#define ALT_MODULE_CLASS_leds altera_avalon_pio
-#define LEDS_BASE 0x8800000
-#define LEDS_BIT_CLEARING_EDGE_REGISTER 0
-#define LEDS_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LEDS_CAPTURE 0
-#define LEDS_DATA_WIDTH 12
-#define LEDS_DO_TEST_BENCH_WIRING 0
-#define LEDS_DRIVEN_SIM_VALUE 0
-#define LEDS_EDGE_TYPE "NONE"
-#define LEDS_FREQ 100000000
-#define LEDS_HAS_IN 0
-#define LEDS_HAS_OUT 1
-#define LEDS_HAS_TRI 0
-#define LEDS_IRQ -1
-#define LEDS_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define LEDS_IRQ_TYPE "NONE"
-#define LEDS_NAME "/dev/leds"
-#define LEDS_RESET_VALUE 0
-#define LEDS_SPAN 16
-#define LEDS_TYPE "altera_avalon_pio"
-
-
-/*
  * ram_data configuration
  *
  */
@@ -297,7 +243,7 @@
 #define ALT_MODULE_CLASS_ram_data altera_avalon_onchip_memory2
 #define RAM_DATA_ALLOW_IN_SYSTEM_MEMORY_CONTENT_EDITOR 0
 #define RAM_DATA_ALLOW_MRAM_SIM_CONTENTS_ONLY_FILE 0
-#define RAM_DATA_BASE 0x8500000
+#define RAM_DATA_BASE 0x8210000
 #define RAM_DATA_CONTENTS_INFO ""
 #define RAM_DATA_DUAL_PORT 0
 #define RAM_DATA_GUI_RAM_BLOCK_TYPE "AUTO"

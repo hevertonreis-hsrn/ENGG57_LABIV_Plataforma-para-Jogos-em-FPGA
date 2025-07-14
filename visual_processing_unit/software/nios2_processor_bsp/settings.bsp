@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jul 12, 2025 5:24:46 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1752351887002</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jul 14, 2025 11:57:42 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1752505062777</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\software\nios2_processor_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\embedded_vpu.sopcinfo</SopcDesignFile>
@@ -882,27 +882,15 @@
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>composer</slaveDescriptor>
-                <addressRange>0x08300000 - 0x083003FF</addressRange>
+                <addressRange>0x08200400 - 0x082007FF</addressRange>
                 <addressSpan>1024</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ram_data</slaveDescriptor>
-                <addressRange>0x08500000 - 0x0850FFFF</addressRange>
+                <addressRange>0x08210000 - 0x0821FFFF</addressRange>
                 <addressSpan>65536</addressSpan>
                 <attributes>memory</attributes>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>key</slaveDescriptor>
-                <addressRange>0x08700000 - 0x0870000F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>leds</slaveDescriptor>
-                <addressRange>0x08800000 - 0x0880000F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>gamepad_pins</slaveDescriptor>

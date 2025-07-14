@@ -1,31 +1,10 @@
-17:24:59 **** Build of configuration Nios II for project nios2_processor ****
-make all 
-Info: Building ../nios2_processor_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios2_processor_bsp/
-[BSP build complete]
-Info: Compiling hello_world.c to obj/default/hello_world.o
-nios2-elf-gcc -xc -MP -MMD -c -I../nios2_processor_bsp//HAL/inc -I../nios2_processor_bsp/ -I../nios2_processor_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world.o hello_world.c
-Info: Linking nios2_processor.elf
-nios2-elf-g++  -T'../nios2_processor_bsp//linker.x' -msys-crt0='../nios2_processor_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios2_processor_bsp/   -Wl,-Map=nios2_processor.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios2_processor.elf obj/default/hello_world.o -lm -msys-lib=m
-nios2-elf-insert nios2_processor.elf --thread_model hal --cpu_name processor --qsys true --simulation_enabled false --stderr_dev none --stdin_dev none --stdout_dev none --sopc_system_name embedded_vpu --quartus_project_dir "C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit" --jdi ../..//output_files/visual_processing_unit.jdi --sopcinfo C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor_bsp/../../embedded_vpu.sopcinfo
-Info: (nios2_processor.elf) 4756 Bytes program size (code + initialized data).
-Info:                       57 KBytes free for stack + heap.
-Info: Creating nios2_processor.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source nios2_processor.elf >nios2_processor.objdump
-[nios2_processor build complete]
-17:28:16 **** Build of configuration Nios II for project nios2_processor ****
+11:57:49 **** Incremental Build of configuration Nios II for project nios2_processor ****
 make all 
 Info: Building ../nios2_processor_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios2_processor_bsp/
 [BSP build complete]
 [nios2_processor build complete]
-17:28:51 **** Build of configuration Nios II for project nios2_processor ****
-make all 
-Info: Building ../nios2_processor_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios2_processor_bsp/
-[BSP build complete]
-[nios2_processor build complete]
-17:29:12 **** Incremental Build of configuration Nios II for project nios2_processor ****
+11:58:01 **** Incremental Build of configuration Nios II for project nios2_processor ****
 make all 
 Info: Building ../nios2_processor_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios2_processor_bsp/

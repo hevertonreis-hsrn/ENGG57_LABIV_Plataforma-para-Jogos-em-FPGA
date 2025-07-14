@@ -19,10 +19,13 @@ module composer_ctrl(
 );
 
 	localparam S_IDLE 			= 0,
-						 S_REQ_BG 		= 1,
-						 S_WAIT_BG    = 2,
-						 S_WAIT_FETCH = 3,
-             S_COMPOSE    = 4;
+						 S_STABLE     = 1,
+						 S_SELECT_BST = 2,
+						 S_REQ_BG 		= 3,
+						 S_WAIT_BG    = 4,
+						 S_WAIT_FETCH = 5,
+             S_COMPOSE    = 6;
+
 
 
   reg [2:0] state, next;
@@ -45,9 +48,17 @@ module composer_ctrl(
     case(state)
       S_IDLE: begin
         if (new_frame || sprites_ready) begin
-          next = S_REQ_BG;
+          next = S_STABLE;
         end
       end
+			
+			S_STABLE: begin
+				next = S_SELECT_BST;  // 
+			end
+			
+			S_SELECT_BST: begin
+				next = S_REQ_BG;  // 
+			end
 
       S_REQ_BG: begin
         if (!wrfull && bg_valid) begin         // evita solicitar se FIFO de saída estiver cheia
@@ -71,7 +82,7 @@ module composer_ctrl(
           if (pixel_x==639 && pixel_y==479)
             next = S_IDLE;
           else
-            next = S_REQ_BG;
+            next = S_STABLE;
         end
       end
     endcase

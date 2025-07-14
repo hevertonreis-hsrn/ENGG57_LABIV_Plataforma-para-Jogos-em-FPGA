@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/obj/default/runtime/sim/mentor
+vembedded_vpu_sdram_controller
+Z1 !s110 1752499294
+!i10b 1
+!s100 K=9HB1j<H>IXiV:]IXH0n0
+I9JRJT`hgzMD4H_4`b9=go1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1752464320
+Z4 8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_sdram_controller.v
+Z5 FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_sdram_controller.v
+L0 159
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1752499294.000000
+Z8 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_sdram_controller.v|
+Z9 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_sdram_controller.v|-work|sdram_controller|
+!i113 1
+Z10 o-work sdram_controller
+Z11 tCvgOpt 0
+vembedded_vpu_sdram_controller_input_efifo_module
+R1
+!i10b 1
+!s100 K[EZUF^B>:AN;`7]h4YiE2
+I92[f>cF^9NUZ21FeW=N=13
+R2
+R0
+R3
+R4
+R5
+Z12 L0 21
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_sdram_controller_test_component
+R1
+!i10b 1
+!s100 n27:kmH3>7dZzn>X2aGz_3
+INXhiWnd5oLbdd=R?i>YZl3
+R2
+R0
+R3
+Z13 8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_sdram_controller_test_component.v
+Z14 FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_sdram_controller_test_component.v
+L0 114
+R6
+r1
+!s85 0
+31
+R7
+Z15 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_sdram_controller_test_component.v|
+Z16 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_sdram_controller_test_component.v|-work|sdram_controller|
+!i113 1
+R10
+R11
+vembedded_vpu_sdram_controller_test_component_ram_module
+R1
+!i10b 1
+!s100 NPbYgomEbl?TO57GQBn^<3
+Igj7z>3Rm>EncGeTA9HmCZ0
+R2
+R0
+R3
+R13
+R14
+R12
+R6
+r1
+!s85 0
+31
+R7
+R15
+R16
+!i113 1
+R10
+R11

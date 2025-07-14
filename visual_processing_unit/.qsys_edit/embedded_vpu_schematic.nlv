@@ -1,0 +1,27 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst embedded_vpu -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst embedded_vpu.processor.cpu -pg 1
+preplace inst embedded_vpu.processor.clock_bridge -pg 1
+preplace inst embedded_vpu.sdram_controller -pg 1 -lvl 4 -y 310
+preplace inst embedded_vpu.processor -pg 1 -lvl 2 -y 140
+preplace inst embedded_vpu.processor.reset_bridge -pg 1
+preplace inst embedded_vpu.background_loader -pg 1 -lvl 3 -y 210
+preplace inst embedded_vpu.composer -pg 1 -lvl 3 -y 30
+preplace inst embedded_vpu.ram_data -pg 1 -lvl 4 -y 610
+preplace inst embedded_vpu.clk -pg 1 -lvl 1 -y 230
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)sdram_controller.wire,(SLAVE)embedded_vpu.sdram_controller_wire) 1 0 4 NJ 440 NJ 440 NJ 440 NJ
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(MASTER)background_loader.master,(SLAVE)sdram_controller.s1) 1 3 1 1130
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)background_loader.fifo_bg_data,(SLAVE)composer.fifo_bg_data) 1 2 1 900
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)background_loader.fifo_bg_empty,(SLAVE)composer.fifo_bg_empty) 1 2 1 920
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)embedded_vpu.composer_conduit,(SLAVE)composer.conduit) 1 0 3 NJ 100 NJ 100 NJ
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)embedded_vpu.clk,(SLAVE)clk.clk_in) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)composer.bg_fifo_full,(SLAVE)background_loader.bg_fifo_full) 1 2 1 880
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)background_loader.conduit,(SLAVE)embedded_vpu.background_loader_conduit) 1 0 3 NJ 200 NJ 330 NJ
+preplace netloc FAN_OUT<net_container>embedded_vpu</net_container>(SLAVE)composer.clock,(MASTER)clk.clk,(SLAVE)background_loader.clock,(SLAVE)ram_data.clk1,(SLAVE)processor.clk,(SLAVE)sdram_controller.clk) 1 1 3 420 300 840 400 1150
+preplace netloc INTERCONNECT<net_container>embedded_vpu</net_container>(SLAVE)composer.avalon,(SLAVE)background_loader.slave,(SLAVE)processor.debug_mem_slave,(MASTER)processor.instruction_master,(MASTER)processor.data_master,(SLAVE)ram_data.s1) 1 1 3 440 280 800 660 NJ
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)clk.clk_in_reset,(SLAVE)embedded_vpu.reset) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>embedded_vpu</net_container>(MASTER)clk.clk_reset,(SLAVE)composer.reset_n,(SLAVE)ram_data.reset1,(SLAVE)sdram_controller.reset,(SLAVE)processor.reset,(MASTER)processor.debug_reset_request,(SLAVE)background_loader.reset) 1 1 3 400 350 860 420 1170
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)composer.fifo_bg_rd_en,(SLAVE)background_loader.fifo_bg_rd_en) 1 2 1 940
+levelinfo -pg 1 0 170 1370
+levelinfo -hier embedded_vpu 180 210 560 970 1250 1360

@@ -1,0 +1,152 @@
+#include <io.h>
+#include <system.h>
+#include <stdint.h>
+
+// Master Interface register offsets (in bytes)
+#define REG_BG_WIDTH        0   // Background width (e.g., 1920)
+#define REG_BG_HEIGHT       4   // Background height (e.g., 1440)
+#define REG_OFFSET_X        8   // Horizontal offset
+#define REG_OFFSET_Y        12   // Vertical offset
+#define REG_OFFSET_START    16   // Trigger configuration latch (write '1')
+
+// Composer register
+#define REG_COMP_OFFSET_X   32
+#define REG_COMP_OFFSET_Y   33
+#define REG_COMP_WORLD_TYPE 34
+#define REG_COMP_READY      35
+
+// Display dimensions
+#define BG_WIDTH            1920
+#define BG_HEIGHT           1440
+
+// Viewport size (visible region)
+#define VIEW_WIDTH          640
+#define VIEW_HEIGHT         480
+
+#define MAX_SPRITES 32
+
+int offset_x       = 0;
+int offset_y 	   = 0;
+
+// Estrutura de sprite
+typedef struct {
+    uint8_t  tile_id;
+    uint16_t pos_x;
+    uint16_t pos_y;
+} Sprite;
+
+// Monta o registro 32 bits no formato esperado pelo Verilog
+uint32_t build_sprite_reg(uint8_t tile_id, uint16_t pos_x, uint16_t pos_y) {
+    return ((uint32_t)(tile_id & 0x1FF) << 23) |  // 9 bits
+           ((uint32_t)(pos_x  & 0x1FFF) << 10) |  // 13 bits
+           ((uint32_t)(pos_y  & 0x3FF));          // 10 bits
+}
+
+// Envia os sprites para o sprite_composer
+void send_sprites_to_composer(Sprite sprites[], int count) {
+    int i;
+    uint32_t reg;
+
+    // Envia os sprites ativos
+    for (i = 0; i < count; i++) {
+        reg = build_sprite_reg(sprites[i].tile_id, sprites[i].pos_x, sprites[i].pos_y);
+        IOWR_32DIRECT(COMPOSER_BASE, i * 4, reg);
+    }
+
+    // Zera os registros restantes
+    for (i = count; i < MAX_SPRITES; i++) {
+        IOWR_32DIRECT(COMPOSER_BASE, i * 4, 0);
+    }
+
+    // Indica que os dados foram enviados
+    IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_OFFSET_X * 4, offset_x);
+    IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_OFFSET_Y * 4, offset_y);
+}
+
+//void send_sprite_to_composer(Sprite sprites[], int id) {
+//    uint32_t reg;
+//    reg = build_sprite_reg(sprites[id].tile_id, sprites[id].pos_x, sprites[id].pos_y);
+//	IOWR_32DIRECT(COMPOSER_BASE, id * 4, reg);
+//}
+//
+//void new_frame_isr() {
+////	// Move o primeiro sprite horizontalmente (exemplo)
+////	sprites[3].pos_x += 1;
+////	if (sprites[3].pos_x > BG_WIDTH) {
+////		sprites[3].pos_x = 0; // volta para o início
+////	}
+////
+////	send_sprite_to_composer((Sprite *)sprites, 3);
+//}
+
+//void init_new_frame_interrupt( void ) {
+//	alt_irq_enable(COMPOSER_IRQ);
+//	alt_irq_register(COMPOSER_IRQ,
+//					 NULL,
+//					 (void *)new_frame_isr);
+//}
+
+int main() {
+	int last_btn = 0;
+	int active_sprites = 5;  // Exemplo: 5 sprites ativos
+	Sprite sprites[MAX_SPRITES];
+
+	// Inicializa sprites ativos (exemplo simples)
+	for (int i = 0; i < active_sprites; i++) {
+		sprites[i].tile_id = i + 1;      // tile_id nunca 0 (0 = sprite vazio)
+		sprites[i].pos_x   = 20 * i;     // posi  o X
+		sprites[i].pos_y   = 20 * i;     // posi  o Y
+	}
+
+	// Zera os restantes (n o obrigatoriamente, mas boa pr tica)
+	for (int i = active_sprites; i < MAX_SPRITES; i++) {
+		sprites[i].tile_id = 0;
+		sprites[i].pos_x = 0;
+		sprites[i].pos_y = 0;
+	}
+
+	// Initial setup: send full BG dimensions and latch config
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_BG_WIDTH, BG_WIDTH);
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_BG_HEIGHT, BG_HEIGHT);
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_START, 1);
+
+	// Envia os sprites para o hardware
+	send_sprites_to_composer(sprites, active_sprites);
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_WORLD_TYPE * 4, 2);  // 00: 9x1, 01: 1x9, 10: 3x3
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_READY * 4, 1);
+
+	//init_new_frame_interrupt();
+
+	while (1) {
+//        //volatile int btns = IORD_32DIRECT(GAMEPAD_PINS_BASE, 0);
+//		//IOWR_32DIRECT(LEDS_BASE, 0, btns);
+////        // Trigger only on edge (change from last state)
+//		if (btns != last_btn) {
+//			if ((btns & (1 << 0)) != 0) {  // CIMA
+//				if (offset_y >= 10)
+//					offset_y -= 10;
+//			}
+//			if ((btns & (1 << 1)) != 0) {  // BAIXO
+//				if (offset_y + VIEW_HEIGHT < BG_HEIGHT)
+//					offset_y += 10;
+//			}
+//			if ((btns & (1 << 2)) != 0) {  // ESQUEDA
+//				if (offset_x >= 10)
+//					offset_x -= 10;
+//			}
+//			if ((btns & (1 << 3)) != 0) {  // DIREITA
+//				if (offset_x + VIEW_WIDTH < BG_WIDTH)
+//					offset_x += 10;
+//			}
+//
+//			// Send updated offsets to Master Interface
+//			IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_X, offset_x);
+//			IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_Y, offset_y);
+//			send_sprites_to_composer(sprites, active_sprites);
+//		}
+//
+//        last_btn = btns;
+    }
+
+    return 0;
+}

@@ -3,7 +3,7 @@
 # Machine generated for CPU 'processor' in SOPC Builder design 'embedded_vpu'
 # SOPC Builder design path: ../../embedded_vpu.sopcinfo
 #
-# Generated: Wed Jul 09 23:41:54 BRT 2025
+# Generated: Sun Jul 13 23:31:37 BRT 2025
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,4 +47,4 @@
 # by allowing GDB to cache memory contents on the host.
 
 # ram_data
-memory 0x8500000 0x8510000 cache
+memory 0x8210000 0x8220000 cache

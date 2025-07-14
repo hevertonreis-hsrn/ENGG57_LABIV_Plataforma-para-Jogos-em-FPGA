@@ -43,20 +43,20 @@ module pixel_counter (
 			pixel_x   <= 0;
 			pixel_y   <= 0;
 			new_frame <= 0;
-		end else if (enable && started) begin
+		end else if (started) begin
 			new_frame <= 0;
-
-			
-			if (pixel_x == H_MAX - 1) begin
-				pixel_x <= 0;
-				if (pixel_y == V_MAX - 1) begin
-					pixel_y   <= 0;
-					new_frame <= 1;
+			if (enable) begin
+				if (pixel_x == H_MAX - 1) begin
+					pixel_x <= 0;
+					if (pixel_y == V_MAX - 1) begin
+						pixel_y   <= 0;
+						new_frame <= 1;
+					end else begin
+						pixel_y <= pixel_y + 1;
+					end
 				end else begin
-					pixel_y <= pixel_y + 1;
-				end
-			end else begin
-				pixel_x <= pixel_x + 1;
+					pixel_x <= pixel_x + 1;
+			end
 			end
 		end
 	end

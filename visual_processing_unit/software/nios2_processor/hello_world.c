@@ -46,16 +46,17 @@ uint32_t build_sprite_reg(uint8_t tile_id, uint16_t pos_x, uint16_t pos_y) {
 void send_sprites_to_composer(Sprite sprites[], int count) {
     int i;
     uint32_t reg;
+    uint32_t addr = 0;
 
     // Envia os sprites ativos
-    for (i = 0; i < count; i++) {
+    for (i = 0; i < count; i++, addr += 4) {
         reg = build_sprite_reg(sprites[i].tile_id, sprites[i].pos_x, sprites[i].pos_y);
-        IOWR_32DIRECT(COMPOSER_BASE, i * 4, reg);
+        IOWR_32DIRECT(COMPOSER_BASE, addr, reg);
     }
 
     // Zera os registros restantes
-    for (i = count; i < MAX_SPRITES; i++) {
-        IOWR_32DIRECT(COMPOSER_BASE, i * 4, 0);
+    for (i = count; i < MAX_SPRITES; i++, addr += 4) {
+        IOWR_32DIRECT(COMPOSER_BASE, addr, 0);
     }
 
     // Indica que os dados foram enviados
@@ -88,7 +89,7 @@ void send_sprites_to_composer(Sprite sprites[], int count) {
 
 int main() {
 	int last_btn = 0;
-	int active_sprites = 9;  // Exemplo: 5 sprites ativos
+	int active_sprites = 30;  // Exemplo: 5 sprites ativos
 	Sprite sprites[MAX_SPRITES];
 
 	// Inicializa sprites ativos (exemplo simples)
@@ -120,7 +121,7 @@ int main() {
 	while (1) {
         volatile int btns = IORD_32DIRECT(GAMEPAD_PINS_BASE, 0);
 		//IOWR_32DIRECT(LEDS_BASE, 0, btns);
-//        // Trigger only on edge (change from last state)
+        // Trigger only on edge (change from last state)
 		if (btns != last_btn) {
 			if ((btns & (1 << 0)) != 0) {  // CIMA
 				if (offset_y >= 10)

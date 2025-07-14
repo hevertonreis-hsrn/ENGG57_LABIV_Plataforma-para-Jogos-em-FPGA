@@ -1,8 +1,6 @@
 module visual_processing_unit(
 	input  wire        CLOCK_50,
-	input  wire [3:0]  KEY,
 	input  wire [0:0]  SW,
-	output wire [11:0] LEDR,
 	output wire        outRequest,
 	output wire        VGA_HS,
 	output wire        VGA_VS,
@@ -20,14 +18,6 @@ module visual_processing_unit(
 	output wire [1:0]  DRAM_BA,
 	inout  wire [31:0] DRAM_DQ,
 	output wire [3:0]  DRAM_DQM,
-	
-	inout  wire [15:0] SRAM_DQ,
-	output wire [19:0] SRAM_ADDR,
-	output wire        SRAM_LB_N,
-	output wire        SRAM_UB_N,
-	output wire        SRAM_CE_N,
-	output wire        SRAM_OE_N,
-	output wire        SRAM_WE_N,
 	
 	input wire	GPIO35,
 	input wire	GPIO31,
@@ -91,8 +81,6 @@ module visual_processing_unit(
 		.composer_conduit_wrreq(wrreq),
 		.composer_conduit_wrfull(wrfull),
 		.composer_conduit_new_frame_test(frame_test),
-		.key_external_connection_export(KEY),    // <- NOVO
-		.leds_external_connection_export(LEDR),
 		.reset_reset_n(SW[0]),                   // <- SW[0] como RESET
 		.sdram_controller_wire_addr(DRAM_ADDR),
 		.sdram_controller_wire_ba(DRAM_BA),
@@ -103,21 +91,7 @@ module visual_processing_unit(
 		.sdram_controller_wire_dqm(DRAM_DQM),
 		.sdram_controller_wire_ras_n(DRAM_RAS_N),
 		.sdram_controller_wire_we_n(DRAM_WE_N),
-		.sram_external_interface_DQ     (SRAM_DQ),
-		.sram_external_interface_ADDR   (SRAM_ADDR),
-		.gamepad_pins_external_connection_export(gamepad_pins),
-//		.gamepad_conduit_pin_1(GPIO35),                //           gamepad_conduit.pin_1
-//		.gamepad_conduit_pin_2(GPIO31),                //                          .pin_2
-//		.gamepad_conduit_pin_3(GPIO27),                //                          .pin_3
-//		.gamepad_conduit_pin_4(GPIO25),                //                          .pin_4
-//		.gamepad_conduit_pin_6(GPIO33),                //                          .pin_6
-//		.gamepad_conduit_pin_7(GPIO29),                //                          .pin_7
-//		.gamepad_conduit_pin_9(GPIO23),                //                          .pin_9
-    .sram_external_interface_LB_N   (SRAM_LB_N),
-    .sram_external_interface_UB_N   (SRAM_UB_N),
-    .sram_external_interface_CE_N   (SRAM_CE_N),
-    .sram_external_interface_OE_N   (SRAM_OE_N),
-    .sram_external_interface_WE_N   (SRAM_WE_N)
+		.gamepad_pins_external_connection_export(gamepad_pins)
 	);
 
 	// Leitor da FIFO para o VGA
