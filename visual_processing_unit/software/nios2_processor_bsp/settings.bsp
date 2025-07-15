@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jul 14, 2025 11:57:42 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1752505062777</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jul 14, 2025 10:46:18 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1752543978720</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\software\nios2_processor_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\embedded_vpu.sopcinfo</SopcDesignFile>
@@ -895,6 +895,12 @@
         <MemoryMap>
                 <slaveDescriptor>gamepad_pins</slaveDescriptor>
                 <addressRange>0x08900000 - 0x0890000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>new_frame_irq</slaveDescriptor>
+                <addressRange>0x08910000 - 0x0891000F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>

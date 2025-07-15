@@ -111,12 +111,33 @@
    {
       datum _lockedAddress
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
       datum baseAddress
       {
          value = "143654912";
+         type = "String";
+      }
+   }
+   element new_frame_irq
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
+   element new_frame_irq.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "143720448";
          type = "String";
       }
    }
@@ -215,6 +236,11 @@
    internal="gamepad_pins.external_connection"
    type="conduit"
    dir="end" />
+ <interface
+   name="new_frame_irq_external_connection"
+   internal="new_frame_irq.external_connection"
+   type="conduit"
+   dir="end" />
  <interface name="reset" internal="clk.clk_in_reset" type="reset" dir="end" />
  <interface
    name="sdram_controller_wire"
@@ -251,6 +277,24 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="12" />
  </module>
+ <module
+   name="new_frame_irq"
+   kind="altera_avalon_pio"
+   version="18.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="100000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="true" />
+  <parameter name="irqType" value="EDGE" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
  <module name="processor" kind="altera_nios2_gen2" version="18.1" enabled="1">
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
@@ -271,7 +315,7 @@
   <parameter name="dataAddrWidth" value="28" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='background_loader.slave' start='0x8200000' end='0x8200400' type='background_loader.slave' /><slave name='composer.avalon' start='0x8200400' end='0x8200800' type='composer.avalon' /><slave name='ram_data.s1' start='0x8210000' end='0x8220000' type='altera_avalon_onchip_memory2.s1' /><slave name='processor.debug_mem_slave' start='0x8220000' end='0x8220800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='gamepad_pins.s1' start='0x8900000' end='0x8900010' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='background_loader.slave' start='0x8200000' end='0x8200400' type='background_loader.slave' /><slave name='composer.avalon' start='0x8200400' end='0x8200800' type='composer.avalon' /><slave name='ram_data.s1' start='0x8210000' end='0x8220000' type='altera_avalon_onchip_memory2.s1' /><slave name='processor.debug_mem_slave' start='0x8220000' end='0x8220800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='gamepad_pins.s1' start='0x8900000' end='0x8900010' type='altera_avalon_pio.s1' /><slave name='new_frame_irq.s1' start='0x8910000' end='0x8910010' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -317,7 +361,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="0" />
+  <parameter name="internalIrqMaskSystemInfo" value="1" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -530,6 +574,15 @@
    kind="avalon"
    version="18.1"
    start="processor.data_master"
+   end="new_frame_irq.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x08910000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="processor.data_master"
    end="background_loader.slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x08200000" />
@@ -569,6 +622,7 @@
    end="sdram_controller.clk" />
  <connection kind="clock" version="18.1" start="clk.clk" end="gamepad_pins.clk" />
  <connection kind="clock" version="18.1" start="clk.clk" end="processor.clk" />
+ <connection kind="clock" version="18.1" start="clk.clk" end="new_frame_irq.clk" />
  <connection kind="clock" version="18.1" start="clk.clk" end="ram_data.clk1" />
  <connection
    kind="clock"
@@ -621,6 +675,13 @@
   <parameter name="width" value="0" />
  </connection>
  <connection
+   kind="interrupt"
+   version="18.1"
+   start="processor.irq"
+   end="new_frame_irq.irq">
+  <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
    kind="reset"
    version="18.1"
    start="clk.clk_reset"
@@ -640,6 +701,11 @@
    version="18.1"
    start="clk.clk_reset"
    end="processor.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk.clk_reset"
+   end="new_frame_irq.reset" />
  <connection
    kind="reset"
    version="18.1"

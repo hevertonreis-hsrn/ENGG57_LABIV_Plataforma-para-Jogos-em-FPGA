@@ -16,7 +16,8 @@ module embedded_vpu (
 	sdram_controller_wire_dq,
 	sdram_controller_wire_dqm,
 	sdram_controller_wire_ras_n,
-	sdram_controller_wire_we_n);	
+	sdram_controller_wire_we_n,
+	new_frame_irq_external_connection_export);	
 
 	input		background_loader_conduit_pll_locked;
 	input		clk_clk;
@@ -35,4 +36,5 @@ module embedded_vpu (
 	output	[3:0]	sdram_controller_wire_dqm;
 	output		sdram_controller_wire_ras_n;
 	output		sdram_controller_wire_we_n;
+	input		new_frame_irq_external_connection_export;
 endmodule

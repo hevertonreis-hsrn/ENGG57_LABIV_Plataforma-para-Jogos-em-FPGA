@@ -3,7 +3,7 @@
 # Machine generated for CPU 'processor' in SOPC Builder design 'embedded_vpu'
 # SOPC Builder design path: ../../embedded_vpu.sopcinfo
 #
-# Generated: Sun Jul 13 23:31:37 BRT 2025
+# Generated: Mon Jul 14 12:25:03 BRT 2025
 
 # DO NOT MODIFY THIS FILE
 #

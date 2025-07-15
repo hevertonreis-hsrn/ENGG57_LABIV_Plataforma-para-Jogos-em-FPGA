@@ -4,23 +4,24 @@
 
 `timescale 1 ps / 1 ps
 module embedded_vpu (
-		input  wire        background_loader_conduit_pll_locked,    //        background_loader_conduit.pll_locked
-		input  wire        clk_clk,                                 //                              clk.clk
-		output wire [23:0] composer_conduit_pixel_out,              //                 composer_conduit.pixel_out
-		input  wire        composer_conduit_wrfull,                 //                                 .wrfull
-		output wire        composer_conduit_wrreq,                  //                                 .wrreq
-		output wire        composer_conduit_new_frame_test,         //                                 .new_frame_test
-		input  wire [11:0] gamepad_pins_external_connection_export, // gamepad_pins_external_connection.export
-		input  wire        reset_reset_n,                           //                            reset.reset_n
-		output wire [12:0] sdram_controller_wire_addr,              //            sdram_controller_wire.addr
-		output wire [1:0]  sdram_controller_wire_ba,                //                                 .ba
-		output wire        sdram_controller_wire_cas_n,             //                                 .cas_n
-		output wire        sdram_controller_wire_cke,               //                                 .cke
-		output wire        sdram_controller_wire_cs_n,              //                                 .cs_n
-		inout  wire [31:0] sdram_controller_wire_dq,                //                                 .dq
-		output wire [3:0]  sdram_controller_wire_dqm,               //                                 .dqm
-		output wire        sdram_controller_wire_ras_n,             //                                 .ras_n
-		output wire        sdram_controller_wire_we_n               //                                 .we_n
+		input  wire        background_loader_conduit_pll_locked,     //         background_loader_conduit.pll_locked
+		input  wire        clk_clk,                                  //                               clk.clk
+		output wire [23:0] composer_conduit_pixel_out,               //                  composer_conduit.pixel_out
+		input  wire        composer_conduit_wrfull,                  //                                  .wrfull
+		output wire        composer_conduit_wrreq,                   //                                  .wrreq
+		output wire        composer_conduit_new_frame_test,          //                                  .new_frame_test
+		input  wire [11:0] gamepad_pins_external_connection_export,  //  gamepad_pins_external_connection.export
+		input  wire        new_frame_irq_external_connection_export, // new_frame_irq_external_connection.export
+		input  wire        reset_reset_n,                            //                             reset.reset_n
+		output wire [12:0] sdram_controller_wire_addr,               //             sdram_controller_wire.addr
+		output wire [1:0]  sdram_controller_wire_ba,                 //                                  .ba
+		output wire        sdram_controller_wire_cas_n,              //                                  .cas_n
+		output wire        sdram_controller_wire_cke,                //                                  .cke
+		output wire        sdram_controller_wire_cs_n,               //                                  .cs_n
+		inout  wire [31:0] sdram_controller_wire_dq,                 //                                  .dq
+		output wire [3:0]  sdram_controller_wire_dqm,                //                                  .dqm
+		output wire        sdram_controller_wire_ras_n,              //                                  .ras_n
+		output wire        sdram_controller_wire_we_n                //                                  .we_n
 	);
 
 	wire         background_loader_bg_fifo_full_bg_fifo_full;             // background_loader:bg_fifo_full -> composer:bg_fifo_full
@@ -59,6 +60,11 @@ module embedded_vpu (
 	wire         mm_interconnect_0_ram_data_s1_clken;                     // mm_interconnect_0:ram_data_s1_clken -> ram_data:clken
 	wire  [31:0] mm_interconnect_0_gamepad_pins_s1_readdata;              // gamepad_pins:readdata -> mm_interconnect_0:gamepad_pins_s1_readdata
 	wire   [1:0] mm_interconnect_0_gamepad_pins_s1_address;               // mm_interconnect_0:gamepad_pins_s1_address -> gamepad_pins:address
+	wire         mm_interconnect_0_new_frame_irq_s1_chipselect;           // mm_interconnect_0:new_frame_irq_s1_chipselect -> new_frame_irq:chipselect
+	wire  [31:0] mm_interconnect_0_new_frame_irq_s1_readdata;             // new_frame_irq:readdata -> mm_interconnect_0:new_frame_irq_s1_readdata
+	wire   [1:0] mm_interconnect_0_new_frame_irq_s1_address;              // mm_interconnect_0:new_frame_irq_s1_address -> new_frame_irq:address
+	wire         mm_interconnect_0_new_frame_irq_s1_write;                // mm_interconnect_0:new_frame_irq_s1_write -> new_frame_irq:write_n
+	wire  [31:0] mm_interconnect_0_new_frame_irq_s1_writedata;            // mm_interconnect_0:new_frame_irq_s1_writedata -> new_frame_irq:writedata
 	wire   [7:0] mm_interconnect_0_background_loader_slave_address;       // mm_interconnect_0:background_loader_slave_address -> background_loader:slave_address
 	wire         mm_interconnect_0_background_loader_slave_write;         // mm_interconnect_0:background_loader_slave_write -> background_loader:slave_write
 	wire  [31:0] mm_interconnect_0_background_loader_slave_writedata;     // mm_interconnect_0:background_loader_slave_writedata -> background_loader:slave_writedata
@@ -80,8 +86,9 @@ module embedded_vpu (
 	wire         mm_interconnect_1_sdram_controller_s1_readdatavalid;     // sdram_controller:za_valid -> mm_interconnect_1:sdram_controller_s1_readdatavalid
 	wire         mm_interconnect_1_sdram_controller_s1_write;             // mm_interconnect_1:sdram_controller_s1_write -> sdram_controller:az_wr_n
 	wire  [31:0] mm_interconnect_1_sdram_controller_s1_writedata;         // mm_interconnect_1:sdram_controller_s1_writedata -> sdram_controller:az_data
+	wire         irq_mapper_receiver0_irq;                                // new_frame_irq:irq -> irq_mapper:receiver0_irq
 	wire  [31:0] processor_irq_irq;                                       // irq_mapper:sender_irq -> processor:irq
-	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [background_loader:reset_n, composer:rst_n, gamepad_pins:reset_n, mm_interconnect_0:composer_reset_n_reset_bridge_in_reset_reset, mm_interconnect_1:background_loader_reset_reset_bridge_in_reset_reset, sdram_controller:reset_n]
+	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [background_loader:reset_n, composer:rst_n, gamepad_pins:reset_n, mm_interconnect_0:composer_reset_n_reset_bridge_in_reset_reset, mm_interconnect_1:background_loader_reset_reset_bridge_in_reset_reset, new_frame_irq:reset_n, sdram_controller:reset_n]
 	wire         rst_controller_001_reset_out_reset;                      // rst_controller_001:reset_out -> [irq_mapper:reset, mm_interconnect_0:processor_reset_reset_bridge_in_reset_reset, processor:reset_n, ram_data:reset]
 	wire         rst_controller_001_reset_out_reset_req;                  // rst_controller_001:reset_req -> [processor:reset_req, ram_data:reset_req, rst_translator:reset_req_in]
 	wire         processor_debug_reset_request_reset;                     // processor:debug_reset_request -> rst_controller_001:reset_in1
@@ -130,6 +137,18 @@ module embedded_vpu (
 		.address  (mm_interconnect_0_gamepad_pins_s1_address),  //                  s1.address
 		.readdata (mm_interconnect_0_gamepad_pins_s1_readdata), //                    .readdata
 		.in_port  (gamepad_pins_external_connection_export)     // external_connection.export
+	);
+
+	embedded_vpu_new_frame_irq new_frame_irq (
+		.clk        (clk_clk),                                       //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address    (mm_interconnect_0_new_frame_irq_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_new_frame_irq_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_new_frame_irq_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_new_frame_irq_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_new_frame_irq_s1_readdata),   //                    .readdata
+		.in_port    (new_frame_irq_external_connection_export),      // external_connection.export
+		.irq        (irq_mapper_receiver0_irq)                       //                 irq.irq
 	);
 
 	embedded_vpu_processor processor (
@@ -222,6 +241,11 @@ module embedded_vpu (
 		.composer_avalon_writedata                    (mm_interconnect_0_composer_avalon_writedata),             //                                       .writedata
 		.gamepad_pins_s1_address                      (mm_interconnect_0_gamepad_pins_s1_address),               //                        gamepad_pins_s1.address
 		.gamepad_pins_s1_readdata                     (mm_interconnect_0_gamepad_pins_s1_readdata),              //                                       .readdata
+		.new_frame_irq_s1_address                     (mm_interconnect_0_new_frame_irq_s1_address),              //                       new_frame_irq_s1.address
+		.new_frame_irq_s1_write                       (mm_interconnect_0_new_frame_irq_s1_write),                //                                       .write
+		.new_frame_irq_s1_readdata                    (mm_interconnect_0_new_frame_irq_s1_readdata),             //                                       .readdata
+		.new_frame_irq_s1_writedata                   (mm_interconnect_0_new_frame_irq_s1_writedata),            //                                       .writedata
+		.new_frame_irq_s1_chipselect                  (mm_interconnect_0_new_frame_irq_s1_chipselect),           //                                       .chipselect
 		.processor_debug_mem_slave_address            (mm_interconnect_0_processor_debug_mem_slave_address),     //              processor_debug_mem_slave.address
 		.processor_debug_mem_slave_write              (mm_interconnect_0_processor_debug_mem_slave_write),       //                                       .write
 		.processor_debug_mem_slave_read               (mm_interconnect_0_processor_debug_mem_slave_read),        //                                       .read
@@ -263,9 +287,10 @@ module embedded_vpu (
 	);
 
 	embedded_vpu_irq_mapper irq_mapper (
-		.clk        (clk_clk),                            //       clk.clk
-		.reset      (rst_controller_001_reset_out_reset), // clk_reset.reset
-		.sender_irq (processor_irq_irq)                   //    sender.irq
+		.clk           (clk_clk),                            //       clk.clk
+		.reset         (rst_controller_001_reset_out_reset), // clk_reset.reset
+		.receiver0_irq (irq_mapper_receiver0_irq),           // receiver0.irq
+		.sender_irq    (processor_irq_irq)                   //    sender.irq
 	);
 
 	altera_reset_controller #(

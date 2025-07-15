@@ -32,7 +32,7 @@ module composer (
 		wire 			 sprites_ready;
 		wire new_frame2;
 			
-		assign new_frame_test = new_frame2;
+		assign new_frame_test = new_frame;
 		//assign new_frame_int  = new_frame;
 	
     pixel_counter pc_inst (
