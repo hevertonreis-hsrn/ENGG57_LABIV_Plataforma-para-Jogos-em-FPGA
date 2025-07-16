@@ -7,6 +7,7 @@ module embedded_vpu (
 	composer_conduit_wrreq,
 	composer_conduit_new_frame_test,
 	gamepad_pins_external_connection_export,
+	input_pio_export,
 	reset_reset_n,
 	sdram_controller_wire_addr,
 	sdram_controller_wire_ba,
@@ -16,8 +17,7 @@ module embedded_vpu (
 	sdram_controller_wire_dq,
 	sdram_controller_wire_dqm,
 	sdram_controller_wire_ras_n,
-	sdram_controller_wire_we_n,
-	new_frame_irq_external_connection_export);	
+	sdram_controller_wire_we_n);	
 
 	input		background_loader_conduit_pll_locked;
 	input		clk_clk;
@@ -26,6 +26,7 @@ module embedded_vpu (
 	output		composer_conduit_wrreq;
 	output		composer_conduit_new_frame_test;
 	input	[11:0]	gamepad_pins_external_connection_export;
+	input		input_pio_export;
 	input		reset_reset_n;
 	output	[12:0]	sdram_controller_wire_addr;
 	output	[1:0]	sdram_controller_wire_ba;
@@ -36,5 +37,4 @@ module embedded_vpu (
 	output	[3:0]	sdram_controller_wire_dqm;
 	output		sdram_controller_wire_ras_n;
 	output		sdram_controller_wire_we_n;
-	input		new_frame_irq_external_connection_export;
 endmodule

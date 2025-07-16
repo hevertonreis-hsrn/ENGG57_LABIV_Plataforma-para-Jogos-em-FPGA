@@ -54,8 +54,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 280)
 		(input)
-		(text "new_frame_irq_external_connection_export" (rect 0 0 175 12)(font "Arial" (font_size 8)))
-		(text "new_frame_irq_external_connection_export" (rect 4 269 244 280)(font "Arial" (font_size 8)))
+		(text "input_pio_export" (rect 0 0 64 12)(font "Arial" (font_size 8)))
+		(text "input_pio_export" (rect 4 269 100 280)(font "Arial" (font_size 8)))
 		(line (pt 0 280)(pt 256 280)(line_width 1))
 	)
 	(port
@@ -161,7 +161,7 @@ refer to the applicable agreement for further details.
 		(text "new_frame_test" (rect 261 195 606 400)(font "Arial" (color 0 0 0)))
 		(text "gamepad_pins_external_connection" (rect 49 211 290 435)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "export" (rect 261 235 558 480)(font "Arial" (color 0 0 0)))
-		(text "new_frame_irq_external_connection" (rect 44 251 286 515)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "input_pio" (rect 204 251 462 515)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "export" (rect 261 275 558 560)(font "Arial" (color 0 0 0)))
 		(text "reset" (rect 227 291 484 595)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "reset_n" (rect 261 315 564 640)(font "Arial" (color 0 0 0)))

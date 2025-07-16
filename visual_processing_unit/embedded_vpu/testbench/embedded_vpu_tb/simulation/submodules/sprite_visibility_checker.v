@@ -84,24 +84,25 @@ module sprite_visibility_checker #(
 				else if (address == 8'd35)
 					sprites_ready <= 1'b1;
 			end
+
 		end
 	end
 
 	// Auxiliary functions
 	function [12:0] decode_x(input [31:0] sprite_data, input [1:0] wtype);
 		case (wtype)
-			2'b00: decode_x = sprite_data[22:10];              // 13 bits (3x3)
-			2'b01: decode_x = {3'b000, sprite_data[22:13]};    // 10 bits (9x1)
-			2'b10: decode_x = {1'b0, sprite_data[22:11]};      // 12 bits (1x9)
+			2'b00: decode_x = sprite_data[22:10];              // 13 bits (9x1)
+			2'b01: decode_x = {3'b000, sprite_data[22:13]};    // 10 bits (1x9)
+			2'b10: decode_x = {1'b0, sprite_data[22:11]};      // 12 bits (3x3)
 			default: decode_x = 13'd0;
 		endcase
 	endfunction
 
 	function [12:0] decode_y(input [31:0] sprite_data, input [1:0] wtype);
 		case (wtype)
-			2'b00: decode_y = sprite_data[9:0];                // 10 bits (3x3)
-			2'b01: decode_y = {3'b000, sprite_data[9:0]};      // 10 bits (9x1)
-			2'b10: decode_y = {2'b00, sprite_data[10:0]};      // 11 bits (1x9)
+			2'b00: decode_y = {3'b000, sprite_data[9:0]};       // 10 bits (9x9)
+			2'b01: decode_y = sprite_data[12:0];               // 13 bits (1x9)
+			2'b10: decode_y = {2'b00, sprite_data[10:0]};      // 11 bits (3x3)
 			default: decode_y = 13'd0;
 		endcase
 	endfunction

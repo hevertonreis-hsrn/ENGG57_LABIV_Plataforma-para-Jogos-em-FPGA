@@ -4,14 +4,14 @@ input  wire        clk,
   input  wire        rst_n,
   input  wire        new_pixel,
   input wire new_frame,
+  input wire [7:0] address,
+  input wire read,
+  output reg [31:0] readdata,
   
   input  wire [22:0] h0_in,
   input  wire [22:0] h1_in,
   input  wire [22:0] h2_in,
-  input  wire [22:0] h3_in,
-
-  output wire        collision // ainda não implementado
-
+  input  wire [22:0] h3_in
 
 );
 
@@ -46,29 +46,44 @@ input  wire        clk,
   
   integer i;
   integer j;
+  
+  reg reset_after_read;
+
+always @(posedge clk ) begin
+  if (!rst_n) begin
+    reset_after_read <= 0;
+  end else begin
+    reset_after_read <= read; // captura o estado do read a cada ciclo
+  end
+end
   always @(posedge clk) begin
   
-    if (!rst_n || new_frame) begin
+    if (!rst_n || reset_after_read) begin
 	 
+		
 		 for (i=0; i<32; i=i+1) begin
 		 
 			registers_collision_sprites[i] <= 32'd0;
 			
        end
-		  for (i=0; i<3; i=i+1) begin
+		 
+		  for (i=0; i<4; i=i+1) begin
 		 
 			temp_registers[i] <= 32'd0;
 			
        end
-
+		  
     end else if (new_pixel) begin 
 	 
+		
 		for (i = 0; i < 4; i = i + 1) begin
+		
+				//	temp_registers[i] = 32'd0;
+
 			for (j = 0; j < 4; j = j + 1) begin
 		// Marca o bit do level correspondente no registrador do level atual
 			if(id[i] != 0 && i != j) begin
 			
-				//registers_collision_sprites[level[i]] <= registers_collision_sprites[level[i]] | (32'b1 << level[j]);
 				 temp_registers[i] = temp_registers[i] | (32'b1 << level[j]);
 				end
 			end
@@ -81,4 +96,20 @@ input  wire        clk,
   end
   
   
+  /////NIOS READ
+ 	 
+
+// Lógica de transição de estados (registrada no clock)
+	always @(posedge clk) begin
+    if (!rst_n) begin
+        readdata <= 32'd0;
+    end else begin 
+		if (read) begin
+        if (address >= 8'd37 && address <= 8'd68) begin
+            readdata <= registers_collision_sprites[address - 36];
+        end
+		end
+	  end
+	end
+
   endmodule

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'processor' in SOPC Builder design 'embedded_vpu'
  * SOPC Builder design path: ../../embedded_vpu.sopcinfo
  *
- * Generated: Mon Jul 14 22:12:56 BRT 2025
+ * Generated: Mon Jul 14 12:25:03 BRT 2025
  */
 
 /*
@@ -146,7 +146,6 @@
  */
 
 #define ALT_DEVICE_FAMILY "Cyclone IV E"
-#define ALT_ENHANCED_INTERRUPT_API_PRESENT
 #define ALT_IRQ_BASE NULL
 #define ALT_LOG_PORT "/dev/null"
 #define ALT_LOG_PORT_BASE 0x0
@@ -234,33 +233,6 @@
 #define ALT_MAX_FD 32
 #define ALT_SYS_CLK none
 #define ALT_TIMESTAMP_CLK none
-
-
-/*
- * new_frame_irq configuration
- *
- */
-
-#define ALT_MODULE_CLASS_new_frame_irq altera_avalon_pio
-#define NEW_FRAME_IRQ_BASE 0x8910000
-#define NEW_FRAME_IRQ_BIT_CLEARING_EDGE_REGISTER 0
-#define NEW_FRAME_IRQ_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define NEW_FRAME_IRQ_CAPTURE 1
-#define NEW_FRAME_IRQ_DATA_WIDTH 1
-#define NEW_FRAME_IRQ_DO_TEST_BENCH_WIRING 0
-#define NEW_FRAME_IRQ_DRIVEN_SIM_VALUE 0
-#define NEW_FRAME_IRQ_EDGE_TYPE "RISING"
-#define NEW_FRAME_IRQ_FREQ 100000000
-#define NEW_FRAME_IRQ_HAS_IN 1
-#define NEW_FRAME_IRQ_HAS_OUT 0
-#define NEW_FRAME_IRQ_HAS_TRI 0
-#define NEW_FRAME_IRQ_IRQ 0
-#define NEW_FRAME_IRQ_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define NEW_FRAME_IRQ_IRQ_TYPE "EDGE"
-#define NEW_FRAME_IRQ_NAME "/dev/new_frame_irq"
-#define NEW_FRAME_IRQ_RESET_VALUE 0
-#define NEW_FRAME_IRQ_SPAN 16
-#define NEW_FRAME_IRQ_TYPE "altera_avalon_pio"
 
 
 /*

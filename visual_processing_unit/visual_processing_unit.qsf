@@ -1091,7 +1091,6 @@ set_global_assignment -name VERILOG_FILE sources/rgb16_to_rgb24.v
 set_global_assignment -name VERILOG_FILE sources/vga_controller.v
 set_global_assignment -name VERILOG_FILE sources/top4_sprite_selector.v
 set_global_assignment -name VERILOG_FILE sources/sprite_visibility_checker.v
-set_global_assignment -name VERILOG_FILE sources/sprite_rom_4port.v
 set_global_assignment -name VERILOG_FILE sources/sprite_pixel_fetcher.v
 set_global_assignment -name VERILOG_FILE sources/pixel_reader.v
 set_global_assignment -name VERILOG_FILE sources/pixel_counter.v

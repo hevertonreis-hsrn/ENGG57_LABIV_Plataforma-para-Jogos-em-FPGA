@@ -4,24 +4,14 @@ module border_analyzer (
   input  wire        new_pixel,
   input wire new_frame,
   input  wire [23:0] bg_pixel,
+  input wire [7:0] address,
+  input wire read,
+  output reg [31:0] readdata,
 
   input  wire [22:0] h0_in,
   input  wire [22:0] h1_in,
   input  wire [22:0] h2_in,
-  input  wire [22:0] h3_in,
-
-  // Entradas não utilizadas
-  input  wire        r_in, g_in, b_in,
-  input  wire [1:0]  side_in,
-  input  wire [1:0]  selector_in,
-  input  wire [7:0]  reg_min_in,
-  input  wire [7:0]  reg_max_in,
-
-  input  wire [1:0]  side_select,     // 00=TOP, 01=BOTTOM, 10=LEFT, 11=RIGHT
-  input  wire [4:0]  level_select,
-  output wire [23:0] media_selected,
-
-  output wire        between // ainda não implementado
+  input  wire [22:0] h3_in
 );
 
 
@@ -98,17 +88,20 @@ module border_analyzer (
     end
   endfunction
   
-  
-  always @(posedge clk) begin
-  if (!rst_n)
-    new_frame_d <= 1'b0;
-  else
-    new_frame_d <= new_frame;
-end
+    reg reset_after_read;
 
+always @(posedge clk ) begin
+  if (!rst_n) begin
+    reset_after_read <= 0;
+  end else begin
+    reset_after_read <= read; // captura o estado do read a cada ciclo
+  end
+end
+  
+  
   integer i;
   always @(posedge clk) begin
-    if (!rst_n || new_frame_d) begin
+    if (!rst_n || reset_after_read) begin
       for (i=0; i<32; i=i+1) begin
         registers_border_top[i]    <= 72'd0;
         registers_border_bottom[i] <= 72'd0;
@@ -168,8 +161,53 @@ end
       end
     end
   end
+  
 
+always @(posedge clk) begin
+    if (!rst_n) begin
+        readdata <= 32'd0;
+    end else begin
+        if (read) begin
+            // Handle reads for registers_border_top
+            if (address == 8'd70) begin
+                readdata <= registers_border_top[address - 69][23:0];
+            end else if (address == 8'd71) begin
+                readdata <= registers_border_top[address - 69][47:24];
+            end else if (address == 8'd72) begin
+                readdata <= registers_border_top[address - 69][71:48];
+            end
+            // Handle reads for registers_border_bottom
+            else if (address == 8'd73) begin
+                readdata <= registers_border_bottom[address - 69][23:0];
+            end else if (address == 8'd74) begin
+                readdata <= registers_border_bottom[address - 69][47:24];
+            end else if (address == 8'd75) begin
+                readdata <= registers_border_bottom[address - 69][71:48];
+            end
+            // Handle reads for registers_border_left
+            // Assuming addresses 76, 77, 78 for left border
+            else if (address == 8'd76) begin
+                readdata <= registers_border_left[address - 69][23:0];
+            end else if (address == 8'd77) begin
+                readdata <= registers_border_left[address - 69][47:24];
+            end else if (address == 8'd78) begin
+                readdata <= registers_border_left[address - 69][71:48];
+            end
 
-  assign between = 1'b0;
+            else if (address == 8'd79) begin
+                readdata <= registers_border_right[address - 69][23:0];
+            end else if (address == 8'd80) begin
+                readdata <= registers_border_right[address - 69][47:24];
+            end else if (address == 8'd81) begin
+                readdata <= registers_border_right[address - 69][71:48];
+            end
+            else begin
+                readdata <= 32'd0; // Or some default/error value
+            end
+        end
+
+    end
+end
+
 
 endmodule

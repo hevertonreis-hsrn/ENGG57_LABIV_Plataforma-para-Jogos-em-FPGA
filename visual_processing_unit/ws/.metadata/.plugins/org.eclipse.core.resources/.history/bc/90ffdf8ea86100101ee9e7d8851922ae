@@ -1,0 +1,726 @@
+#include <io.h>
+#include <system.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include "sys/alt_irq.h"
+#include "altera_avalon_pio_regs.h"
+
+// Master Interface register offsets (in bytes)
+#define REG_BG_WIDTH        0   // Background width (e.g., 1920)
+#define REG_BG_HEIGHT       4   // Background height (e.g., 1440)
+#define REG_OFFSET_X        8   // Horizontal offset
+#define REG_OFFSET_Y        12   // Vertical offset
+#define REG_OFFSET_START    16   // Trigger configuration latch (write '1')
+
+// Composer register
+#define REG_COMP_OFFSET_X   32
+#define REG_COMP_OFFSET_Y   33
+#define REG_COMP_WORLD_TYPE 34
+#define REG_COMP_READY      35
+
+// Display dimensions
+#define BG_WIDTH            3200
+#define BG_HEIGHT           480
+
+// Viewport size (visible region)
+#define VIEW_WIDTH          640
+#define VIEW_HEIGHT         480
+
+#define MAX_SPRITES 32
+
+#define BUTTON_UP     0
+#define BUTTON_DOWN   1
+#define BUTTON_LEFT   2
+#define BUTTON_RIGHT  3
+#define BUTTON_A      4
+#define BUTTON_B 	  5
+#define BUTTON_C      6
+#define BUTTON_X      7
+#define BUTTON_Y      8
+#define BUTTON_Z      9
+#define BUTTON_START  10
+#define BUTTON_SELECT 11
+
+#define SPRITE_PLAYER_HEAD_FRONT 		        7
+#define SPRITE_PLAYER_BODY_STOPED_FRONT 		8
+#define SPRITE_PLAYER_BODY_MOVING_FRONT_1 		9
+#define SPRITE_PLAYER_BODY_MOVING_FRONT_2 		10
+#define SPRITE_PLAYER_HEAD_LEFT 			    11
+#define SPRITE_PLAYER_BODY_STOPED_LEFT 			12
+#define SPRITE_PLAYER_BODY_MOVING_LEFT_1 		13
+#define SPRITE_PLAYER_BODY_MOVING_LEFT_2 		14
+#define SPRITE_PLAYER_HEAD_RIGHT 				15
+#define SPRITE_PLAYER_BODY_STOPED_RIGHT 		16
+#define SPRITE_PLAYER_BODY_MOVING_RIGHT_1 		17
+#define SPRITE_PLAYER_BODY_MOVING_RIGHT_2 		18
+#define SPRITE_PLAYER_HEAD_BACK 				44
+#define SPRITE_PLAYER_BODY_STOPED_BACK			46
+#define SPRITE_PLAYER_BODY_MOVING_BACK_1		45
+#define SPRITE_PLAYER_BODY_MOVING_BACK_2		47
+#define SPRITE_NUMBER_0 						36
+#define SPRITE_NUMBER_1 						35
+#define SPRITE_NUMBER_2 						34
+#define SPRITE_NUMBER_3 						33
+#define SPRITE_NUMBER_4 						32
+#define SPRITE_NUMBER_5 						31
+#define SPRITE_NUMBER_6 						30
+#define SPRITE_NUMBER_7 						29
+#define SPRITE_NUMBER_8 						28
+#define SPRITE_NUMBER_9 						27
+#define SPRITE_X 								37
+#define SPRITE_PLATE 							6
+#define SPRITE_BREAD 							1
+#define SPRITE_LETTUCE 							2
+#define SPRITE_TOMATO 							3
+#define SPRITE_RAW_MEAT 						4
+#define SPRITE_COOKED_MEAT 						5
+#define SPRITE_PLATE_BREAD 						38
+#define SPRITE_PLATE_BREAD_LETTUCE 				39
+#define SPRITE_PLATE_BREAD_LETTUCE_TOMATO 		40
+#define SPRITE_PLATE_BREAD_LETTUCE_TOMATO_MEAT 	41
+#define SPRITE_PLATE_BREAD_MEAT 				42
+#define SPRITE_PLATE_BREAD_LETTUCE_MEAT 		43
+#define SPRITE_PLATE_BREAD_TOMATO 				42
+#define SPRITE_PLATE_BREAD_MEAT_TOMATO			42
+#define SPRITE_PLATE_BREAD_TOMATO_MEAT 			42
+#define SPRITE_CAR_FRONT_1 						19
+#define SPRITE_CAR_BACK_1 						20
+#define SPRITE_CAR_FRONT_2 						21
+#define SPRITE_CAR_BACK_2 						22
+#define SPRITE_CAR_FRONT_3 						23
+#define SPRITE_CAR_BACK_3 						24
+#define SPRITE_CAR_FRONT_4 						25
+#define SPRITE_CAR_BACK_5 						26
+
+#define SPRITE_SIZE 16
+
+#define MAP_POSITION_OFFSET_X   		640 * 3
+#define MAP_POSITION_OFFSET_Y   		0
+#define SECOND_IMAGE_OFFSET_X			640
+#define SECOND_IMAGE_OFFSET_Y			0
+#define START_IMAGE_OFFSET_X			640 * 2
+#define START_IMAGE_OFFSET_Y			0
+#define PLAYER_HEAD_INITIAL_POSITION_X 	889 + MAP_POSITION_OFFSET_X
+#define PLAYER_HEAD_INITIAL_POSITION_Y  304 + MAP_POSITION_OFFSET_Y
+#define CAMERA_GAME_POSITION_X			353 + MAP_POSITION_OFFSET_X
+#define CAMERA_GAME_POSITION_Y			0 + MAP_POSITION_OFFSET_Y
+
+#define BEGIN_MAP_X							426 + MAP_POSITION_OFFSET_X
+#define BEGIN_MAP_Y							240 + MAP_POSITION_OFFSET_Y
+#define END_MAP_X							928 + MAP_POSITION_OFFSET_X
+#define END_MAP_Y							384 + MAP_POSITION_OFFSET_Y
+
+#define ITEM_POS_Y							75  + MAP_POSITION_OFFSET_Y
+#define BREAD_POS_X							706 + MAP_POSITION_OFFSET_X
+#define LETTUCE_POS_X						769 + MAP_POSITION_OFFSET_X
+#define TOMATO_POS_X 						830 + MAP_POSITION_OFFSET_X
+#define MEAT_POS_X							894 + MAP_POSITION_OFFSET_X
+#define FULL_BURGUER_POS_X					925 + MAP_POSITION_OFFSET_X
+
+#define CAR_INITIAL_POS_X 					929 + MAP_POSITION_OFFSET_X
+#define CAR_INITIAL_POS_Y					199 + MAP_POSITION_OFFSET_Y
+
+#define WALKING_SPEED 						2
+
+#define SEED								1
+
+#define GAME_BURGUER_STATUS_INCOMPLETE 0
+#define GAME_BURGUER_STATUS_COMPLETE 1
+#define GAME_BURGUER_STATUS_DELIVERED 2
+
+#define CAR_STATUS_ARRIVED 0
+#define CAR_STATUS_AWAITING 1
+#define CAR_STATUS_GO_AWAY_1 2
+#define CAR_STATUS_GO_AWAY_2 3
+#define CAR_STATUS_NO_CAR 4
+
+#define BOX_STOVE_POINT_X_1 647 + MAP_POSITION_OFFSET_X
+#define BOX_STOVE_POINT_X_2 680 + MAP_POSITION_OFFSET_X
+#define BOX_STOVE_POINT_Y_1 340 + MAP_POSITION_OFFSET_Y
+#define BOX_STOVE_POINT_Y_2 400 + MAP_POSITION_OFFSET_Y
+#define BOX_SINK_POINT_X_1 	754 + MAP_POSITION_OFFSET_X
+#define BOX_SINK_POINT_X_2 	821 + MAP_POSITION_OFFSET_X
+#define BOX_SINK_POINT_Y_1	367 + MAP_POSITION_OFFSET_Y
+#define BOX_SINK_POINT_Y_2	400 + MAP_POSITION_OFFSET_Y
+#define BOX_WALL_POINT_X_1	824 + MAP_POSITION_OFFSET_X
+#define BOX_WALL_POINT_X_2	831 + MAP_POSITION_OFFSET_X
+#define BOX_WALL_POINT_Y_1	340 + MAP_POSITION_OFFSET_Y
+#define BOX_WALL_POINT_Y_2	400 + MAP_POSITION_OFFSET_Y
+
+#define ITEM_BOX_POINT_X_1 		428 + MAP_POSITION_OFFSET_X
+#define ITEM_BOX_POINT_X_2		453 + MAP_POSITION_OFFSET_X
+#define BREAD_BOX_POINT_Y_1		272 + MAP_POSITION_OFFSET_Y
+#define BREAD_BOX_POINT_Y_2		301 + MAP_POSITION_OFFSET_Y
+#define LETTUCE_BOX_POINT_Y_1 	301 + MAP_POSITION_OFFSET_Y
+#define LETTUCE_BOX_POINT_Y_2 	331 + MAP_POSITION_OFFSET_Y
+#define TOMATO_BOX_POINT_Y_1 	331 + MAP_POSITION_OFFSET_Y
+#define TOMATO_BOX_POINT_Y_2 	361 + MAP_POSITION_OFFSET_Y
+#define RAW_MEAT_BOX_POINT_Y_1 	361 + MAP_POSITION_OFFSET_Y
+#define RAW_MEAT_BOX_POINT_Y_2 	391 + MAP_POSITION_OFFSET_Y
+#define MEAT_BOX_POINT_X_1		682 + MAP_POSITION_OFFSET_X
+#define MEAT_BOX_POINT_X_2		701 + MAP_POSITION_OFFSET_X
+#define MEAT_BOX_POINT_Y_1		347 + MAP_POSITION_OFFSET_Y
+#define MEAT_BOX_POINT_Y_2		380 + MAP_POSITION_OFFSET_Y
+#define PLATE_BOX_POINT_X_1		650 + MAP_POSITION_OFFSET_X
+#define PLATE_BOX_POINT_X_2		685 + MAP_POSITION_OFFSET_X
+#define PLATE_BOX_POINT_Y_1		262 + MAP_POSITION_OFFSET_Y
+#define PLATE_BOX_POINT_Y_2		278 + MAP_POSITION_OFFSET_Y
+#define DELIVER_BOX_POINT_X_1	832 + MAP_POSITION_OFFSET_X
+#define DELIVER_BOX_POINT_X_2	943 + MAP_POSITION_OFFSET_X
+#define DELIVER_BOX_POINT_Y_1	262 + MAP_POSITION_OFFSET_Y
+#define DELIVER_BOX_POINT_Y_2	281 + MAP_POSITION_OFFSET_Y
+
+// Estrutura de sprite
+typedef struct {
+	uint8_t tile_id;
+	uint16_t pos_x;
+	uint16_t pos_y;
+} Sprite;
+
+typedef struct {
+	Sprite head;
+	Sprite body;
+} Player;
+
+typedef struct {
+	uint8_t bread;
+	uint8_t lettuce;
+	uint8_t tomato;
+	uint8_t meat;
+
+	uint8_t current_bread;
+	uint8_t current_lettuce;
+	uint8_t current_tomato;
+	uint8_t current_raw_meat;
+	uint8_t current_meat;
+	uint8_t current_plate;
+	// 0 -> Incomplete
+	// 1 -> Complete
+	// 2 -> Delivered
+	uint8_t status_burguer;
+} GameStatus;
+
+typedef struct {
+	Sprite car_front_1;
+	Sprite car_front_2;
+	Sprite car_front_3;
+	Sprite car_back_1;
+	Sprite car_back_2;
+	Sprite car_back_3;
+
+	// 0 -> Chegando carro
+	// 1 -> chegou / Esperando
+	// 2 -> indo embora 1
+	// 3 -> indo embora 2
+	// 4 -> Sem Carro
+	uint8_t car_status;
+} Car;
+
+// Monta o registro 32 bits no formato esperado pelo Verilog
+uint32_t build_sprite_reg(uint8_t tile_id, uint16_t pos_x, uint16_t pos_y) {
+	return ((uint32_t) (tile_id & 0x1FF) << 23) |  // 9 bits
+			((uint32_t) (pos_x & 0x1FFF) << 10) |  // 13 bits
+			((uint32_t) (pos_y & 0x3FF));          // 10 bits
+}
+
+// Envia os sprites para o sprite_composer
+void send_sprites_to_composer(Sprite* sprites[], int count) {
+	int i;
+	uint32_t reg;
+
+	// Envia os sprites ativos
+	for (i = 0; i < count; i++) {
+		if (sprites[i] != NULL) {
+			reg = build_sprite_reg(sprites[i]->tile_id, sprites[i]->pos_x, sprites[i]->pos_y);
+			IOWR_32DIRECT(COMPOSER_BASE, i * 4, reg);
+		} else {
+			// Se o ponteiro estiver nulo, zera esse registro
+			IOWR_32DIRECT(COMPOSER_BASE, i * 4, 0);
+		}
+	}
+
+	// Zera os registros restantes
+	for (i = count; i < MAX_SPRITES; i++) {
+		IOWR_32DIRECT(COMPOSER_BASE, i * 4, 0);
+	}
+
+	// Indica que os dados foram enviados
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_OFFSET_X * 4, CAMERA_GAME_POSITION_X);
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_OFFSET_Y * 4, CAMERA_GAME_POSITION_Y);
+}
+
+uint8_t is_pressed(uint32_t btns, int button_index) {
+//	return (btns >> button_index) & 1;
+	return ((btns & (1 << button_index)) != 0);
+}
+
+uint8_t check_colision_objects(int pos_x, int pos_y) {
+	if (((pos_x > BOX_STOVE_POINT_X_1 && pos_x < BOX_STOVE_POINT_X_2)
+			&& (pos_y > BOX_STOVE_POINT_Y_1 && pos_y < BOX_STOVE_POINT_Y_2))
+			|| ((pos_x > BOX_SINK_POINT_X_1 && pos_x < BOX_SINK_POINT_X_2)
+					&& (pos_y > BOX_SINK_POINT_Y_1 && pos_y < BOX_SINK_POINT_Y_2))
+			|| ((pos_x > BOX_WALL_POINT_X_1 && pos_x < BOX_WALL_POINT_X_2)
+					&& (pos_y > BOX_WALL_POINT_Y_1 && pos_y < BOX_WALL_POINT_Y_2))) {
+		return 1;
+	}
+
+	return 0;
+}
+
+uint8_t check_colision_sprites(Sprite* sprite){
+
+	volatile int result = IORD_32DIRECT(COMPOSER_BASE, 60 * 4); //60 - 36 = reg[31] level 24 = Id 7
+
+	if (result & (1 << 31) || result & (1 << 30)  ) {
+		return 1;
+	}
+	return 0;
+
+}
+
+void move_sprite(Sprite* sprite, int amount_x, int ref_x, int amount_y, int ref_y) {
+	int new_pos_x = sprite->pos_x + amount_x;
+	int new_pos_y = sprite->pos_y + amount_y;
+
+	if (check_colision_sprites(sprite)) {
+			return;
+		}
+
+	//if (check_colision_objects(new_pos_x, new_pos_y)) {
+	//	return;
+	//}
+
+	if ((new_pos_x + ref_x < END_MAP_X) && (new_pos_x + ref_x > BEGIN_MAP_X)) {
+		sprite->pos_x = new_pos_x;
+	}
+
+	if ((new_pos_y + ref_y < END_MAP_Y) && (new_pos_y + ref_y > BEGIN_MAP_Y)) {
+		sprite->pos_y = new_pos_y;
+	}
+}
+
+void load_background(uint32_t offset_x, uint32_t offset_y) {
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_X, offset_x);
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_Y, offset_y);
+}
+
+void _helper_player_sprite(Player* player, uint8_t head, uint8_t body_min, uint8_t body_max) {
+    player->head.tile_id = head;
+    if (player->body.tile_id >= body_min && player->body.tile_id <= body_max) {
+        player->body.tile_id += 1;
+    } else {
+        player->body.tile_id = body_min;
+    }
+}
+
+void walk_player(Player* player, int amount_x, int ref_x_h, int ref_x_b, int amount_y, int ref_y_h, int ref_y_b) {
+
+	move_sprite(&(player->head), amount_x, ref_x_h, amount_y, ref_y_h);
+	move_sprite(&(player->body), amount_x, ref_x_b, amount_y, ref_y_b);
+
+	if (amount_y < 0) {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_BACK,
+		SPRITE_PLAYER_BODY_STOPED_BACK,
+		SPRITE_PLAYER_BODY_MOVING_BACK_2);
+	} else if (amount_y > 0) {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_FRONT,
+		SPRITE_PLAYER_BODY_STOPED_FRONT,
+		SPRITE_PLAYER_BODY_MOVING_FRONT_2);
+	} else if (amount_x < 0) {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_LEFT,
+		SPRITE_PLAYER_BODY_STOPED_LEFT,
+		SPRITE_PLAYER_BODY_MOVING_LEFT_2);
+	} else {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_RIGHT,
+		SPRITE_PLAYER_BODY_STOPED_RIGHT,
+		SPRITE_PLAYER_BODY_MOVING_RIGHT_2);
+	}
+}
+
+int get_burguer_component(const Player* player, int min_pos_x, int max_pos_x,
+		int min_pos_y, int max_pos_y) {
+	int current_x = player->body.pos_x;
+	int current_y = player->body.pos_y;
+
+	if ((current_x > min_pos_x && current_x < max_pos_x)
+			&& (current_y > min_pos_y && current_y < max_pos_y)) {
+		return 1;
+	}
+
+	return 0;
+}
+
+void deliver_food(GameStatus* game, const Player* player, int min_pos_x,
+		int max_pos_x, int min_pos_y, int max_pos_y) {
+	int current_x = player->body.pos_x;
+	int current_y = player->body.pos_y;
+
+	if ((current_x > min_pos_x && current_x < max_pos_x)
+	    && (current_y > min_pos_y && current_y < max_pos_y)
+	    && (game->bread == game->current_bread
+	        && game->tomato == game->current_tomato
+	        && game->meat == game->current_meat
+	        && game->lettuce == game->current_lettuce
+	        && game->current_plate == 1)) {
+
+	    game->current_bread = 0;
+	    game->current_meat = 0;
+	    game->current_lettuce = 0;
+	    game->current_plate = 0;
+	    game->current_tomato = 0;
+	    game->status_burguer = GAME_BURGUER_STATUS_DELIVERED;
+	}
+}
+
+void handle_burguer_sprite(Sprite* sprite, const GameStatus* game) {
+	if (game->current_plate == 0) {
+	    sprite->tile_id = SPRITE_X;
+	    return;
+	}
+
+	sprite->tile_id = SPRITE_PLATE;
+	if (game->current_bread) {
+		sprite->tile_id = SPRITE_PLATE_BREAD;
+		if (!game->current_meat && !game->current_tomato
+				&& game->current_lettuce) {
+			sprite->tile_id = SPRITE_PLATE_BREAD_LETTUCE;
+		} else if (!game->current_meat && game->current_tomato
+				&& !game->current_lettuce) {
+			sprite->tile_id = SPRITE_PLATE_BREAD_TOMATO;
+		} else if (!game->current_meat && game->current_tomato
+				&& game->current_lettuce) {
+			sprite->tile_id = SPRITE_PLATE_BREAD_LETTUCE_TOMATO;
+		} else if (game->current_meat && !game->current_tomato
+				&& !game->current_lettuce) {
+			sprite->tile_id = SPRITE_PLATE_BREAD_MEAT;
+		} else if (game->current_meat && !game->current_tomato
+				&& game->current_lettuce) {
+			sprite->tile_id = SPRITE_PLATE_BREAD_LETTUCE_MEAT;
+		} else if (game->current_meat && game->current_tomato
+				&& !game->current_lettuce) {
+			sprite->tile_id = SPRITE_PLATE_BREAD_MEAT_TOMATO;
+		} else if (game->current_meat && game->current_tomato
+				&& game->current_lettuce) {
+			sprite->tile_id = SPRITE_PLATE_BREAD_LETTUCE_TOMATO_MEAT;
+		}
+	}
+}
+
+
+volatile int frame_flag = 0;
+
+void new_frame_isr(void* context) {
+    // Limpa a interrupção
+    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIO_0_BASE, 0x1);
+
+    // Sinaliza que um novo frame chegou
+    frame_flag = 1;
+}
+
+void init_pio_interrupt() {
+    // Zera EDGE_CAP (registro de captura de borda)
+    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIO_0_BASE, 0x1);
+
+    // Habilita a interrupção no bit 0 (único bit nesse PIO)
+    IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PIO_0_BASE, 0x1);
+
+    // Registra a interrupção no Nios II
+    alt_irq_register(PIO_0_IRQ, NULL, (void*)new_frame_isr);
+}
+
+int main() {
+	init_pio_interrupt();
+
+	srand(SEED);
+	uint8_t sprite_counter = 0;
+	Player player;
+	Sprite player_head;
+	Sprite player_body;
+
+	player_head.tile_id = SPRITE_PLAYER_HEAD_FRONT;
+	player_head.pos_x = PLAYER_HEAD_INITIAL_POSITION_X;
+	player_head.pos_y = PLAYER_HEAD_INITIAL_POSITION_Y;
+
+	player_body.tile_id = SPRITE_PLAYER_BODY_STOPED_FRONT;
+	player_body.pos_x = PLAYER_HEAD_INITIAL_POSITION_X;
+	player_body.pos_y = PLAYER_HEAD_INITIAL_POSITION_Y + SPRITE_SIZE;
+
+	player.head = player_head;
+	player.body = player_body;
+
+	Sprite* sprites[MAX_SPRITES];
+
+	sprites[0] = &player.head;
+	sprites[1] = &player.body;
+
+	GameStatus game;
+	game.bread = 0;
+	game.lettuce = 0;
+	game.tomato = 0;
+	game.meat = 0;
+	game.status_burguer = 0;
+	game.current_bread = 0;
+	game.current_lettuce = 0;
+	game.current_tomato = 0;
+	game.current_meat = 0;
+	game.current_raw_meat = 0;
+	game.current_plate = 0;
+
+	Sprite bread_sprite_number;
+	bread_sprite_number.tile_id = SPRITE_X;
+	bread_sprite_number.pos_x = BREAD_POS_X;
+	bread_sprite_number.pos_y = ITEM_POS_Y;
+	sprites[2] = &bread_sprite_number;
+
+	Sprite lettuce_sprite_number;
+	lettuce_sprite_number.tile_id = SPRITE_X;
+	lettuce_sprite_number.pos_x = LETTUCE_POS_X;
+	lettuce_sprite_number.pos_y = ITEM_POS_Y;
+	sprites[3] = &lettuce_sprite_number;
+
+	Sprite tomato_sprite_number;
+	tomato_sprite_number.tile_id = SPRITE_X;
+	tomato_sprite_number.pos_x = TOMATO_POS_X;
+	tomato_sprite_number.pos_y = ITEM_POS_Y;
+	sprites[4] = &tomato_sprite_number;
+
+	Sprite meat_sprite_number;
+	meat_sprite_number.tile_id = SPRITE_X;
+	meat_sprite_number.pos_x = MEAT_POS_X;
+	meat_sprite_number.pos_y = ITEM_POS_Y;
+	sprites[5] = &meat_sprite_number;
+
+	Sprite full_burguer_sprite;
+	full_burguer_sprite.tile_id = SPRITE_X;
+	full_burguer_sprite.pos_x = FULL_BURGUER_POS_X;
+	full_burguer_sprite.pos_y = ITEM_POS_Y;
+	sprites[6] = &full_burguer_sprite;
+
+	Sprite collision;
+	collision.tile_id = SPRITE_X;
+	collision.pos_x = PLAYER_HEAD_INITIAL_POSITION_X + 30;
+	collision.pos_y = PLAYER_HEAD_INITIAL_POSITION_Y + 40 ;
+	sprites[7] = &collision;
+
+// Iniciando o carro
+	Car car;
+	Sprite car_front_1_sprite;
+	Sprite car_front_2_sprite;
+	Sprite car_front_3_sprite;
+	Sprite car_back_1_sprite;
+	Sprite car_back_2_sprite;
+	Sprite car_back_3_sprite;
+
+	car_front_1_sprite.tile_id = SPRITE_CAR_FRONT_1;
+	car_front_1_sprite.pos_x = 0;
+	car_front_1_sprite.pos_y = 0;
+
+	car_front_2_sprite.tile_id = SPRITE_CAR_FRONT_2;
+	car_front_2_sprite.pos_x = 0;
+	car_front_2_sprite.pos_y = 0;
+
+	car_front_3_sprite.tile_id = SPRITE_CAR_FRONT_3;
+	car_front_3_sprite.pos_x = 0;
+	car_front_3_sprite.pos_y = 0;
+
+	car_back_1_sprite.tile_id = SPRITE_CAR_BACK_1;
+	car_back_1_sprite.pos_x = 0;
+	car_back_1_sprite.pos_x = 0;
+
+	car_back_2_sprite.tile_id = SPRITE_CAR_BACK_2;
+	car_back_2_sprite.pos_x = 0;
+	car_back_2_sprite.pos_x = 0;
+
+	car_back_3_sprite.tile_id = SPRITE_CAR_BACK_3;
+	car_back_3_sprite.pos_x = 0;
+	car_back_3_sprite.pos_x = 0;
+
+	sprite_counter = 8;
+
+// Initial setup: send full BG dimensions and latch config
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_BG_WIDTH, BG_WIDTH);
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_BG_HEIGHT, BG_HEIGHT);
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_START, 1);
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_WORLD_TYPE * 4, 0);  // 00: 9x1, 01: 1x9, 10: 3x3
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_READY * 4, 1);
+
+// Espera 3 segundo
+	usleep(3000000);
+
+	load_background(SECOND_IMAGE_OFFSET_X, SECOND_IMAGE_OFFSET_Y);
+
+	usleep(3000000);
+
+	load_background(START_IMAGE_OFFSET_X, START_IMAGE_OFFSET_Y);
+
+// Faz uma tela de carregamento
+	uint8_t start_game = 0;
+	while (start_game) {
+		volatile int btn = IORD_32DIRECT(GAMEPAD_PINS_BASE, 0);
+		if (is_pressed(btn, BUTTON_START)) {
+			start_game = 0;
+		}
+	}
+
+	load_background(CAMERA_GAME_POSITION_X, CAMERA_GAME_POSITION_Y);
+	send_sprites_to_composer(sprites, sprite_counter);
+	int count = 0;
+// Inicia o jogo
+	while (1) {
+		volatile int btn = IORD_32DIRECT(GAMEPAD_PINS_BASE, 0);
+		if (frame_flag) {
+			frame_flag = 0;
+			if (is_pressed(btn, BUTTON_UP)) {
+				walk_player(&player, 0, 0, 0, -WALKING_SPEED, 0, -SPRITE_SIZE);//Player* player, int amount_x, int ref_x_h, int ref_x_b, int amount_y, int ref_y_h, int ref_y_b
+			} else if (is_pressed(btn, BUTTON_DOWN)) {
+				walk_player(&player, 0, 0, 0, WALKING_SPEED, SPRITE_SIZE, 0);
+			} else if (is_pressed(btn, BUTTON_LEFT)) {
+				walk_player(&player, -WALKING_SPEED, 0, 0, 0, 0, 0);
+			} else if (is_pressed(btn, BUTTON_RIGHT)) {
+				walk_player(&player, WALKING_SPEED, 0, 0, 0, 0, 0);
+			}else {
+				// player parado
+				if (player.body.tile_id >= SPRITE_PLAYER_BODY_STOPED_FRONT
+						|| player.body.tile_id <= SPRITE_PLAYER_BODY_MOVING_FRONT_2) {
+					player.body.tile_id = SPRITE_PLAYER_BODY_STOPED_FRONT;
+				} else if (player.body.tile_id >= SPRITE_PLAYER_BODY_STOPED_BACK
+						|| player.body.tile_id <= SPRITE_PLAYER_BODY_MOVING_BACK_2) {
+					player.body.tile_id = SPRITE_PLAYER_BODY_STOPED_BACK;
+				} else if (player.body.tile_id >= SPRITE_PLAYER_BODY_STOPED_LEFT
+						|| player.body.tile_id <= SPRITE_PLAYER_BODY_MOVING_LEFT_2) {
+					player.body.tile_id = SPRITE_PLAYER_BODY_STOPED_LEFT;
+				} else {
+					player.body.tile_id = SPRITE_PLAYER_BODY_STOPED_RIGHT;
+				}
+			}
+//			sprites[0] = player.head;
+//			sprites[1] = player.body;
+//			// Checa por carro
+			if (car.car_status == CAR_STATUS_ARRIVED) {
+				car.car_status = CAR_STATUS_AWAITING;
+
+				game.bread = rand() % 9 + 1;
+				game.lettuce = rand() % 10;
+				game.meat = rand() % 10;
+				game.tomato = rand() % 10;
+				bread_sprite_number.tile_id = SPRITE_NUMBER_0 - game.bread;
+				lettuce_sprite_number.tile_id = SPRITE_NUMBER_0 - game.bread;
+				meat_sprite_number.tile_id = SPRITE_NUMBER_0 - game.bread;
+				tomato_sprite_number.tile_id = SPRITE_NUMBER_0 - game.bread;
+
+				car_front_1_sprite.pos_x = CAR_INITIAL_POS_X;
+				car_front_1_sprite.pos_y = CAR_INITIAL_POS_Y;
+				car_back_1_sprite.pos_x = CAR_INITIAL_POS_X;
+				car_back_1_sprite.pos_y = CAR_INITIAL_POS_Y + SPRITE_SIZE;
+
+				sprites[sprite_counter] = &car_front_1_sprite;
+				sprites[sprite_counter + 1] = &car_back_1_sprite;
+				sprite_counter += 2;
+			} else if (car.car_status == CAR_STATUS_AWAITING
+					&& game.status_burguer == GAME_BURGUER_STATUS_DELIVERED) {
+				car.car_status = CAR_STATUS_GO_AWAY_1;
+			} else if (car.car_status == CAR_STATUS_GO_AWAY_1) {
+				if (count == 0) {
+					car_front_1_sprite.pos_x = CAR_INITIAL_POS_X - SPRITE_SIZE;
+					car_front_1_sprite.pos_y = CAR_INITIAL_POS_Y;
+					car_back_1_sprite.pos_x = CAR_INITIAL_POS_X - SPRITE_SIZE;
+					car_back_1_sprite.pos_y = CAR_INITIAL_POS_Y + SPRITE_SIZE;
+
+					car_front_2_sprite.pos_x = CAR_INITIAL_POS_X;
+					car_front_2_sprite.pos_y = CAR_INITIAL_POS_Y;
+					car_back_2_sprite.pos_x = CAR_INITIAL_POS_X;
+					car_back_2_sprite.pos_y = CAR_INITIAL_POS_Y + SPRITE_SIZE;
+
+					sprites[sprite_counter] = &car_front_2_sprite;
+					sprites[sprite_counter + 1] = &car_back_2_sprite;
+					sprite_counter += 2;
+				} else if (count == 10) {
+					car.car_status = CAR_STATUS_GO_AWAY_2;
+				} else {
+					count += 1;
+				}
+			} else if (car.car_status == CAR_STATUS_GO_AWAY_2) {
+				if (count == 10) {
+					car_front_1_sprite.pos_x = CAR_INITIAL_POS_X - 2 * SPRITE_SIZE;
+					car_front_1_sprite.pos_y = CAR_INITIAL_POS_Y;
+					car_back_1_sprite.pos_x = CAR_INITIAL_POS_X - 2 * SPRITE_SIZE;
+					car_back_1_sprite.pos_y = CAR_INITIAL_POS_Y + SPRITE_SIZE;
+
+					car_front_2_sprite.pos_x = CAR_INITIAL_POS_X - SPRITE_SIZE;
+					car_front_2_sprite.pos_y = CAR_INITIAL_POS_Y;
+					car_back_2_sprite.pos_x = CAR_INITIAL_POS_X - SPRITE_SIZE;
+					car_back_2_sprite.pos_y = CAR_INITIAL_POS_Y + SPRITE_SIZE;
+
+					car_front_3_sprite.pos_x = CAR_INITIAL_POS_X;
+					car_front_3_sprite.pos_y = CAR_INITIAL_POS_Y;
+					car_back_3_sprite.pos_x = CAR_INITIAL_POS_X;
+					car_back_3_sprite.pos_y = CAR_INITIAL_POS_Y + SPRITE_SIZE;
+
+					sprites[sprite_counter] = &car_front_3_sprite;
+					sprites[sprite_counter + 1] = &car_back_3_sprite;
+					sprite_counter += 2;
+				} else if (count == 20) {
+					car.car_status = CAR_STATUS_NO_CAR;;
+				} else {
+					count += 1;
+				}
+
+			} else if (car.car_status == CAR_STATUS_NO_CAR) {
+				car.car_status = CAR_STATUS_ARRIVED;
+				sprite_counter -= 6;
+				count = 0;
+			}
+
+			if (is_pressed(btn, BUTTON_A)) {
+				if (game.current_plate == 0) {
+					game.current_plate = get_burguer_component(&player,
+					PLATE_BOX_POINT_X_1, PLATE_BOX_POINT_X_2,
+					PLATE_BOX_POINT_Y_1, PLATE_BOX_POINT_Y_2);
+				} else if (game.current_plate == 1) {
+					game.current_bread += get_burguer_component(&player,
+					ITEM_BOX_POINT_X_1, ITEM_BOX_POINT_X_2,
+					BREAD_BOX_POINT_Y_1, BREAD_BOX_POINT_Y_2);
+					if (game.current_bread > 0) {
+						game.current_lettuce += get_burguer_component(&player,
+						ITEM_BOX_POINT_X_1, ITEM_BOX_POINT_X_2,
+						LETTUCE_BOX_POINT_Y_1, LETTUCE_BOX_POINT_Y_2);
+						game.current_tomato += get_burguer_component(&player,
+						ITEM_BOX_POINT_X_1, ITEM_BOX_POINT_X_2,
+						TOMATO_BOX_POINT_Y_1, TOMATO_BOX_POINT_Y_2);
+						game.current_raw_meat += get_burguer_component(&player,
+						ITEM_BOX_POINT_X_1, ITEM_BOX_POINT_X_2,
+						RAW_MEAT_BOX_POINT_Y_1, RAW_MEAT_BOX_POINT_Y_2);
+
+						if (game.current_raw_meat) {
+							game.current_meat += get_burguer_component(&player,
+							MEAT_BOX_POINT_X_1, MEAT_BOX_POINT_X_2,
+							MEAT_BOX_POINT_Y_1, MEAT_BOX_POINT_Y_2);
+							game.current_raw_meat -= 1;
+						}
+					}
+				}
+
+				deliver_food(&game, &player, DELIVER_BOX_POINT_X_1,
+				DELIVER_BOX_POINT_X_2,
+				DELIVER_BOX_POINT_Y_1, DELIVER_BOX_POINT_Y_2);
+
+				handle_burguer_sprite(&full_burguer_sprite, &game);
+
+			}
+//
+//			volatile int result = IORD_32DIRECT(COMPOSER_BASE, 60 * 4); //60 - 36 = reg[31] level 24 = Id 7
+//				//	volatile int result_BG_TOP = IORD_32DIRECT(COMPOSER_BASE, 93 * 4); //93 - 69 = reg[24] level 24 = Id 7
+//
+//
+//					if (result & (1 << 31)) { //se level 31 se chocou com level 24
+//
+//						move_sprite(&player.body, 20, 0, 20,0);
+//						move_sprite(&player.head, 20, 0, 20,0);
+//					}
+			walk_player(&player, 1, 0, 0,0,0,0);
+
+			send_sprites_to_composer(sprites, sprite_counter);
+		}
+	}
+}

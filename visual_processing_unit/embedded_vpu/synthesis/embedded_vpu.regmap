@@ -3,7 +3,7 @@
 <name>embedded_vpu</name>
 <peripherals>
 <peripheral>
-      <name>embedded_vpu_new_frame_irq_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
+      <name>embedded_vpu_pio_0_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
       <addressBlock>
         <offset>0x0</offset>
         <size>32</size>

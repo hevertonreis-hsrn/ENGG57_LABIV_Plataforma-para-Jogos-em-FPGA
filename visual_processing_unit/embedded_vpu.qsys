@@ -99,6 +99,30 @@
          type = "String";
       }
    }
+   element embedded_vpu
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element embedded_vpu
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element embedded_vpu
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
    element gamepad_pins
    {
       datum _sortIndex
@@ -120,7 +144,7 @@
          type = "String";
       }
    }
-   element new_frame_irq
+   element pio_0
    {
       datum _sortIndex
       {
@@ -128,12 +152,25 @@
          type = "int";
       }
    }
-   element new_frame_irq.s1
+   element pio_0.reset
+   {
+      datum _tags
+      {
+         value = "";
+         type = "String";
+      }
+   }
+   element pio_0.s1
    {
       datum _lockedAddress
       {
          value = "1";
          type = "boolean";
+      }
+      datum _tags
+      {
+         value = "";
+         type = "String";
       }
       datum baseAddress
       {
@@ -237,8 +274,8 @@
    type="conduit"
    dir="end" />
  <interface
-   name="new_frame_irq_external_connection"
-   internal="new_frame_irq.external_connection"
+   name="input_pio"
+   internal="pio_0.external_connection"
    type="conduit"
    dir="end" />
  <interface name="reset" internal="clk.clk_in_reset" type="reset" dir="end" />
@@ -277,11 +314,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="12" />
  </module>
- <module
-   name="new_frame_irq"
-   kind="altera_avalon_pio"
-   version="18.1"
-   enabled="1">
+ <module name="pio_0" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="true" />
@@ -315,7 +348,7 @@
   <parameter name="dataAddrWidth" value="28" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='background_loader.slave' start='0x8200000' end='0x8200400' type='background_loader.slave' /><slave name='composer.avalon' start='0x8200400' end='0x8200800' type='composer.avalon' /><slave name='ram_data.s1' start='0x8210000' end='0x8220000' type='altera_avalon_onchip_memory2.s1' /><slave name='processor.debug_mem_slave' start='0x8220000' end='0x8220800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='gamepad_pins.s1' start='0x8900000' end='0x8900010' type='altera_avalon_pio.s1' /><slave name='new_frame_irq.s1' start='0x8910000' end='0x8910010' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='background_loader.slave' start='0x8200000' end='0x8200400' type='background_loader.slave' /><slave name='composer.avalon' start='0x8200400' end='0x8200800' type='composer.avalon' /><slave name='ram_data.s1' start='0x8210000' end='0x8220000' type='altera_avalon_onchip_memory2.s1' /><slave name='processor.debug_mem_slave' start='0x8220000' end='0x8220800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='gamepad_pins.s1' start='0x8900000' end='0x8900010' type='altera_avalon_pio.s1' /><slave name='pio_0.s1' start='0x8910000' end='0x8910010' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -574,7 +607,7 @@
    kind="avalon"
    version="18.1"
    start="processor.data_master"
-   end="new_frame_irq.s1">
+   end="pio_0.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x08910000" />
   <parameter name="defaultConnection" value="false" />
@@ -622,7 +655,7 @@
    end="sdram_controller.clk" />
  <connection kind="clock" version="18.1" start="clk.clk" end="gamepad_pins.clk" />
  <connection kind="clock" version="18.1" start="clk.clk" end="processor.clk" />
- <connection kind="clock" version="18.1" start="clk.clk" end="new_frame_irq.clk" />
+ <connection kind="clock" version="18.1" start="clk.clk" end="pio_0.clk" />
  <connection kind="clock" version="18.1" start="clk.clk" end="ram_data.clk1" />
  <connection
    kind="clock"
@@ -674,11 +707,7 @@
   <parameter name="startPortLSB" value="0" />
   <parameter name="width" value="0" />
  </connection>
- <connection
-   kind="interrupt"
-   version="18.1"
-   start="processor.irq"
-   end="new_frame_irq.irq">
+ <connection kind="interrupt" version="18.1" start="processor.irq" end="pio_0.irq">
   <parameter name="irqNumber" value="0" />
  </connection>
  <connection
@@ -701,11 +730,7 @@
    version="18.1"
    start="clk.clk_reset"
    end="processor.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk.clk_reset"
-   end="new_frame_irq.reset" />
+ <connection kind="reset" version="18.1" start="clk.clk_reset" end="pio_0.reset" />
  <connection
    kind="reset"
    version="18.1"

@@ -92,7 +92,7 @@ module visual_processing_unit(
 		.sdram_controller_wire_ras_n(DRAM_RAS_N),
 		.sdram_controller_wire_we_n(DRAM_WE_N),
 		.gamepad_pins_external_connection_export(gamepad_pins),
-		.new_frame_irq_external_connection_export(frame_test)
+		.input_pio_export(frame_test)
 	);
 
 	// Leitor da FIFO para o VGA

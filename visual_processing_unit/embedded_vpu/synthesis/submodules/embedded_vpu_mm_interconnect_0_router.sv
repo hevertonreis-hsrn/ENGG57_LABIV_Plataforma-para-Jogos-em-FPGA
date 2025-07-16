@@ -207,7 +207,7 @@ module embedded_vpu_mm_interconnect_0_router
     end
 
     // ( 0x8200400 .. 0x8200800 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 28'h8200400  && write_transaction  ) begin
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 28'h8200400   ) begin
             src_channel = 6'b000001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end

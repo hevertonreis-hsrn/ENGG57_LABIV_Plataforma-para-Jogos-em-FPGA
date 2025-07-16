@@ -41,6 +41,22 @@
          type = "int";
       }
    }
+   element embedded_vpu_inst_gamepad_pins_external_connection_bfm
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element embedded_vpu_inst_input_pio_bfm
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
    element embedded_vpu_inst_reset_bfm
    {
       datum _sortIndex
@@ -53,7 +69,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "7";
          type = "int";
       }
    }
@@ -123,6 +139,28 @@
   <parameter name="SIGNAL_WIDTHS" value="1,24,1,1" />
  </module>
  <module
+   name="embedded_vpu_inst_gamepad_pins_external_connection_bfm"
+   kind="altera_conduit_bfm"
+   version="18.1"
+   enabled="1">
+  <parameter name="CLOCKED_SIGNAL" value="false" />
+  <parameter name="ENABLE_RESET" value="false" />
+  <parameter name="SIGNAL_DIRECTIONS" value="output" />
+  <parameter name="SIGNAL_ROLES" value="export" />
+  <parameter name="SIGNAL_WIDTHS" value="12" />
+ </module>
+ <module
+   name="embedded_vpu_inst_input_pio_bfm"
+   kind="altera_conduit_bfm"
+   version="18.1"
+   enabled="1">
+  <parameter name="CLOCKED_SIGNAL" value="false" />
+  <parameter name="ENABLE_RESET" value="false" />
+  <parameter name="SIGNAL_DIRECTIONS" value="output" />
+  <parameter name="SIGNAL_ROLES" value="export" />
+  <parameter name="SIGNAL_WIDTHS" value="1" />
+ </module>
+ <module
    name="embedded_vpu_inst_reset_bfm"
    kind="altera_avalon_reset_source"
    version="18.1"
@@ -186,6 +224,28 @@
    version="18.1"
    start="embedded_vpu_inst_composer_conduit_bfm.conduit"
    end="embedded_vpu_inst.composer_conduit">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="18.1"
+   start="embedded_vpu_inst_gamepad_pins_external_connection_bfm.conduit"
+   end="embedded_vpu_inst.gamepad_pins_external_connection">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="18.1"
+   start="embedded_vpu_inst_input_pio_bfm.conduit"
+   end="embedded_vpu_inst.input_pio">
   <parameter name="endPort" value="" />
   <parameter name="endPortLSB" value="0" />
   <parameter name="startPort" value="" />

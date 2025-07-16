@@ -4,26 +4,29 @@ preplace inst embedded_vpu -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst embedded_vpu.processor.cpu -pg 1
 preplace inst embedded_vpu.processor.clock_bridge -pg 1
 preplace inst embedded_vpu.sdram_controller -pg 1 -lvl 4 -y 310
-preplace inst embedded_vpu.processor -pg 1 -lvl 2 -y 180
+preplace inst embedded_vpu.processor -pg 1 -lvl 2 -y 220
+preplace inst embedded_vpu.pio_0 -pg 1 -lvl 3 -y 450
 preplace inst embedded_vpu.processor.reset_bridge -pg 1
 preplace inst embedded_vpu.background_loader -pg 1 -lvl 3 -y 210
 preplace inst embedded_vpu.composer -pg 1 -lvl 3 -y 30
 preplace inst embedded_vpu.ram_data -pg 1 -lvl 4 -y 610
-preplace inst embedded_vpu.gamepad_pins -pg 1 -lvl 3 -y 410
+preplace inst embedded_vpu.gamepad_pins -pg 1 -lvl 3 -y 590
 preplace inst embedded_vpu.clk -pg 1 -lvl 1 -y 230
-preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)sdram_controller.s1,(MASTER)background_loader.master) 1 3 1 1160
-preplace netloc FAN_OUT<net_container>embedded_vpu</net_container>(SLAVE)sdram_controller.clk,(MASTER)clk.clk,(SLAVE)processor.clk,(SLAVE)ram_data.clk1,(SLAVE)background_loader.clock,(SLAVE)gamepad_pins.clk,(SLAVE)composer.clock) 1 1 3 410 80 890 520 1180
-preplace netloc INTERCONNECT<net_container>embedded_vpu</net_container>(SLAVE)processor.debug_mem_slave,(SLAVE)gamepad_pins.s1,(SLAVE)ram_data.s1,(MASTER)processor.data_master,(SLAVE)background_loader.slave,(SLAVE)composer.avalon,(MASTER)processor.instruction_master) 1 1 3 450 60 850 660 NJ
-preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)background_loader.fifo_bg_data,(SLAVE)composer.fifo_bg_data) 1 2 1 930
-preplace netloc INTERCONNECT<net_container>embedded_vpu</net_container>(MASTER)clk.clk_reset,(SLAVE)ram_data.reset1,(SLAVE)composer.reset_n,(SLAVE)background_loader.reset,(SLAVE)gamepad_pins.reset,(MASTER)processor.debug_reset_request,(SLAVE)sdram_controller.reset,(SLAVE)processor.reset) 1 1 3 430 120 830 540 1200
-preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)embedded_vpu.background_loader_conduit,(SLAVE)background_loader.conduit) 1 0 3 NJ 140 NJ 140 NJ
-preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)background_loader.fifo_bg_empty,(SLAVE)composer.fifo_bg_empty) 1 2 1 950
-preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)embedded_vpu.composer_conduit,(SLAVE)composer.conduit) 1 0 3 NJ 100 NJ 100 NJ
-preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)embedded_vpu.clk,(SLAVE)clk.clk_in) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)composer.bg_fifo_full,(SLAVE)background_loader.bg_fifo_full) 1 2 1 910
-preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)embedded_vpu.sdram_controller_wire,(SLAVE)sdram_controller.wire) 1 0 4 NJ 400 NJ 400 NJ 400 NJ
-preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)gamepad_pins.external_connection,(SLAVE)embedded_vpu.gamepad_pins_external_connection) 1 0 3 NJ 440 NJ 440 NJ
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)clk.clk_in,(SLAVE)embedded_vpu.clk) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)pio_0.irq,(MASTER)processor.irq) 1 2 1 890
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)composer.fifo_bg_data,(SLAVE)background_loader.fifo_bg_data) 1 2 1 970
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)embedded_vpu.gamepad_pins_external_connection,(SLAVE)gamepad_pins.external_connection) 1 0 3 NJ 620 NJ 620 NJ
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(MASTER)background_loader.master,(SLAVE)sdram_controller.s1) 1 3 1 1200
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)composer.conduit,(SLAVE)embedded_vpu.composer_conduit) 1 0 3 NJ 100 NJ 100 NJ
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)background_loader.fifo_bg_rd_en,(SLAVE)composer.fifo_bg_rd_en) 1 2 1 1010
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)background_loader.bg_fifo_full,(SLAVE)composer.bg_fifo_full) 1 2 1 950
+preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)background_loader.fifo_bg_empty,(SLAVE)composer.fifo_bg_empty) 1 2 1 990
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)embedded_vpu.sdram_controller_wire,(SLAVE)sdram_controller.wire) 1 0 4 NJ 400 NJ 400 NJ 440 NJ
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)background_loader.conduit,(SLAVE)embedded_vpu.background_loader_conduit) 1 0 3 NJ 120 NJ 120 NJ
+preplace netloc FAN_OUT<net_container>embedded_vpu</net_container>(MASTER)clk.clk,(SLAVE)processor.clk,(SLAVE)ram_data.clk1,(SLAVE)sdram_controller.clk,(SLAVE)pio_0.clk,(SLAVE)composer.clock,(SLAVE)background_loader.clock,(SLAVE)gamepad_pins.clk) 1 1 3 430 140 910 400 1220
+preplace netloc INTERCONNECT<net_container>embedded_vpu</net_container>(SLAVE)processor.debug_mem_slave,(SLAVE)ram_data.s1,(MASTER)processor.instruction_master,(MASTER)processor.data_master,(SLAVE)background_loader.slave,(SLAVE)composer.avalon,(SLAVE)gamepad_pins.s1,(SLAVE)pio_0.s1) 1 1 3 450 180 830 580 1200
+preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)embedded_vpu.input_pio,(SLAVE)pio_0.external_connection) 1 0 3 NJ 480 NJ 480 NJ
 preplace netloc EXPORT<net_container>embedded_vpu</net_container>(SLAVE)clk.clk_in_reset,(SLAVE)embedded_vpu.reset) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>embedded_vpu</net_container>(SLAVE)composer.fifo_bg_rd_en,(SLAVE)background_loader.fifo_bg_rd_en) 1 2 1 970
-levelinfo -pg 1 0 200 1400
-levelinfo -hier embedded_vpu 210 240 590 1000 1280 1390
+preplace netloc INTERCONNECT<net_container>embedded_vpu</net_container>(MASTER)clk.clk_reset,(SLAVE)composer.reset_n,(SLAVE)background_loader.reset,(SLAVE)gamepad_pins.reset,(SLAVE)processor.reset,(SLAVE)sdram_controller.reset,(SLAVE)pio_0.reset,(SLAVE)ram_data.reset1,(MASTER)processor.debug_reset_request) 1 1 3 410 160 850 420 1240
+levelinfo -pg 1 0 200 1410
+levelinfo -hier embedded_vpu 210 240 590 1040 1290 1400

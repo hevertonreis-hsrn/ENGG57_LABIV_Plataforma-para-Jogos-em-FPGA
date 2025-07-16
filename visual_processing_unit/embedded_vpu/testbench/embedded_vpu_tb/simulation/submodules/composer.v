@@ -6,7 +6,10 @@ module composer (
     input  wire        avalon_write,
     input  wire [7:0 ] avalon_address,
     input  wire [31:0] avalon_writedata,
-
+	 
+	 input wire avalon_read,
+	 output wire [31:0] avalon_readdata,
+	 
     // Background FIFO interface
     input  wire [23:0] bg_fifo_q,
     input  wire        bg_fifo_empty,
@@ -32,7 +35,7 @@ module composer (
 		wire 			 sprites_ready;
 		wire new_frame2;
 			
-		assign new_frame_test = new_frame2;
+		assign new_frame_test = new_frame;
 		//assign new_frame_int  = new_frame;
 	
     pixel_counter pc_inst (
@@ -124,11 +127,17 @@ module composer (
 	
 	wire collision;
 	
+	wire [31:0] collision_readdata;
+	assign avalon_readdata = collision_readdata;
+
 	collision_sprite_analyzer collision_sprite(
 		.clk(clk),
 		.rst_n(rst_n),
 		.new_pixel(fetch_done),
 		.new_frame(new_frame2),
+		.address(avalon_address),
+		.readdata(collision_readdata),
+		.read(avalon_read),
 		.h0_in(h0),
 		.h1_in(h1),
 		.h2_in(h2),
@@ -198,6 +207,7 @@ module composer (
 			.pc_enable     (pc_enable),
 			.wrreq         (wrreq)
 		);
+		
 
 
 endmodule

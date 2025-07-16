@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="embedded_vpu" kind="embedded_vpu" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2025.07.14.22:05:45 -->
+ <!-- 2025.07.15.17:43:53 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1752541545</value>
+  <value>1752612233</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -1367,9 +1367,9 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>new_frame_irq</moduleName>
+    <moduleName>pio_0</moduleName>
     <slaveName>clk</slaveName>
-    <name>new_frame_irq.clk</name>
+    <name>pio_0.clk</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -1746,7 +1746,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="readWaitStates">
     <type>int</type>
-    <value>1</value>
+    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -1754,7 +1754,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="readWaitTime">
     <type>int</type>
-    <value>1</value>
+    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -1867,6 +1867,18 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>32</width>
     <role>writedata</role>
+   </port>
+   <port>
+    <name>avalon_read</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>read</role>
+   </port>
+   <port>
+    <name>avalon_readdata</name>
+    <direction>Output</direction>
+    <width>32</width>
+    <role>readdata</role>
    </port>
   </interface>
   <interface name="conduit" kind="conduit_end" version="18.1">
@@ -2918,11 +2930,7 @@ parameters are a RESULT of the module parameters. -->
    </port>
   </interface>
  </module>
- <module
-   name="new_frame_irq"
-   kind="altera_avalon_pio"
-   version="18.1"
-   path="new_frame_irq">
+ <module name="pio_0" kind="altera_avalon_pio" version="18.1" path="pio_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
   <assignment>
@@ -3721,7 +3729,7 @@ parameters are a RESULT of the module parameters. -->
    </assignment>
    <parameter name="associatedAddressablePoint">
     <type>com.altera.entityinterfaces.IConnectionPoint</type>
-    <value>new_frame_irq.s1</value>
+    <value>pio_0.s1</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -5408,7 +5416,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='background_loader.slave' start='0x8200000' end='0x8200400' type='background_loader.slave' /><slave name='composer.avalon' start='0x8200400' end='0x8200800' type='composer.avalon' /><slave name='ram_data.s1' start='0x8210000' end='0x8220000' type='altera_avalon_onchip_memory2.s1' /><slave name='processor.debug_mem_slave' start='0x8220000' end='0x8220800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='gamepad_pins.s1' start='0x8900000' end='0x8900010' type='altera_avalon_pio.s1' /><slave name='new_frame_irq.s1' start='0x8910000' end='0x8910010' type='altera_avalon_pio.s1' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='background_loader.slave' start='0x8200000' end='0x8200400' type='background_loader.slave' /><slave name='composer.avalon' start='0x8200400' end='0x8200800' type='composer.avalon' /><slave name='ram_data.s1' start='0x8210000' end='0x8220000' type='altera_avalon_onchip_memory2.s1' /><slave name='processor.debug_mem_slave' start='0x8220000' end='0x8220800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='gamepad_pins.s1' start='0x8900000' end='0x8900010' type='altera_avalon_pio.s1' /><slave name='pio_0.s1' start='0x8910000' end='0x8910010' type='altera_avalon_pio.s1' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -6108,9 +6116,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>new_frame_irq</moduleName>
+    <moduleName>pio_0</moduleName>
     <slaveName>s1</slaveName>
-    <name>new_frame_irq.s1</name>
+    <name>pio_0.s1</name>
     <baseAddress>143720448</baseAddress>
     <span>16</span>
    </memoryBlock>
@@ -6496,9 +6504,9 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <interrupt>
     <isBridge>false</isBridge>
-    <moduleName>new_frame_irq</moduleName>
+    <moduleName>pio_0</moduleName>
     <slaveName>irq</slaveName>
-    <name>new_frame_irq.irq</name>
+    <name>pio_0.irq</name>
     <interruptNumber>0</interruptNumber>
    </interrupt>
   </interface>
@@ -9087,11 +9095,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="processor.data_master/new_frame_irq.s1"
+   name="processor.data_master/pio_0.s1"
    kind="avalon"
    version="18.1"
    start="processor.data_master"
-   end="new_frame_irq.s1">
+   end="pio_0.s1">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -9134,7 +9142,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>processor</startModule>
   <startConnectionPoint>data_master</startConnectionPoint>
-  <endModule>new_frame_irq</endModule>
+  <endModule>pio_0</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
@@ -9423,11 +9431,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
-   name="clk.clk/new_frame_irq.clk"
+   name="clk.clk/pio_0.clk"
    kind="clock"
    version="18.1"
    start="clk.clk"
-   end="new_frame_irq.clk">
+   end="pio_0.clk">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -9446,7 +9454,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>new_frame_irq</endModule>
+  <endModule>pio_0</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
@@ -9799,11 +9807,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>fifo_bg_rd_en</endConnectionPoint>
  </connection>
  <connection
-   name="processor.irq/new_frame_irq.irq"
+   name="processor.irq/pio_0.irq"
    kind="interrupt"
    version="18.1"
    start="processor.irq"
-   end="new_frame_irq.irq">
+   end="pio_0.irq">
   <parameter name="irqNumber">
    <type>int</type>
    <value>0</value>
@@ -9830,7 +9838,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>processor</startModule>
   <startConnectionPoint>irq</startConnectionPoint>
-  <endModule>new_frame_irq</endModule>
+  <endModule>pio_0</endModule>
   <endConnectionPoint>irq</endConnectionPoint>
  </connection>
  <connection
@@ -9942,11 +9950,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="clk.clk_reset/new_frame_irq.reset"
+   name="clk.clk_reset/pio_0.reset"
    kind="reset"
    version="18.1"
    start="clk.clk_reset"
-   end="new_frame_irq.reset">
+   end="pio_0.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -9965,7 +9973,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>new_frame_irq</endModule>
+  <endModule>pio_0</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection

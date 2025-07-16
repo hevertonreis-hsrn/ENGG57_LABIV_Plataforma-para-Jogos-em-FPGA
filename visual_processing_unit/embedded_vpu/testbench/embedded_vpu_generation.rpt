@@ -1,6 +1,6 @@
 Info: Starting: Create testbench Platform Designer system
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu.ipx
-Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\embedded_vpu.qsys --testbench=STANDARD --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu.ipx
+Info: qsys-generate C:\Users\caios\OneDrive\Documentos\UFBA\laboratorio_integrado_IV\sdram+sprites+sram\visual_processing_unit\embedded_vpu.qsys --testbench=STANDARD --output-directory=C:\Users\caios\OneDrive\Documentos\UFBA\laboratorio_integrado_IV\sdram+sprites+sram\visual_processing_unit --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading visual_processing_unit/embedded_vpu.qsys
 Progress: Reading input file
 Progress: Adding background_loader [background_loader 1.0]
@@ -11,6 +11,8 @@ Progress: Adding composer [composer 1.0]
 Progress: Parameterizing module composer
 Progress: Adding gamepad_pins [altera_avalon_pio 18.1]
 Progress: Parameterizing module gamepad_pins
+Progress: Adding pio_0 [altera_avalon_pio 18.1]
+Progress: Parameterizing module pio_0
 Progress: Adding processor [altera_nios2_gen2 18.1]
 Progress: Parameterizing module processor
 Progress: Adding ram_data [altera_avalon_onchip_memory2 18.1]
@@ -21,6 +23,8 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: embedded_vpu.gamepad_pins: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: embedded_vpu.pio_0: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: embedded_vpu.sdram_controller: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Info: qsys-generate succeeded.
 Info: Loading IP catalog for testbench.
@@ -31,38 +35,38 @@ Progress: (2) searching C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_com
 Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx
 Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx: Loading now from components.ipx
 Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx
-Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0.00 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.00 seconds
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/ip/**/* matched 0 files in 0.00 seconds
-Info: Reading index C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\embedded_vpu\testbench\embedded_vpu.ipx
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0,00 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0,00 seconds
+Info: C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/ip/**/* matched 0 files in 0,00 seconds
+Info: Reading index C:\Users\caios\OneDrive\Documentos\UFBA\laboratorio_integrado_IV\sdram+sprites+sram\visual_processing_unit\embedded_vpu\testbench\embedded_vpu.ipx
 Progress: Loading visual_processing_unit/background_loader_hw.tcl
 Progress: Loading visual_processing_unit/composer_hw.tcl
 Progress: Loading visual_processing_unit/embedded_vpu.qsys
 Progress: Loading visual_processing_unit/gamepad_hw.tcl
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/* matched 51 files in 0.08 seconds
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/ip/**/* matched 0 files in 0.00 seconds
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/*/* matched 546 files in 0.01 seconds
-Info: C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\embedded_vpu\testbench\embedded_vpu.ipx described 0 plugins, 3 paths, in 0.08 seconds
+Info: C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/* matched 53 files in 0,06 seconds
+Info: C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/ip/**/* matched 0 files in 0,00 seconds
+Info: C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/*/* matched 566 files in 0,03 seconds
+Info: C:\Users\caios\OneDrive\Documentos\UFBA\laboratorio_integrado_IV\sdram+sprites+sram\visual_processing_unit\embedded_vpu\testbench\embedded_vpu.ipx described 0 plugins, 3 paths, in 0,09 seconds
 Progress: Loading testbench/embedded_vpu_tb.qsys
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/* matched 13 files in 0.11 seconds
-Info: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/*/* matched 8 files in 0.00 seconds
-Info: C:/Users/felip/.altera.quartus/ip/18.1/**/* matched 0 files in 0.00 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0.00 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0.00 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0.00 seconds
+Info: C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/* matched 13 files in 0,10 seconds
+Info: C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/*/* matched 8 files in 0,00 seconds
+Info: C:/Users/caios/.altera.quartus/ip/18.1/**/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0,00 seconds
 Info: Reading index C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx
-Info: C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0.11 seconds
-Info: C:/intelfpga_lite/18.1/ip/**/* matched 139 files in 0.11 seconds
-Info: C:/intelfpga_lite/ip/**/* matched 0 files in 0.00 seconds
+Info: C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0,06 seconds
+Info: C:/intelfpga_lite/18.1/ip/**/* matched 139 files in 0,07 seconds
+Info: C:/intelfpga_lite/ip/**/* matched 0 files in 0,00 seconds
 Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx
-Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0.00 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/**/* matched 8 files in 0.01 seconds
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0,00 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/**/* matched 8 files in 0,00 seconds
 Info: Reading index C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx
-Info: C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0.01 seconds
-Info: C:/intelfpga_lite/18.1/quartus/common/librarian/factories/**/* matched 4 files in 0.01 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
-Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0.25 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.25 seconds
+Info: C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0,01 seconds
+Info: C:/intelfpga_lite/18.1/quartus/common/librarian/factories/**/* matched 4 files in 0,01 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0,00 seconds
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,18 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,18 seconds
 Progress: 
 Progress: 
 Progress: 
@@ -83,6 +87,12 @@ Info: get_instance_assignment clk testbench.partner.map.clk_in
 Info: get_interface_property composer_conduit EXPORT_OF
 Info: get_instance_property composer CLASS_NAME
 Info: get_instance_assignment composer testbench.partner.map.conduit
+Info: get_interface_property gamepad_pins_external_connection EXPORT_OF
+Info: get_instance_property gamepad_pins CLASS_NAME
+Info: get_instance_assignment gamepad_pins testbench.partner.map.external_connection
+Info: get_interface_property input_pio EXPORT_OF
+Info: get_instance_property pio_0 CLASS_NAME
+Info: get_instance_assignment pio_0 testbench.partner.map.external_connection
 Info: get_interface_property reset EXPORT_OF
 Info: get_instance_property clk CLASS_NAME
 Info: get_instance_assignment clk testbench.partner.map.clk_in_reset
@@ -131,6 +141,8 @@ Info: get_instance_interfaces sdram_controller
 Info: get_interface_property background_loader_conduit EXPORT_OF
 Info: get_interface_property clk EXPORT_OF
 Info: get_interface_property composer_conduit EXPORT_OF
+Info: get_interface_property gamepad_pins_external_connection EXPORT_OF
+Info: get_interface_property input_pio EXPORT_OF
 Info: get_interface_property reset EXPORT_OF
 Info: get_interface_property sdram_controller_wire EXPORT_OF
 Info: get_instance_assignment sdram_controller testbench.partner.map.clk
@@ -142,6 +154,8 @@ Info: get_instance_interface_property sdram_controller clk CLASS_NAME
 Info: get_interface_property background_loader_conduit EXPORT_OF
 Info: get_interface_property clk EXPORT_OF
 Info: get_interface_property composer_conduit EXPORT_OF
+Info: get_interface_property gamepad_pins_external_connection EXPORT_OF
+Info: get_interface_property input_pio EXPORT_OF
 Info: get_interface_property reset EXPORT_OF
 Info: get_interface_property sdram_controller_wire EXPORT_OF
 Info: get_instance_property clk CLASS_NAME
@@ -176,6 +190,8 @@ Info: get_instance_interfaces embedded_vpu_inst
 Info: get_instance_interface_property embedded_vpu_inst background_loader_conduit CLASS_NAME
 Info: get_instance_interface_property embedded_vpu_inst clk CLASS_NAME
 Info: get_instance_interface_property embedded_vpu_inst composer_conduit CLASS_NAME
+Info: get_instance_interface_property embedded_vpu_inst gamepad_pins_external_connection CLASS_NAME
+Info: get_instance_interface_property embedded_vpu_inst input_pio CLASS_NAME
 Info: get_instance_interface_property embedded_vpu_inst reset CLASS_NAME
 Info: get_instance_interface_property embedded_vpu_inst sdram_controller_wire CLASS_NAME
 Info: get_instance_interface_property embedded_vpu_inst clk CLASS_NAME
@@ -318,6 +334,50 @@ Info: get_instance_interface_property embedded_vpu_inst_composer_conduit_bfm clk
 Info: get_instance_interface_property embedded_vpu_inst_composer_conduit_bfm conduit CLASS_NAME
 Info: get_instance_interface_property embedded_vpu_inst_composer_conduit_bfm reset CLASS_NAME
 Info: add_connection embedded_vpu_inst_composer_conduit_bfm.conduit embedded_vpu_inst.composer_conduit
+Info: get_instance_interface_property embedded_vpu_inst gamepad_pins_external_connection CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: gamepad_pins_external_connection
+Info: TB_Gen: conduit_end found: gamepad_pins_external_connection
+Info: get_instance_interface_property embedded_vpu_inst gamepad_pins_external_connection CLASS_NAME
+Info: add_instance embedded_vpu_inst_gamepad_pins_external_connection_bfm altera_conduit_bfm 
+Info: get_instance_property embedded_vpu_inst_gamepad_pins_external_connection_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value embedded_vpu_inst gamepad_pins_external_connection associatedClock
+Info: get_instance_interface_parameter_value embedded_vpu_inst gamepad_pins_external_connection associatedReset
+Info: get_instance_interface_ports embedded_vpu_inst gamepad_pins_external_connection
+Info: get_instance_interface_port_property embedded_vpu_inst gamepad_pins_external_connection gamepad_pins_external_connection_export ROLE
+Info: get_instance_interface_port_property embedded_vpu_inst gamepad_pins_external_connection gamepad_pins_external_connection_export WIDTH
+Info: get_instance_interface_port_property embedded_vpu_inst gamepad_pins_external_connection gamepad_pins_external_connection_export DIRECTION
+Info: set_instance_parameter_value embedded_vpu_inst_gamepad_pins_external_connection_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value embedded_vpu_inst_gamepad_pins_external_connection_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value embedded_vpu_inst_gamepad_pins_external_connection_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value embedded_vpu_inst_gamepad_pins_external_connection_bfm SIGNAL_WIDTHS 12
+Info: set_instance_parameter_value embedded_vpu_inst_gamepad_pins_external_connection_bfm SIGNAL_DIRECTIONS output
+Info: get_instance_property embedded_vpu_inst_gamepad_pins_external_connection_bfm CLASS_NAME
+Info: get_instance_interface_property embedded_vpu_inst gamepad_pins_external_connection CLASS_NAME
+Info: get_instance_interfaces embedded_vpu_inst_gamepad_pins_external_connection_bfm
+Info: get_instance_interface_property embedded_vpu_inst_gamepad_pins_external_connection_bfm conduit CLASS_NAME
+Info: add_connection embedded_vpu_inst_gamepad_pins_external_connection_bfm.conduit embedded_vpu_inst.gamepad_pins_external_connection
+Info: get_instance_interface_property embedded_vpu_inst input_pio CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: input_pio
+Info: TB_Gen: conduit_end found: input_pio
+Info: get_instance_interface_property embedded_vpu_inst input_pio CLASS_NAME
+Info: add_instance embedded_vpu_inst_input_pio_bfm altera_conduit_bfm 
+Info: get_instance_property embedded_vpu_inst_input_pio_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value embedded_vpu_inst input_pio associatedClock
+Info: get_instance_interface_parameter_value embedded_vpu_inst input_pio associatedReset
+Info: get_instance_interface_ports embedded_vpu_inst input_pio
+Info: get_instance_interface_port_property embedded_vpu_inst input_pio input_pio_export ROLE
+Info: get_instance_interface_port_property embedded_vpu_inst input_pio input_pio_export WIDTH
+Info: get_instance_interface_port_property embedded_vpu_inst input_pio input_pio_export DIRECTION
+Info: set_instance_parameter_value embedded_vpu_inst_input_pio_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value embedded_vpu_inst_input_pio_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value embedded_vpu_inst_input_pio_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value embedded_vpu_inst_input_pio_bfm SIGNAL_WIDTHS 1
+Info: set_instance_parameter_value embedded_vpu_inst_input_pio_bfm SIGNAL_DIRECTIONS output
+Info: get_instance_property embedded_vpu_inst_input_pio_bfm CLASS_NAME
+Info: get_instance_interface_property embedded_vpu_inst input_pio CLASS_NAME
+Info: get_instance_interfaces embedded_vpu_inst_input_pio_bfm
+Info: get_instance_interface_property embedded_vpu_inst_input_pio_bfm conduit CLASS_NAME
+Info: add_connection embedded_vpu_inst_input_pio_bfm.conduit embedded_vpu_inst.input_pio
 Info: get_instance_interface_property embedded_vpu_inst sdram_controller_wire CLASS_NAME
 Info: send_message Info TB_Gen: conduit_end (for partner module) found: sdram_controller_wire
 Info: TB_Gen: conduit_end (for partner module) found: sdram_controller_wire
@@ -345,9 +405,9 @@ Info: TB_Gen: Saving testbench system: embedded_vpu_tb.qsys
 Info: save_system embedded_vpu_tb.qsys
 Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
 Info: TB_Gen: TBGEN SUCCESSFUL
-Info: Testbench system: C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb.qsys
+Info: Testbench system: C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb.qsys
 Info: Done
-Info: qsys-generate C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\embedded_vpu.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\embedded_vpu\testbench\embedded_vpu_tb\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\caios\OneDrive\Documentos\UFBA\laboratorio_integrado_IV\sdram+sprites+sram\visual_processing_unit\embedded_vpu.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=C:\Users\caios\OneDrive\Documentos\UFBA\laboratorio_integrado_IV\sdram+sprites+sram\visual_processing_unit\embedded_vpu\testbench\embedded_vpu_tb\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading testbench/embedded_vpu_tb.qsys
 Progress: Reading input file
 Progress: Adding embedded_vpu_inst [embedded_vpu 1.0]
@@ -358,6 +418,10 @@ Progress: Adding embedded_vpu_inst_clk_bfm [altera_avalon_clock_source 18.1]
 Progress: Parameterizing module embedded_vpu_inst_clk_bfm
 Progress: Adding embedded_vpu_inst_composer_conduit_bfm [altera_conduit_bfm 18.1]
 Progress: Parameterizing module embedded_vpu_inst_composer_conduit_bfm
+Progress: Adding embedded_vpu_inst_gamepad_pins_external_connection_bfm [altera_conduit_bfm 18.1]
+Progress: Parameterizing module embedded_vpu_inst_gamepad_pins_external_connection_bfm
+Progress: Adding embedded_vpu_inst_input_pio_bfm [altera_conduit_bfm 18.1]
+Progress: Parameterizing module embedded_vpu_inst_input_pio_bfm
 Progress: Adding embedded_vpu_inst_reset_bfm [altera_avalon_reset_source 18.1]
 Progress: Parameterizing module embedded_vpu_inst_reset_bfm
 Progress: Adding sdram_controller_my_partner [altera_sdram_partner_module 11.0]
@@ -366,6 +430,8 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: embedded_vpu_tb.embedded_vpu_inst.gamepad_pins: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: embedded_vpu_tb.embedded_vpu_inst.pio_0: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: embedded_vpu_tb.embedded_vpu_inst.sdram_controller: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Info: embedded_vpu_tb.embedded_vpu_inst_clk_bfm: Elaborate: altera_clock_source
 Info: embedded_vpu_tb.embedded_vpu_inst_clk_bfm:            $Revision: #1 $
@@ -381,50 +447,65 @@ Info: Interconnect is inserted between master background_loader.master and slave
 Info: embedded_vpu_inst: "embedded_vpu_tb" instantiated embedded_vpu "embedded_vpu_inst"
 Info: embedded_vpu_inst_background_loader_conduit_bfm: "embedded_vpu_tb" instantiated altera_conduit_bfm "embedded_vpu_inst_background_loader_conduit_bfm"
 Info: embedded_vpu_inst_clk_bfm: "embedded_vpu_tb" instantiated altera_avalon_clock_source "embedded_vpu_inst_clk_bfm"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/verbosity_pkg.sv
 Info: embedded_vpu_inst_composer_conduit_bfm: "embedded_vpu_tb" instantiated altera_conduit_bfm "embedded_vpu_inst_composer_conduit_bfm"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/verbosity_pkg.sv
+Info: embedded_vpu_inst_gamepad_pins_external_connection_bfm: "embedded_vpu_tb" instantiated altera_conduit_bfm "embedded_vpu_inst_gamepad_pins_external_connection_bfm"
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/verbosity_pkg.sv
+Info: embedded_vpu_inst_input_pio_bfm: "embedded_vpu_tb" instantiated altera_conduit_bfm "embedded_vpu_inst_input_pio_bfm"
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/verbosity_pkg.sv
 Info: embedded_vpu_inst_reset_bfm: "embedded_vpu_tb" instantiated altera_avalon_reset_source "embedded_vpu_inst_reset_bfm"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/verbosity_pkg.sv
 Info: sdram_controller_my_partner: Starting RTL generation for partner module 'altera_sdram_partner_module'
-Info: sdram_controller_my_partner:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/ip/altera/alt_mem_if/alt_mem_if_mem_models/altera_sdram_partner_module/ -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_sdram_partner_module -- C:/intelfpga_lite/18.1/ip/altera/alt_mem_if/alt_mem_if_mem_models/altera_sdram_partner_module//em_altera_sodimm.pl --output_dir=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0007_sopcgen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --language=verilog --sdram_data_width=32 --sdram_bank_width=2 --sdram_col_width=10 --sdram_row_width=13 --sdram_num_chipselects=1 --module_name=altera_sdram_partner_module --cas_latency=2]
-Info: sdram_controller_my_partner: # 2025.07.14 11:19:36 (*) Starting SDRAM Simulation Partner Module generation
+Info: sdram_controller_my_partner:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/ip/altera/alt_mem_if/alt_mem_if_mem_models/altera_sdram_partner_module/ -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_sdram_partner_module -- C:/intelfpga_lite/18.1/ip/altera/alt_mem_if/alt_mem_if_mem_models/altera_sdram_partner_module//em_altera_sodimm.pl --output_dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0041_sopcgen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --language=verilog --sdram_data_width=32 --sdram_bank_width=2 --sdram_col_width=10 --sdram_row_width=13 --sdram_num_chipselects=1 --module_name=altera_sdram_partner_module --cas_latency=2]
+Info: sdram_controller_my_partner: # 2025.07.15 11:11:18 (*) Starting SDRAM Simulation Partner Module generation
 Info: sdram_controller_my_partner: Done RTL generation for module 'altera_sdram_partner_module'
 Info: sdram_controller_my_partner: "embedded_vpu_tb" instantiated altera_sdram_partner_module "sdram_controller_my_partner"
 Info: background_loader: "embedded_vpu_inst" instantiated background_loader "background_loader"
 Info: composer: "embedded_vpu_inst" instantiated composer "composer"
+Info: gamepad_pins: Starting RTL generation for module 'embedded_vpu_gamepad_pins'
+Info: gamepad_pins:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=embedded_vpu_gamepad_pins --dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0044_gamepad_pins_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0044_gamepad_pins_gen//embedded_vpu_gamepad_pins_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0044_gamepad_pins_gen/  ]
+Info: gamepad_pins: Done RTL generation for module 'embedded_vpu_gamepad_pins'
+Info: gamepad_pins: "embedded_vpu_inst" instantiated altera_avalon_pio "gamepad_pins"
+Info: pio_0: Starting RTL generation for module 'embedded_vpu_pio_0'
+Info: pio_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=embedded_vpu_pio_0 --dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0045_pio_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0045_pio_0_gen//embedded_vpu_pio_0_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0045_pio_0_gen/  ]
+Info: pio_0: Done RTL generation for module 'embedded_vpu_pio_0'
+Info: pio_0: "embedded_vpu_inst" instantiated altera_avalon_pio "pio_0"
 Info: processor: "embedded_vpu_inst" instantiated altera_nios2_gen2 "processor"
 Info: ram_data: Starting RTL generation for module 'embedded_vpu_ram_data'
-Info: ram_data:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=embedded_vpu_ram_data --dir=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0010_ram_data_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0010_ram_data_gen//embedded_vpu_ram_data_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0010_ram_data_gen/  ]
+Info: ram_data:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=embedded_vpu_ram_data --dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0046_ram_data_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0046_ram_data_gen//embedded_vpu_ram_data_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0046_ram_data_gen/  ]
 Info: ram_data: Done RTL generation for module 'embedded_vpu_ram_data'
 Info: ram_data: "embedded_vpu_inst" instantiated altera_avalon_onchip_memory2 "ram_data"
 Info: sdram_controller: Starting RTL generation for module 'embedded_vpu_sdram_controller'
-Info: sdram_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=embedded_vpu_sdram_controller --dir=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0011_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0011_sdram_controller_gen//embedded_vpu_sdram_controller_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0011_sdram_controller_gen/  ]
+Info: sdram_controller:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=embedded_vpu_sdram_controller --dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0047_sdram_controller_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0047_sdram_controller_gen//embedded_vpu_sdram_controller_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0047_sdram_controller_gen/  ]
 Info: sdram_controller: Done RTL generation for module 'embedded_vpu_sdram_controller'
 Info: sdram_controller: "embedded_vpu_inst" instantiated altera_avalon_new_sdram_controller "sdram_controller"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "embedded_vpu_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_1: "embedded_vpu_inst" instantiated altera_mm_interconnect "mm_interconnect_1"
 Info: irq_mapper: "embedded_vpu_inst" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "embedded_vpu_inst" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'embedded_vpu_processor_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=embedded_vpu_processor_cpu --dir=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0014_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0014_cpu_gen//embedded_vpu_processor_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0014_cpu_gen/  ]
-Info: cpu: # 2025.07.14 11:19:48 (*) Starting Nios II generation
-Info: cpu: # 2025.07.14 11:19:48 (*)   Checking for plaintext license.
-Info: cpu: # 2025.07.14 11:19:49 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2025.07.14 11:19:49 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2025.07.14 11:19:49 (*)   Plaintext license not found.
-Info: cpu: # 2025.07.14 11:19:49 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2025.07.14 11:19:49 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2025.07.14 11:19:49 (*)   Creating all objects for CPU
-Info: cpu: # 2025.07.14 11:19:50 (*)   Creating 'C:/Users/felip/AppData/Local/Temp/alt0283_6105224150162288127.dir/0014_cpu_gen//embedded_vpu_processor_cpu_nios2_waves.do'
-Info: cpu: # 2025.07.14 11:19:50 (*)   Generating RTL from CPU objects
-Info: cpu: # 2025.07.14 11:19:50 (*)   Creating plain-text RTL
-Info: cpu: # 2025.07.14 11:19:50 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=embedded_vpu_processor_cpu --dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0050_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0050_cpu_gen//embedded_vpu_processor_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0050_cpu_gen/  ]
+Info: cpu: # 2025.07.15 11:11:34 (*) Starting Nios II generation
+Info: cpu: # 2025.07.15 11:11:34 (*)   Checking for plaintext license.
+Info: cpu: # 2025.07.15 11:11:35 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2025.07.15 11:11:35 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2025.07.15 11:11:35 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2025.07.15 11:11:35 (*)   Plaintext license not found.
+Info: cpu: # 2025.07.15 11:11:35 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2025.07.15 11:11:35 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2025.07.15 11:11:35 (*)   Creating all objects for CPU
+Info: cpu: # 2025.07.15 11:11:36 (*)   Creating 'C:/Users/caios/AppData/Local/Temp/alt0284_6217473871804124469.dir/0050_cpu_gen//embedded_vpu_processor_cpu_nios2_waves.do'
+Info: cpu: # 2025.07.15 11:11:36 (*)   Generating RTL from CPU objects
+Info: cpu: # 2025.07.15 11:11:36 (*)   Creating plain-text RTL
+Info: cpu: # 2025.07.15 11:11:36 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'embedded_vpu_processor_cpu'
 Info: cpu: "processor" instantiated altera_nios2_gen2_unit "cpu"
 Info: processor_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "processor_data_master_translator"
@@ -440,39 +521,39 @@ Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "c
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
 Info: sdram_controller_s1_burst_adapter: "mm_interconnect_1" instantiated altera_merlin_burst_adapter "sdram_controller_s1_burst_adapter"
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: embedded_vpu_tb: Done "embedded_vpu_tb" with 41 modules, 85 files
+Info: embedded_vpu_tb: Done "embedded_vpu_tb" with 45 modules, 88 files
 Info: qsys-generate succeeded.
-Info: sim-script-gen --spd=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\embedded_vpu_tb.spd --output-directory=C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/ --use-relative-paths=true
-Info: Doing: ip-make-simscript --spd=C:\Projects\Quartus\ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA\visual_processing_unit\embedded_vpu_tb.spd --output-directory=C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/ --use-relative-paths=true
-Info: Generating the following file(s) for MODELSIM simulator in C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/ directory:
+Info: sim-script-gen --spd=C:\Users\caios\OneDrive\Documentos\UFBA\laboratorio_integrado_IV\sdram+sprites+sram\visual_processing_unit\embedded_vpu_tb.spd --output-directory=C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\caios\OneDrive\Documentos\UFBA\laboratorio_integrado_IV\sdram+sprites+sram\visual_processing_unit\embedded_vpu_tb.spd --output-directory=C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/ directory:
 Info: 	mentor/msim_setup.tcl
 Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
-Info: Generating the following file(s) for VCSMX simulator in C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/ directory:
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/ directory:
 Info: 	synopsys/vcsmx/synopsys_sim.setup
 Info: 	synopsys/vcsmx/vcsmx_setup.sh
-Info: Generating the following file(s) for NCSIM simulator in C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/ directory:
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/ directory:
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: 	36 .cds.lib files in cadence/cds_libs/ directory
-Info: Generating the following file(s) for RIVIERA simulator in C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/ directory:
+Info: 	40 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/ directory:
 Info: 	aldec/rivierapro_setup.tcl
-Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/.
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/.
 Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
 Info: Finished: Create testbench Platform Designer system

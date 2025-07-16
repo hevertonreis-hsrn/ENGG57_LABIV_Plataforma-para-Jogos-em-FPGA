@@ -6,7 +6,10 @@ module composer (
     input  wire        avalon_write,
     input  wire [7:0 ] avalon_address,
     input  wire [31:0] avalon_writedata,
-
+	 
+	 input wire avalon_read,
+	 output wire [31:0] avalon_readdata,
+	 
     // Background FIFO interface
     input  wire [23:0] bg_fifo_q,
     input  wire        bg_fifo_empty,
@@ -121,53 +124,42 @@ module composer (
 	//-----------------------------
 	// COLLISION SPRITE ANALYZER
 	//-----------------------------
-	
-	wire collision;
-	
+		
+	wire [31:0] collision_readdata;
+	assign avalon_readdata = collision_readdata;
+
 	collision_sprite_analyzer collision_sprite(
 		.clk(clk),
 		.rst_n(rst_n),
 		.new_pixel(fetch_done),
-		.new_frame(new_frame2),
+		.new_frame(new_frame),
+		.address(avalon_address),
+		.readdata(collision_readdata),
+		.read(avalon_read),
 		.h0_in(h0),
 		.h1_in(h1),
 		.h2_in(h2),
-		.h3_in(h3),
-		.collision(collision) // ainda não implementado
-	);
+		.h3_in(h3)
+		);
 	 
 	 
     //-----------------------------
     // BORDER ANALYZER
     //-----------------------------
-		
-		wire r_comp;
-		wire g_comp;
-		wire b_comp;
-		wire side_val;
-		wire selector_val;
-		wire min_val;
-		wire max_val;
-		wire pixel_between;
-		
+			wire [31:0] border_readdata;
     border_analyzer border_inst (
         .clk(clk),
         .rst_n(rst_n),
 		  .new_pixel(fetch_done),
-		  .new_frame(new_frame2),
+		  .new_frame(new_frame),
+			.address(avalon_address),
+			.readdata(border_readdata),
+			.read(avalon_read),
         .bg_pixel(bg_fifo_q),
         .h0_in(h0),
         .h1_in(h1),
         .h2_in(h2),
-        .h3_in(h3),
-        .r_in(r_comp),
-        .g_in(g_comp),
-        .b_in(b_comp),
-        .side_in(side_val),
-        .selector_in(selector_val),
-        .reg_min_in(min_val),
-        .reg_max_in(max_val),
-        .between(pixel_between)
+        .h3_in(h3)
     );
 
     //-----------------------------
@@ -198,6 +190,7 @@ module composer (
 			.pc_enable     (pc_enable),
 			.wrreq         (wrreq)
 		);
+		
 
 
 endmodule

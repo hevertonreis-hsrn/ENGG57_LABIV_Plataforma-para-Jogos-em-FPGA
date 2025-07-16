@@ -4783,7 +4783,7 @@ Caused by: org.eclipse.swt.SWTException: Widget is disposed
 
 !ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 16:23:33.340
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-!SESSION 2025-07-14 21:14:44.776 -----------------------------------------------
+!SESSION 2025-07-15 15:45:08.521 -----------------------------------------------
 eclipse.buildId=4.5.2.M20160212-1500
 java.version=1.8.0_05
 java.vendor=Oracle Corporation
@@ -4791,7 +4791,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2025-07-14 21:15:18.166
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2025-07-15 15:46:13.132
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. ; version: 1.100.0.v20160217-0435
 !STACK 0
 javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -4840,7 +4840,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 33 more
 
-!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-14 21:15:19.289
+!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-15 15:46:14.445
 !MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 !STACK 0
 org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -4902,7 +4902,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 43 more
 
-!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-14 21:15:20.074
+!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-15 15:46:15.227
 !MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 !STACK 0
 org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -4960,7 +4960,270 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 39 more
 
-!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-14 21:15:21.333
+!ENTRY org.eclipse.egit.core 4 0 2025-07-15 15:46:15.402
+!MESSAGE Remove repository mapping of Git mapped resource for which project or mapped git repository has disappeared: 'RepositoryMapping[<empty> -> '../../../.git', absolute path: 'C:/Users/felip/Downloads/visual_processing_unit/.git' ]'
+!STACK 0
+java.io.FileNotFoundException: 
+	at org.eclipse.egit.core.project.GitProjectData.logAndUnmapGoneMappedResource(GitProjectData.java:544)
+	at org.eclipse.egit.core.project.GitProjectData.map(GitProjectData.java:510)
+	at org.eclipse.egit.core.project.GitProjectData.remapAll(GitProjectData.java:479)
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:472)
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:210)
+	at org.eclipse.egit.core.GitProvider.getData(GitProvider.java:103)
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:374)
+	at org.eclipse.egit.core.internal.indexdiff.GitResourceDeltaVisitor.visit(GitResourceDeltaVisitor.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:63)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:74)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:47)
+	at org.eclipse.egit.core.internal.indexdiff.IndexDiffCacheEntry$6.resourceChanged(IndexDiffCacheEntry.java:566)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:152)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:373)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1470)
+	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1598)
+	at org.eclipse.rse.internal.files.ui.resources.SystemRemoteEditManager.refreshRemoteEditProject(SystemRemoteEditManager.java:794)
+	at org.eclipse.rse.internal.files.ui.Activator$InitRemoteEditJob.run(Activator.java:77)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-15 15:46:16.633
+!MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+!STACK 0
+org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:295)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.createInputStream(ExtensibleURIConverterImpl.java:360)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.handleArchiveRedirection(SetupCoreUtil.java:383)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.configureResourceSet(SetupCoreUtil.java:365)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.createResourceSet(SetupCoreUtil.java:133)
+	at org.eclipse.oomph.setup.internal.core.SetupContext.associate(SetupContext.java:359)
+	at org.eclipse.oomph.setup.internal.core.SetupContext.createSelf(SetupContext.java:238)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.performStartup(SetupUIPlugin.java:563)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.access$3(SetupUIPlugin.java:346)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin$1$1.run(SetupUIPlugin.java:243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:618)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:885)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:576)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:232)
+	... 10 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 35 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 41 more
+!SESSION 2025-07-15 15:47:04.569 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2025-07-15 15:47:29.678
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 27 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 33 more
+
+!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-15 15:47:30.059
+!MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+!STACK 0
+org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:295)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.createInputStream(ExtensibleURIConverterImpl.java:360)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.handleArchiveRedirection(SetupCoreUtil.java:383)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.configureResourceSet(SetupCoreUtil.java:365)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.createResourceSet(SetupCoreUtil.java:133)
+	at org.eclipse.oomph.setup.ui.recorder.RecorderManager.<clinit>(RecorderManager.java:119)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.performStartup(SetupUIPlugin.java:196)
+	at org.eclipse.oomph.setup.ui.EarlyStartup.earlyStartup(EarlyStartup.java:22)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:90)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:68)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2852)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:618)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:885)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:576)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:232)
+	... 12 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 37 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 43 more
+
+!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-15 15:47:30.978
+!MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+!STACK 0
+org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:295)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.createInputStream(ExtensibleURIConverterImpl.java:360)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.handleArchiveRedirection(SetupCoreUtil.java:383)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.configureResourceSet(SetupCoreUtil.java:365)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.createResourceSet(SetupCoreUtil.java:133)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.performStartup(SetupUIPlugin.java:419)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.access$3(SetupUIPlugin.java:346)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin$1$1.run(SetupUIPlugin.java:243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:618)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:885)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:576)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:232)
+	... 8 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 33 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 39 more
+
+!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-15 15:47:32.002
 !MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 !STACK 0
 org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -5020,539 +5283,427 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 41 more
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 21:29:03.376
-!MESSAGE No Byte Stream Services found for Nios II Console View
+!ENTRY org.eclipse.cdt.core 1 0 2025-07-15 15:49:27.171
+!MESSAGE Indexed 'processador_bsp' (75 sources, 150 headers) in 3.34 sec: 5,122 declarations; 7,820 references; 1 unresolved inclusions; 2 syntax errors; 9 unresolved names (0.069%)
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 21:29:03.442
+!ENTRY org.eclipse.cdt.core 1 0 2025-07-15 15:49:27.432
+!MESSAGE Indexed 'processador' (1 sources, 28 headers) in 0.149 sec: 1,028 declarations; 2,458 references; 4 unresolved inclusions; 0 syntax errors; 19 unresolved names (0.54%)
+
+!ENTRY com.altera.sbtgui.launch 4 4 2025-07-15 15:56:22.946
+!MESSAGE No project selected for this launch
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 15:57:11.487
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 21:29:05.558
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 15:57:14.277
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 21:30:51.777
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:17:14.824
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 21:30:52.062
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 21:30:52.063
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:17:15.588
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 21:30:54.061
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:17:18.210
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 21:53:02.700
+!ENTRY org.eclipse.cdt.core 1 0 2025-07-15 16:19:22.240
+!MESSAGE Indexed 'nios2_processor' (1 sources, 37 headers) in 0.228 sec: 1,070 declarations; 2,620 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-07-15 16:19:23.920
+!MESSAGE Indexed 'nios2_processor_bsp' (74 sources, 146 headers) in 1.55 sec: 5,118 declarations; 7,814 references; 1 unresolved inclusions; 2 syntax errors; 9 unresolved names (0.07%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:38:11.107
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 21:53:02.998
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 21:53:02.999
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:38:11.831
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 21:53:05.046
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:38:14.396
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY org.eclipse.cdt.core 1 0 2025-07-14 22:19:19.897
-!MESSAGE Indexed 'nios2_processor' (1 sources, 37 headers) in 0.117 sec: 1,063 declarations; 2,212 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 22:21:47.922
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:21:47.923
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:21:49.972
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:26:27.865
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:46:10.381
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 22:26:28.166
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:26:28.167
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:46:11.117
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:26:30.262
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:46:13.696
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:27:20.059
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:47:11.936
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 22:27:20.356
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:27:20.357
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:47:12.650
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:27:22.379
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:47:15.256
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:29:37.055
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:56:29.421
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 22:29:37.334
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:29:37.335
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:56:30.135
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:29:39.399
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 16:56:32.638
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:31:54.172
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:03:34.543
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 22:31:54.454
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:31:54.455
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:03:35.257
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:31:56.481
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:03:37.800
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:34:29.549
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:05:33.486
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 22:34:29.838
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:34:29.840
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:05:34.188
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:34:31.883
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:05:36.780
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:35:51.029
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:37:02.648
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 22:35:51.336
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:35:51.337
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:37:03.662
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:35:53.366
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:37:06.164
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:46:25.784
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:52:40.167
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 22:46:26.066
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:46:26.068
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:52:40.794
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:46:28.141
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:52:43.104
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:49:47.449
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:54:23.169
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 22:49:47.732
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:49:47.735
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:54:23.789
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 22:49:49.854
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:54:26.155
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:10:37.951
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:57:32.995
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:10:38.180
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:10:38.181
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:57:33.598
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:10:40.103
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 17:57:35.936
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:18:06.842
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:02:07.485
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:18:07.075
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:18:07.075
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:02:07.975
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:18:09.062
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:02:10.317
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:20:22.610
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:05:33.246
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:20:22.839
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:20:22.840
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:05:33.836
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:20:24.760
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:05:36.191
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:21:44.388
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:15:34.154
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:21:44.617
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:21:44.618
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:15:34.772
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:21:46.605
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:15:37.105
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:23:52.374
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:17:13.478
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:23:52.612
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:23:52.613
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:17:14.073
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:23:54.574
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:17:16.382
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:34:18.538
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:28:37.837
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:34:18.766
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:34:18.767
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:28:38.444
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:34:20.695
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:28:40.759
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:37:13.410
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:31:10.946
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:37:13.637
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:37:13.638
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:31:13.175
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:37:15.561
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:31:15.502
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:40:09.778
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:36:41.753
 !MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:40:10.018
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:40:10.018
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:36:42.360
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:40:11.966
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 18:36:44.674
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]
+!SESSION 2025-07-15 20:04:03.224 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:47:55.883
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2025-07-15 20:05:06.359
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 27 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 33 more
 
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:47:56.108
-!MESSAGE No Byte Stream Services found for Nios II Console View
+!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-15 20:05:08.265
+!MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+!STACK 0
+org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:295)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.createInputStream(ExtensibleURIConverterImpl.java:360)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.handleArchiveRedirection(SetupCoreUtil.java:383)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.configureResourceSet(SetupCoreUtil.java:365)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.createResourceSet(SetupCoreUtil.java:133)
+	at org.eclipse.oomph.setup.ui.recorder.RecorderManager.<clinit>(RecorderManager.java:119)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.performStartup(SetupUIPlugin.java:196)
+	at org.eclipse.oomph.setup.ui.EarlyStartup.earlyStartup(EarlyStartup.java:22)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:90)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:68)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2852)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:618)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:885)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:576)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:232)
+	... 12 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 37 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 43 more
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:47:56.109
+!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-15 20:05:09.385
+!MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+!STACK 0
+org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:295)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.createInputStream(ExtensibleURIConverterImpl.java:360)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.handleArchiveRedirection(SetupCoreUtil.java:383)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.configureResourceSet(SetupCoreUtil.java:365)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.createResourceSet(SetupCoreUtil.java:133)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.performStartup(SetupUIPlugin.java:419)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.access$3(SetupUIPlugin.java:346)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin$1$1.run(SetupUIPlugin.java:243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:618)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:885)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:576)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:232)
+	... 8 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 33 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 39 more
+
+!ENTRY org.eclipse.oomph.setup.core 2 0 2025-07-15 20:05:11.436
+!MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+!STACK 0
+org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:295)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.createInputStream(ExtensibleURIConverterImpl.java:360)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.handleArchiveRedirection(SetupCoreUtil.java:383)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.configureResourceSet(SetupCoreUtil.java:365)
+	at org.eclipse.oomph.setup.internal.core.util.SetupCoreUtil.createResourceSet(SetupCoreUtil.java:133)
+	at org.eclipse.oomph.setup.internal.core.SetupContext.associate(SetupContext.java:359)
+	at org.eclipse.oomph.setup.internal.core.SetupContext.createSelf(SetupContext.java:238)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.performStartup(SetupUIPlugin.java:563)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.access$3(SetupUIPlugin.java:346)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin$1$1.run(SetupUIPlugin.java:243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:618)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:885)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:576)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.oomph.setup.internal.core.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:232)
+	... 10 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 35 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 41 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 21:05:15.984
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:47:58.027
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:49:34.152
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:49:34.381
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:49:34.382
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:49:36.308
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:58:04.354
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:58:04.594
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:58:04.595
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:58:06.595
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:59:17.062
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-14 23:59:17.300
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:59:17.301
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-14 23:59:19.229
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:03:24.051
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:03:24.273
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:03:24.274
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:03:26.194
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:04:28.758
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:04:28.996
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:04:28.997
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:04:30.950
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:11:55.900
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:11:56.124
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:11:56.125
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:11:58.035
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:15:56.707
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:15:56.931
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:15:56.932
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:15:58.843
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:19:11.457
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:19:11.683
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:19:11.683
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:19:13.607
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:23:03.806
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:23:04.036
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:23:04.037
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:23:05.940
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:38:11.565
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:38:11.802
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:38:11.803
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:38:13.725
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:39:51.964
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:39:52.191
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:39:52.192
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:39:54.113
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:40:55.059
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:40:55.291
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:40:55.292
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:40:57.214
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:42:32.353
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:42:32.579
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:42:32.579
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:42:34.502
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:45:06.361
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:45:06.899
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:45:06.899
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:45:08.866
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:50:50.997
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:50:51.232
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:50:51.233
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:50:53.177
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:56:04.137
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 00:56:04.365
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:56:04.366
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 00:56:06.297
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:01:02.826
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 01:01:03.052
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:01:03.054
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:01:06.216
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:20:05.078
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 01:20:05.319
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:20:05.320
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:20:07.252
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:23:40.491
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 01:23:40.778
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:23:40.779
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:23:42.723
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:38:42.896
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 01:38:43.125
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:38:43.125
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:38:45.048
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:39:52.366
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 01:39:52.590
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:39:52.591
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:39:54.524
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:42:04.323
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 01:42:04.549
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:42:04.550
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:42:06.480
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:42:56.722
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 01:42:56.946
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:42:56.947
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:42:58.878
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:43:18.082
-!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2025-07-15 01:43:18.317
-!MESSAGE No Byte Stream Services found for Nios II Console View
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:43:18.317
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 01:43:20.239
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/nios2_processor.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2025-07-15 21:05:18.803
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/felip/Downloads/visual_processing_unit/visual_processing_unit/software/processador/processador.elf]

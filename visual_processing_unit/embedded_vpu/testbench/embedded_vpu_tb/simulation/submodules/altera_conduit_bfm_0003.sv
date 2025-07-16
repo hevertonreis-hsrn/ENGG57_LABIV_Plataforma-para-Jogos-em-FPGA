@@ -28,63 +28,29 @@
 // This BFM's HDL is been generated through terp file in Qsys/SOPC Builder.
 // Generation parameters:
 // output_name:                                       altera_conduit_bfm_0003
-// role:width:direction:                              ADDR:20:input,CE_N:1:input,DQ:16:bidir,LB_N:1:input,OE_N:1:input,UB_N:1:input,WE_N:1:input
+// role:width:direction:                              export:12:output
 // 0
 //-----------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
 module altera_conduit_bfm_0003
 (
-   sig_ADDR,
-   sig_CE_N,
-   sig_DQ,
-   sig_LB_N,
-   sig_OE_N,
-   sig_UB_N,
-   sig_WE_N
+   sig_export
 );
 
    //--------------------------------------------------------------------------
    // =head1 PINS 
    // =head2 User defined interface
    //--------------------------------------------------------------------------
-   input [19 : 0] sig_ADDR;
-   input sig_CE_N;
-   inout wire [15 : 0] sig_DQ;
-   input sig_LB_N;
-   input sig_OE_N;
-   input sig_UB_N;
-   input sig_WE_N;
+   output [11 : 0] sig_export;
 
    // synthesis translate_off
    import verbosity_pkg::*;
    
-   typedef logic [19 : 0] ROLE_ADDR_t;
-   typedef logic ROLE_CE_N_t;
-   typedef logic [15 : 0] ROLE_DQ_t;
-   typedef logic ROLE_LB_N_t;
-   typedef logic ROLE_OE_N_t;
-   typedef logic ROLE_UB_N_t;
-   typedef logic ROLE_WE_N_t;
+   typedef logic [11 : 0] ROLE_export_t;
 
-   logic [19 : 0] sig_ADDR_in;
-   logic [19 : 0] sig_ADDR_local;
-   logic [0 : 0] sig_CE_N_in;
-   logic [0 : 0] sig_CE_N_local;
-   logic sig_DQ_oe;
-   logic sig_DQ_oe_temp = 0;
-   reg [15 : 0] sig_DQ_temp;
-   reg [15 : 0] sig_DQ_out;
-   logic [15 : 0] sig_DQ_in;
-   logic [15 : 0] sig_DQ_local;
-   logic [0 : 0] sig_LB_N_in;
-   logic [0 : 0] sig_LB_N_local;
-   logic [0 : 0] sig_OE_N_in;
-   logic [0 : 0] sig_OE_N_local;
-   logic [0 : 0] sig_UB_N_in;
-   logic [0 : 0] sig_UB_N_local;
-   logic [0 : 0] sig_WE_N_in;
-   logic [0 : 0] sig_WE_N_local;
+   reg [11 : 0] sig_export_temp;
+   reg [11 : 0] sig_export_out;
 
    //--------------------------------------------------------------------------
    // =head1 Public Methods API
@@ -104,13 +70,6 @@ module altera_conduit_bfm_0003
    // =cut
    //--------------------------------------------------------------------------
    
-   event signal_input_ADDR_change;
-   event signal_input_CE_N_change;
-   event signal_input_DQ_change;
-   event signal_input_LB_N_change;
-   event signal_input_OE_N_change;
-   event signal_input_UB_N_change;
-   event signal_input_WE_N_change;
    
    function automatic string get_version();  // public
       // Return BFM version string. For example, version 9.1 sp1 is "9.1sp1" 
@@ -119,167 +78,23 @@ module altera_conduit_bfm_0003
    endfunction
 
    // -------------------------------------------------------
-   // ADDR
+   // export
    // -------------------------------------------------------
-   function automatic ROLE_ADDR_t get_ADDR();
-   
-      // Gets the ADDR input value.
-      $sformat(message, "%m: called get_ADDR");
-      print(VERBOSITY_DEBUG, message);
-      return sig_ADDR_in;
-      
-   endfunction
 
-   // -------------------------------------------------------
-   // CE_N
-   // -------------------------------------------------------
-   function automatic ROLE_CE_N_t get_CE_N();
-   
-      // Gets the CE_N input value.
-      $sformat(message, "%m: called get_CE_N");
-      print(VERBOSITY_DEBUG, message);
-      return sig_CE_N_in;
-      
-   endfunction
-
-   // -------------------------------------------------------
-   // DQ
-   // -------------------------------------------------------
-   function automatic ROLE_DQ_t get_DQ();
-   
-      // Gets the DQ input value.
-      $sformat(message, "%m: called get_DQ");
-      print(VERBOSITY_DEBUG, message);
-      return sig_DQ_in;
-      
-   endfunction
-
-   function automatic void set_DQ (
-      ROLE_DQ_t new_value
+   function automatic void set_export (
+      ROLE_export_t new_value
    );
-      // Drive the new value to DQ.
+      // Drive the new value to export.
       
       $sformat(message, "%m: method called arg0 %0d", new_value); 
       print(VERBOSITY_DEBUG, message);
       
-      sig_DQ_temp = new_value;
-   endfunction
-   
-   function automatic void set_DQ_oe (
-      bit enable
-   );
-      // bidir port DQ will work as output port when set to 1.
-      // bidir port DQ will work as input port when set to 0.
-      
-      $sformat(message, "%m: method called arg0 %0d", enable); 
-      print(VERBOSITY_DEBUG, message);
-      
-      sig_DQ_oe_temp = enable;
+      sig_export_temp = new_value;
    endfunction
 
-   // -------------------------------------------------------
-   // LB_N
-   // -------------------------------------------------------
-   function automatic ROLE_LB_N_t get_LB_N();
-   
-      // Gets the LB_N input value.
-      $sformat(message, "%m: called get_LB_N");
-      print(VERBOSITY_DEBUG, message);
-      return sig_LB_N_in;
-      
-   endfunction
-
-   // -------------------------------------------------------
-   // OE_N
-   // -------------------------------------------------------
-   function automatic ROLE_OE_N_t get_OE_N();
-   
-      // Gets the OE_N input value.
-      $sformat(message, "%m: called get_OE_N");
-      print(VERBOSITY_DEBUG, message);
-      return sig_OE_N_in;
-      
-   endfunction
-
-   // -------------------------------------------------------
-   // UB_N
-   // -------------------------------------------------------
-   function automatic ROLE_UB_N_t get_UB_N();
-   
-      // Gets the UB_N input value.
-      $sformat(message, "%m: called get_UB_N");
-      print(VERBOSITY_DEBUG, message);
-      return sig_UB_N_in;
-      
-   endfunction
-
-   // -------------------------------------------------------
-   // WE_N
-   // -------------------------------------------------------
-   function automatic ROLE_WE_N_t get_WE_N();
-   
-      // Gets the WE_N input value.
-      $sformat(message, "%m: called get_WE_N");
-      print(VERBOSITY_DEBUG, message);
-      return sig_WE_N_in;
-      
-   endfunction
-
-   assign sig_ADDR_in = sig_ADDR;
-   assign sig_CE_N_in = sig_CE_N;
-   assign sig_DQ_oe = sig_DQ_oe_temp;
-   assign sig_DQ = (sig_DQ_oe == 1)? sig_DQ_temp:'z;
-   assign sig_DQ_in = (sig_DQ_oe == 0)? sig_DQ:'z;
-   assign sig_LB_N_in = sig_LB_N;
-   assign sig_OE_N_in = sig_OE_N;
-   assign sig_UB_N_in = sig_UB_N;
-   assign sig_WE_N_in = sig_WE_N;
+   assign sig_export = sig_export_temp;
 
 
-   always @(sig_ADDR_in) begin
-      if (sig_ADDR_local != sig_ADDR_in)
-         -> signal_input_ADDR_change;
-      sig_ADDR_local = sig_ADDR_in;
-   end
-   
-   always @(sig_CE_N_in) begin
-      if (sig_CE_N_local != sig_CE_N_in)
-         -> signal_input_CE_N_change;
-      sig_CE_N_local = sig_CE_N_in;
-   end
-   
-   always @(sig_DQ_in) begin
-      if (sig_DQ_oe == 0) begin
-         if (sig_DQ_local != sig_DQ_in)
-            -> signal_input_DQ_change;
-         sig_DQ_local = sig_DQ_in;
-      end
-   end
-   
-   always @(sig_LB_N_in) begin
-      if (sig_LB_N_local != sig_LB_N_in)
-         -> signal_input_LB_N_change;
-      sig_LB_N_local = sig_LB_N_in;
-   end
-   
-   always @(sig_OE_N_in) begin
-      if (sig_OE_N_local != sig_OE_N_in)
-         -> signal_input_OE_N_change;
-      sig_OE_N_local = sig_OE_N_in;
-   end
-   
-   always @(sig_UB_N_in) begin
-      if (sig_UB_N_local != sig_UB_N_in)
-         -> signal_input_UB_N_change;
-      sig_UB_N_local = sig_UB_N_in;
-   end
-   
-   always @(sig_WE_N_in) begin
-      if (sig_WE_N_local != sig_WE_N_in)
-         -> signal_input_WE_N_change;
-      sig_WE_N_local = sig_WE_N_in;
-   end
-   
 
 
 // synthesis translate_on

@@ -274,6 +274,14 @@
    type="VERILOG"
    library="processor" />
  <file
+   path="embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_pio_0.v"
+   type="VERILOG"
+   library="pio_0" />
+ <file
+   path="embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_gamepad_pins.v"
+   type="VERILOG"
+   library="gamepad_pins" />
+ <file
    path="embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer.v"
    type="VERILOG"
    library="composer" />
@@ -303,10 +311,6 @@
    library="composer" />
  <file
    path="embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer_ctrl.v"
-   type="VERILOG"
-   library="composer" />
- <file
-   path="embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/rgb16_to_rgb24.v"
    type="VERILOG"
    library="composer" />
  <file
@@ -341,6 +345,14 @@
    path="embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_avalon_reset_source.sv"
    type="SYSTEM_VERILOG"
    library="embedded_vpu_inst_reset_bfm" />
+ <file
+   path="embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_conduit_bfm_0004.sv"
+   type="SYSTEM_VERILOG"
+   library="embedded_vpu_inst_input_pio_bfm" />
+ <file
+   path="embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_conduit_bfm_0003.sv"
+   type="SYSTEM_VERILOG"
+   library="embedded_vpu_inst_gamepad_pins_external_connection_bfm" />
  <file
    path="embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/altera_conduit_bfm_0002.sv"
    type="SYSTEM_VERILOG"

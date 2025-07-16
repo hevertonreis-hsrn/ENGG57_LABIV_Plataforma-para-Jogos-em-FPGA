@@ -1,0 +1,535 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/software/nios2_processor/obj/default/runtime/sim/mentor
+vembedded_vpu_processor_cpu
+Z1 !s110 1752499293
+!i10b 1
+!s100 1aF[:o>iXoV1=HjIczABh1
+Izj9lF4^Og_:^hX_ceX?cn0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1752464333
+Z4 8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu.v
+Z5 FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu.v
+L0 2834
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1752499293.000000
+Z8 !s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu.v|
+Z9 !s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu.v|-work|cpu|
+!i113 1
+Z10 o-work cpu
+Z11 tCvgOpt 0
+vembedded_vpu_processor_cpu_debug_slave_sysclk
+R1
+!i10b 1
+!s100 7g5iDXjoLOPR9:?F_:Ql@1
+I3cC;C6nhj?8TzAIRBn7Qc0
+R2
+R0
+R3
+8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_sysclk.v
+FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_sysclk.v
+Z12 L0 21
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_sysclk.v|
+!s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_sysclk.v|-work|cpu|
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_debug_slave_tck
+R1
+!i10b 1
+!s100 >BEH?C0Z=z>6iNzALDKz@2
+I8[jVDngJ^;=:IAb[MLzO60
+R2
+R0
+R3
+8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_tck.v
+FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_tck.v
+R12
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_tck.v|
+!s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_tck.v|-work|cpu|
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_debug_slave_wrapper
+R1
+!i10b 1
+!s100 SSE7;ZNEo69]A=DAJ8SNj0
+IikToC?mVDWkDEYU>2=eH@3
+R2
+R0
+R3
+8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_wrapper.v
+FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_wrapper.v
+R12
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_wrapper.v|
+!s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_debug_slave_wrapper.v|-work|cpu|
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_avalon_reg
+R1
+!i10b 1
+!s100 FkmgN`f?1d;UC1IHcaDFN3
+IfMIUBmXjRI>5Lzf73aSPE2
+R2
+R0
+R3
+R4
+R5
+L0 2023
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci
+R1
+!i10b 1
+!s100 D6dIU`8X@S1nJFT_7h2[l3
+I0_K@OP4E7kWc<CYicEkjV0
+R2
+R0
+R3
+R4
+R5
+L0 2362
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_break
+R1
+!i10b 1
+!s100 khP3n`XmQXa2Fnm_geKBR3
+Ib;e6M[<4gc=kQzHfki>T?2
+R2
+R0
+R3
+R4
+R5
+L0 295
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_compute_input_tm_cnt
+R1
+!i10b 1
+!s100 oT7bdbXDR:a<C6O<m87bS0
+I=PZH56SJ_7iHAPDh_EAMi1
+R2
+R0
+R3
+R4
+R5
+L0 1265
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_dbrk
+R1
+!i10b 1
+!s100 TloE6gL5[O4QBbdo[CZg>3
+ITTe>Z`WJ2IOTn[]U@Ki]V1
+R2
+R0
+R3
+R4
+R5
+L0 795
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_debug
+R1
+!i10b 1
+!s100 c`?Nzmn5`@[EbmK_cDdc82
+Ik3=27a5fAFHhNCFA`STo33
+R2
+R0
+R3
+R4
+R5
+L0 153
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_dtrace
+R1
+!i10b 1
+!s100 FB[eIUH_fL5VnMVBY]@^T0
+I4Jk;@5jC9=X?4F5m55f=[1
+R2
+R0
+R3
+R4
+R5
+L0 1183
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_fifo
+R1
+!i10b 1
+!s100 WM_gQ<dTh^<dH5DfA?D0a0
+IiTY4C;D>QT^4c_Lo`Fk9B3
+R2
+R0
+R3
+R4
+R5
+L0 1427
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_fifo_cnt_inc
+R1
+!i10b 1
+!s100 agZ[6CMk;cGjYecmLC;J13
+IDbNM:;ddj;mSm=8jMMScl0
+R2
+R0
+R3
+R4
+R5
+L0 1380
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_fifo_wrptr_inc
+R1
+!i10b 1
+!s100 HkWnR`_K2nmAg>QdHmPn^2
+I0jSaC[Mf>FmV@DE4zESRf2
+R2
+R0
+R3
+R4
+R5
+L0 1337
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_im
+R1
+!i10b 1
+!s100 HM`U^WCVi3]9?z<65^2J_0
+IL]af6]cRA[?b3ngE^f23H2
+R2
+R0
+R3
+R4
+R5
+L0 1936
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_itrace
+R1
+!i10b 1
+!s100 ?0f_JMCHl>hFULUPOdcNn1
+If0eR`2AFgC4[@_DahOCcG3
+R2
+R0
+R3
+R4
+R5
+L0 982
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_pib
+R1
+!i10b 1
+!s100 9k@6T2L2F>O@1[UZn^2BE3
+IaXm8kSPjgmH`jYX<5LZ281
+R2
+R0
+R3
+R4
+R5
+L0 1913
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_td_mode
+R1
+!i10b 1
+!s100 RI5H3`Olo4iKGAjk6a6[j2
+IgX66b<za?K2ZQ^a[7Y1D?2
+R2
+R0
+R3
+R4
+R5
+L0 1115
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_oci_xbrk
+R1
+!i10b 1
+!s100 Sk?k?93UZ_jAmPH00e@M]0
+IZ<VbdVd6WVhR`D2KU[6B^2
+R2
+R0
+R3
+R4
+R5
+L0 588
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_ocimem
+R1
+!i10b 1
+!s100 87l6YoEE3Ri5NG[efXP@]3
+IjI@A2ij:JoMKaXY>^W`>62
+R2
+R0
+R3
+R4
+R5
+L0 2181
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_nios2_performance_monitors
+R1
+!i10b 1
+!s100 kfGUM@S19F8KdnB>WGz_z0
+I58YXX07_EL=e_m1=njnIM3
+R2
+R0
+R3
+R4
+R5
+L0 2006
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_ociram_sp_ram_module
+R1
+!i10b 1
+!s100 @U`nTXWCj7KNPc6HdgW_03
+I<;eOic@KE_X37`gVjBlL@0
+R2
+R0
+R3
+R4
+R5
+L0 2116
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_register_bank_a_module
+R1
+!i10b 1
+!s100 W8cz:4cc54nS=<hgJE58Y0
+Iih920Wa03c7ddLe]R27nk2
+R2
+R0
+R3
+R4
+R5
+R12
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_register_bank_b_module
+R1
+!i10b 1
+!s100 @PD4TfCTgJ9l3Ud4<F4Hd3
+I_fi@G2z[h2N`FookLNU351
+R2
+R0
+R3
+R4
+R5
+L0 87
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vembedded_vpu_processor_cpu_test_bench
+R1
+!i10b 1
+!s100 HdA?T5a97?N[4n;BoeGH83
+IT@Uz9VPK5^C:Rl45bnC@`3
+R2
+R0
+R3
+8C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_test_bench.v
+FC:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_test_bench.v
+R12
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_test_bench.v|
+!s90 -reportprogress|300|C:/Projects/Quartus/ENGG57_LABIV_Plataforma-para-Jogos-em-FPGA/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/embedded_vpu_processor_cpu_test_bench.v|-work|cpu|
+!i113 1
+R10
+R11

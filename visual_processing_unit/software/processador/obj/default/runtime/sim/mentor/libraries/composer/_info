@@ -1,0 +1,261 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/software/processador/obj/default/runtime/sim/mentor
+vbackground_fifo_reader
+Z1 !s110 1752587705
+!i10b 1
+!s100 X[b02PU`dH>>oc3@_:63S3
+IMeOOo;moeQm3cSJ;Xh]W70
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1752587477
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/background_fifo_reader.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/background_fifo_reader.v
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1752587704.000000
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/background_fifo_reader.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/background_fifo_reader.v|-work|composer|
+!i113 1
+Z6 o-work composer
+Z7 tCvgOpt 0
+vborder_analyzer
+R1
+!i10b 1
+!s100 fgZaQ@QMcP]3A^73ZH?o62
+IzbTOC37DPzXhWdhXZgkLE2
+R2
+R0
+R3
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/border_analyzer.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/border_analyzer.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z8 !s108 1752587705.000000
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/border_analyzer.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/border_analyzer.v|-work|composer|
+!i113 1
+R6
+R7
+vcollision_sprite_analyzer
+R1
+!i10b 1
+!s100 MNDi6T6dB@RVCf5JFLcSh0
+ID;T_48f[XlkGYD[]a<X_d2
+R2
+R0
+R3
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/collision_sprite_analyzer.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/collision_sprite_analyzer.v
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/collision_sprite_analyzer.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/collision_sprite_analyzer.v|-work|composer|
+!i113 1
+R6
+R7
+vcomposer
+!s110 1752587704
+!i10b 1
+!s100 fPXA4PH]V]a[=1ZOCmOe10
+If2KB77Qm^R9KhaTiBiJdE1
+R2
+R0
+R3
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer.v|-work|composer|
+!i113 1
+R6
+R7
+vcomposer_ctrl
+R1
+!i10b 1
+!s100 @>X[eo]@D1IA1b>JkG@CV3
+I`;de?nc2[?nne0G1WKLPJ3
+R2
+R0
+R3
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer_ctrl.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer_ctrl.v
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer_ctrl.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/composer_ctrl.v|-work|composer|
+!i113 1
+R6
+R7
+vpixel_composer
+R1
+!i10b 1
+!s100 hn[e6MLEk?37E6@K9KARG0
+IhPL_TVj?Wl`:5D0P76T813
+R2
+R0
+R3
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/pixel_composer.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/pixel_composer.v
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/pixel_composer.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/pixel_composer.v|-work|composer|
+!i113 1
+R6
+R7
+vpixel_counter
+R1
+!i10b 1
+!s100 7NRMDf<_gj_7AoiOEEWN[3
+IQFMG6`6fPAU;zJA<aN6791
+R2
+R0
+R3
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/pixel_counter.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/pixel_counter.v
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/pixel_counter.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/pixel_counter.v|-work|composer|
+!i113 1
+R6
+R7
+Erom_sprites
+R3
+Z9 DPx9 altera_mf 20 altera_mf_components 0 22 gV:l9C^?PSb6]b5V?_jR@3
+Z10 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z11 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z12 8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/rom_sprites.vhd
+Z13 FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/rom_sprites.vhd
+l0
+L42
+VA``LK>4n1BI;iU83R8SUC3
+!s100 OMgFE]]Vnhol>okO`DiiW3
+Z14 OV;C;10.5b;63
+32
+R1
+!i10b 1
+R8
+Z15 !s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/rom_sprites.vhd|-work|composer|
+Z16 !s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/rom_sprites.vhd|
+!i113 1
+R6
+Z17 tExplicit 1 CvgOpt 0
+Asyn
+R9
+R10
+R11
+Z18 DEx4 work 11 rom_sprites 0 22 A``LK>4n1BI;iU83R8SUC3
+l56
+L52
+Z19 V_dbUZz;WS@NLTWH3IE4<N3
+Z20 !s100 e?=oO2BmzmDKeO=gbFeVW3
+R14
+32
+R1
+!i10b 1
+R8
+R15
+R16
+!i113 1
+R6
+R17
+vsprite_pixel_fetcher
+R1
+!i10b 1
+!s100 Dd>EPd3FSP@TV9<J<Th@91
+I?g^H7JoAQeeXS?1]_DdGn2
+R2
+R0
+R3
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/sprite_pixel_fetcher.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/sprite_pixel_fetcher.v
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/sprite_pixel_fetcher.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/sprite_pixel_fetcher.v|-work|composer|
+!i113 1
+R6
+R7
+vsprite_visibility_checker
+R1
+!i10b 1
+!s100 =7G^=eol^0B]IhX=85:z60
+I[;^1z2mLhF61JZCfX@nc=1
+R2
+R0
+R3
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/sprite_visibility_checker.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/sprite_visibility_checker.v
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/sprite_visibility_checker.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/sprite_visibility_checker.v|-work|composer|
+!i113 1
+R6
+R7
+vtop4_sprite_selector
+R1
+!i10b 1
+!s100 AbbL2::=]2lIJ?AzZ]]MU3
+IiYCBJU66jao7VijT1XK0k3
+R2
+R0
+R3
+8C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/top4_sprite_selector.v
+FC:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/top4_sprite_selector.v
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/top4_sprite_selector.v|
+!s90 -reportprogress|300|C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/embedded_vpu/testbench/embedded_vpu_tb/simulation/submodules/top4_sprite_selector.v|-work|composer|
+!i113 1
+R6
+R7

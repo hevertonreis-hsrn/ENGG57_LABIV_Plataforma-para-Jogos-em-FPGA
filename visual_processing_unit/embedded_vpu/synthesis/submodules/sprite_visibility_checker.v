@@ -84,6 +84,7 @@ module sprite_visibility_checker #(
 				else if (address == 8'd35)
 					sprites_ready <= 1'b1;
 			end
+
 		end
 	end
 
