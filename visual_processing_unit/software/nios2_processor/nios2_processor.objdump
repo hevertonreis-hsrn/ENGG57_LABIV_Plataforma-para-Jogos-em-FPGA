@@ -1,0 +1,3422 @@
+
+nios2_processor.elf:     file format elf32-littlenios2
+nios2_processor.elf
+architecture: nios2:r1, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x08210020
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x08210000 paddr 0x08210000 align 2**12
+         filesz 0x00000020 memsz 0x00000020 flags r-x
+    LOAD off    0x00001020 vaddr 0x08210020 paddr 0x08210020 align 2**12
+         filesz 0x00002264 memsz 0x00002264 flags r-x
+    LOAD off    0x00003284 vaddr 0x08212284 paddr 0x08212870 align 2**12
+         filesz 0x000005ec memsz 0x000005ec flags rw-
+    LOAD off    0x00003e5c vaddr 0x08212e5c paddr 0x08212e5c align 2**12
+         filesz 0x00000000 memsz 0x00000010 flags rw-
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .entry        00000020  08210000  08210000  00001000  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .exceptions   00000000  08210020  08210020  00003870  2**0
+                  CONTENTS
+  2 .text         00002254  08210020  08210020  00001020  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .rodata       00000010  08212274  08212274  00003274  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .rwdata       000005ec  08212284  08212870  00003284  2**2
+                  CONTENTS, ALLOC, LOAD, DATA, SMALL_DATA
+  5 .bss          00000010  08212e5c  08212e5c  00003e5c  2**2
+                  ALLOC, SMALL_DATA
+  6 .ram_data     00000000  08212e6c  08212e6c  00003870  2**0
+                  CONTENTS
+  7 .comment      00000023  00000000  00000000  00003870  2**0
+                  CONTENTS, READONLY
+  8 .debug_aranges 00000358  00000000  00000000  00003898  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_info   00004ff3  00000000  00000000  00003bf0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_abbrev 00001754  00000000  00000000  00008be3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_line   00001a17  00000000  00000000  0000a337  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_frame  0000070c  00000000  00000000  0000bd50  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_str    0000142e  00000000  00000000  0000c45c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_loc    00000a6e  00000000  00000000  0000d88a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_alt_sim_info 00000040  00000000  00000000  0000e2f8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 16 .debug_ranges 00000128  00000000  00000000  0000e338  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 17 .thread_model 00000003  00000000  00000000  0000f802  2**0
+                  CONTENTS, READONLY
+ 18 .cpu          00000009  00000000  00000000  0000f805  2**0
+                  CONTENTS, READONLY
+ 19 .qsys         00000001  00000000  00000000  0000f80e  2**0
+                  CONTENTS, READONLY
+ 20 .simulation_enabled 00000001  00000000  00000000  0000f80f  2**0
+                  CONTENTS, READONLY
+ 21 .stderr_dev   00000004  00000000  00000000  0000f810  2**0
+                  CONTENTS, READONLY
+ 22 .stdin_dev    00000004  00000000  00000000  0000f814  2**0
+                  CONTENTS, READONLY
+ 23 .stdout_dev   00000004  00000000  00000000  0000f818  2**0
+                  CONTENTS, READONLY
+ 24 .sopc_system_name 0000000c  00000000  00000000  0000f81c  2**0
+                  CONTENTS, READONLY
+ 25 .quartus_project_dir 00000055  00000000  00000000  0000f828  2**0
+                  CONTENTS, READONLY
+ 26 .jdi          00006f84  00000000  00000000  0000f87d  2**0
+                  CONTENTS, READONLY
+ 27 .sopcinfo     00042a9d  00000000  00000000  00016801  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+08210000 l    d  .entry	00000000 .entry
+08210020 l    d  .exceptions	00000000 .exceptions
+08210020 l    d  .text	00000000 .text
+08212274 l    d  .rodata	00000000 .rodata
+08212284 l    d  .rwdata	00000000 .rwdata
+08212e5c l    d  .bss	00000000 .bss
+08212e6c l    d  .ram_data	00000000 .ram_data
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_alt_sim_info	00000000 .debug_alt_sim_info
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    df *ABS*	00000000 ../nios2_processor_bsp//obj/HAL/src/crt0.o
+08210058 l       .text	00000000 alt_after_alt_main
+00000000 l    df *ABS*	00000000 hello_world.c
+00000000 l    df *ABS*	00000000 lib2-divmod.c
+00000000 l    df *ABS*	00000000 lib2-mul.c
+00000000 l    df *ABS*	00000000 rand.c
+00000000 l    df *ABS*	00000000 impure.c
+08212284 l     O .rwdata	00000424 impure_data
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 alt_load.c
+08211948 l     F .text	00000068 alt_load_section
+00000000 l    df *ABS*	00000000 alt_main.c
+00000000 l    df *ABS*	00000000 alt_usleep.c
+00000000 l    df *ABS*	00000000 alt_sys_init.c
+00000000 l    df *ABS*	00000000 alt_busy_sleep.c
+00000000 l    df *ABS*	00000000 alt_close.c
+08211c74 l     F .text	0000003c alt_get_errno
+00000000 l    df *ABS*	00000000 alt_dcache_flush_all.c
+00000000 l    df *ABS*	00000000 alt_dev.c
+08211da8 l     F .text	0000002c alt_dev_null_write
+00000000 l    df *ABS*	00000000 alt_do_ctors.c
+00000000 l    df *ABS*	00000000 alt_do_dtors.c
+00000000 l    df *ABS*	00000000 alt_errno.c
+00000000 l    df *ABS*	00000000 alt_icache_flush_all.c
+00000000 l    df *ABS*	00000000 alt_release_fd.c
+00000000 l    df *ABS*	00000000 altera_nios2_gen2_irq.c
+00000000 l    df *ABS*	00000000 atexit.c
+00000000 l    df *ABS*	00000000 exit.c
+00000000 l    df *ABS*	00000000 int_errno.c
+00000000 l    df *ABS*	00000000 __atexit.c
+00000000 l    df *ABS*	00000000 __call_atexit.c
+00000000 l    df *ABS*	00000000 alt_exit.c
+08211a34 g     F .text	00000060 alt_main
+08212870 g       *ABS*	00000000 __flash_rwdata_start
+08210000 g       *ABS*	00000000 __alt_mem_ram_data
+08211f38 g     F .text	00000024 altera_nios2_gen2_irq_init
+08210000 g     F .entry	0000000c __reset
+08210020 g       *ABS*	00000000 __flash_exceptions_start
+08212e68 g     O .bss	00000004 errno
+08212e60 g     O .bss	00000004 alt_argv
+0821a850 g       *ABS*	00000000 _gp
+08211a94 g     F .text	00000030 usleep
+0821021c g     F .text	00000034 is_pressed
+082126d0 g     O .rwdata	00000180 alt_fd_list
+08212274 g       *ABS*	00000000 __DTOR_END__
+082116dc g     F .text	00000064 .hidden __udivsi3
+0821073c g     F .text	000001ac handle_burguer_sprite
+08212868 g     O .rwdata	00000004 alt_max_fd
+08212850 g     O .rwdata	00000004 _global_impure_ptr
+08212e6c g       *ABS*	00000000 __bss_end
+082126a8 g     O .rwdata	00000028 alt_dev_null
+08210650 g     F .text	000000ec deliver_food
+08211d88 g     F .text	00000020 alt_dcache_flush_all
+08212870 g       *ABS*	00000000 __ram_rwdata_end
+08212860 g     O .rwdata	00000008 alt_dev_list
+08212284 g       *ABS*	00000000 __ram_rodata_end
+08211740 g     F .text	00000058 .hidden __umodsi3
+08212e6c g       *ABS*	00000000 end
+08212274 g       *ABS*	00000000 __CTOR_LIST__
+08220000 g       *ABS*	00000000 __alt_stack_pointer
+082120c0 g     F .text	00000180 __call_exitprocs
+08210020 g     F .text	0000003c _start
+082117d8 g     F .text	00000064 rand
+08211afc g     F .text	00000020 alt_sys_init
+08211fa8 g     F .text	00000118 __register_exitproc
+08211798 g     F .text	00000028 .hidden __mulsi3
+08212284 g       *ABS*	00000000 __ram_rwdata_start
+08212274 g       *ABS*	00000000 __ram_rodata_start
+08211b1c g     F .text	00000158 alt_busy_sleep
+08212e6c g       *ABS*	00000000 __alt_stack_base
+0821005c g     F .text	00000054 build_sprite_reg
+08212e5c g       *ABS*	00000000 __bss_start
+082108e8 g     F .text	00000cfc main
+08212e64 g     O .bss	00000004 alt_envp
+082117c0 g     F .text	00000018 srand
+08210410 g     F .text	00000084 _helper_player_sprite
+0821286c g     O .rwdata	00000004 alt_errno
+082115e4 g     F .text	00000084 .hidden __divsi3
+08212274 g       *ABS*	00000000 __CTOR_END__
+08212274 g       *ABS*	00000000 __flash_rodata_start
+08212274 g       *ABS*	00000000 __DTOR_LIST__
+082100b0 g     F .text	0000016c send_sprites_to_composer
+08211ac4 g     F .text	00000038 alt_irq_init
+08211eb4 g     F .text	00000084 alt_release_fd
+08211f5c g     F .text	00000014 atexit
+08212854 g     O .rwdata	00000004 _impure_ptr
+08212e5c g     O .bss	00000004 alt_argc
+08211e34 g     F .text	00000060 _do_dtors
+08212858 g     O .rwdata	00000008 alt_fs_list
+08210250 g     F .text	000000c0 check_colision_objects
+08210020 g       *ABS*	00000000 __ram_exceptions_start
+08212870 g       *ABS*	00000000 _edata
+08212e6c g       *ABS*	00000000 _end
+08210020 g       *ABS*	00000000 __ram_exceptions_end
+08211f70 g     F .text	00000038 exit
+08211668 g     F .text	00000074 .hidden __modsi3
+08220000 g       *ABS*	00000000 __alt_data_end
+08210494 g     F .text	0000013c walk_player
+08212240 g     F .text	00000034 _exit
+0821183c g     F .text	0000010c .hidden __muldi3
+082103c8 g     F .text	00000048 load_background
+08211e94 g     F .text	00000020 alt_icache_flush_all
+08210310 g     F .text	000000b8 move_sprite
+08211dd4 g     F .text	00000060 _do_ctors
+08211cb0 g     F .text	000000d8 close
+082105d0 g     F .text	00000080 get_burguer_component
+082119b0 g     F .text	00000084 alt_load
+
+
+
+Disassembly of section .entry:
+
+08210000 <__reset>:
+ * Jump to the _start entry point in the .text section if reset code
+ * is allowed or if optimizing for RTL simulation.
+ */
+#if defined(ALT_ALLOW_CODE_AT_RESET) || defined(ALT_SIM_OPTIMIZE)
+    /* Jump to the _start entry point in the .text section. */
+    movhi r1, %hi(_start)
+ 8210000:	00420874 	movhi	at,2081
+    ori r1, r1, %lo(_start)
+ 8210004:	08400814 	ori	at,at,32
+    jmp r1
+ 8210008:	0800683a 	jmp	at
+	...
+
+Disassembly of section .text:
+
+08210020 <_start>:
+
+    /*
+     * Now that the caches are initialized, set up the stack pointer and global pointer.
+     * The values provided by the linker are assumed to be correctly aligned.
+     */
+    movhi sp, %hi(__alt_stack_pointer)
+ 8210020:	06c208b4 	movhi	sp,2082
+    ori sp, sp, %lo(__alt_stack_pointer)
+ 8210024:	dec00014 	ori	sp,sp,0
+    movhi gp, %hi(_gp)
+ 8210028:	06820874 	movhi	gp,2081
+    ori gp, gp, %lo(_gp)
+ 821002c:	d6aa1414 	ori	gp,gp,43088
+ */
+#ifndef ALT_SIM_OPTIMIZE
+    /* Log that the BSS is about to be cleared. */
+    ALT_LOG_PUTS(alt_log_msg_bss)
+
+    movhi r2, %hi(__bss_start)
+ 8210030:	00820874 	movhi	r2,2081
+    ori r2, r2, %lo(__bss_start)
+ 8210034:	108b9714 	ori	r2,r2,11868
+
+    movhi r3, %hi(__bss_end)
+ 8210038:	00c20874 	movhi	r3,2081
+    ori r3, r3, %lo(__bss_end)
+ 821003c:	18cb9b14 	ori	r3,r3,11884
+
+    beq r2, r3, 1f
+ 8210040:	10c00326 	beq	r2,r3,8210050 <_start+0x30>
+
+0:
+    stw zero, (r2)
+ 8210044:	10000015 	stw	zero,0(r2)
+    addi r2, r2, 4
+ 8210048:	10800104 	addi	r2,r2,4
+    bltu r2, r3, 0b
+ 821004c:	10fffd36 	bltu	r2,r3,8210044 <__alt_data_end+0xffff0044>
+     * section aren't defined until alt_load() has been called).
+     */
+    mov   et, zero
+#endif
+
+    call alt_load
+ 8210050:	82119b00 	call	82119b0 <alt_load>
+
+    /* Log that alt_main is about to be called. */
+    ALT_LOG_PUTS(alt_log_msg_alt_main)
+
+    /* Call the C entry point. It should never return. */
+    call alt_main
+ 8210054:	8211a340 	call	8211a34 <alt_main>
+
+08210058 <alt_after_alt_main>:
+
+    /* Wait in infinite loop in case alt_main does return. */
+alt_after_alt_main:
+    br alt_after_alt_main
+ 8210058:	003fff06 	br	8210058 <__alt_data_end+0xffff0058>
+
+0821005c <build_sprite_reg>:
+	// 4 -> Sem Carro
+	uint8_t car_status;
+} Car;
+
+// Monta o registro 32 bits no formato esperado pelo Verilog
+uint32_t build_sprite_reg(uint8_t tile_id, uint16_t pos_x, uint16_t pos_y) {
+ 821005c:	defffc04 	addi	sp,sp,-16
+ 8210060:	df000315 	stw	fp,12(sp)
+ 8210064:	df000304 	addi	fp,sp,12
+ 8210068:	2807883a 	mov	r3,r5
+ 821006c:	3005883a 	mov	r2,r6
+ 8210070:	e13ffd05 	stb	r4,-12(fp)
+ 8210074:	e0fffe0d 	sth	r3,-8(fp)
+ 8210078:	e0bfff0d 	sth	r2,-4(fp)
+	return ((uint32_t) (tile_id & 0x1FF) << 23) |  // 9 bits
+ 821007c:	e0bffd03 	ldbu	r2,-12(fp)
+ 8210080:	100695fa 	slli	r3,r2,23
+			((uint32_t) (pos_x & 0x1FFF) << 10) |  // 13 bits
+ 8210084:	e0bffe0b 	ldhu	r2,-8(fp)
+ 8210088:	1087ffcc 	andi	r2,r2,8191
+ 821008c:	100492ba 	slli	r2,r2,10
+	uint8_t car_status;
+} Car;
+
+// Monta o registro 32 bits no formato esperado pelo Verilog
+uint32_t build_sprite_reg(uint8_t tile_id, uint16_t pos_x, uint16_t pos_y) {
+	return ((uint32_t) (tile_id & 0x1FF) << 23) |  // 9 bits
+ 8210090:	1886b03a 	or	r3,r3,r2
+			((uint32_t) (pos_x & 0x1FFF) << 10) |  // 13 bits
+			((uint32_t) (pos_y & 0x3FF));          // 10 bits
+ 8210094:	e0bfff0b 	ldhu	r2,-4(fp)
+ 8210098:	1080ffcc 	andi	r2,r2,1023
+	uint8_t car_status;
+} Car;
+
+// Monta o registro 32 bits no formato esperado pelo Verilog
+uint32_t build_sprite_reg(uint8_t tile_id, uint16_t pos_x, uint16_t pos_y) {
+	return ((uint32_t) (tile_id & 0x1FF) << 23) |  // 9 bits
+ 821009c:	1884b03a 	or	r2,r3,r2
+			((uint32_t) (pos_x & 0x1FFF) << 10) |  // 13 bits
+			((uint32_t) (pos_y & 0x3FF));          // 10 bits
+}
+ 82100a0:	e037883a 	mov	sp,fp
+ 82100a4:	df000017 	ldw	fp,0(sp)
+ 82100a8:	dec00104 	addi	sp,sp,4
+ 82100ac:	f800283a 	ret
+
+082100b0 <send_sprites_to_composer>:
+
+// Envia os sprites para o sprite_composer
+void send_sprites_to_composer(Sprite sprites[], int count) {
+ 82100b0:	defff804 	addi	sp,sp,-32
+ 82100b4:	dfc00715 	stw	ra,28(sp)
+ 82100b8:	df000615 	stw	fp,24(sp)
+ 82100bc:	dc400515 	stw	r17,20(sp)
+ 82100c0:	dc000415 	stw	r16,16(sp)
+ 82100c4:	df000604 	addi	fp,sp,24
+ 82100c8:	e13ffc15 	stw	r4,-16(fp)
+ 82100cc:	e17ffd15 	stw	r5,-12(fp)
+	int i;
+	uint32_t reg;
+
+	// Envia os sprites ativos
+	for (i = 0; i < count; i++) {
+ 82100d0:	e03ffa15 	stw	zero,-24(fp)
+ 82100d4:	00002c06 	br	8210188 <send_sprites_to_composer+0xd8>
+		reg = build_sprite_reg(sprites[i].tile_id, sprites[i].pos_x,
+ 82100d8:	e0bffa17 	ldw	r2,-24(fp)
+ 82100dc:	01400184 	movi	r5,6
+ 82100e0:	1009883a 	mov	r4,r2
+ 82100e4:	82117980 	call	8211798 <__mulsi3>
+ 82100e8:	1007883a 	mov	r3,r2
+ 82100ec:	e0bffc17 	ldw	r2,-16(fp)
+ 82100f0:	10c5883a 	add	r2,r2,r3
+ 82100f4:	10800003 	ldbu	r2,0(r2)
+ 82100f8:	14003fcc 	andi	r16,r2,255
+ 82100fc:	e0bffa17 	ldw	r2,-24(fp)
+ 8210100:	01400184 	movi	r5,6
+ 8210104:	1009883a 	mov	r4,r2
+ 8210108:	82117980 	call	8211798 <__mulsi3>
+ 821010c:	1007883a 	mov	r3,r2
+ 8210110:	e0bffc17 	ldw	r2,-16(fp)
+ 8210114:	10c5883a 	add	r2,r2,r3
+ 8210118:	1080008b 	ldhu	r2,2(r2)
+ 821011c:	147fffcc 	andi	r17,r2,65535
+				sprites[i].pos_y);
+ 8210120:	e0bffa17 	ldw	r2,-24(fp)
+ 8210124:	01400184 	movi	r5,6
+ 8210128:	1009883a 	mov	r4,r2
+ 821012c:	82117980 	call	8211798 <__mulsi3>
+ 8210130:	1007883a 	mov	r3,r2
+ 8210134:	e0bffc17 	ldw	r2,-16(fp)
+ 8210138:	10c5883a 	add	r2,r2,r3
+ 821013c:	1080010b 	ldhu	r2,4(r2)
+	int i;
+	uint32_t reg;
+
+	// Envia os sprites ativos
+	for (i = 0; i < count; i++) {
+		reg = build_sprite_reg(sprites[i].tile_id, sprites[i].pos_x,
+ 8210140:	10bfffcc 	andi	r2,r2,65535
+ 8210144:	100d883a 	mov	r6,r2
+ 8210148:	880b883a 	mov	r5,r17
+ 821014c:	8009883a 	mov	r4,r16
+ 8210150:	821005c0 	call	821005c <build_sprite_reg>
+ 8210154:	e0bffb15 	stw	r2,-20(fp)
+				sprites[i].pos_y);
+		IOWR_32DIRECT(COMPOSER_BASE, i * 4, reg);
+ 8210158:	e0bffa17 	ldw	r2,-24(fp)
+ 821015c:	1085883a 	add	r2,r2,r2
+ 8210160:	1085883a 	add	r2,r2,r2
+ 8210164:	1007883a 	mov	r3,r2
+ 8210168:	00820834 	movhi	r2,2080
+ 821016c:	10810004 	addi	r2,r2,1024
+ 8210170:	1885883a 	add	r2,r3,r2
+ 8210174:	e0fffb17 	ldw	r3,-20(fp)
+ 8210178:	10c00035 	stwio	r3,0(r2)
+void send_sprites_to_composer(Sprite sprites[], int count) {
+	int i;
+	uint32_t reg;
+
+	// Envia os sprites ativos
+	for (i = 0; i < count; i++) {
+ 821017c:	e0bffa17 	ldw	r2,-24(fp)
+ 8210180:	10800044 	addi	r2,r2,1
+ 8210184:	e0bffa15 	stw	r2,-24(fp)
+ 8210188:	e0fffa17 	ldw	r3,-24(fp)
+ 821018c:	e0bffd17 	ldw	r2,-12(fp)
+ 8210190:	18bfd116 	blt	r3,r2,82100d8 <__alt_data_end+0xffff00d8>
+				sprites[i].pos_y);
+		IOWR_32DIRECT(COMPOSER_BASE, i * 4, reg);
+	}
+
+	// Zera os registros restantes
+	for (i = count; i < MAX_SPRITES; i++) {
+ 8210194:	e0bffd17 	ldw	r2,-12(fp)
+ 8210198:	e0bffa15 	stw	r2,-24(fp)
+ 821019c:	00000c06 	br	82101d0 <send_sprites_to_composer+0x120>
+		IOWR_32DIRECT(COMPOSER_BASE, i * 4, 0);
+ 82101a0:	e0bffa17 	ldw	r2,-24(fp)
+ 82101a4:	1085883a 	add	r2,r2,r2
+ 82101a8:	1085883a 	add	r2,r2,r2
+ 82101ac:	1007883a 	mov	r3,r2
+ 82101b0:	00820834 	movhi	r2,2080
+ 82101b4:	10810004 	addi	r2,r2,1024
+ 82101b8:	1885883a 	add	r2,r3,r2
+ 82101bc:	0007883a 	mov	r3,zero
+ 82101c0:	10c00035 	stwio	r3,0(r2)
+				sprites[i].pos_y);
+		IOWR_32DIRECT(COMPOSER_BASE, i * 4, reg);
+	}
+
+	// Zera os registros restantes
+	for (i = count; i < MAX_SPRITES; i++) {
+ 82101c4:	e0bffa17 	ldw	r2,-24(fp)
+ 82101c8:	10800044 	addi	r2,r2,1
+ 82101cc:	e0bffa15 	stw	r2,-24(fp)
+ 82101d0:	e0bffa17 	ldw	r2,-24(fp)
+ 82101d4:	10800810 	cmplti	r2,r2,32
+ 82101d8:	103ff11e 	bne	r2,zero,82101a0 <__alt_data_end+0xffff01a0>
+		IOWR_32DIRECT(COMPOSER_BASE, i * 4, 0);
+	}
+
+	// Indica que os dados foram enviados
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_OFFSET_X * 4, 0);
+ 82101dc:	0007883a 	mov	r3,zero
+ 82101e0:	00820834 	movhi	r2,2080
+ 82101e4:	10812004 	addi	r2,r2,1152
+ 82101e8:	10c00035 	stwio	r3,0(r2)
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_OFFSET_Y * 4, 0);
+ 82101ec:	0007883a 	mov	r3,zero
+ 82101f0:	00820834 	movhi	r2,2080
+ 82101f4:	10812104 	addi	r2,r2,1156
+ 82101f8:	10c00035 	stwio	r3,0(r2)
+}
+ 82101fc:	0001883a 	nop
+ 8210200:	e6fffe04 	addi	sp,fp,-8
+ 8210204:	dfc00317 	ldw	ra,12(sp)
+ 8210208:	df000217 	ldw	fp,8(sp)
+ 821020c:	dc400117 	ldw	r17,4(sp)
+ 8210210:	dc000017 	ldw	r16,0(sp)
+ 8210214:	dec00404 	addi	sp,sp,16
+ 8210218:	f800283a 	ret
+
+0821021c <is_pressed>:
+
+uint8_t is_pressed(uint32_t btns, int button_index) {
+ 821021c:	defffd04 	addi	sp,sp,-12
+ 8210220:	df000215 	stw	fp,8(sp)
+ 8210224:	df000204 	addi	fp,sp,8
+ 8210228:	e13ffe15 	stw	r4,-8(fp)
+ 821022c:	e17fff15 	stw	r5,-4(fp)
+	return (btns >> button_index) & 1;
+ 8210230:	e0fffe17 	ldw	r3,-8(fp)
+ 8210234:	e0bfff17 	ldw	r2,-4(fp)
+ 8210238:	1884d83a 	srl	r2,r3,r2
+ 821023c:	1080004c 	andi	r2,r2,1
+}
+ 8210240:	e037883a 	mov	sp,fp
+ 8210244:	df000017 	ldw	fp,0(sp)
+ 8210248:	dec00104 	addi	sp,sp,4
+ 821024c:	f800283a 	ret
+
+08210250 <check_colision_objects>:
+
+uint8_t check_colision_objects(int pos_x, int pos_y) {
+ 8210250:	defffd04 	addi	sp,sp,-12
+ 8210254:	df000215 	stw	fp,8(sp)
+ 8210258:	df000204 	addi	fp,sp,8
+ 821025c:	e13ffe15 	stw	r4,-8(fp)
+ 8210260:	e17fff15 	stw	r5,-4(fp)
+	if (((pos_x > BOX_STOVE_POINT_X_1 && pos_x < BOX_STOVE_POINT_X_2)
+ 8210264:	e0bffe17 	ldw	r2,-8(fp)
+ 8210268:	1080a210 	cmplti	r2,r2,648
+ 821026c:	1000091e 	bne	r2,zero,8210294 <check_colision_objects+0x44>
+ 8210270:	e0bffe17 	ldw	r2,-8(fp)
+ 8210274:	1080aa08 	cmpgei	r2,r2,680
+ 8210278:	1000061e 	bne	r2,zero,8210294 <check_colision_objects+0x44>
+			&& (pos_y > BOX_STOVE_POINT_Y_1 && pos_y < BOX_STOVE_POINT_Y_2))
+ 821027c:	e0bfff17 	ldw	r2,-4(fp)
+ 8210280:	10805550 	cmplti	r2,r2,341
+ 8210284:	1000031e 	bne	r2,zero,8210294 <check_colision_objects+0x44>
+ 8210288:	e0bfff17 	ldw	r2,-4(fp)
+ 821028c:	10806410 	cmplti	r2,r2,400
+ 8210290:	1000181e 	bne	r2,zero,82102f4 <check_colision_objects+0xa4>
+			|| ((pos_x > BOX_SINK_POINT_X_1 && pos_x < BOX_SINK_POINT_X_2)
+ 8210294:	e0bffe17 	ldw	r2,-8(fp)
+ 8210298:	1080bcd0 	cmplti	r2,r2,755
+ 821029c:	1000091e 	bne	r2,zero,82102c4 <check_colision_objects+0x74>
+ 82102a0:	e0bffe17 	ldw	r2,-8(fp)
+ 82102a4:	1080cd48 	cmpgei	r2,r2,821
+ 82102a8:	1000061e 	bne	r2,zero,82102c4 <check_colision_objects+0x74>
+					&& (pos_y > BOX_SINK_POINT_Y_1 && pos_y < BOX_SINK_POINT_Y_2))
+ 82102ac:	e0bfff17 	ldw	r2,-4(fp)
+ 82102b0:	10805c10 	cmplti	r2,r2,368
+ 82102b4:	1000031e 	bne	r2,zero,82102c4 <check_colision_objects+0x74>
+ 82102b8:	e0bfff17 	ldw	r2,-4(fp)
+ 82102bc:	10806410 	cmplti	r2,r2,400
+ 82102c0:	10000c1e 	bne	r2,zero,82102f4 <check_colision_objects+0xa4>
+			|| ((pos_x > BOX_WALL_POINT_X_1 && pos_x < BOX_WALL_POINT_X_2)
+ 82102c4:	e0bffe17 	ldw	r2,-8(fp)
+ 82102c8:	1080ce50 	cmplti	r2,r2,825
+ 82102cc:	10000b1e 	bne	r2,zero,82102fc <check_colision_objects+0xac>
+ 82102d0:	e0bffe17 	ldw	r2,-8(fp)
+ 82102d4:	1080cfc8 	cmpgei	r2,r2,831
+ 82102d8:	1000081e 	bne	r2,zero,82102fc <check_colision_objects+0xac>
+					&& (pos_y > BOX_WALL_POINT_Y_1 && pos_y < BOX_WALL_POINT_Y_2))) {
+ 82102dc:	e0bfff17 	ldw	r2,-4(fp)
+ 82102e0:	10805550 	cmplti	r2,r2,341
+ 82102e4:	1000051e 	bne	r2,zero,82102fc <check_colision_objects+0xac>
+ 82102e8:	e0bfff17 	ldw	r2,-4(fp)
+ 82102ec:	10806408 	cmpgei	r2,r2,400
+ 82102f0:	1000021e 	bne	r2,zero,82102fc <check_colision_objects+0xac>
+		return 1;
+ 82102f4:	00800044 	movi	r2,1
+ 82102f8:	00000106 	br	8210300 <check_colision_objects+0xb0>
+	}
+
+	return 0;
+ 82102fc:	0005883a 	mov	r2,zero
+}
+ 8210300:	e037883a 	mov	sp,fp
+ 8210304:	df000017 	ldw	fp,0(sp)
+ 8210308:	dec00104 	addi	sp,sp,4
+ 821030c:	f800283a 	ret
+
+08210310 <move_sprite>:
+
+void move_sprite(Sprite sprite, int amount_x, int amount_y) {
+ 8210310:	defff804 	addi	sp,sp,-32
+ 8210314:	dfc00715 	stw	ra,28(sp)
+ 8210318:	df000615 	stw	fp,24(sp)
+ 821031c:	df000604 	addi	fp,sp,24
+ 8210320:	e13ffc15 	stw	r4,-16(fp)
+ 8210324:	e17ffd15 	stw	r5,-12(fp)
+ 8210328:	e1bffe15 	stw	r6,-8(fp)
+ 821032c:	e1ffff15 	stw	r7,-4(fp)
+	int new_pos_x = sprite.pos_x + amount_x;
+ 8210330:	e0bffc8b 	ldhu	r2,-14(fp)
+ 8210334:	10ffffcc 	andi	r3,r2,65535
+ 8210338:	e0bffe17 	ldw	r2,-8(fp)
+ 821033c:	1885883a 	add	r2,r3,r2
+ 8210340:	e0bffa15 	stw	r2,-24(fp)
+	int new_pos_y = sprite.pos_y + amount_y;
+ 8210344:	e0bffd0b 	ldhu	r2,-12(fp)
+ 8210348:	10ffffcc 	andi	r3,r2,65535
+ 821034c:	e0bfff17 	ldw	r2,-4(fp)
+ 8210350:	1885883a 	add	r2,r3,r2
+ 8210354:	e0bffb15 	stw	r2,-20(fp)
+
+	if (check_colision_objects(new_pos_x, new_pos_y)) {
+ 8210358:	e17ffb17 	ldw	r5,-20(fp)
+ 821035c:	e13ffa17 	ldw	r4,-24(fp)
+ 8210360:	82102500 	call	8210250 <check_colision_objects>
+ 8210364:	10803fcc 	andi	r2,r2,255
+ 8210368:	1000111e 	bne	r2,zero,82103b0 <move_sprite+0xa0>
+		return;
+	}
+
+	if (!(new_pos_x > END_MAP_X) || !(new_pos_x < BEGIN_MAP_X)) {
+ 821036c:	e0bffa17 	ldw	r2,-24(fp)
+ 8210370:	10822c50 	cmplti	r2,r2,2225
+ 8210374:	1000031e 	bne	r2,zero,8210384 <move_sprite+0x74>
+ 8210378:	e0bffa17 	ldw	r2,-24(fp)
+ 821037c:	1081aa90 	cmplti	r2,r2,1706
+ 8210380:	1000021e 	bne	r2,zero,821038c <move_sprite+0x7c>
+		sprite.pos_x = new_pos_x;
+ 8210384:	e0bffa17 	ldw	r2,-24(fp)
+ 8210388:	e0bffc8d 	sth	r2,-14(fp)
+	}
+
+	if (!(new_pos_y > END_MAP_Y) || !(new_pos_y < BEGIN_MAP_Y)) {
+ 821038c:	e0bffb17 	ldw	r2,-20(fp)
+ 8210390:	10806450 	cmplti	r2,r2,401
+ 8210394:	1000031e 	bne	r2,zero,82103a4 <move_sprite+0x94>
+ 8210398:	e0bffb17 	ldw	r2,-20(fp)
+ 821039c:	10804190 	cmplti	r2,r2,262
+ 82103a0:	1000041e 	bne	r2,zero,82103b4 <move_sprite+0xa4>
+		sprite.pos_y = new_pos_y;
+ 82103a4:	e0bffb17 	ldw	r2,-20(fp)
+ 82103a8:	e0bffd0d 	sth	r2,-12(fp)
+ 82103ac:	00000106 	br	82103b4 <move_sprite+0xa4>
+void move_sprite(Sprite sprite, int amount_x, int amount_y) {
+	int new_pos_x = sprite.pos_x + amount_x;
+	int new_pos_y = sprite.pos_y + amount_y;
+
+	if (check_colision_objects(new_pos_x, new_pos_y)) {
+		return;
+ 82103b0:	0001883a 	nop
+	}
+
+	if (!(new_pos_y > END_MAP_Y) || !(new_pos_y < BEGIN_MAP_Y)) {
+		sprite.pos_y = new_pos_y;
+	}
+}
+ 82103b4:	e037883a 	mov	sp,fp
+ 82103b8:	dfc00117 	ldw	ra,4(sp)
+ 82103bc:	df000017 	ldw	fp,0(sp)
+ 82103c0:	dec00204 	addi	sp,sp,8
+ 82103c4:	f800283a 	ret
+
+082103c8 <load_background>:
+
+void load_background(uint32_t offset_x, uint32_t offset_y) {
+ 82103c8:	defffd04 	addi	sp,sp,-12
+ 82103cc:	df000215 	stw	fp,8(sp)
+ 82103d0:	df000204 	addi	fp,sp,8
+ 82103d4:	e13ffe15 	stw	r4,-8(fp)
+ 82103d8:	e17fff15 	stw	r5,-4(fp)
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_X, offset_x);
+ 82103dc:	e0fffe17 	ldw	r3,-8(fp)
+ 82103e0:	00820834 	movhi	r2,2080
+ 82103e4:	10800204 	addi	r2,r2,8
+ 82103e8:	10c00035 	stwio	r3,0(r2)
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_Y, offset_y);
+ 82103ec:	e0ffff17 	ldw	r3,-4(fp)
+ 82103f0:	00820834 	movhi	r2,2080
+ 82103f4:	10800304 	addi	r2,r2,12
+ 82103f8:	10c00035 	stwio	r3,0(r2)
+}
+ 82103fc:	0001883a 	nop
+ 8210400:	e037883a 	mov	sp,fp
+ 8210404:	df000017 	ldw	fp,0(sp)
+ 8210408:	dec00104 	addi	sp,sp,4
+ 821040c:	f800283a 	ret
+
+08210410 <_helper_player_sprite>:
+
+void _helper_player_sprite(Player player, uint8_t head, uint8_t body_min,
+		uint8_t body_max) {
+ 8210410:	defff904 	addi	sp,sp,-28
+ 8210414:	df000615 	stw	fp,24(sp)
+ 8210418:	df000604 	addi	fp,sp,24
+ 821041c:	e13ffa15 	stw	r4,-24(fp)
+ 8210420:	e17ffb15 	stw	r5,-20(fp)
+ 8210424:	e1bffc15 	stw	r6,-16(fp)
+ 8210428:	3809883a 	mov	r4,r7
+ 821042c:	e0c00117 	ldw	r3,4(fp)
+ 8210430:	e0800217 	ldw	r2,8(fp)
+ 8210434:	e13ffd05 	stb	r4,-12(fp)
+ 8210438:	e0fffe05 	stb	r3,-8(fp)
+ 821043c:	e0bfff05 	stb	r2,-4(fp)
+	player.head.tile_id = head;
+ 8210440:	e0bffd03 	ldbu	r2,-12(fp)
+ 8210444:	e0bffa05 	stb	r2,-24(fp)
+	if (player.body.tile_id >= body_min || player.body.tile_id <= body_max) {
+ 8210448:	e0bffb83 	ldbu	r2,-18(fp)
+ 821044c:	10c03fcc 	andi	r3,r2,255
+ 8210450:	e0bffe03 	ldbu	r2,-8(fp)
+ 8210454:	1880042e 	bgeu	r3,r2,8210468 <_helper_player_sprite+0x58>
+ 8210458:	e0bffb83 	ldbu	r2,-18(fp)
+ 821045c:	10803fcc 	andi	r2,r2,255
+ 8210460:	e0ffff03 	ldbu	r3,-4(fp)
+ 8210464:	18800436 	bltu	r3,r2,8210478 <_helper_player_sprite+0x68>
+		player.body.tile_id += 1;
+ 8210468:	e0bffb83 	ldbu	r2,-18(fp)
+ 821046c:	10800044 	addi	r2,r2,1
+ 8210470:	e0bffb85 	stb	r2,-18(fp)
+ 8210474:	00000206 	br	8210480 <_helper_player_sprite+0x70>
+	} else {
+		player.body.tile_id = body_min;
+ 8210478:	e0bffe03 	ldbu	r2,-8(fp)
+ 821047c:	e0bffb85 	stb	r2,-18(fp)
+	}
+}
+ 8210480:	0001883a 	nop
+ 8210484:	e037883a 	mov	sp,fp
+ 8210488:	df000017 	ldw	fp,0(sp)
+ 821048c:	dec00104 	addi	sp,sp,4
+ 8210490:	f800283a 	ret
+
+08210494 <walk_player>:
+
+void walk_player(Player player, int amount_x, int amount_y) {
+ 8210494:	defff804 	addi	sp,sp,-32
+ 8210498:	dfc00715 	stw	ra,28(sp)
+ 821049c:	df000615 	stw	fp,24(sp)
+ 82104a0:	df000604 	addi	fp,sp,24
+ 82104a4:	e13ffc15 	stw	r4,-16(fp)
+ 82104a8:	e17ffd15 	stw	r5,-12(fp)
+ 82104ac:	e1bffe15 	stw	r6,-8(fp)
+ 82104b0:	e1ffff15 	stw	r7,-4(fp)
+
+	move_sprite(player.head, amount_x, amount_y);
+ 82104b4:	e1c00217 	ldw	r7,8(fp)
+ 82104b8:	e1bfff17 	ldw	r6,-4(fp)
+ 82104bc:	e13ffc17 	ldw	r4,-16(fp)
+ 82104c0:	e17ffd17 	ldw	r5,-12(fp)
+ 82104c4:	82103100 	call	8210310 <move_sprite>
+	move_sprite(player.body, amount_x, amount_y);
+ 82104c8:	e0bffd8b 	ldhu	r2,-10(fp)
+ 82104cc:	e0fffe0b 	ldhu	r3,-8(fp)
+ 82104d0:	1806943a 	slli	r3,r3,16
+ 82104d4:	1884b03a 	or	r2,r3,r2
+ 82104d8:	0009883a 	mov	r4,zero
+ 82104dc:	1009883a 	mov	r4,r2
+ 82104e0:	e0fffe8b 	ldhu	r3,-6(fp)
+ 82104e4:	0005883a 	mov	r2,zero
+ 82104e8:	18ffffcc 	andi	r3,r3,65535
+ 82104ec:	10bfffec 	andhi	r2,r2,65535
+ 82104f0:	10c4b03a 	or	r2,r2,r3
+ 82104f4:	e1c00217 	ldw	r7,8(fp)
+ 82104f8:	e1bfff17 	ldw	r6,-4(fp)
+ 82104fc:	100b883a 	mov	r5,r2
+ 8210500:	82103100 	call	8210310 <move_sprite>
+
+	if (amount_x > 0) {
+ 8210504:	e0bfff17 	ldw	r2,-4(fp)
+ 8210508:	00800a0e 	bge	zero,r2,8210534 <walk_player+0xa0>
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_BACK,
+ 821050c:	00800404 	movi	r2,16
+ 8210510:	d8800115 	stw	r2,4(sp)
+ 8210514:	00800384 	movi	r2,14
+ 8210518:	d8800015 	stw	r2,0(sp)
+ 821051c:	01c00344 	movi	r7,13
+ 8210520:	e13ffc17 	ldw	r4,-16(fp)
+ 8210524:	e17ffd17 	ldw	r5,-12(fp)
+ 8210528:	e1bffe17 	ldw	r6,-8(fp)
+ 821052c:	82104100 	call	8210410 <_helper_player_sprite>
+	} else {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_RIGHT,
+		SPRITE_PLAYER_BODY_STOPED_RIGHT,
+		SPRITE_PLAYER_BODY_MOVING_RIGHT_2);
+	}
+}
+ 8210530:	00002106 	br	82105b8 <walk_player+0x124>
+
+	if (amount_x > 0) {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_BACK,
+		SPRITE_PLAYER_BODY_STOPED_BACK,
+		SPRITE_PLAYER_BODY_MOVING_BACK_2);
+	} else if (amount_x < 0) {
+ 8210534:	e0bfff17 	ldw	r2,-4(fp)
+ 8210538:	10000a0e 	bge	r2,zero,8210564 <walk_player+0xd0>
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_FRONT,
+ 821053c:	00800104 	movi	r2,4
+ 8210540:	d8800115 	stw	r2,4(sp)
+ 8210544:	00800084 	movi	r2,2
+ 8210548:	d8800015 	stw	r2,0(sp)
+ 821054c:	01c00044 	movi	r7,1
+ 8210550:	e13ffc17 	ldw	r4,-16(fp)
+ 8210554:	e17ffd17 	ldw	r5,-12(fp)
+ 8210558:	e1bffe17 	ldw	r6,-8(fp)
+ 821055c:	82104100 	call	8210410 <_helper_player_sprite>
+	} else {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_RIGHT,
+		SPRITE_PLAYER_BODY_STOPED_RIGHT,
+		SPRITE_PLAYER_BODY_MOVING_RIGHT_2);
+	}
+}
+ 8210560:	00001506 	br	82105b8 <walk_player+0x124>
+		SPRITE_PLAYER_BODY_MOVING_BACK_2);
+	} else if (amount_x < 0) {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_FRONT,
+		SPRITE_PLAYER_BODY_STOPED_FRONT,
+		SPRITE_PLAYER_BODY_MOVING_FRONT_2);
+	} else if (amount_y > 0) {
+ 8210564:	e0800217 	ldw	r2,8(fp)
+ 8210568:	00800a0e 	bge	zero,r2,8210594 <walk_player+0x100>
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_LEFT,
+ 821056c:	00800204 	movi	r2,8
+ 8210570:	d8800115 	stw	r2,4(sp)
+ 8210574:	00800184 	movi	r2,6
+ 8210578:	d8800015 	stw	r2,0(sp)
+ 821057c:	01c00144 	movi	r7,5
+ 8210580:	e13ffc17 	ldw	r4,-16(fp)
+ 8210584:	e17ffd17 	ldw	r5,-12(fp)
+ 8210588:	e1bffe17 	ldw	r6,-8(fp)
+ 821058c:	82104100 	call	8210410 <_helper_player_sprite>
+	} else {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_RIGHT,
+		SPRITE_PLAYER_BODY_STOPED_RIGHT,
+		SPRITE_PLAYER_BODY_MOVING_RIGHT_2);
+	}
+}
+ 8210590:	00000906 	br	82105b8 <walk_player+0x124>
+	} else if (amount_y > 0) {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_LEFT,
+		SPRITE_PLAYER_BODY_STOPED_LEFT,
+		SPRITE_PLAYER_BODY_MOVING_LEFT_2);
+	} else {
+		_helper_player_sprite(player, SPRITE_PLAYER_HEAD_RIGHT,
+ 8210594:	00800304 	movi	r2,12
+ 8210598:	d8800115 	stw	r2,4(sp)
+ 821059c:	00800284 	movi	r2,10
+ 82105a0:	d8800015 	stw	r2,0(sp)
+ 82105a4:	01c00244 	movi	r7,9
+ 82105a8:	e13ffc17 	ldw	r4,-16(fp)
+ 82105ac:	e17ffd17 	ldw	r5,-12(fp)
+ 82105b0:	e1bffe17 	ldw	r6,-8(fp)
+ 82105b4:	82104100 	call	8210410 <_helper_player_sprite>
+		SPRITE_PLAYER_BODY_STOPED_RIGHT,
+		SPRITE_PLAYER_BODY_MOVING_RIGHT_2);
+	}
+}
+ 82105b8:	0001883a 	nop
+ 82105bc:	e037883a 	mov	sp,fp
+ 82105c0:	dfc00117 	ldw	ra,4(sp)
+ 82105c4:	df000017 	ldw	fp,0(sp)
+ 82105c8:	dec00204 	addi	sp,sp,8
+ 82105cc:	f800283a 	ret
+
+082105d0 <get_burguer_component>:
+
+int get_burguer_component(const Player player, int min_pos_x, int max_pos_x,
+		int min_pos_y, int max_pos_y) {
+ 82105d0:	defff904 	addi	sp,sp,-28
+ 82105d4:	df000615 	stw	fp,24(sp)
+ 82105d8:	df000604 	addi	fp,sp,24
+ 82105dc:	e13ffc15 	stw	r4,-16(fp)
+ 82105e0:	e17ffd15 	stw	r5,-12(fp)
+ 82105e4:	e1bffe15 	stw	r6,-8(fp)
+ 82105e8:	e1ffff15 	stw	r7,-4(fp)
+	int current_x = player.body.pos_x;
+ 82105ec:	e0bffe0b 	ldhu	r2,-8(fp)
+ 82105f0:	10bfffcc 	andi	r2,r2,65535
+ 82105f4:	e0bffa15 	stw	r2,-24(fp)
+	int current_y = player.body.pos_y;
+ 82105f8:	e0bffe8b 	ldhu	r2,-6(fp)
+ 82105fc:	10bfffcc 	andi	r2,r2,65535
+ 8210600:	e0bffb15 	stw	r2,-20(fp)
+
+	if ((current_x > min_pos_x && current_x < max_pos_x)
+ 8210604:	e0bffa17 	ldw	r2,-24(fp)
+ 8210608:	e0ffff17 	ldw	r3,-4(fp)
+ 821060c:	18800b0e 	bge	r3,r2,821063c <get_burguer_component+0x6c>
+ 8210610:	e0fffa17 	ldw	r3,-24(fp)
+ 8210614:	e0800117 	ldw	r2,4(fp)
+ 8210618:	1880080e 	bge	r3,r2,821063c <get_burguer_component+0x6c>
+			&& (current_y > min_pos_y && current_y < max_pos_y)) {
+ 821061c:	e0bffb17 	ldw	r2,-20(fp)
+ 8210620:	e0c00217 	ldw	r3,8(fp)
+ 8210624:	1880050e 	bge	r3,r2,821063c <get_burguer_component+0x6c>
+ 8210628:	e0fffb17 	ldw	r3,-20(fp)
+ 821062c:	e0800317 	ldw	r2,12(fp)
+ 8210630:	1880020e 	bge	r3,r2,821063c <get_burguer_component+0x6c>
+		return 1;
+ 8210634:	00800044 	movi	r2,1
+ 8210638:	00000106 	br	8210640 <get_burguer_component+0x70>
+	}
+
+	return 0;
+ 821063c:	0005883a 	mov	r2,zero
+}
+ 8210640:	e037883a 	mov	sp,fp
+ 8210644:	df000017 	ldw	fp,0(sp)
+ 8210648:	dec00104 	addi	sp,sp,4
+ 821064c:	f800283a 	ret
+
+08210650 <deliver_food>:
+
+void deliver_food(GameStatus game, const Player player, int min_pos_x,
+		int max_pos_x, int min_pos_y, int max_pos_y) {
+ 8210650:	defff904 	addi	sp,sp,-28
+ 8210654:	df000515 	stw	fp,20(sp)
+ 8210658:	df000504 	addi	fp,sp,20
+ 821065c:	e13ffd15 	stw	r4,-12(fp)
+ 8210660:	e17ffe15 	stw	r5,-8(fp)
+ 8210664:	e1bfff15 	stw	r6,-4(fp)
+ 8210668:	e1c00115 	stw	r7,4(fp)
+	int current_x = player.body.pos_x;
+ 821066c:	e080030b 	ldhu	r2,12(fp)
+ 8210670:	10bfffcc 	andi	r2,r2,65535
+ 8210674:	e0bffb15 	stw	r2,-20(fp)
+	int current_y = player.body.pos_y;
+ 8210678:	e080038b 	ldhu	r2,14(fp)
+ 821067c:	10bfffcc 	andi	r2,r2,65535
+ 8210680:	e0bffc15 	stw	r2,-16(fp)
+
+	if ((current_x > min_pos_x && current_x < max_pos_x)
+ 8210684:	e0bffb17 	ldw	r2,-20(fp)
+ 8210688:	e0c00417 	ldw	r3,16(fp)
+ 821068c:	1880260e 	bge	r3,r2,8210728 <deliver_food+0xd8>
+ 8210690:	e0fffb17 	ldw	r3,-20(fp)
+ 8210694:	e0800517 	ldw	r2,20(fp)
+ 8210698:	1880230e 	bge	r3,r2,8210728 <deliver_food+0xd8>
+			&& (current_y > min_pos_y && current_y < max_pos_y)
+ 821069c:	e0bffc17 	ldw	r2,-16(fp)
+ 82106a0:	e0c00617 	ldw	r3,24(fp)
+ 82106a4:	1880200e 	bge	r3,r2,8210728 <deliver_food+0xd8>
+ 82106a8:	e0fffc17 	ldw	r3,-16(fp)
+ 82106ac:	e0800717 	ldw	r2,28(fp)
+ 82106b0:	18801d0e 	bge	r3,r2,8210728 <deliver_food+0xd8>
+			&& (game.bread == game.current_bread
+ 82106b4:	e0fffd03 	ldbu	r3,-12(fp)
+ 82106b8:	e0bffe03 	ldbu	r2,-8(fp)
+ 82106bc:	18c03fcc 	andi	r3,r3,255
+ 82106c0:	10803fcc 	andi	r2,r2,255
+ 82106c4:	1880181e 	bne	r3,r2,8210728 <deliver_food+0xd8>
+					&& game.tomato == game.current_tomato
+ 82106c8:	e0fffd83 	ldbu	r3,-10(fp)
+ 82106cc:	e0bffe83 	ldbu	r2,-6(fp)
+ 82106d0:	18c03fcc 	andi	r3,r3,255
+ 82106d4:	10803fcc 	andi	r2,r2,255
+ 82106d8:	1880131e 	bne	r3,r2,8210728 <deliver_food+0xd8>
+					&& game.meat == game.current_meat
+ 82106dc:	e0fffdc3 	ldbu	r3,-9(fp)
+ 82106e0:	e0bfff03 	ldbu	r2,-4(fp)
+ 82106e4:	18c03fcc 	andi	r3,r3,255
+ 82106e8:	10803fcc 	andi	r2,r2,255
+ 82106ec:	18800e1e 	bne	r3,r2,8210728 <deliver_food+0xd8>
+					&& game.lettuce == game.current_lettuce
+ 82106f0:	e0fffd43 	ldbu	r3,-11(fp)
+ 82106f4:	e0bffe43 	ldbu	r2,-7(fp)
+ 82106f8:	18c03fcc 	andi	r3,r3,255
+ 82106fc:	10803fcc 	andi	r2,r2,255
+ 8210700:	1880091e 	bne	r3,r2,8210728 <deliver_food+0xd8>
+					&& game.current_plate == 1)) {
+ 8210704:	e0bfff43 	ldbu	r2,-3(fp)
+ 8210708:	10803fcc 	andi	r2,r2,255
+ 821070c:	10800058 	cmpnei	r2,r2,1
+ 8210710:	1000051e 	bne	r2,zero,8210728 <deliver_food+0xd8>
+		game.current_bread = 0;
+ 8210714:	e03ffe05 	stb	zero,-8(fp)
+		game.current_meat = 0;
+ 8210718:	e03fff05 	stb	zero,-4(fp)
+		game.current_lettuce = 0;
+ 821071c:	e03ffe45 	stb	zero,-7(fp)
+		game.current_plate = 0;
+ 8210720:	e03fff45 	stb	zero,-3(fp)
+		game.current_tomato = 0;
+ 8210724:	e03ffe85 	stb	zero,-6(fp)
+	}
+}
+ 8210728:	0001883a 	nop
+ 821072c:	e037883a 	mov	sp,fp
+ 8210730:	df000017 	ldw	fp,0(sp)
+ 8210734:	dec00204 	addi	sp,sp,8
+ 8210738:	f800283a 	ret
+
+0821073c <handle_burguer_sprite>:
+
+void handle_burguer_sprite(Sprite sprite, const GameStatus game) {
+ 821073c:	defffb04 	addi	sp,sp,-20
+ 8210740:	df000215 	stw	fp,8(sp)
+ 8210744:	df000204 	addi	fp,sp,8
+ 8210748:	e13ffe15 	stw	r4,-8(fp)
+ 821074c:	e17fff15 	stw	r5,-4(fp)
+ 8210750:	e1800115 	stw	r6,4(fp)
+ 8210754:	e1c00215 	stw	r7,8(fp)
+	if (game.current_plate == 0) {
+ 8210758:	e0800343 	ldbu	r2,13(fp)
+ 821075c:	10803fcc 	andi	r2,r2,255
+ 8210760:	1000031e 	bne	r2,zero,8210770 <handle_burguer_sprite+0x34>
+		sprite.tile_id = SPRITE_X;
+ 8210764:	008006c4 	movi	r2,27
+ 8210768:	e0bffe05 	stb	r2,-8(fp)
+		return;
+ 821076c:	00005a06 	br	82108d8 <handle_burguer_sprite+0x19c>
+	}
+
+	sprite.tile_id = SPRITE_PLATE;
+ 8210770:	00800704 	movi	r2,28
+ 8210774:	e0bffe05 	stb	r2,-8(fp)
+	if (game.current_bread) {
+ 8210778:	e0800203 	ldbu	r2,8(fp)
+ 821077c:	10803fcc 	andi	r2,r2,255
+ 8210780:	10005526 	beq	r2,zero,82108d8 <handle_burguer_sprite+0x19c>
+		sprite.tile_id = SPRITE_PLATE_BREAD;
+ 8210784:	00800884 	movi	r2,34
+ 8210788:	e0bffe05 	stb	r2,-8(fp)
+		if (!game.current_meat && !game.current_tomato
+ 821078c:	e0800303 	ldbu	r2,12(fp)
+ 8210790:	10803fcc 	andi	r2,r2,255
+ 8210794:	1000091e 	bne	r2,zero,82107bc <handle_burguer_sprite+0x80>
+ 8210798:	e0800283 	ldbu	r2,10(fp)
+ 821079c:	10803fcc 	andi	r2,r2,255
+ 82107a0:	1000061e 	bne	r2,zero,82107bc <handle_burguer_sprite+0x80>
+				&& game.current_lettuce) {
+ 82107a4:	e0800243 	ldbu	r2,9(fp)
+ 82107a8:	10803fcc 	andi	r2,r2,255
+ 82107ac:	10000326 	beq	r2,zero,82107bc <handle_burguer_sprite+0x80>
+			sprite.tile_id = SPRITE_PLATE_BREAD_LETTUCE;
+ 82107b0:	008008c4 	movi	r2,35
+ 82107b4:	e0bffe05 	stb	r2,-8(fp)
+ 82107b8:	00004706 	br	82108d8 <handle_burguer_sprite+0x19c>
+		} else if (!game.current_meat && game.current_tomato
+ 82107bc:	e0800303 	ldbu	r2,12(fp)
+ 82107c0:	10803fcc 	andi	r2,r2,255
+ 82107c4:	1000091e 	bne	r2,zero,82107ec <handle_burguer_sprite+0xb0>
+ 82107c8:	e0800283 	ldbu	r2,10(fp)
+ 82107cc:	10803fcc 	andi	r2,r2,255
+ 82107d0:	10000626 	beq	r2,zero,82107ec <handle_burguer_sprite+0xb0>
+				&& !game.current_lettuce) {
+ 82107d4:	e0800243 	ldbu	r2,9(fp)
+ 82107d8:	10803fcc 	andi	r2,r2,255
+ 82107dc:	1000031e 	bne	r2,zero,82107ec <handle_burguer_sprite+0xb0>
+			sprite.tile_id = SPRITE_PLATE_BREAD_TOMATO;
+ 82107e0:	00800a04 	movi	r2,40
+ 82107e4:	e0bffe05 	stb	r2,-8(fp)
+ 82107e8:	00003b06 	br	82108d8 <handle_burguer_sprite+0x19c>
+		} else if (!game.current_meat && game.current_tomato
+ 82107ec:	e0800303 	ldbu	r2,12(fp)
+ 82107f0:	10803fcc 	andi	r2,r2,255
+ 82107f4:	1000091e 	bne	r2,zero,821081c <handle_burguer_sprite+0xe0>
+ 82107f8:	e0800283 	ldbu	r2,10(fp)
+ 82107fc:	10803fcc 	andi	r2,r2,255
+ 8210800:	10000626 	beq	r2,zero,821081c <handle_burguer_sprite+0xe0>
+				&& game.current_lettuce) {
+ 8210804:	e0800243 	ldbu	r2,9(fp)
+ 8210808:	10803fcc 	andi	r2,r2,255
+ 821080c:	10000326 	beq	r2,zero,821081c <handle_burguer_sprite+0xe0>
+			sprite.tile_id = SPRITE_PLATE_BREAD_LETTUCE_TOMATO;
+ 8210810:	00800904 	movi	r2,36
+ 8210814:	e0bffe05 	stb	r2,-8(fp)
+ 8210818:	00002f06 	br	82108d8 <handle_burguer_sprite+0x19c>
+		} else if (game.current_meat && !game.current_tomato
+ 821081c:	e0800303 	ldbu	r2,12(fp)
+ 8210820:	10803fcc 	andi	r2,r2,255
+ 8210824:	10000926 	beq	r2,zero,821084c <handle_burguer_sprite+0x110>
+ 8210828:	e0800283 	ldbu	r2,10(fp)
+ 821082c:	10803fcc 	andi	r2,r2,255
+ 8210830:	1000061e 	bne	r2,zero,821084c <handle_burguer_sprite+0x110>
+				&& !game.current_lettuce) {
+ 8210834:	e0800243 	ldbu	r2,9(fp)
+ 8210838:	10803fcc 	andi	r2,r2,255
+ 821083c:	1000031e 	bne	r2,zero,821084c <handle_burguer_sprite+0x110>
+			sprite.tile_id = SPRITE_PLATE_BREAD_MEAT;
+ 8210840:	00800984 	movi	r2,38
+ 8210844:	e0bffe05 	stb	r2,-8(fp)
+ 8210848:	00002306 	br	82108d8 <handle_burguer_sprite+0x19c>
+		} else if (game.current_meat && !game.current_tomato
+ 821084c:	e0800303 	ldbu	r2,12(fp)
+ 8210850:	10803fcc 	andi	r2,r2,255
+ 8210854:	10000926 	beq	r2,zero,821087c <handle_burguer_sprite+0x140>
+ 8210858:	e0800283 	ldbu	r2,10(fp)
+ 821085c:	10803fcc 	andi	r2,r2,255
+ 8210860:	1000061e 	bne	r2,zero,821087c <handle_burguer_sprite+0x140>
+				&& game.current_lettuce) {
+ 8210864:	e0800243 	ldbu	r2,9(fp)
+ 8210868:	10803fcc 	andi	r2,r2,255
+ 821086c:	10000326 	beq	r2,zero,821087c <handle_burguer_sprite+0x140>
+			sprite.tile_id = SPRITE_PLATE_BREAD_LETTUCE_MEAT;
+ 8210870:	008009c4 	movi	r2,39
+ 8210874:	e0bffe05 	stb	r2,-8(fp)
+ 8210878:	00001706 	br	82108d8 <handle_burguer_sprite+0x19c>
+		} else if (game.current_meat && game.current_tomato
+ 821087c:	e0800303 	ldbu	r2,12(fp)
+ 8210880:	10803fcc 	andi	r2,r2,255
+ 8210884:	10000926 	beq	r2,zero,82108ac <handle_burguer_sprite+0x170>
+ 8210888:	e0800283 	ldbu	r2,10(fp)
+ 821088c:	10803fcc 	andi	r2,r2,255
+ 8210890:	10000626 	beq	r2,zero,82108ac <handle_burguer_sprite+0x170>
+				&& !game.current_lettuce) {
+ 8210894:	e0800243 	ldbu	r2,9(fp)
+ 8210898:	10803fcc 	andi	r2,r2,255
+ 821089c:	1000031e 	bne	r2,zero,82108ac <handle_burguer_sprite+0x170>
+			sprite.tile_id = SPRITE_PLATE_BREAD_MEAT_TOMATO;
+ 82108a0:	00800a44 	movi	r2,41
+ 82108a4:	e0bffe05 	stb	r2,-8(fp)
+ 82108a8:	00000b06 	br	82108d8 <handle_burguer_sprite+0x19c>
+		} else if (game.current_meat && game.current_tomato
+ 82108ac:	e0800303 	ldbu	r2,12(fp)
+ 82108b0:	10803fcc 	andi	r2,r2,255
+ 82108b4:	10000826 	beq	r2,zero,82108d8 <handle_burguer_sprite+0x19c>
+ 82108b8:	e0800283 	ldbu	r2,10(fp)
+ 82108bc:	10803fcc 	andi	r2,r2,255
+ 82108c0:	10000526 	beq	r2,zero,82108d8 <handle_burguer_sprite+0x19c>
+				&& game.current_lettuce) {
+ 82108c4:	e0800243 	ldbu	r2,9(fp)
+ 82108c8:	10803fcc 	andi	r2,r2,255
+ 82108cc:	10000226 	beq	r2,zero,82108d8 <handle_burguer_sprite+0x19c>
+			sprite.tile_id = SPRITE_PLATE_BREAD_LETTUCE_TOMATO_MEAT;
+ 82108d0:	00800944 	movi	r2,37
+ 82108d4:	e0bffe05 	stb	r2,-8(fp)
+		}
+	}
+}
+ 82108d8:	e037883a 	mov	sp,fp
+ 82108dc:	df000017 	ldw	fp,0(sp)
+ 82108e0:	dec00304 	addi	sp,sp,12
+ 82108e4:	f800283a 	ret
+
+082108e8 <main>:
+
+int main() {
+ 82108e8:	deffa204 	addi	sp,sp,-376
+ 82108ec:	dfc05d15 	stw	ra,372(sp)
+ 82108f0:	df005c15 	stw	fp,368(sp)
+ 82108f4:	df005c04 	addi	fp,sp,368
+	srand(SEED);
+ 82108f8:	01000044 	movi	r4,1
+ 82108fc:	82117c00 	call	82117c0 <srand>
+	uint8_t sprite_counter = 0;
+ 8210900:	e03faa05 	stb	zero,-344(fp)
+	Player player;
+	Sprite player_head;
+	Sprite player_body;
+
+	player_head.tile_id = SPRITE_PLAYER_HEAD_FRONT;
+ 8210904:	00800044 	movi	r2,1
+ 8210908:	e0bfad85 	stb	r2,-330(fp)
+	player_head.pos_x = PLAYER_HEAD_INITIAL_POSITION_X;
+ 821090c:	00821e44 	movi	r2,2169
+ 8210910:	e0bfae0d 	sth	r2,-328(fp)
+	player_head.pos_y = PLAYER_HEAD_INITIAL_POSITION_Y;
+ 8210914:	00804c04 	movi	r2,304
+ 8210918:	e0bfae8d 	sth	r2,-326(fp)
+
+	player_body.tile_id = SPRITE_PLAYER_BODY_STOPED_FRONT;
+ 821091c:	00800084 	movi	r2,2
+ 8210920:	e0bfaf05 	stb	r2,-324(fp)
+	player_body.pos_x = PLAYER_HEAD_INITIAL_POSITION_X;
+ 8210924:	00821e44 	movi	r2,2169
+ 8210928:	e0bfaf8d 	sth	r2,-322(fp)
+	player_body.pos_y = PLAYER_HEAD_INITIAL_POSITION_Y + SPRITE_SIZE;
+ 821092c:	00805004 	movi	r2,320
+ 8210930:	e0bfb00d 	sth	r2,-320(fp)
+
+	player.head = player_head;
+ 8210934:	e0bfad8b 	ldhu	r2,-330(fp)
+ 8210938:	e0bfaa8d 	sth	r2,-342(fp)
+ 821093c:	e0bfae0b 	ldhu	r2,-328(fp)
+ 8210940:	e0bfab0d 	sth	r2,-340(fp)
+ 8210944:	e0bfae8b 	ldhu	r2,-326(fp)
+ 8210948:	e0bfab8d 	sth	r2,-338(fp)
+	player.body = player_body;
+ 821094c:	e0bfaf0b 	ldhu	r2,-324(fp)
+ 8210950:	e0bfac0d 	sth	r2,-336(fp)
+ 8210954:	e0bfaf8b 	ldhu	r2,-322(fp)
+ 8210958:	e0bfac8d 	sth	r2,-334(fp)
+ 821095c:	e0bfb00b 	ldhu	r2,-320(fp)
+ 8210960:	e0bfad0d 	sth	r2,-332(fp)
+	Sprite sprites[MAX_SPRITES];
+	sprites[0] = player.head;
+ 8210964:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 8210968:	e0bfb08d 	sth	r2,-318(fp)
+ 821096c:	e0bfab0b 	ldhu	r2,-340(fp)
+ 8210970:	e0bfb10d 	sth	r2,-316(fp)
+ 8210974:	e0bfab8b 	ldhu	r2,-338(fp)
+ 8210978:	e0bfb18d 	sth	r2,-314(fp)
+	sprites[1] = player.body;
+ 821097c:	e0bfac0b 	ldhu	r2,-336(fp)
+ 8210980:	e0bfb20d 	sth	r2,-312(fp)
+ 8210984:	e0bfac8b 	ldhu	r2,-334(fp)
+ 8210988:	e0bfb28d 	sth	r2,-310(fp)
+ 821098c:	e0bfad0b 	ldhu	r2,-332(fp)
+ 8210990:	e0bfb30d 	sth	r2,-308(fp)
+
+	GameStatus game;
+	game.bread = 0;
+ 8210994:	e03fe085 	stb	zero,-126(fp)
+	game.lettuce = 0;
+ 8210998:	e03fe0c5 	stb	zero,-125(fp)
+	game.tomato = 0;
+ 821099c:	e03fe105 	stb	zero,-124(fp)
+	game.meat = 0;
+ 82109a0:	e03fe145 	stb	zero,-123(fp)
+	game.status_burguer = 0;
+ 82109a4:	e03fe305 	stb	zero,-116(fp)
+	game.current_bread = 0;
+ 82109a8:	e03fe185 	stb	zero,-122(fp)
+	game.current_lettuce = 0;
+ 82109ac:	e03fe1c5 	stb	zero,-121(fp)
+	game.current_tomato = 0;
+ 82109b0:	e03fe205 	stb	zero,-120(fp)
+	game.current_meat = 0;
+ 82109b4:	e03fe285 	stb	zero,-118(fp)
+	game.current_raw_meat = 0;
+ 82109b8:	e03fe245 	stb	zero,-119(fp)
+	game.current_plate = 0;
+ 82109bc:	e03fe2c5 	stb	zero,-117(fp)
+
+	Sprite bread_sprite_number;
+	bread_sprite_number.tile_id = SPRITE_X;
+ 82109c0:	008006c4 	movi	r2,27
+ 82109c4:	e0bfe385 	stb	r2,-114(fp)
+	bread_sprite_number.pos_x = BREAD_POS_X;
+ 82109c8:	0081f084 	movi	r2,1986
+ 82109cc:	e0bfe40d 	sth	r2,-112(fp)
+	bread_sprite_number.pos_y = ITEM_POS_Y;
+ 82109d0:	00801304 	movi	r2,76
+ 82109d4:	e0bfe48d 	sth	r2,-110(fp)
+	sprites[2] = bread_sprite_number;
+ 82109d8:	e0bfe38b 	ldhu	r2,-114(fp)
+ 82109dc:	e0bfb38d 	sth	r2,-306(fp)
+ 82109e0:	e0bfe40b 	ldhu	r2,-112(fp)
+ 82109e4:	e0bfb40d 	sth	r2,-304(fp)
+ 82109e8:	e0bfe48b 	ldhu	r2,-110(fp)
+ 82109ec:	e0bfb48d 	sth	r2,-302(fp)
+
+	Sprite lettuce_sprite_number;
+	lettuce_sprite_number.tile_id = SPRITE_X;
+ 82109f0:	008006c4 	movi	r2,27
+ 82109f4:	e0bfe505 	stb	r2,-108(fp)
+	lettuce_sprite_number.pos_x = LETTUCE_POS_X;
+ 82109f8:	00820044 	movi	r2,2049
+ 82109fc:	e0bfe58d 	sth	r2,-106(fp)
+	lettuce_sprite_number.pos_y = ITEM_POS_Y;
+ 8210a00:	00801304 	movi	r2,76
+ 8210a04:	e0bfe60d 	sth	r2,-104(fp)
+	sprites[3] = lettuce_sprite_number;
+ 8210a08:	e0bfe50b 	ldhu	r2,-108(fp)
+ 8210a0c:	e0bfb50d 	sth	r2,-300(fp)
+ 8210a10:	e0bfe58b 	ldhu	r2,-106(fp)
+ 8210a14:	e0bfb58d 	sth	r2,-298(fp)
+ 8210a18:	e0bfe60b 	ldhu	r2,-104(fp)
+ 8210a1c:	e0bfb60d 	sth	r2,-296(fp)
+
+	Sprite tomato_sprite_number;
+	tomato_sprite_number.tile_id = SPRITE_X;
+ 8210a20:	008006c4 	movi	r2,27
+ 8210a24:	e0bfe685 	stb	r2,-102(fp)
+	tomato_sprite_number.pos_x = TOMATO_POS_X;
+ 8210a28:	00820f84 	movi	r2,2110
+ 8210a2c:	e0bfe70d 	sth	r2,-100(fp)
+	tomato_sprite_number.pos_y = ITEM_POS_Y;
+ 8210a30:	00801304 	movi	r2,76
+ 8210a34:	e0bfe78d 	sth	r2,-98(fp)
+	sprites[4] = tomato_sprite_number;
+ 8210a38:	e0bfe68b 	ldhu	r2,-102(fp)
+ 8210a3c:	e0bfb68d 	sth	r2,-294(fp)
+ 8210a40:	e0bfe70b 	ldhu	r2,-100(fp)
+ 8210a44:	e0bfb70d 	sth	r2,-292(fp)
+ 8210a48:	e0bfe78b 	ldhu	r2,-98(fp)
+ 8210a4c:	e0bfb78d 	sth	r2,-290(fp)
+
+	Sprite meat_sprite_number;
+	meat_sprite_number.tile_id = SPRITE_X;
+ 8210a50:	008006c4 	movi	r2,27
+ 8210a54:	e0bfe805 	stb	r2,-96(fp)
+	meat_sprite_number.pos_x = MEAT_POS_X;
+ 8210a58:	00821f84 	movi	r2,2174
+ 8210a5c:	e0bfe88d 	sth	r2,-94(fp)
+	meat_sprite_number.pos_y = ITEM_POS_Y;
+ 8210a60:	00801304 	movi	r2,76
+ 8210a64:	e0bfe90d 	sth	r2,-92(fp)
+	sprites[5] = meat_sprite_number;
+ 8210a68:	e0bfe80b 	ldhu	r2,-96(fp)
+ 8210a6c:	e0bfb80d 	sth	r2,-288(fp)
+ 8210a70:	e0bfe88b 	ldhu	r2,-94(fp)
+ 8210a74:	e0bfb88d 	sth	r2,-286(fp)
+ 8210a78:	e0bfe90b 	ldhu	r2,-92(fp)
+ 8210a7c:	e0bfb90d 	sth	r2,-284(fp)
+
+	Sprite full_burguer_sprite;
+	full_burguer_sprite.tile_id = SPRITE_X;
+ 8210a80:	008006c4 	movi	r2,27
+ 8210a84:	e0bfe985 	stb	r2,-90(fp)
+	full_burguer_sprite.pos_x = FULL_BURGUER_POS_X;
+ 8210a88:	00822744 	movi	r2,2205
+ 8210a8c:	e0bfea0d 	sth	r2,-88(fp)
+	full_burguer_sprite.pos_y = ITEM_POS_Y;
+ 8210a90:	00801304 	movi	r2,76
+ 8210a94:	e0bfea8d 	sth	r2,-86(fp)
+	sprites[6] = full_burguer_sprite;
+ 8210a98:	e0bfe98b 	ldhu	r2,-90(fp)
+ 8210a9c:	e0bfb98d 	sth	r2,-282(fp)
+ 8210aa0:	e0bfea0b 	ldhu	r2,-88(fp)
+ 8210aa4:	e0bfba0d 	sth	r2,-280(fp)
+ 8210aa8:	e0bfea8b 	ldhu	r2,-86(fp)
+ 8210aac:	e0bfba8d 	sth	r2,-278(fp)
+	Sprite car_front_3_sprite;
+	Sprite car_back_1_sprite;
+	Sprite car_back_2_sprite;
+	Sprite car_back_3_sprite;
+
+	car_front_1_sprite.tile_id = SPRITE_CAR_FRONT_1;
+ 8210ab0:	00800ac4 	movi	r2,43
+ 8210ab4:	e0bff485 	stb	r2,-46(fp)
+	car_front_1_sprite.pos_x = 0;
+ 8210ab8:	e03ff50d 	sth	zero,-44(fp)
+	car_front_1_sprite.pos_y = 0;
+ 8210abc:	e03ff58d 	sth	zero,-42(fp)
+
+	car_front_2_sprite.tile_id = SPRITE_CAR_FRONT_2;
+ 8210ac0:	00800b44 	movi	r2,45
+ 8210ac4:	e0bff605 	stb	r2,-40(fp)
+	car_front_2_sprite.pos_x = 0;
+ 8210ac8:	e03ff68d 	sth	zero,-38(fp)
+	car_front_2_sprite.pos_y = 0;
+ 8210acc:	e03ff70d 	sth	zero,-36(fp)
+
+	car_front_3_sprite.tile_id = SPRITE_CAR_FRONT_3;
+ 8210ad0:	00800bc4 	movi	r2,47
+ 8210ad4:	e0bff785 	stb	r2,-34(fp)
+	car_front_3_sprite.pos_x = 0;
+ 8210ad8:	e03ff80d 	sth	zero,-32(fp)
+	car_front_3_sprite.pos_y = 0;
+ 8210adc:	e03ff88d 	sth	zero,-30(fp)
+
+	car_back_1_sprite.tile_id = SPRITE_CAR_BACK_1;
+ 8210ae0:	00800b04 	movi	r2,44
+ 8210ae4:	e0bff905 	stb	r2,-28(fp)
+	car_back_1_sprite.pos_x = 0;
+ 8210ae8:	e03ff98d 	sth	zero,-26(fp)
+	car_back_1_sprite.pos_x = 0;
+ 8210aec:	e03ff98d 	sth	zero,-26(fp)
+
+	car_back_2_sprite.tile_id = SPRITE_CAR_BACK_2;
+ 8210af0:	00800b84 	movi	r2,46
+ 8210af4:	e0bffa85 	stb	r2,-22(fp)
+	car_back_2_sprite.pos_x = 0;
+ 8210af8:	e03ffb0d 	sth	zero,-20(fp)
+	car_back_2_sprite.pos_x = 0;
+ 8210afc:	e03ffb0d 	sth	zero,-20(fp)
+
+	car_back_3_sprite.tile_id = SPRITE_CAR_BACK_3;
+ 8210b00:	00800c04 	movi	r2,48
+ 8210b04:	e0bffc05 	stb	r2,-16(fp)
+	car_back_3_sprite.pos_x = 0;
+ 8210b08:	e03ffc8d 	sth	zero,-14(fp)
+	car_back_3_sprite.pos_x = 0;
+ 8210b0c:	e03ffc8d 	sth	zero,-14(fp)
+
+	sprite_counter = 7;
+ 8210b10:	008001c4 	movi	r2,7
+ 8210b14:	e0bfaa05 	stb	r2,-344(fp)
+
+// Initial setup: send full BG dimensions and latch config
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_BG_WIDTH, BG_WIDTH);
+ 8210b18:	00c28004 	movi	r3,2560
+ 8210b1c:	00820834 	movhi	r2,2080
+ 8210b20:	10c00035 	stwio	r3,0(r2)
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_BG_HEIGHT, BG_HEIGHT);
+ 8210b24:	00c07804 	movi	r3,480
+ 8210b28:	00820834 	movhi	r2,2080
+ 8210b2c:	10800104 	addi	r2,r2,4
+ 8210b30:	10c00035 	stwio	r3,0(r2)
+	IOWR_32DIRECT(BACKGROUND_LOADER_BASE, REG_OFFSET_START, 1);
+ 8210b34:	00c00044 	movi	r3,1
+ 8210b38:	00820834 	movhi	r2,2080
+ 8210b3c:	10800404 	addi	r2,r2,16
+ 8210b40:	10c00035 	stwio	r3,0(r2)
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_WORLD_TYPE * 4, 0);  // 00: 9x1, 01: 1x9, 10: 3x3
+ 8210b44:	0007883a 	mov	r3,zero
+ 8210b48:	00820834 	movhi	r2,2080
+ 8210b4c:	10812204 	addi	r2,r2,1160
+ 8210b50:	10c00035 	stwio	r3,0(r2)
+	IOWR_32DIRECT(COMPOSER_BASE, REG_COMP_READY * 4, 1);
+ 8210b54:	00c00044 	movi	r3,1
+ 8210b58:	00820834 	movhi	r2,2080
+ 8210b5c:	10812304 	addi	r2,r2,1164
+ 8210b60:	10c00035 	stwio	r3,0(r2)
+
+// Espera 10 segundo
+	usleep(10000000);
+ 8210b64:	01002674 	movhi	r4,153
+ 8210b68:	2125a004 	addi	r4,r4,-27008
+ 8210b6c:	8211a940 	call	8211a94 <usleep>
+
+	load_background(SECOND_IMAGE_OFFSET_X, SECOND_IMAGE_OFFSET_Y);
+ 8210b70:	000b883a 	mov	r5,zero
+ 8210b74:	0100a004 	movi	r4,640
+ 8210b78:	82103c80 	call	82103c8 <load_background>
+
+// Faz uma tela de carregamento
+	uint8_t start_game = 1;
+ 8210b7c:	00800044 	movi	r2,1
+ 8210b80:	e0bfaa45 	stb	r2,-343(fp)
+	while (start_game) {
+ 8210b84:	00000a06 	br	8210bb0 <main+0x2c8>
+		volatile int btn = IORD_32DIRECT(GAMEPAD_PINS_BASE, 0);
+ 8210b88:	00822434 	movhi	r2,2192
+ 8210b8c:	10800037 	ldwio	r2,0(r2)
+ 8210b90:	e0bffe15 	stw	r2,-8(fp)
+		if (is_pressed(btn, BUTTON_START)) {
+ 8210b94:	e0bffe17 	ldw	r2,-8(fp)
+ 8210b98:	01400284 	movi	r5,10
+ 8210b9c:	1009883a 	mov	r4,r2
+ 8210ba0:	821021c0 	call	821021c <is_pressed>
+ 8210ba4:	10803fcc 	andi	r2,r2,255
+ 8210ba8:	10000126 	beq	r2,zero,8210bb0 <main+0x2c8>
+			start_game = 0;
+ 8210bac:	e03faa45 	stb	zero,-343(fp)
+
+	load_background(SECOND_IMAGE_OFFSET_X, SECOND_IMAGE_OFFSET_Y);
+
+// Faz uma tela de carregamento
+	uint8_t start_game = 1;
+	while (start_game) {
+ 8210bb0:	e0bfaa43 	ldbu	r2,-343(fp)
+ 8210bb4:	103ff41e 	bne	r2,zero,8210b88 <__alt_data_end+0xffff0b88>
+		if (is_pressed(btn, BUTTON_START)) {
+			start_game = 0;
+		}
+	}
+
+	load_background(CAMERA_GAME_POSITION_X, CAMERA_GAME_POSITION_Y);
+ 8210bb8:	01414004 	movi	r5,1280
+ 8210bbc:	01019844 	movi	r4,1633
+ 8210bc0:	82103c80 	call	82103c8 <load_background>
+
+// Inicia o jogo
+	while (1) {
+		volatile int btn = IORD_32DIRECT(GAMEPAD_PINS_BASE, 0);
+ 8210bc4:	00822434 	movhi	r2,2192
+ 8210bc8:	10800037 	ldwio	r2,0(r2)
+ 8210bcc:	e0bfff15 	stw	r2,-4(fp)
+
+		// Movimentacao
+		if (is_pressed(btn, BUTTON_UP)) {
+ 8210bd0:	e0bfff17 	ldw	r2,-4(fp)
+ 8210bd4:	000b883a 	mov	r5,zero
+ 8210bd8:	1009883a 	mov	r4,r2
+ 8210bdc:	821021c0 	call	821021c <is_pressed>
+ 8210be0:	10803fcc 	andi	r2,r2,255
+ 8210be4:	10001726 	beq	r2,zero,8210c44 <main+0x35c>
+			walk_player(player, -WALKING_SPEED, 0);
+ 8210be8:	d8000015 	stw	zero,0(sp)
+ 8210bec:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 8210bf0:	e0ffab0b 	ldhu	r3,-340(fp)
+ 8210bf4:	1806943a 	slli	r3,r3,16
+ 8210bf8:	1884b03a 	or	r2,r3,r2
+ 8210bfc:	0009883a 	mov	r4,zero
+ 8210c00:	1009883a 	mov	r4,r2
+ 8210c04:	e0bfab8b 	ldhu	r2,-338(fp)
+ 8210c08:	e0ffac0b 	ldhu	r3,-336(fp)
+ 8210c0c:	1806943a 	slli	r3,r3,16
+ 8210c10:	1884b03a 	or	r2,r3,r2
+ 8210c14:	000b883a 	mov	r5,zero
+ 8210c18:	100b883a 	mov	r5,r2
+ 8210c1c:	e0bfac8b 	ldhu	r2,-334(fp)
+ 8210c20:	e0ffad0b 	ldhu	r3,-332(fp)
+ 8210c24:	1806943a 	slli	r3,r3,16
+ 8210c28:	1884b03a 	or	r2,r3,r2
+ 8210c2c:	0007883a 	mov	r3,zero
+ 8210c30:	1007883a 	mov	r3,r2
+ 8210c34:	01ffff84 	movi	r7,-2
+ 8210c38:	180d883a 	mov	r6,r3
+ 8210c3c:	82104940 	call	8210494 <walk_player>
+ 8210c40:	00007c06 	br	8210e34 <main+0x54c>
+		} else if (is_pressed(btn, BUTTON_DOWN)) {
+ 8210c44:	e0bfff17 	ldw	r2,-4(fp)
+ 8210c48:	01400044 	movi	r5,1
+ 8210c4c:	1009883a 	mov	r4,r2
+ 8210c50:	821021c0 	call	821021c <is_pressed>
+ 8210c54:	10803fcc 	andi	r2,r2,255
+ 8210c58:	10001726 	beq	r2,zero,8210cb8 <main+0x3d0>
+			walk_player(player, WALKING_SPEED, 0);
+ 8210c5c:	d8000015 	stw	zero,0(sp)
+ 8210c60:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 8210c64:	e0ffab0b 	ldhu	r3,-340(fp)
+ 8210c68:	1806943a 	slli	r3,r3,16
+ 8210c6c:	1884b03a 	or	r2,r3,r2
+ 8210c70:	0009883a 	mov	r4,zero
+ 8210c74:	1009883a 	mov	r4,r2
+ 8210c78:	e0bfab8b 	ldhu	r2,-338(fp)
+ 8210c7c:	e0ffac0b 	ldhu	r3,-336(fp)
+ 8210c80:	1806943a 	slli	r3,r3,16
+ 8210c84:	1884b03a 	or	r2,r3,r2
+ 8210c88:	000b883a 	mov	r5,zero
+ 8210c8c:	100b883a 	mov	r5,r2
+ 8210c90:	e0bfac8b 	ldhu	r2,-334(fp)
+ 8210c94:	e0ffad0b 	ldhu	r3,-332(fp)
+ 8210c98:	1806943a 	slli	r3,r3,16
+ 8210c9c:	1884b03a 	or	r2,r3,r2
+ 8210ca0:	0007883a 	mov	r3,zero
+ 8210ca4:	1007883a 	mov	r3,r2
+ 8210ca8:	01c00084 	movi	r7,2
+ 8210cac:	180d883a 	mov	r6,r3
+ 8210cb0:	82104940 	call	8210494 <walk_player>
+ 8210cb4:	00005f06 	br	8210e34 <main+0x54c>
+		} else if (is_pressed(btn, BUTTON_LEFT)) {
+ 8210cb8:	e0bfff17 	ldw	r2,-4(fp)
+ 8210cbc:	01400084 	movi	r5,2
+ 8210cc0:	1009883a 	mov	r4,r2
+ 8210cc4:	821021c0 	call	821021c <is_pressed>
+ 8210cc8:	10803fcc 	andi	r2,r2,255
+ 8210ccc:	10001826 	beq	r2,zero,8210d30 <main+0x448>
+			walk_player(player, 0, WALKING_SPEED);
+ 8210cd0:	00800084 	movi	r2,2
+ 8210cd4:	d8800015 	stw	r2,0(sp)
+ 8210cd8:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 8210cdc:	e0ffab0b 	ldhu	r3,-340(fp)
+ 8210ce0:	1806943a 	slli	r3,r3,16
+ 8210ce4:	1884b03a 	or	r2,r3,r2
+ 8210ce8:	0009883a 	mov	r4,zero
+ 8210cec:	1009883a 	mov	r4,r2
+ 8210cf0:	e0bfab8b 	ldhu	r2,-338(fp)
+ 8210cf4:	e0ffac0b 	ldhu	r3,-336(fp)
+ 8210cf8:	1806943a 	slli	r3,r3,16
+ 8210cfc:	1884b03a 	or	r2,r3,r2
+ 8210d00:	000b883a 	mov	r5,zero
+ 8210d04:	100b883a 	mov	r5,r2
+ 8210d08:	e0bfac8b 	ldhu	r2,-334(fp)
+ 8210d0c:	e0ffad0b 	ldhu	r3,-332(fp)
+ 8210d10:	1806943a 	slli	r3,r3,16
+ 8210d14:	1884b03a 	or	r2,r3,r2
+ 8210d18:	0007883a 	mov	r3,zero
+ 8210d1c:	1007883a 	mov	r3,r2
+ 8210d20:	000f883a 	mov	r7,zero
+ 8210d24:	180d883a 	mov	r6,r3
+ 8210d28:	82104940 	call	8210494 <walk_player>
+ 8210d2c:	00004106 	br	8210e34 <main+0x54c>
+		} else if (is_pressed(btn, BUTTON_RIGHT)) {
+ 8210d30:	e0bfff17 	ldw	r2,-4(fp)
+ 8210d34:	014000c4 	movi	r5,3
+ 8210d38:	1009883a 	mov	r4,r2
+ 8210d3c:	821021c0 	call	821021c <is_pressed>
+ 8210d40:	10803fcc 	andi	r2,r2,255
+ 8210d44:	10001826 	beq	r2,zero,8210da8 <main+0x4c0>
+			walk_player(player, 0, -WALKING_SPEED);
+ 8210d48:	00bfff84 	movi	r2,-2
+ 8210d4c:	d8800015 	stw	r2,0(sp)
+ 8210d50:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 8210d54:	e0ffab0b 	ldhu	r3,-340(fp)
+ 8210d58:	1806943a 	slli	r3,r3,16
+ 8210d5c:	1884b03a 	or	r2,r3,r2
+ 8210d60:	0009883a 	mov	r4,zero
+ 8210d64:	1009883a 	mov	r4,r2
+ 8210d68:	e0bfab8b 	ldhu	r2,-338(fp)
+ 8210d6c:	e0ffac0b 	ldhu	r3,-336(fp)
+ 8210d70:	1806943a 	slli	r3,r3,16
+ 8210d74:	1884b03a 	or	r2,r3,r2
+ 8210d78:	000b883a 	mov	r5,zero
+ 8210d7c:	100b883a 	mov	r5,r2
+ 8210d80:	e0bfac8b 	ldhu	r2,-334(fp)
+ 8210d84:	e0ffad0b 	ldhu	r3,-332(fp)
+ 8210d88:	1806943a 	slli	r3,r3,16
+ 8210d8c:	1884b03a 	or	r2,r3,r2
+ 8210d90:	0007883a 	mov	r3,zero
+ 8210d94:	1007883a 	mov	r3,r2
+ 8210d98:	000f883a 	mov	r7,zero
+ 8210d9c:	180d883a 	mov	r6,r3
+ 8210da0:	82104940 	call	8210494 <walk_player>
+ 8210da4:	00002306 	br	8210e34 <main+0x54c>
+		} else {
+			// player parado
+			if (player.body.tile_id >= SPRITE_PLAYER_BODY_STOPED_FRONT
+ 8210da8:	e0bfac03 	ldbu	r2,-336(fp)
+ 8210dac:	10803fcc 	andi	r2,r2,255
+ 8210db0:	108000a8 	cmpgeui	r2,r2,2
+ 8210db4:	1000041e 	bne	r2,zero,8210dc8 <main+0x4e0>
+					|| player.body.tile_id <= SPRITE_PLAYER_BODY_MOVING_FRONT_2) {
+ 8210db8:	e0bfac03 	ldbu	r2,-336(fp)
+ 8210dbc:	10803fcc 	andi	r2,r2,255
+ 8210dc0:	10800168 	cmpgeui	r2,r2,5
+ 8210dc4:	1000031e 	bne	r2,zero,8210dd4 <main+0x4ec>
+				player.body.tile_id = SPRITE_PLAYER_BODY_STOPED_FRONT;
+ 8210dc8:	00800084 	movi	r2,2
+ 8210dcc:	e0bfac05 	stb	r2,-336(fp)
+ 8210dd0:	00001806 	br	8210e34 <main+0x54c>
+			} else if (player.body.tile_id >= SPRITE_PLAYER_BODY_STOPED_BACK
+ 8210dd4:	e0bfac03 	ldbu	r2,-336(fp)
+ 8210dd8:	10803fcc 	andi	r2,r2,255
+ 8210ddc:	108003a8 	cmpgeui	r2,r2,14
+ 8210de0:	1000041e 	bne	r2,zero,8210df4 <main+0x50c>
+					|| player.body.tile_id <= SPRITE_PLAYER_BODY_MOVING_BACK_2) {
+ 8210de4:	e0bfac03 	ldbu	r2,-336(fp)
+ 8210de8:	10803fcc 	andi	r2,r2,255
+ 8210dec:	10800468 	cmpgeui	r2,r2,17
+ 8210df0:	1000031e 	bne	r2,zero,8210e00 <main+0x518>
+				player.body.tile_id = SPRITE_PLAYER_BODY_STOPED_BACK;
+ 8210df4:	00800384 	movi	r2,14
+ 8210df8:	e0bfac05 	stb	r2,-336(fp)
+ 8210dfc:	00000d06 	br	8210e34 <main+0x54c>
+			} else if (player.body.tile_id >= SPRITE_PLAYER_BODY_STOPED_LEFT
+ 8210e00:	e0bfac03 	ldbu	r2,-336(fp)
+ 8210e04:	10803fcc 	andi	r2,r2,255
+ 8210e08:	108001a8 	cmpgeui	r2,r2,6
+ 8210e0c:	1000041e 	bne	r2,zero,8210e20 <main+0x538>
+					|| player.body.tile_id <= SPRITE_PLAYER_BODY_MOVING_LEFT_2) {
+ 8210e10:	e0bfac03 	ldbu	r2,-336(fp)
+ 8210e14:	10803fcc 	andi	r2,r2,255
+ 8210e18:	10800268 	cmpgeui	r2,r2,9
+ 8210e1c:	1000031e 	bne	r2,zero,8210e2c <main+0x544>
+				player.body.tile_id = SPRITE_PLAYER_BODY_STOPED_LEFT;
+ 8210e20:	00800184 	movi	r2,6
+ 8210e24:	e0bfac05 	stb	r2,-336(fp)
+ 8210e28:	00000206 	br	8210e34 <main+0x54c>
+			} else {
+				player.body.tile_id = SPRITE_PLAYER_BODY_STOPED_RIGHT;
+ 8210e2c:	00800284 	movi	r2,10
+ 8210e30:	e0bfac05 	stb	r2,-336(fp)
+			}
+		}
+
+		// Checa por carro
+		if (car.car_status == CAR_STATUS_ARRIVED) {
+ 8210e34:	e0bff403 	ldbu	r2,-48(fp)
+ 8210e38:	10803fcc 	andi	r2,r2,255
+ 8210e3c:	10004a1e 	bne	r2,zero,8210f68 <main+0x680>
+			car.car_status = CAR_STATUS_AWAITING;
+ 8210e40:	00800044 	movi	r2,1
+ 8210e44:	e0bff405 	stb	r2,-48(fp)
+
+			game.bread = rand() % 9 + 1;
+ 8210e48:	82117d80 	call	82117d8 <rand>
+ 8210e4c:	01400244 	movi	r5,9
+ 8210e50:	1009883a 	mov	r4,r2
+ 8210e54:	82116680 	call	8211668 <__modsi3>
+ 8210e58:	10800044 	addi	r2,r2,1
+ 8210e5c:	e0bfe085 	stb	r2,-126(fp)
+			game.lettuce = rand() % 10;
+ 8210e60:	82117d80 	call	82117d8 <rand>
+ 8210e64:	01400284 	movi	r5,10
+ 8210e68:	1009883a 	mov	r4,r2
+ 8210e6c:	82116680 	call	8211668 <__modsi3>
+ 8210e70:	e0bfe0c5 	stb	r2,-125(fp)
+			game.meat = rand() % 10;
+ 8210e74:	82117d80 	call	82117d8 <rand>
+ 8210e78:	01400284 	movi	r5,10
+ 8210e7c:	1009883a 	mov	r4,r2
+ 8210e80:	82116680 	call	8211668 <__modsi3>
+ 8210e84:	e0bfe145 	stb	r2,-123(fp)
+			game.tomato = rand() % 10;
+ 8210e88:	82117d80 	call	82117d8 <rand>
+ 8210e8c:	01400284 	movi	r5,10
+ 8210e90:	1009883a 	mov	r4,r2
+ 8210e94:	82116680 	call	8211668 <__modsi3>
+ 8210e98:	e0bfe105 	stb	r2,-124(fp)
+			bread_sprite_number.tile_id = SPRITE_NUMBER_0 + game.bread;
+ 8210e9c:	e0bfe083 	ldbu	r2,-126(fp)
+ 8210ea0:	10800444 	addi	r2,r2,17
+ 8210ea4:	e0bfe385 	stb	r2,-114(fp)
+			lettuce_sprite_number.tile_id = SPRITE_NUMBER_0 + game.bread;
+ 8210ea8:	e0bfe083 	ldbu	r2,-126(fp)
+ 8210eac:	10800444 	addi	r2,r2,17
+ 8210eb0:	e0bfe505 	stb	r2,-108(fp)
+			meat_sprite_number.tile_id = SPRITE_NUMBER_0 + game.bread;
+ 8210eb4:	e0bfe083 	ldbu	r2,-126(fp)
+ 8210eb8:	10800444 	addi	r2,r2,17
+ 8210ebc:	e0bfe805 	stb	r2,-96(fp)
+			tomato_sprite_number.tile_id = SPRITE_NUMBER_0 + game.bread;
+ 8210ec0:	e0bfe083 	ldbu	r2,-126(fp)
+ 8210ec4:	10800444 	addi	r2,r2,17
+ 8210ec8:	e0bfe685 	stb	r2,-102(fp)
+
+			car_front_1_sprite.pos_x = CAR_INITIAL_POS_X;
+ 8210ecc:	008227c4 	movi	r2,2207
+ 8210ed0:	e0bff50d 	sth	r2,-44(fp)
+			car_front_1_sprite.pos_y = CAR_INITIAL_POS_Y;
+ 8210ed4:	00803844 	movi	r2,225
+ 8210ed8:	e0bff58d 	sth	r2,-42(fp)
+			car_back_1_sprite.pos_x = CAR_INITIAL_POS_X;
+ 8210edc:	008227c4 	movi	r2,2207
+ 8210ee0:	e0bff98d 	sth	r2,-26(fp)
+			car_back_1_sprite.pos_y = CAR_INITIAL_POS_Y - SPRITE_SIZE;
+ 8210ee4:	00803444 	movi	r2,209
+ 8210ee8:	e0bffa0d 	sth	r2,-24(fp)
+
+			sprites[sprite_counter] = car_front_1_sprite;
+ 8210eec:	e0bfaa03 	ldbu	r2,-344(fp)
+ 8210ef0:	01400184 	movi	r5,6
+ 8210ef4:	1009883a 	mov	r4,r2
+ 8210ef8:	82117980 	call	8211798 <__mulsi3>
+ 8210efc:	e0ffaa04 	addi	r3,fp,-344
+ 8210f00:	1885883a 	add	r2,r3,r2
+ 8210f04:	10800684 	addi	r2,r2,26
+ 8210f08:	e0fff48b 	ldhu	r3,-46(fp)
+ 8210f0c:	10c0000d 	sth	r3,0(r2)
+ 8210f10:	e0fff50b 	ldhu	r3,-44(fp)
+ 8210f14:	10c0008d 	sth	r3,2(r2)
+ 8210f18:	e0fff58b 	ldhu	r3,-42(fp)
+ 8210f1c:	10c0010d 	sth	r3,4(r2)
+			sprites[sprite_counter + 1] = car_back_1_sprite;
+ 8210f20:	e0bfaa03 	ldbu	r2,-344(fp)
+ 8210f24:	10800044 	addi	r2,r2,1
+ 8210f28:	01400184 	movi	r5,6
+ 8210f2c:	1009883a 	mov	r4,r2
+ 8210f30:	82117980 	call	8211798 <__mulsi3>
+ 8210f34:	e0ffaa04 	addi	r3,fp,-344
+ 8210f38:	1885883a 	add	r2,r3,r2
+ 8210f3c:	10800684 	addi	r2,r2,26
+ 8210f40:	e0fff90b 	ldhu	r3,-28(fp)
+ 8210f44:	10c0000d 	sth	r3,0(r2)
+ 8210f48:	e0fff98b 	ldhu	r3,-26(fp)
+ 8210f4c:	10c0008d 	sth	r3,2(r2)
+ 8210f50:	e0fffa0b 	ldhu	r3,-24(fp)
+ 8210f54:	10c0010d 	sth	r3,4(r2)
+			sprite_counter += 2;
+ 8210f58:	e0bfaa03 	ldbu	r2,-344(fp)
+ 8210f5c:	10800084 	addi	r2,r2,2
+ 8210f60:	e0bfaa05 	stb	r2,-344(fp)
+ 8210f64:	00008006 	br	8211168 <main+0x880>
+		} else if (car.car_status == CAR_STATUS_AWAITING
+ 8210f68:	e0bff403 	ldbu	r2,-48(fp)
+ 8210f6c:	10803fcc 	andi	r2,r2,255
+ 8210f70:	10800058 	cmpnei	r2,r2,1
+ 8210f74:	1000071e 	bne	r2,zero,8210f94 <main+0x6ac>
+				&& game.status_burguer == GAME_BURGUER_STATUS_DELIVERED) {
+ 8210f78:	e0bfe303 	ldbu	r2,-116(fp)
+ 8210f7c:	10803fcc 	andi	r2,r2,255
+ 8210f80:	10800098 	cmpnei	r2,r2,2
+ 8210f84:	1000031e 	bne	r2,zero,8210f94 <main+0x6ac>
+			car.car_status = CAR_STATUS_GO_AWAY_1;
+ 8210f88:	00800084 	movi	r2,2
+ 8210f8c:	e0bff405 	stb	r2,-48(fp)
+ 8210f90:	00007506 	br	8211168 <main+0x880>
+		} else if (car.car_status == CAR_STATUS_GO_AWAY_1) {
+ 8210f94:	e0bff403 	ldbu	r2,-48(fp)
+ 8210f98:	10803fcc 	andi	r2,r2,255
+ 8210f9c:	10800098 	cmpnei	r2,r2,2
+ 8210fa0:	1000311e 	bne	r2,zero,8211068 <main+0x780>
+			car.car_status = CAR_STATUS_GO_AWAY_2;
+ 8210fa4:	008000c4 	movi	r2,3
+ 8210fa8:	e0bff405 	stb	r2,-48(fp)
+
+			car_front_1_sprite.pos_x = CAR_INITIAL_POS_X - SPRITE_SIZE;
+ 8210fac:	008223c4 	movi	r2,2191
+ 8210fb0:	e0bff50d 	sth	r2,-44(fp)
+			car_front_1_sprite.pos_y = CAR_INITIAL_POS_Y;
+ 8210fb4:	00803844 	movi	r2,225
+ 8210fb8:	e0bff58d 	sth	r2,-42(fp)
+			car_back_1_sprite.pos_x = CAR_INITIAL_POS_X - SPRITE_SIZE;
+ 8210fbc:	008223c4 	movi	r2,2191
+ 8210fc0:	e0bff98d 	sth	r2,-26(fp)
+			car_back_1_sprite.pos_y = CAR_INITIAL_POS_Y - SPRITE_SIZE;
+ 8210fc4:	00803444 	movi	r2,209
+ 8210fc8:	e0bffa0d 	sth	r2,-24(fp)
+
+			car_front_2_sprite.pos_x = CAR_INITIAL_POS_X;
+ 8210fcc:	008227c4 	movi	r2,2207
+ 8210fd0:	e0bff68d 	sth	r2,-38(fp)
+			car_front_2_sprite.pos_y = CAR_INITIAL_POS_Y;
+ 8210fd4:	00803844 	movi	r2,225
+ 8210fd8:	e0bff70d 	sth	r2,-36(fp)
+			car_back_2_sprite.pos_x = CAR_INITIAL_POS_X;
+ 8210fdc:	008227c4 	movi	r2,2207
+ 8210fe0:	e0bffb0d 	sth	r2,-20(fp)
+			car_back_2_sprite.pos_y = CAR_INITIAL_POS_Y - SPRITE_SIZE;
+ 8210fe4:	00803444 	movi	r2,209
+ 8210fe8:	e0bffb8d 	sth	r2,-18(fp)
+
+			sprites[sprite_counter] = car_front_2_sprite;
+ 8210fec:	e0bfaa03 	ldbu	r2,-344(fp)
+ 8210ff0:	01400184 	movi	r5,6
+ 8210ff4:	1009883a 	mov	r4,r2
+ 8210ff8:	82117980 	call	8211798 <__mulsi3>
+ 8210ffc:	e0ffaa04 	addi	r3,fp,-344
+ 8211000:	1885883a 	add	r2,r3,r2
+ 8211004:	10800684 	addi	r2,r2,26
+ 8211008:	e0fff60b 	ldhu	r3,-40(fp)
+ 821100c:	10c0000d 	sth	r3,0(r2)
+ 8211010:	e0fff68b 	ldhu	r3,-38(fp)
+ 8211014:	10c0008d 	sth	r3,2(r2)
+ 8211018:	e0fff70b 	ldhu	r3,-36(fp)
+ 821101c:	10c0010d 	sth	r3,4(r2)
+			sprites[sprite_counter + 1] = car_back_2_sprite;
+ 8211020:	e0bfaa03 	ldbu	r2,-344(fp)
+ 8211024:	10800044 	addi	r2,r2,1
+ 8211028:	01400184 	movi	r5,6
+ 821102c:	1009883a 	mov	r4,r2
+ 8211030:	82117980 	call	8211798 <__mulsi3>
+ 8211034:	e0ffaa04 	addi	r3,fp,-344
+ 8211038:	1885883a 	add	r2,r3,r2
+ 821103c:	10800684 	addi	r2,r2,26
+ 8211040:	e0fffa8b 	ldhu	r3,-22(fp)
+ 8211044:	10c0000d 	sth	r3,0(r2)
+ 8211048:	e0fffb0b 	ldhu	r3,-20(fp)
+ 821104c:	10c0008d 	sth	r3,2(r2)
+ 8211050:	e0fffb8b 	ldhu	r3,-18(fp)
+ 8211054:	10c0010d 	sth	r3,4(r2)
+			sprite_counter += 2;
+ 8211058:	e0bfaa03 	ldbu	r2,-344(fp)
+ 821105c:	10800084 	addi	r2,r2,2
+ 8211060:	e0bfaa05 	stb	r2,-344(fp)
+ 8211064:	00004006 	br	8211168 <main+0x880>
+		} else if (car.car_status == CAR_STATUS_GO_AWAY_2) {
+ 8211068:	e0bff403 	ldbu	r2,-48(fp)
+ 821106c:	10803fcc 	andi	r2,r2,255
+ 8211070:	108000d8 	cmpnei	r2,r2,3
+ 8211074:	1000391e 	bne	r2,zero,821115c <main+0x874>
+			car.car_status = CAR_STATUS_NO_CAR;
+ 8211078:	00800104 	movi	r2,4
+ 821107c:	e0bff405 	stb	r2,-48(fp)
+
+			car_front_1_sprite.pos_x = CAR_INITIAL_POS_X - 2 * SPRITE_SIZE;
+ 8211080:	00821fc4 	movi	r2,2175
+ 8211084:	e0bff50d 	sth	r2,-44(fp)
+			car_front_1_sprite.pos_y = CAR_INITIAL_POS_Y;
+ 8211088:	00803844 	movi	r2,225
+ 821108c:	e0bff58d 	sth	r2,-42(fp)
+			car_back_1_sprite.pos_x = CAR_INITIAL_POS_X - 2 * SPRITE_SIZE;
+ 8211090:	00821fc4 	movi	r2,2175
+ 8211094:	e0bff98d 	sth	r2,-26(fp)
+			car_back_1_sprite.pos_y = CAR_INITIAL_POS_Y - SPRITE_SIZE;
+ 8211098:	00803444 	movi	r2,209
+ 821109c:	e0bffa0d 	sth	r2,-24(fp)
+
+			car_front_2_sprite.pos_x = CAR_INITIAL_POS_X - SPRITE_SIZE;
+ 82110a0:	008223c4 	movi	r2,2191
+ 82110a4:	e0bff68d 	sth	r2,-38(fp)
+			car_front_2_sprite.pos_y = CAR_INITIAL_POS_Y;
+ 82110a8:	00803844 	movi	r2,225
+ 82110ac:	e0bff70d 	sth	r2,-36(fp)
+			car_back_2_sprite.pos_x = CAR_INITIAL_POS_X - SPRITE_SIZE;
+ 82110b0:	008223c4 	movi	r2,2191
+ 82110b4:	e0bffb0d 	sth	r2,-20(fp)
+			car_back_2_sprite.pos_y = CAR_INITIAL_POS_Y - SPRITE_SIZE;
+ 82110b8:	00803444 	movi	r2,209
+ 82110bc:	e0bffb8d 	sth	r2,-18(fp)
+
+			car_front_3_sprite.pos_x = CAR_INITIAL_POS_X;
+ 82110c0:	008227c4 	movi	r2,2207
+ 82110c4:	e0bff80d 	sth	r2,-32(fp)
+			car_front_3_sprite.pos_y = CAR_INITIAL_POS_Y;
+ 82110c8:	00803844 	movi	r2,225
+ 82110cc:	e0bff88d 	sth	r2,-30(fp)
+			car_back_3_sprite.pos_x = CAR_INITIAL_POS_X;
+ 82110d0:	008227c4 	movi	r2,2207
+ 82110d4:	e0bffc8d 	sth	r2,-14(fp)
+			car_back_3_sprite.pos_y = CAR_INITIAL_POS_Y - SPRITE_SIZE;
+ 82110d8:	00803444 	movi	r2,209
+ 82110dc:	e0bffd0d 	sth	r2,-12(fp)
+
+			sprites[sprite_counter] = car_front_3_sprite;
+ 82110e0:	e0bfaa03 	ldbu	r2,-344(fp)
+ 82110e4:	01400184 	movi	r5,6
+ 82110e8:	1009883a 	mov	r4,r2
+ 82110ec:	82117980 	call	8211798 <__mulsi3>
+ 82110f0:	e0ffaa04 	addi	r3,fp,-344
+ 82110f4:	1885883a 	add	r2,r3,r2
+ 82110f8:	10800684 	addi	r2,r2,26
+ 82110fc:	e0fff78b 	ldhu	r3,-34(fp)
+ 8211100:	10c0000d 	sth	r3,0(r2)
+ 8211104:	e0fff80b 	ldhu	r3,-32(fp)
+ 8211108:	10c0008d 	sth	r3,2(r2)
+ 821110c:	e0fff88b 	ldhu	r3,-30(fp)
+ 8211110:	10c0010d 	sth	r3,4(r2)
+			sprites[sprite_counter + 1] = car_back_3_sprite;
+ 8211114:	e0bfaa03 	ldbu	r2,-344(fp)
+ 8211118:	10800044 	addi	r2,r2,1
+ 821111c:	01400184 	movi	r5,6
+ 8211120:	1009883a 	mov	r4,r2
+ 8211124:	82117980 	call	8211798 <__mulsi3>
+ 8211128:	e0ffaa04 	addi	r3,fp,-344
+ 821112c:	1885883a 	add	r2,r3,r2
+ 8211130:	10800684 	addi	r2,r2,26
+ 8211134:	e0fffc0b 	ldhu	r3,-16(fp)
+ 8211138:	10c0000d 	sth	r3,0(r2)
+ 821113c:	e0fffc8b 	ldhu	r3,-14(fp)
+ 8211140:	10c0008d 	sth	r3,2(r2)
+ 8211144:	e0fffd0b 	ldhu	r3,-12(fp)
+ 8211148:	10c0010d 	sth	r3,4(r2)
+			sprite_counter += 2;
+ 821114c:	e0bfaa03 	ldbu	r2,-344(fp)
+ 8211150:	10800084 	addi	r2,r2,2
+ 8211154:	e0bfaa05 	stb	r2,-344(fp)
+ 8211158:	00000306 	br	8211168 <main+0x880>
+		} else {
+			sprite_counter -= 6;
+ 821115c:	e0bfaa03 	ldbu	r2,-344(fp)
+ 8211160:	10bffe84 	addi	r2,r2,-6
+ 8211164:	e0bfaa05 	stb	r2,-344(fp)
+		}
+
+		if (is_pressed(btn, BUTTON_A)) {
+ 8211168:	e0bfff17 	ldw	r2,-4(fp)
+ 821116c:	01400104 	movi	r5,4
+ 8211170:	1009883a 	mov	r4,r2
+ 8211174:	821021c0 	call	821021c <is_pressed>
+ 8211178:	10803fcc 	andi	r2,r2,255
+ 821117c:	10011326 	beq	r2,zero,82115cc <main+0xce4>
+			game.current_plate = get_burguer_component(player,
+ 8211180:	00804584 	movi	r2,278
+ 8211184:	d8800215 	stw	r2,8(sp)
+ 8211188:	00804184 	movi	r2,262
+ 821118c:	d8800115 	stw	r2,4(sp)
+ 8211190:	0080ab44 	movi	r2,685
+ 8211194:	d8800015 	stw	r2,0(sp)
+ 8211198:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 821119c:	e0ffab0b 	ldhu	r3,-340(fp)
+ 82111a0:	1806943a 	slli	r3,r3,16
+ 82111a4:	1884b03a 	or	r2,r3,r2
+ 82111a8:	0009883a 	mov	r4,zero
+ 82111ac:	1009883a 	mov	r4,r2
+ 82111b0:	e0bfab8b 	ldhu	r2,-338(fp)
+ 82111b4:	e0ffac0b 	ldhu	r3,-336(fp)
+ 82111b8:	1806943a 	slli	r3,r3,16
+ 82111bc:	1884b03a 	or	r2,r3,r2
+ 82111c0:	000b883a 	mov	r5,zero
+ 82111c4:	100b883a 	mov	r5,r2
+ 82111c8:	e0bfac8b 	ldhu	r2,-334(fp)
+ 82111cc:	e0ffad0b 	ldhu	r3,-332(fp)
+ 82111d0:	1806943a 	slli	r3,r3,16
+ 82111d4:	1884b03a 	or	r2,r3,r2
+ 82111d8:	0007883a 	mov	r3,zero
+ 82111dc:	1007883a 	mov	r3,r2
+ 82111e0:	01c0a284 	movi	r7,650
+ 82111e4:	180d883a 	mov	r6,r3
+ 82111e8:	82105d00 	call	82105d0 <get_burguer_component>
+ 82111ec:	e0bfe2c5 	stb	r2,-117(fp)
+			PLATE_BOX_POINT_X_1, PLATE_BOX_POINT_X_2,
+			PLATE_BOX_POINT_Y_1, PLATE_BOX_POINT_Y_2);
+
+			if (game.current_plate == 1) {
+ 82111f0:	e0bfe2c3 	ldbu	r2,-117(fp)
+ 82111f4:	10803fcc 	andi	r2,r2,255
+ 82111f8:	10800058 	cmpnei	r2,r2,1
+ 82111fc:	1000a41e 	bne	r2,zero,8211490 <main+0xba8>
+				game.current_bread += get_burguer_component(player,
+ 8211200:	00804b44 	movi	r2,301
+ 8211204:	d8800215 	stw	r2,8(sp)
+ 8211208:	00804404 	movi	r2,272
+ 821120c:	d8800115 	stw	r2,4(sp)
+ 8211210:	00807144 	movi	r2,453
+ 8211214:	d8800015 	stw	r2,0(sp)
+ 8211218:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 821121c:	e0ffab0b 	ldhu	r3,-340(fp)
+ 8211220:	1806943a 	slli	r3,r3,16
+ 8211224:	1884b03a 	or	r2,r3,r2
+ 8211228:	0009883a 	mov	r4,zero
+ 821122c:	1009883a 	mov	r4,r2
+ 8211230:	e0bfab8b 	ldhu	r2,-338(fp)
+ 8211234:	e0ffac0b 	ldhu	r3,-336(fp)
+ 8211238:	1806943a 	slli	r3,r3,16
+ 821123c:	1884b03a 	or	r2,r3,r2
+ 8211240:	000b883a 	mov	r5,zero
+ 8211244:	100b883a 	mov	r5,r2
+ 8211248:	e0bfac8b 	ldhu	r2,-334(fp)
+ 821124c:	e0ffad0b 	ldhu	r3,-332(fp)
+ 8211250:	1806943a 	slli	r3,r3,16
+ 8211254:	1884b03a 	or	r2,r3,r2
+ 8211258:	0007883a 	mov	r3,zero
+ 821125c:	1007883a 	mov	r3,r2
+ 8211260:	01c06b04 	movi	r7,428
+ 8211264:	180d883a 	mov	r6,r3
+ 8211268:	82105d00 	call	82105d0 <get_burguer_component>
+ 821126c:	1007883a 	mov	r3,r2
+ 8211270:	e0bfe183 	ldbu	r2,-122(fp)
+ 8211274:	10c5883a 	add	r2,r2,r3
+ 8211278:	e0bfe185 	stb	r2,-122(fp)
+				ITEM_BOX_POINT_X_1, ITEM_BOX_POINT_X_2,
+				BREAD_BOX_POINT_Y_1, BREAD_BOX_POINT_Y_2);
+				if (game.current_bread > 0) {
+ 821127c:	e0bfe183 	ldbu	r2,-122(fp)
+ 8211280:	10803fcc 	andi	r2,r2,255
+ 8211284:	10008226 	beq	r2,zero,8211490 <main+0xba8>
+					game.current_lettuce += get_burguer_component(player,
+ 8211288:	008052c4 	movi	r2,331
+ 821128c:	d8800215 	stw	r2,8(sp)
+ 8211290:	00804b44 	movi	r2,301
+ 8211294:	d8800115 	stw	r2,4(sp)
+ 8211298:	00807144 	movi	r2,453
+ 821129c:	d8800015 	stw	r2,0(sp)
+ 82112a0:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 82112a4:	e0ffab0b 	ldhu	r3,-340(fp)
+ 82112a8:	1806943a 	slli	r3,r3,16
+ 82112ac:	1884b03a 	or	r2,r3,r2
+ 82112b0:	0009883a 	mov	r4,zero
+ 82112b4:	1009883a 	mov	r4,r2
+ 82112b8:	e0bfab8b 	ldhu	r2,-338(fp)
+ 82112bc:	e0ffac0b 	ldhu	r3,-336(fp)
+ 82112c0:	1806943a 	slli	r3,r3,16
+ 82112c4:	1884b03a 	or	r2,r3,r2
+ 82112c8:	000b883a 	mov	r5,zero
+ 82112cc:	100b883a 	mov	r5,r2
+ 82112d0:	e0bfac8b 	ldhu	r2,-334(fp)
+ 82112d4:	e0ffad0b 	ldhu	r3,-332(fp)
+ 82112d8:	1806943a 	slli	r3,r3,16
+ 82112dc:	1884b03a 	or	r2,r3,r2
+ 82112e0:	0007883a 	mov	r3,zero
+ 82112e4:	1007883a 	mov	r3,r2
+ 82112e8:	01c06b04 	movi	r7,428
+ 82112ec:	180d883a 	mov	r6,r3
+ 82112f0:	82105d00 	call	82105d0 <get_burguer_component>
+ 82112f4:	1007883a 	mov	r3,r2
+ 82112f8:	e0bfe1c3 	ldbu	r2,-121(fp)
+ 82112fc:	10c5883a 	add	r2,r2,r3
+ 8211300:	e0bfe1c5 	stb	r2,-121(fp)
+					ITEM_BOX_POINT_X_1, ITEM_BOX_POINT_X_2,
+					LETTUCE_BOX_POINT_Y_1, LETTUCE_BOX_POINT_Y_2);
+					game.current_tomato += get_burguer_component(player,
+ 8211304:	00805a44 	movi	r2,361
+ 8211308:	d8800215 	stw	r2,8(sp)
+ 821130c:	008052c4 	movi	r2,331
+ 8211310:	d8800115 	stw	r2,4(sp)
+ 8211314:	00807144 	movi	r2,453
+ 8211318:	d8800015 	stw	r2,0(sp)
+ 821131c:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 8211320:	e0ffab0b 	ldhu	r3,-340(fp)
+ 8211324:	1806943a 	slli	r3,r3,16
+ 8211328:	1884b03a 	or	r2,r3,r2
+ 821132c:	0009883a 	mov	r4,zero
+ 8211330:	1009883a 	mov	r4,r2
+ 8211334:	e0bfab8b 	ldhu	r2,-338(fp)
+ 8211338:	e0ffac0b 	ldhu	r3,-336(fp)
+ 821133c:	1806943a 	slli	r3,r3,16
+ 8211340:	1884b03a 	or	r2,r3,r2
+ 8211344:	000b883a 	mov	r5,zero
+ 8211348:	100b883a 	mov	r5,r2
+ 821134c:	e0bfac8b 	ldhu	r2,-334(fp)
+ 8211350:	e0ffad0b 	ldhu	r3,-332(fp)
+ 8211354:	1806943a 	slli	r3,r3,16
+ 8211358:	1884b03a 	or	r2,r3,r2
+ 821135c:	0007883a 	mov	r3,zero
+ 8211360:	1007883a 	mov	r3,r2
+ 8211364:	01c06b04 	movi	r7,428
+ 8211368:	180d883a 	mov	r6,r3
+ 821136c:	82105d00 	call	82105d0 <get_burguer_component>
+ 8211370:	1007883a 	mov	r3,r2
+ 8211374:	e0bfe203 	ldbu	r2,-120(fp)
+ 8211378:	10c5883a 	add	r2,r2,r3
+ 821137c:	e0bfe205 	stb	r2,-120(fp)
+					ITEM_BOX_POINT_X_1, ITEM_BOX_POINT_X_2,
+					TOMATO_BOX_POINT_Y_1, TOMATO_BOX_POINT_Y_2);
+					game.current_raw_meat += get_burguer_component(player,
+ 8211380:	008061c4 	movi	r2,391
+ 8211384:	d8800215 	stw	r2,8(sp)
+ 8211388:	00805a44 	movi	r2,361
+ 821138c:	d8800115 	stw	r2,4(sp)
+ 8211390:	00807144 	movi	r2,453
+ 8211394:	d8800015 	stw	r2,0(sp)
+ 8211398:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 821139c:	e0ffab0b 	ldhu	r3,-340(fp)
+ 82113a0:	1806943a 	slli	r3,r3,16
+ 82113a4:	1884b03a 	or	r2,r3,r2
+ 82113a8:	0009883a 	mov	r4,zero
+ 82113ac:	1009883a 	mov	r4,r2
+ 82113b0:	e0bfab8b 	ldhu	r2,-338(fp)
+ 82113b4:	e0ffac0b 	ldhu	r3,-336(fp)
+ 82113b8:	1806943a 	slli	r3,r3,16
+ 82113bc:	1884b03a 	or	r2,r3,r2
+ 82113c0:	000b883a 	mov	r5,zero
+ 82113c4:	100b883a 	mov	r5,r2
+ 82113c8:	e0bfac8b 	ldhu	r2,-334(fp)
+ 82113cc:	e0ffad0b 	ldhu	r3,-332(fp)
+ 82113d0:	1806943a 	slli	r3,r3,16
+ 82113d4:	1884b03a 	or	r2,r3,r2
+ 82113d8:	0007883a 	mov	r3,zero
+ 82113dc:	1007883a 	mov	r3,r2
+ 82113e0:	01c06b04 	movi	r7,428
+ 82113e4:	180d883a 	mov	r6,r3
+ 82113e8:	82105d00 	call	82105d0 <get_burguer_component>
+ 82113ec:	1007883a 	mov	r3,r2
+ 82113f0:	e0bfe243 	ldbu	r2,-119(fp)
+ 82113f4:	10c5883a 	add	r2,r2,r3
+ 82113f8:	e0bfe245 	stb	r2,-119(fp)
+					ITEM_BOX_POINT_X_1, ITEM_BOX_POINT_X_2,
+					RAW_MEAT_BOX_POINT_Y_1, RAW_MEAT_BOX_POINT_Y_2);
+
+					if (game.current_raw_meat) {
+ 82113fc:	e0bfe243 	ldbu	r2,-119(fp)
+ 8211400:	10803fcc 	andi	r2,r2,255
+ 8211404:	10002226 	beq	r2,zero,8211490 <main+0xba8>
+						game.current_meat += get_burguer_component(player,
+ 8211408:	00805f04 	movi	r2,380
+ 821140c:	d8800215 	stw	r2,8(sp)
+ 8211410:	008056c4 	movi	r2,347
+ 8211414:	d8800115 	stw	r2,4(sp)
+ 8211418:	0080af44 	movi	r2,701
+ 821141c:	d8800015 	stw	r2,0(sp)
+ 8211420:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 8211424:	e0ffab0b 	ldhu	r3,-340(fp)
+ 8211428:	1806943a 	slli	r3,r3,16
+ 821142c:	1884b03a 	or	r2,r3,r2
+ 8211430:	0009883a 	mov	r4,zero
+ 8211434:	1009883a 	mov	r4,r2
+ 8211438:	e0bfab8b 	ldhu	r2,-338(fp)
+ 821143c:	e0ffac0b 	ldhu	r3,-336(fp)
+ 8211440:	1806943a 	slli	r3,r3,16
+ 8211444:	1884b03a 	or	r2,r3,r2
+ 8211448:	000b883a 	mov	r5,zero
+ 821144c:	100b883a 	mov	r5,r2
+ 8211450:	e0bfac8b 	ldhu	r2,-334(fp)
+ 8211454:	e0ffad0b 	ldhu	r3,-332(fp)
+ 8211458:	1806943a 	slli	r3,r3,16
+ 821145c:	1884b03a 	or	r2,r3,r2
+ 8211460:	0007883a 	mov	r3,zero
+ 8211464:	1007883a 	mov	r3,r2
+ 8211468:	01c0aa84 	movi	r7,682
+ 821146c:	180d883a 	mov	r6,r3
+ 8211470:	82105d00 	call	82105d0 <get_burguer_component>
+ 8211474:	1007883a 	mov	r3,r2
+ 8211478:	e0bfe283 	ldbu	r2,-118(fp)
+ 821147c:	10c5883a 	add	r2,r2,r3
+ 8211480:	e0bfe285 	stb	r2,-118(fp)
+						MEAT_BOX_POINT_X_1, MEAT_BOX_POINT_X_2,
+						MEAT_BOX_POINT_Y_1, MEAT_BOX_POINT_Y_2);
+						game.current_raw_meat -= 1;
+ 8211484:	e0bfe243 	ldbu	r2,-119(fp)
+ 8211488:	10bfffc4 	addi	r2,r2,-1
+ 821148c:	e0bfe245 	stb	r2,-119(fp)
+					}
+				}
+			}
+
+			deliver_food(game, player, DELIVER_BOX_POINT_X_1,
+ 8211490:	00804644 	movi	r2,281
+ 8211494:	d8800515 	stw	r2,20(sp)
+ 8211498:	00804184 	movi	r2,262
+ 821149c:	d8800415 	stw	r2,16(sp)
+ 82114a0:	0080ebc4 	movi	r2,943
+ 82114a4:	d8800315 	stw	r2,12(sp)
+ 82114a8:	0080d004 	movi	r2,832
+ 82114ac:	d8800215 	stw	r2,8(sp)
+ 82114b0:	e0bfaa8b 	ldhu	r2,-342(fp)
+ 82114b4:	e0ffab0b 	ldhu	r3,-340(fp)
+ 82114b8:	1806943a 	slli	r3,r3,16
+ 82114bc:	1884b03a 	or	r2,r3,r2
+ 82114c0:	000f883a 	mov	r7,zero
+ 82114c4:	100f883a 	mov	r7,r2
+ 82114c8:	e0bfe08b 	ldhu	r2,-126(fp)
+ 82114cc:	e0ffe10b 	ldhu	r3,-124(fp)
+ 82114d0:	1806943a 	slli	r3,r3,16
+ 82114d4:	1884b03a 	or	r2,r3,r2
+ 82114d8:	000d883a 	mov	r6,zero
+ 82114dc:	100d883a 	mov	r6,r2
+ 82114e0:	e0bfe18b 	ldhu	r2,-122(fp)
+ 82114e4:	e0ffe20b 	ldhu	r3,-120(fp)
+ 82114e8:	1806943a 	slli	r3,r3,16
+ 82114ec:	1884b03a 	or	r2,r3,r2
+ 82114f0:	000b883a 	mov	r5,zero
+ 82114f4:	100b883a 	mov	r5,r2
+ 82114f8:	e0bfe28b 	ldhu	r2,-118(fp)
+ 82114fc:	e0ffe30b 	ldhu	r3,-116(fp)
+ 8211500:	18c03fcc 	andi	r3,r3,255
+ 8211504:	1806943a 	slli	r3,r3,16
+ 8211508:	1888b03a 	or	r4,r3,r2
+ 821150c:	0007883a 	mov	r3,zero
+ 8211510:	00804034 	movhi	r2,256
+ 8211514:	10bfffc4 	addi	r2,r2,-1
+ 8211518:	2084703a 	and	r2,r4,r2
+ 821151c:	18ffc02c 	andhi	r3,r3,65280
+ 8211520:	1884b03a 	or	r2,r3,r2
+ 8211524:	1007883a 	mov	r3,r2
+ 8211528:	e0bfab8b 	ldhu	r2,-338(fp)
+ 821152c:	d880000d 	sth	r2,0(sp)
+ 8211530:	e0bfac0b 	ldhu	r2,-336(fp)
+ 8211534:	d880008d 	sth	r2,2(sp)
+ 8211538:	e0bfac8b 	ldhu	r2,-334(fp)
+ 821153c:	d880010d 	sth	r2,4(sp)
+ 8211540:	e0bfad0b 	ldhu	r2,-332(fp)
+ 8211544:	d880018d 	sth	r2,6(sp)
+ 8211548:	3009883a 	mov	r4,r6
+ 821154c:	180d883a 	mov	r6,r3
+ 8211550:	82106500 	call	8210650 <deliver_food>
+			DELIVER_BOX_POINT_X_2,
+			DELIVER_BOX_POINT_Y_1, DELIVER_BOX_POINT_Y_2);
+
+			handle_burguer_sprite(full_burguer_sprite, game);
+ 8211554:	e0bfe08b 	ldhu	r2,-126(fp)
+ 8211558:	e0ffe10b 	ldhu	r3,-124(fp)
+ 821155c:	1806943a 	slli	r3,r3,16
+ 8211560:	1884b03a 	or	r2,r3,r2
+ 8211564:	000d883a 	mov	r6,zero
+ 8211568:	100d883a 	mov	r6,r2
+ 821156c:	e0bfe18b 	ldhu	r2,-122(fp)
+ 8211570:	e0ffe20b 	ldhu	r3,-120(fp)
+ 8211574:	1806943a 	slli	r3,r3,16
+ 8211578:	1884b03a 	or	r2,r3,r2
+ 821157c:	000b883a 	mov	r5,zero
+ 8211580:	100b883a 	mov	r5,r2
+ 8211584:	e0bfe98b 	ldhu	r2,-90(fp)
+ 8211588:	e0ffea0b 	ldhu	r3,-88(fp)
+ 821158c:	1806943a 	slli	r3,r3,16
+ 8211590:	1884b03a 	or	r2,r3,r2
+ 8211594:	0009883a 	mov	r4,zero
+ 8211598:	1009883a 	mov	r4,r2
+ 821159c:	e0ffea8b 	ldhu	r3,-86(fp)
+ 82115a0:	0005883a 	mov	r2,zero
+ 82115a4:	18ffffcc 	andi	r3,r3,65535
+ 82115a8:	10bfffec 	andhi	r2,r2,65535
+ 82115ac:	10c4b03a 	or	r2,r2,r3
+ 82115b0:	e0ffe28b 	ldhu	r3,-118(fp)
+ 82115b4:	d8c0000d 	sth	r3,0(sp)
+ 82115b8:	e0ffe303 	ldbu	r3,-116(fp)
+ 82115bc:	d8c00085 	stb	r3,2(sp)
+ 82115c0:	280f883a 	mov	r7,r5
+ 82115c4:	100b883a 	mov	r5,r2
+ 82115c8:	821073c0 	call	821073c <handle_burguer_sprite>
+
+		}
+
+		send_sprites_to_composer(sprites, sprite_counter);
+ 82115cc:	e0ffaa03 	ldbu	r3,-344(fp)
+ 82115d0:	e0bfb084 	addi	r2,fp,-318
+ 82115d4:	180b883a 	mov	r5,r3
+ 82115d8:	1009883a 	mov	r4,r2
+ 82115dc:	82100b00 	call	82100b0 <send_sprites_to_composer>
+	}
+ 82115e0:	003d7806 	br	8210bc4 <__alt_data_end+0xffff0bc4>
+
+082115e4 <__divsi3>:
+ 82115e4:	20001b16 	blt	r4,zero,8211654 <__divsi3+0x70>
+ 82115e8:	000f883a 	mov	r7,zero
+ 82115ec:	28001616 	blt	r5,zero,8211648 <__divsi3+0x64>
+ 82115f0:	200d883a 	mov	r6,r4
+ 82115f4:	29001a2e 	bgeu	r5,r4,8211660 <__divsi3+0x7c>
+ 82115f8:	00800804 	movi	r2,32
+ 82115fc:	00c00044 	movi	r3,1
+ 8211600:	00000106 	br	8211608 <__divsi3+0x24>
+ 8211604:	10000d26 	beq	r2,zero,821163c <__divsi3+0x58>
+ 8211608:	294b883a 	add	r5,r5,r5
+ 821160c:	10bfffc4 	addi	r2,r2,-1
+ 8211610:	18c7883a 	add	r3,r3,r3
+ 8211614:	293ffb36 	bltu	r5,r4,8211604 <__alt_data_end+0xffff1604>
+ 8211618:	0005883a 	mov	r2,zero
+ 821161c:	18000726 	beq	r3,zero,821163c <__divsi3+0x58>
+ 8211620:	0005883a 	mov	r2,zero
+ 8211624:	31400236 	bltu	r6,r5,8211630 <__divsi3+0x4c>
+ 8211628:	314dc83a 	sub	r6,r6,r5
+ 821162c:	10c4b03a 	or	r2,r2,r3
+ 8211630:	1806d07a 	srli	r3,r3,1
+ 8211634:	280ad07a 	srli	r5,r5,1
+ 8211638:	183ffa1e 	bne	r3,zero,8211624 <__alt_data_end+0xffff1624>
+ 821163c:	38000126 	beq	r7,zero,8211644 <__divsi3+0x60>
+ 8211640:	0085c83a 	sub	r2,zero,r2
+ 8211644:	f800283a 	ret
+ 8211648:	014bc83a 	sub	r5,zero,r5
+ 821164c:	39c0005c 	xori	r7,r7,1
+ 8211650:	003fe706 	br	82115f0 <__alt_data_end+0xffff15f0>
+ 8211654:	0109c83a 	sub	r4,zero,r4
+ 8211658:	01c00044 	movi	r7,1
+ 821165c:	003fe306 	br	82115ec <__alt_data_end+0xffff15ec>
+ 8211660:	00c00044 	movi	r3,1
+ 8211664:	003fee06 	br	8211620 <__alt_data_end+0xffff1620>
+
+08211668 <__modsi3>:
+ 8211668:	20001716 	blt	r4,zero,82116c8 <__modsi3+0x60>
+ 821166c:	000f883a 	mov	r7,zero
+ 8211670:	2005883a 	mov	r2,r4
+ 8211674:	28001216 	blt	r5,zero,82116c0 <__modsi3+0x58>
+ 8211678:	2900162e 	bgeu	r5,r4,82116d4 <__modsi3+0x6c>
+ 821167c:	01800804 	movi	r6,32
+ 8211680:	00c00044 	movi	r3,1
+ 8211684:	00000106 	br	821168c <__modsi3+0x24>
+ 8211688:	30000a26 	beq	r6,zero,82116b4 <__modsi3+0x4c>
+ 821168c:	294b883a 	add	r5,r5,r5
+ 8211690:	31bfffc4 	addi	r6,r6,-1
+ 8211694:	18c7883a 	add	r3,r3,r3
+ 8211698:	293ffb36 	bltu	r5,r4,8211688 <__alt_data_end+0xffff1688>
+ 821169c:	18000526 	beq	r3,zero,82116b4 <__modsi3+0x4c>
+ 82116a0:	1806d07a 	srli	r3,r3,1
+ 82116a4:	11400136 	bltu	r2,r5,82116ac <__modsi3+0x44>
+ 82116a8:	1145c83a 	sub	r2,r2,r5
+ 82116ac:	280ad07a 	srli	r5,r5,1
+ 82116b0:	183ffb1e 	bne	r3,zero,82116a0 <__alt_data_end+0xffff16a0>
+ 82116b4:	38000126 	beq	r7,zero,82116bc <__modsi3+0x54>
+ 82116b8:	0085c83a 	sub	r2,zero,r2
+ 82116bc:	f800283a 	ret
+ 82116c0:	014bc83a 	sub	r5,zero,r5
+ 82116c4:	003fec06 	br	8211678 <__alt_data_end+0xffff1678>
+ 82116c8:	0109c83a 	sub	r4,zero,r4
+ 82116cc:	01c00044 	movi	r7,1
+ 82116d0:	003fe706 	br	8211670 <__alt_data_end+0xffff1670>
+ 82116d4:	00c00044 	movi	r3,1
+ 82116d8:	003ff106 	br	82116a0 <__alt_data_end+0xffff16a0>
+
+082116dc <__udivsi3>:
+ 82116dc:	200d883a 	mov	r6,r4
+ 82116e0:	2900152e 	bgeu	r5,r4,8211738 <__udivsi3+0x5c>
+ 82116e4:	28001416 	blt	r5,zero,8211738 <__udivsi3+0x5c>
+ 82116e8:	00800804 	movi	r2,32
+ 82116ec:	00c00044 	movi	r3,1
+ 82116f0:	00000206 	br	82116fc <__udivsi3+0x20>
+ 82116f4:	10000e26 	beq	r2,zero,8211730 <__udivsi3+0x54>
+ 82116f8:	28000516 	blt	r5,zero,8211710 <__udivsi3+0x34>
+ 82116fc:	294b883a 	add	r5,r5,r5
+ 8211700:	10bfffc4 	addi	r2,r2,-1
+ 8211704:	18c7883a 	add	r3,r3,r3
+ 8211708:	293ffa36 	bltu	r5,r4,82116f4 <__alt_data_end+0xffff16f4>
+ 821170c:	18000826 	beq	r3,zero,8211730 <__udivsi3+0x54>
+ 8211710:	0005883a 	mov	r2,zero
+ 8211714:	31400236 	bltu	r6,r5,8211720 <__udivsi3+0x44>
+ 8211718:	314dc83a 	sub	r6,r6,r5
+ 821171c:	10c4b03a 	or	r2,r2,r3
+ 8211720:	1806d07a 	srli	r3,r3,1
+ 8211724:	280ad07a 	srli	r5,r5,1
+ 8211728:	183ffa1e 	bne	r3,zero,8211714 <__alt_data_end+0xffff1714>
+ 821172c:	f800283a 	ret
+ 8211730:	0005883a 	mov	r2,zero
+ 8211734:	f800283a 	ret
+ 8211738:	00c00044 	movi	r3,1
+ 821173c:	003ff406 	br	8211710 <__alt_data_end+0xffff1710>
+
+08211740 <__umodsi3>:
+ 8211740:	2005883a 	mov	r2,r4
+ 8211744:	2900122e 	bgeu	r5,r4,8211790 <__umodsi3+0x50>
+ 8211748:	28001116 	blt	r5,zero,8211790 <__umodsi3+0x50>
+ 821174c:	01800804 	movi	r6,32
+ 8211750:	00c00044 	movi	r3,1
+ 8211754:	00000206 	br	8211760 <__umodsi3+0x20>
+ 8211758:	30000c26 	beq	r6,zero,821178c <__umodsi3+0x4c>
+ 821175c:	28000516 	blt	r5,zero,8211774 <__umodsi3+0x34>
+ 8211760:	294b883a 	add	r5,r5,r5
+ 8211764:	31bfffc4 	addi	r6,r6,-1
+ 8211768:	18c7883a 	add	r3,r3,r3
+ 821176c:	293ffa36 	bltu	r5,r4,8211758 <__alt_data_end+0xffff1758>
+ 8211770:	18000626 	beq	r3,zero,821178c <__umodsi3+0x4c>
+ 8211774:	1806d07a 	srli	r3,r3,1
+ 8211778:	11400136 	bltu	r2,r5,8211780 <__umodsi3+0x40>
+ 821177c:	1145c83a 	sub	r2,r2,r5
+ 8211780:	280ad07a 	srli	r5,r5,1
+ 8211784:	183ffb1e 	bne	r3,zero,8211774 <__alt_data_end+0xffff1774>
+ 8211788:	f800283a 	ret
+ 821178c:	f800283a 	ret
+ 8211790:	00c00044 	movi	r3,1
+ 8211794:	003ff706 	br	8211774 <__alt_data_end+0xffff1774>
+
+08211798 <__mulsi3>:
+ 8211798:	0005883a 	mov	r2,zero
+ 821179c:	20000726 	beq	r4,zero,82117bc <__mulsi3+0x24>
+ 82117a0:	20c0004c 	andi	r3,r4,1
+ 82117a4:	2008d07a 	srli	r4,r4,1
+ 82117a8:	18000126 	beq	r3,zero,82117b0 <__mulsi3+0x18>
+ 82117ac:	1145883a 	add	r2,r2,r5
+ 82117b0:	294b883a 	add	r5,r5,r5
+ 82117b4:	203ffa1e 	bne	r4,zero,82117a0 <__alt_data_end+0xffff17a0>
+ 82117b8:	f800283a 	ret
+ 82117bc:	f800283a 	ret
+
+082117c0 <srand>:
+ 82117c0:	00820874 	movhi	r2,2081
+ 82117c4:	108a1504 	addi	r2,r2,10324
+ 82117c8:	10800017 	ldw	r2,0(r2)
+ 82117cc:	11002915 	stw	r4,164(r2)
+ 82117d0:	10002a15 	stw	zero,168(r2)
+ 82117d4:	f800283a 	ret
+
+082117d8 <rand>:
+ 82117d8:	00820874 	movhi	r2,2081
+ 82117dc:	defffe04 	addi	sp,sp,-8
+ 82117e0:	108a1504 	addi	r2,r2,10324
+ 82117e4:	dc000015 	stw	r16,0(sp)
+ 82117e8:	14000017 	ldw	r16,0(r2)
+ 82117ec:	dfc00115 	stw	ra,4(sp)
+ 82117f0:	01932574 	movhi	r6,19605
+ 82117f4:	81002917 	ldw	r4,164(r16)
+ 82117f8:	81402a17 	ldw	r5,168(r16)
+ 82117fc:	01d614b4 	movhi	r7,22610
+ 8211800:	319fcb44 	addi	r6,r6,32557
+ 8211804:	39fd0b44 	addi	r7,r7,-3027
+ 8211808:	821183c0 	call	821183c <__muldi3>
+ 821180c:	11000044 	addi	r4,r2,1
+ 8211810:	2085803a 	cmpltu	r2,r4,r2
+ 8211814:	10c7883a 	add	r3,r2,r3
+ 8211818:	00a00034 	movhi	r2,32768
+ 821181c:	10bfffc4 	addi	r2,r2,-1
+ 8211820:	1884703a 	and	r2,r3,r2
+ 8211824:	81002915 	stw	r4,164(r16)
+ 8211828:	80c02a15 	stw	r3,168(r16)
+ 821182c:	dfc00117 	ldw	ra,4(sp)
+ 8211830:	dc000017 	ldw	r16,0(sp)
+ 8211834:	dec00204 	addi	sp,sp,8
+ 8211838:	f800283a 	ret
+
+0821183c <__muldi3>:
+ 821183c:	defff604 	addi	sp,sp,-40
+ 8211840:	dd800615 	stw	r22,24(sp)
+ 8211844:	dd400515 	stw	r21,20(sp)
+ 8211848:	dc400115 	stw	r17,4(sp)
+ 821184c:	357fffcc 	andi	r21,r6,65535
+ 8211850:	2022d43a 	srli	r17,r4,16
+ 8211854:	25bfffcc 	andi	r22,r4,65535
+ 8211858:	dcc00315 	stw	r19,12(sp)
+ 821185c:	dc800215 	stw	r18,8(sp)
+ 8211860:	2027883a 	mov	r19,r4
+ 8211864:	2825883a 	mov	r18,r5
+ 8211868:	b009883a 	mov	r4,r22
+ 821186c:	a80b883a 	mov	r5,r21
+ 8211870:	dfc00915 	stw	ra,36(sp)
+ 8211874:	df000815 	stw	fp,32(sp)
+ 8211878:	ddc00715 	stw	r23,28(sp)
+ 821187c:	3839883a 	mov	fp,r7
+ 8211880:	302ed43a 	srli	r23,r6,16
+ 8211884:	dd000415 	stw	r20,16(sp)
+ 8211888:	dc000015 	stw	r16,0(sp)
+ 821188c:	3029883a 	mov	r20,r6
+ 8211890:	82117980 	call	8211798 <__mulsi3>
+ 8211894:	a80b883a 	mov	r5,r21
+ 8211898:	8809883a 	mov	r4,r17
+ 821189c:	1021883a 	mov	r16,r2
+ 82118a0:	82117980 	call	8211798 <__mulsi3>
+ 82118a4:	8809883a 	mov	r4,r17
+ 82118a8:	b80b883a 	mov	r5,r23
+ 82118ac:	102b883a 	mov	r21,r2
+ 82118b0:	82117980 	call	8211798 <__mulsi3>
+ 82118b4:	b80b883a 	mov	r5,r23
+ 82118b8:	b009883a 	mov	r4,r22
+ 82118bc:	1023883a 	mov	r17,r2
+ 82118c0:	82117980 	call	8211798 <__mulsi3>
+ 82118c4:	8006d43a 	srli	r3,r16,16
+ 82118c8:	1545883a 	add	r2,r2,r21
+ 82118cc:	1885883a 	add	r2,r3,r2
+ 82118d0:	1540022e 	bgeu	r2,r21,82118dc <__muldi3+0xa0>
+ 82118d4:	00c00074 	movhi	r3,1
+ 82118d8:	88e3883a 	add	r17,r17,r3
+ 82118dc:	1006d43a 	srli	r3,r2,16
+ 82118e0:	1004943a 	slli	r2,r2,16
+ 82118e4:	e00b883a 	mov	r5,fp
+ 82118e8:	9809883a 	mov	r4,r19
+ 82118ec:	843fffcc 	andi	r16,r16,65535
+ 82118f0:	1c63883a 	add	r17,r3,r17
+ 82118f4:	1421883a 	add	r16,r2,r16
+ 82118f8:	82117980 	call	8211798 <__mulsi3>
+ 82118fc:	900b883a 	mov	r5,r18
+ 8211900:	a009883a 	mov	r4,r20
+ 8211904:	1027883a 	mov	r19,r2
+ 8211908:	82117980 	call	8211798 <__mulsi3>
+ 821190c:	9885883a 	add	r2,r19,r2
+ 8211910:	1447883a 	add	r3,r2,r17
+ 8211914:	8005883a 	mov	r2,r16
+ 8211918:	dfc00917 	ldw	ra,36(sp)
+ 821191c:	df000817 	ldw	fp,32(sp)
+ 8211920:	ddc00717 	ldw	r23,28(sp)
+ 8211924:	dd800617 	ldw	r22,24(sp)
+ 8211928:	dd400517 	ldw	r21,20(sp)
+ 821192c:	dd000417 	ldw	r20,16(sp)
+ 8211930:	dcc00317 	ldw	r19,12(sp)
+ 8211934:	dc800217 	ldw	r18,8(sp)
+ 8211938:	dc400117 	ldw	r17,4(sp)
+ 821193c:	dc000017 	ldw	r16,0(sp)
+ 8211940:	dec00a04 	addi	sp,sp,40
+ 8211944:	f800283a 	ret
+
+08211948 <alt_load_section>:
+ */
+
+static void ALT_INLINE alt_load_section (alt_u32* from, 
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+ 8211948:	defffc04 	addi	sp,sp,-16
+ 821194c:	df000315 	stw	fp,12(sp)
+ 8211950:	df000304 	addi	fp,sp,12
+ 8211954:	e13ffd15 	stw	r4,-12(fp)
+ 8211958:	e17ffe15 	stw	r5,-8(fp)
+ 821195c:	e1bfff15 	stw	r6,-4(fp)
+  if (to != from)
+ 8211960:	e0fffe17 	ldw	r3,-8(fp)
+ 8211964:	e0bffd17 	ldw	r2,-12(fp)
+ 8211968:	18800c26 	beq	r3,r2,821199c <alt_load_section+0x54>
+  {
+    while( to != end )
+ 821196c:	00000806 	br	8211990 <alt_load_section+0x48>
+    {
+      *to++ = *from++;
+ 8211970:	e0bffe17 	ldw	r2,-8(fp)
+ 8211974:	10c00104 	addi	r3,r2,4
+ 8211978:	e0fffe15 	stw	r3,-8(fp)
+ 821197c:	e0fffd17 	ldw	r3,-12(fp)
+ 8211980:	19000104 	addi	r4,r3,4
+ 8211984:	e13ffd15 	stw	r4,-12(fp)
+ 8211988:	18c00017 	ldw	r3,0(r3)
+ 821198c:	10c00015 	stw	r3,0(r2)
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+  {
+    while( to != end )
+ 8211990:	e0fffe17 	ldw	r3,-8(fp)
+ 8211994:	e0bfff17 	ldw	r2,-4(fp)
+ 8211998:	18bff51e 	bne	r3,r2,8211970 <__alt_data_end+0xffff1970>
+    {
+      *to++ = *from++;
+    }
+  }
+}
+ 821199c:	0001883a 	nop
+ 82119a0:	e037883a 	mov	sp,fp
+ 82119a4:	df000017 	ldw	fp,0(sp)
+ 82119a8:	dec00104 	addi	sp,sp,4
+ 82119ac:	f800283a 	ret
+
+082119b0 <alt_load>:
+ * there is no bootloader, so this application is responsible for loading to
+ * RAM any sections that are required.
+ */  
+
+void alt_load (void)
+{
+ 82119b0:	defffe04 	addi	sp,sp,-8
+ 82119b4:	dfc00115 	stw	ra,4(sp)
+ 82119b8:	df000015 	stw	fp,0(sp)
+ 82119bc:	d839883a 	mov	fp,sp
+  /* 
+   * Copy the .rwdata section. 
+   */
+
+  alt_load_section (&__flash_rwdata_start, 
+ 82119c0:	01820874 	movhi	r6,2081
+ 82119c4:	318a1c04 	addi	r6,r6,10352
+ 82119c8:	01420874 	movhi	r5,2081
+ 82119cc:	2948a104 	addi	r5,r5,8836
+ 82119d0:	01020874 	movhi	r4,2081
+ 82119d4:	210a1c04 	addi	r4,r4,10352
+ 82119d8:	82119480 	call	8211948 <alt_load_section>
+
+  /*
+   * Copy the exception handler.
+   */
+
+  alt_load_section (&__flash_exceptions_start, 
+ 82119dc:	01820874 	movhi	r6,2081
+ 82119e0:	31800804 	addi	r6,r6,32
+ 82119e4:	01420874 	movhi	r5,2081
+ 82119e8:	29400804 	addi	r5,r5,32
+ 82119ec:	01020874 	movhi	r4,2081
+ 82119f0:	21000804 	addi	r4,r4,32
+ 82119f4:	82119480 	call	8211948 <alt_load_section>
+
+  /*
+   * Copy the .rodata section.
+   */
+
+  alt_load_section (&__flash_rodata_start, 
+ 82119f8:	01820874 	movhi	r6,2081
+ 82119fc:	3188a104 	addi	r6,r6,8836
+ 8211a00:	01420874 	movhi	r5,2081
+ 8211a04:	29489d04 	addi	r5,r5,8820
+ 8211a08:	01020874 	movhi	r4,2081
+ 8211a0c:	21089d04 	addi	r4,r4,8820
+ 8211a10:	82119480 	call	8211948 <alt_load_section>
+  
+  /*
+   * Now ensure that the caches are in synch.
+   */
+  
+  alt_dcache_flush_all();
+ 8211a14:	8211d880 	call	8211d88 <alt_dcache_flush_all>
+  alt_icache_flush_all();
+ 8211a18:	8211e940 	call	8211e94 <alt_icache_flush_all>
+}
+ 8211a1c:	0001883a 	nop
+ 8211a20:	e037883a 	mov	sp,fp
+ 8211a24:	dfc00117 	ldw	ra,4(sp)
+ 8211a28:	df000017 	ldw	fp,0(sp)
+ 8211a2c:	dec00204 	addi	sp,sp,8
+ 8211a30:	f800283a 	ret
+
+08211a34 <alt_main>:
+ * devices/filesystems/components in the system; and call the entry point for
+ * the users application, i.e. main().
+ */
+
+void alt_main (void)
+{
+ 8211a34:	defffd04 	addi	sp,sp,-12
+ 8211a38:	dfc00215 	stw	ra,8(sp)
+ 8211a3c:	df000115 	stw	fp,4(sp)
+ 8211a40:	df000104 	addi	fp,sp,4
+#endif
+
+  /* ALT LOG - please see HAL/sys/alt_log_printf.h for details */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Entering alt_main, calling alt_irq_init.\r\n");
+  /* Initialize the interrupt controller. */
+  alt_irq_init (NULL);
+ 8211a44:	0009883a 	mov	r4,zero
+ 8211a48:	8211ac40 	call	8211ac4 <alt_irq_init>
+
+  /* Initialize the operating system */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Done alt_irq_init, calling alt_os_init.\r\n");
+  ALT_OS_INIT();
+ 8211a4c:	0001883a 	nop
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Done OS Init, calling alt_sem_create.\r\n");
+  ALT_SEM_CREATE (&alt_fd_list_lock, 1);
+
+  /* Initialize the device drivers/software components. */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling alt_sys_init.\r\n");
+  alt_sys_init();
+ 8211a50:	8211afc0 	call	8211afc <alt_sys_init>
+  /* 
+   * Call the C++ constructors 
+   */
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling C++ constructors.\r\n");
+  _do_ctors ();
+ 8211a54:	8211dd40 	call	8211dd4 <_do_ctors>
+   * redefined as _exit()). This is in the interest of reducing code footprint,
+   * in that the atexit() overhead is removed when it's not needed.
+   */
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling atexit.\r\n");
+  atexit (_do_dtors);
+ 8211a58:	01020874 	movhi	r4,2081
+ 8211a5c:	21078d04 	addi	r4,r4,7732
+ 8211a60:	8211f5c0 	call	8211f5c <atexit>
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling main.\r\n");
+
+#ifdef ALT_NO_EXIT
+  main (alt_argc, alt_argv, alt_envp);
+#else
+  result = main (alt_argc, alt_argv, alt_envp);
+ 8211a64:	d0a18317 	ldw	r2,-31220(gp)
+ 8211a68:	d0e18417 	ldw	r3,-31216(gp)
+ 8211a6c:	d1218517 	ldw	r4,-31212(gp)
+ 8211a70:	200d883a 	mov	r6,r4
+ 8211a74:	180b883a 	mov	r5,r3
+ 8211a78:	1009883a 	mov	r4,r2
+ 8211a7c:	82108e80 	call	82108e8 <main>
+ 8211a80:	e0bfff15 	stw	r2,-4(fp)
+  close(STDOUT_FILENO);
+ 8211a84:	01000044 	movi	r4,1
+ 8211a88:	8211cb00 	call	8211cb0 <close>
+  exit (result);
+ 8211a8c:	e13fff17 	ldw	r4,-4(fp)
+ 8211a90:	8211f700 	call	8211f70 <exit>
+
+08211a94 <usleep>:
+#if defined (__GNUC__) && __GNUC__ >= 4
+int ALT_USLEEP (useconds_t us)
+#else
+unsigned int ALT_USLEEP (unsigned int us)
+#endif
+{
+ 8211a94:	defffd04 	addi	sp,sp,-12
+ 8211a98:	dfc00215 	stw	ra,8(sp)
+ 8211a9c:	df000115 	stw	fp,4(sp)
+ 8211aa0:	df000104 	addi	fp,sp,4
+ 8211aa4:	e13fff15 	stw	r4,-4(fp)
+  return alt_busy_sleep(us);
+ 8211aa8:	e13fff17 	ldw	r4,-4(fp)
+ 8211aac:	8211b1c0 	call	8211b1c <alt_busy_sleep>
+}
+ 8211ab0:	e037883a 	mov	sp,fp
+ 8211ab4:	dfc00117 	ldw	ra,4(sp)
+ 8211ab8:	df000017 	ldw	fp,0(sp)
+ 8211abc:	dec00204 	addi	sp,sp,8
+ 8211ac0:	f800283a 	ret
+
+08211ac4 <alt_irq_init>:
+ * The "base" parameter is ignored and only
+ * present for backwards-compatibility.
+ */
+
+void alt_irq_init ( const void* base )
+{
+ 8211ac4:	defffd04 	addi	sp,sp,-12
+ 8211ac8:	dfc00215 	stw	ra,8(sp)
+ 8211acc:	df000115 	stw	fp,4(sp)
+ 8211ad0:	df000104 	addi	fp,sp,4
+ 8211ad4:	e13fff15 	stw	r4,-4(fp)
+    ALTERA_NIOS2_GEN2_IRQ_INIT ( PROCESSOR, processor);
+ 8211ad8:	8211f380 	call	8211f38 <altera_nios2_gen2_irq_init>
+ * alt_irq_cpu_enable_interrupts() enables the CPU to start taking interrupts.
+ */
+static ALT_INLINE void ALT_ALWAYS_INLINE 
+       alt_irq_cpu_enable_interrupts (void)
+{
+    NIOS2_WRITE_STATUS(NIOS2_STATUS_PIE_MSK
+ 8211adc:	00800044 	movi	r2,1
+ 8211ae0:	1001703a 	wrctl	status,r2
+    alt_irq_cpu_enable_interrupts();
+}
+ 8211ae4:	0001883a 	nop
+ 8211ae8:	e037883a 	mov	sp,fp
+ 8211aec:	dfc00117 	ldw	ra,4(sp)
+ 8211af0:	df000017 	ldw	fp,0(sp)
+ 8211af4:	dec00204 	addi	sp,sp,8
+ 8211af8:	f800283a 	ret
+
+08211afc <alt_sys_init>:
+ * Initialize the non-interrupt controller devices.
+ * Called after alt_irq_init().
+ */
+
+void alt_sys_init( void )
+{
+ 8211afc:	deffff04 	addi	sp,sp,-4
+ 8211b00:	df000015 	stw	fp,0(sp)
+ 8211b04:	d839883a 	mov	fp,sp
+}
+ 8211b08:	0001883a 	nop
+ 8211b0c:	e037883a 	mov	sp,fp
+ 8211b10:	df000017 	ldw	fp,0(sp)
+ 8211b14:	dec00104 	addi	sp,sp,4
+ 8211b18:	f800283a 	ret
+
+08211b1c <alt_busy_sleep>:
+#include "alt_types.h"
+
+#include "priv/alt_busy_sleep.h"
+
+unsigned int alt_busy_sleep (unsigned int us)
+{
+ 8211b1c:	defffa04 	addi	sp,sp,-24
+ 8211b20:	dfc00515 	stw	ra,20(sp)
+ 8211b24:	df000415 	stw	fp,16(sp)
+ 8211b28:	df000404 	addi	fp,sp,16
+ 8211b2c:	e13fff15 	stw	r4,-4(fp)
+  int big_loops;
+  alt_u32 cycles_per_loop;
+  
+  if (!strcmp(NIOS2_CPU_IMPLEMENTATION,"tiny"))
+  {
+    cycles_per_loop = 9;
+ 8211b30:	00800244 	movi	r2,9
+ 8211b34:	e0bffd15 	stw	r2,-12(fp)
+    cycles_per_loop = 3;
+  }
+  
+
+  big_loops = us / (INT_MAX/
+  (ALT_CPU_FREQ/(cycles_per_loop * 1000000)));
+ 8211b38:	014003f4 	movhi	r5,15
+ 8211b3c:	29509004 	addi	r5,r5,16960
+ 8211b40:	e13ffd17 	ldw	r4,-12(fp)
+ 8211b44:	82117980 	call	8211798 <__mulsi3>
+ 8211b48:	100b883a 	mov	r5,r2
+ 8211b4c:	01017db4 	movhi	r4,1526
+ 8211b50:	21384004 	addi	r4,r4,-7936
+ 8211b54:	82116dc0 	call	82116dc <__udivsi3>
+  {
+    cycles_per_loop = 3;
+  }
+  
+
+  big_loops = us / (INT_MAX/
+ 8211b58:	100b883a 	mov	r5,r2
+ 8211b5c:	01200034 	movhi	r4,32768
+ 8211b60:	213fffc4 	addi	r4,r4,-1
+ 8211b64:	82116dc0 	call	82116dc <__udivsi3>
+ 8211b68:	100b883a 	mov	r5,r2
+ 8211b6c:	e13fff17 	ldw	r4,-4(fp)
+ 8211b70:	82116dc0 	call	82116dc <__udivsi3>
+ 8211b74:	e0bffe15 	stw	r2,-8(fp)
+  (ALT_CPU_FREQ/(cycles_per_loop * 1000000)));
+
+  if (big_loops)
+ 8211b78:	e0bffe17 	ldw	r2,-8(fp)
+ 8211b7c:	10002a26 	beq	r2,zero,8211c28 <alt_busy_sleep+0x10c>
+  {
+    for(i=0;i<big_loops;i++)
+ 8211b80:	e03ffc15 	stw	zero,-16(fp)
+ 8211b84:	00001706 	br	8211be4 <alt_busy_sleep+0xc8>
+      /*
+      * Do NOT Try to single step the asm statement below 
+      * (single step will never return)
+      * Step out of this function or set a breakpoint after the asm statements
+      */
+      __asm__ volatile (
+ 8211b88:	00a00034 	movhi	r2,32768
+ 8211b8c:	10bfffc4 	addi	r2,r2,-1
+ 8211b90:	10bfffc4 	addi	r2,r2,-1
+ 8211b94:	103ffe1e 	bne	r2,zero,8211b90 <__alt_data_end+0xffff1b90>
+        "\n\t.pushsection .debug_alt_sim_info"
+        "\n\t.int 4, 0, 0b, 1b"
+        "\n\t.popsection"
+        :: "r" (INT_MAX));
+      us -= (INT_MAX/(ALT_CPU_FREQ/
+      (cycles_per_loop * 1000000)));
+ 8211b98:	014003f4 	movhi	r5,15
+ 8211b9c:	29509004 	addi	r5,r5,16960
+ 8211ba0:	e13ffd17 	ldw	r4,-12(fp)
+ 8211ba4:	82117980 	call	8211798 <__mulsi3>
+        "\n1:"
+        "\n\t.pushsection .debug_alt_sim_info"
+        "\n\t.int 4, 0, 0b, 1b"
+        "\n\t.popsection"
+        :: "r" (INT_MAX));
+      us -= (INT_MAX/(ALT_CPU_FREQ/
+ 8211ba8:	100b883a 	mov	r5,r2
+ 8211bac:	01017db4 	movhi	r4,1526
+ 8211bb0:	21384004 	addi	r4,r4,-7936
+ 8211bb4:	82116dc0 	call	82116dc <__udivsi3>
+ 8211bb8:	100b883a 	mov	r5,r2
+ 8211bbc:	01200034 	movhi	r4,32768
+ 8211bc0:	213fffc4 	addi	r4,r4,-1
+ 8211bc4:	82116dc0 	call	82116dc <__udivsi3>
+ 8211bc8:	1007883a 	mov	r3,r2
+ 8211bcc:	e0bfff17 	ldw	r2,-4(fp)
+ 8211bd0:	10c5c83a 	sub	r2,r2,r3
+ 8211bd4:	e0bfff15 	stw	r2,-4(fp)
+  big_loops = us / (INT_MAX/
+  (ALT_CPU_FREQ/(cycles_per_loop * 1000000)));
+
+  if (big_loops)
+  {
+    for(i=0;i<big_loops;i++)
+ 8211bd8:	e0bffc17 	ldw	r2,-16(fp)
+ 8211bdc:	10800044 	addi	r2,r2,1
+ 8211be0:	e0bffc15 	stw	r2,-16(fp)
+ 8211be4:	e0fffc17 	ldw	r3,-16(fp)
+ 8211be8:	e0bffe17 	ldw	r2,-8(fp)
+ 8211bec:	18bfe616 	blt	r3,r2,8211b88 <__alt_data_end+0xffff1b88>
+      "\n\tbne %0,zero,0b"
+      "\n1:"
+      "\n\t.pushsection .debug_alt_sim_info"
+      "\n\t.int 4, 0, 0b, 1b"
+      "\n\t.popsection"
+      :: "r" (us*(ALT_CPU_FREQ/(cycles_per_loop * 1000000))));
+ 8211bf0:	014003f4 	movhi	r5,15
+ 8211bf4:	29509004 	addi	r5,r5,16960
+ 8211bf8:	e13ffd17 	ldw	r4,-12(fp)
+ 8211bfc:	82117980 	call	8211798 <__mulsi3>
+ 8211c00:	100b883a 	mov	r5,r2
+ 8211c04:	01017db4 	movhi	r4,1526
+ 8211c08:	21384004 	addi	r4,r4,-7936
+ 8211c0c:	82116dc0 	call	82116dc <__udivsi3>
+ 8211c10:	e17fff17 	ldw	r5,-4(fp)
+ 8211c14:	1009883a 	mov	r4,r2
+ 8211c18:	82117980 	call	8211798 <__mulsi3>
+    /*
+    * Do NOT Try to single step the asm statement below 
+    * (single step will never return)
+    * Step out of this function or set a breakpoint after the asm statements
+    */
+    __asm__ volatile (
+ 8211c1c:	10bfffc4 	addi	r2,r2,-1
+ 8211c20:	103ffe1e 	bne	r2,zero,8211c1c <__alt_data_end+0xffff1c1c>
+ 8211c24:	00000d06 	br	8211c5c <alt_busy_sleep+0x140>
+      "\n\tbgt %0,zero,0b"
+      "\n1:"
+      "\n\t.pushsection .debug_alt_sim_info"
+      "\n\t.int 4, 0, 0b, 1b"
+      "\n\t.popsection"
+      :: "r" (us*(ALT_CPU_FREQ/(cycles_per_loop * 1000000))));
+ 8211c28:	014003f4 	movhi	r5,15
+ 8211c2c:	29509004 	addi	r5,r5,16960
+ 8211c30:	e13ffd17 	ldw	r4,-12(fp)
+ 8211c34:	82117980 	call	8211798 <__mulsi3>
+ 8211c38:	100b883a 	mov	r5,r2
+ 8211c3c:	01017db4 	movhi	r4,1526
+ 8211c40:	21384004 	addi	r4,r4,-7936
+ 8211c44:	82116dc0 	call	82116dc <__udivsi3>
+ 8211c48:	e17fff17 	ldw	r5,-4(fp)
+ 8211c4c:	1009883a 	mov	r4,r2
+ 8211c50:	82117980 	call	8211798 <__mulsi3>
+    /*
+    * Do NOT Try to single step the asm statement below 
+    * (single step will never return)
+    * Step out of this function or set a breakpoint after the asm statements
+    */
+    __asm__ volatile (
+ 8211c54:	10bfffc4 	addi	r2,r2,-1
+ 8211c58:	00bffe16 	blt	zero,r2,8211c54 <__alt_data_end+0xffff1c54>
+      "\n\t.int 4, 0, 0b, 1b"
+      "\n\t.popsection"
+      :: "r" (us*(ALT_CPU_FREQ/(cycles_per_loop * 1000000))));
+  }
+#endif /* #ifndef ALT_SIM_OPTIMIZE */
+  return 0;
+ 8211c5c:	0005883a 	mov	r2,zero
+}
+ 8211c60:	e037883a 	mov	sp,fp
+ 8211c64:	dfc00117 	ldw	ra,4(sp)
+ 8211c68:	df000017 	ldw	fp,0(sp)
+ 8211c6c:	dec00204 	addi	sp,sp,8
+ 8211c70:	f800283a 	ret
+
+08211c74 <alt_get_errno>:
+#undef errno
+
+extern int errno;
+
+static ALT_INLINE int* alt_get_errno(void)
+{
+ 8211c74:	defffe04 	addi	sp,sp,-8
+ 8211c78:	dfc00115 	stw	ra,4(sp)
+ 8211c7c:	df000015 	stw	fp,0(sp)
+ 8211c80:	d839883a 	mov	fp,sp
+  return ((alt_errno) ? alt_errno() : &errno);
+ 8211c84:	d0a00717 	ldw	r2,-32740(gp)
+ 8211c88:	10000326 	beq	r2,zero,8211c98 <alt_get_errno+0x24>
+ 8211c8c:	d0a00717 	ldw	r2,-32740(gp)
+ 8211c90:	103ee83a 	callr	r2
+ 8211c94:	00000106 	br	8211c9c <alt_get_errno+0x28>
+ 8211c98:	d0a18604 	addi	r2,gp,-31208
+}
+ 8211c9c:	e037883a 	mov	sp,fp
+ 8211ca0:	dfc00117 	ldw	ra,4(sp)
+ 8211ca4:	df000017 	ldw	fp,0(sp)
+ 8211ca8:	dec00204 	addi	sp,sp,8
+ 8211cac:	f800283a 	ret
+
+08211cb0 <close>:
+ *
+ * ALT_CLOSE is mapped onto the close() system call in alt_syscall.h
+ */
+ 
+int ALT_CLOSE (int fildes)
+{
+ 8211cb0:	defffb04 	addi	sp,sp,-20
+ 8211cb4:	dfc00415 	stw	ra,16(sp)
+ 8211cb8:	df000315 	stw	fp,12(sp)
+ 8211cbc:	df000304 	addi	fp,sp,12
+ 8211cc0:	e13fff15 	stw	r4,-4(fp)
+   * A common error case is that when the file descriptor was created, the call
+   * to open() failed resulting in a negative file descriptor. This is trapped
+   * below so that we don't try and process an invalid file descriptor.
+   */
+
+  fd = (fildes < 0) ? NULL : &alt_fd_list[fildes];
+ 8211cc4:	e0bfff17 	ldw	r2,-4(fp)
+ 8211cc8:	10000816 	blt	r2,zero,8211cec <close+0x3c>
+ 8211ccc:	01400304 	movi	r5,12
+ 8211cd0:	e13fff17 	ldw	r4,-4(fp)
+ 8211cd4:	82117980 	call	8211798 <__mulsi3>
+ 8211cd8:	1007883a 	mov	r3,r2
+ 8211cdc:	00820874 	movhi	r2,2081
+ 8211ce0:	1089b404 	addi	r2,r2,9936
+ 8211ce4:	1885883a 	add	r2,r3,r2
+ 8211ce8:	00000106 	br	8211cf0 <close+0x40>
+ 8211cec:	0005883a 	mov	r2,zero
+ 8211cf0:	e0bffd15 	stw	r2,-12(fp)
+
+  if (fd)
+ 8211cf4:	e0bffd17 	ldw	r2,-12(fp)
+ 8211cf8:	10001926 	beq	r2,zero,8211d60 <close+0xb0>
+    /*
+     * If the associated file system/device has a close function, call it so 
+     * that any necessary cleanup code can run.
+     */
+
+    rval = (fd->dev->close) ? fd->dev->close(fd) : 0;
+ 8211cfc:	e0bffd17 	ldw	r2,-12(fp)
+ 8211d00:	10800017 	ldw	r2,0(r2)
+ 8211d04:	10800417 	ldw	r2,16(r2)
+ 8211d08:	10000626 	beq	r2,zero,8211d24 <close+0x74>
+ 8211d0c:	e0bffd17 	ldw	r2,-12(fp)
+ 8211d10:	10800017 	ldw	r2,0(r2)
+ 8211d14:	10800417 	ldw	r2,16(r2)
+ 8211d18:	e13ffd17 	ldw	r4,-12(fp)
+ 8211d1c:	103ee83a 	callr	r2
+ 8211d20:	00000106 	br	8211d28 <close+0x78>
+ 8211d24:	0005883a 	mov	r2,zero
+ 8211d28:	e0bffe15 	stw	r2,-8(fp)
+
+    /* Free the file descriptor structure and return. */
+
+    alt_release_fd (fildes);
+ 8211d2c:	e13fff17 	ldw	r4,-4(fp)
+ 8211d30:	8211eb40 	call	8211eb4 <alt_release_fd>
+    if (rval < 0)
+ 8211d34:	e0bffe17 	ldw	r2,-8(fp)
+ 8211d38:	1000070e 	bge	r2,zero,8211d58 <close+0xa8>
+    {
+      ALT_ERRNO = -rval;
+ 8211d3c:	8211c740 	call	8211c74 <alt_get_errno>
+ 8211d40:	1007883a 	mov	r3,r2
+ 8211d44:	e0bffe17 	ldw	r2,-8(fp)
+ 8211d48:	0085c83a 	sub	r2,zero,r2
+ 8211d4c:	18800015 	stw	r2,0(r3)
+      return -1;
+ 8211d50:	00bfffc4 	movi	r2,-1
+ 8211d54:	00000706 	br	8211d74 <close+0xc4>
+    }
+    return 0;
+ 8211d58:	0005883a 	mov	r2,zero
+ 8211d5c:	00000506 	br	8211d74 <close+0xc4>
+  }
+  else
+  {
+    ALT_ERRNO = EBADFD;
+ 8211d60:	8211c740 	call	8211c74 <alt_get_errno>
+ 8211d64:	1007883a 	mov	r3,r2
+ 8211d68:	00801444 	movi	r2,81
+ 8211d6c:	18800015 	stw	r2,0(r3)
+    return -1;
+ 8211d70:	00bfffc4 	movi	r2,-1
+  }
+}
+ 8211d74:	e037883a 	mov	sp,fp
+ 8211d78:	dfc00117 	ldw	ra,4(sp)
+ 8211d7c:	df000017 	ldw	fp,0(sp)
+ 8211d80:	dec00204 	addi	sp,sp,8
+ 8211d84:	f800283a 	ret
+
+08211d88 <alt_dcache_flush_all>:
+/*
+ * alt_dcache_flush_all() is called to flush the entire data cache.
+ */
+
+void alt_dcache_flush_all (void)
+{
+ 8211d88:	deffff04 	addi	sp,sp,-4
+ 8211d8c:	df000015 	stw	fp,0(sp)
+ 8211d90:	d839883a 	mov	fp,sp
+  for (i = (char*) 0; i < (char*) NIOS2_DCACHE_SIZE; i+= NIOS2_DCACHE_LINE_SIZE)
+  { 
+    __asm__ volatile ("flushd (%0)" :: "r" (i));
+  }
+#endif /* NIOS2_DCACHE_SIZE > 0 */
+}
+ 8211d94:	0001883a 	nop
+ 8211d98:	e037883a 	mov	sp,fp
+ 8211d9c:	df000017 	ldw	fp,0(sp)
+ 8211da0:	dec00104 	addi	sp,sp,4
+ 8211da4:	f800283a 	ret
+
+08211da8 <alt_dev_null_write>:
+ * by the alt_dev_null device. It simple discards all data passed to it, and
+ * indicates that the data has been successfully transmitted.
+ */
+
+static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
+{
+ 8211da8:	defffc04 	addi	sp,sp,-16
+ 8211dac:	df000315 	stw	fp,12(sp)
+ 8211db0:	df000304 	addi	fp,sp,12
+ 8211db4:	e13ffd15 	stw	r4,-12(fp)
+ 8211db8:	e17ffe15 	stw	r5,-8(fp)
+ 8211dbc:	e1bfff15 	stw	r6,-4(fp)
+  return len;
+ 8211dc0:	e0bfff17 	ldw	r2,-4(fp)
+}
+ 8211dc4:	e037883a 	mov	sp,fp
+ 8211dc8:	df000017 	ldw	fp,0(sp)
+ 8211dcc:	dec00104 	addi	sp,sp,4
+ 8211dd0:	f800283a 	ret
+
+08211dd4 <_do_ctors>:
+/*
+ * Run the C++ static constructors.
+ */
+
+void _do_ctors(void)
+{
+ 8211dd4:	defffd04 	addi	sp,sp,-12
+ 8211dd8:	dfc00215 	stw	ra,8(sp)
+ 8211ddc:	df000115 	stw	fp,4(sp)
+ 8211de0:	df000104 	addi	fp,sp,4
+  constructor* ctor;
+
+  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
+ 8211de4:	00820874 	movhi	r2,2081
+ 8211de8:	10889c04 	addi	r2,r2,8816
+ 8211dec:	e0bfff15 	stw	r2,-4(fp)
+ 8211df0:	00000606 	br	8211e0c <_do_ctors+0x38>
+        (*ctor) (); 
+ 8211df4:	e0bfff17 	ldw	r2,-4(fp)
+ 8211df8:	10800017 	ldw	r2,0(r2)
+ 8211dfc:	103ee83a 	callr	r2
+
+void _do_ctors(void)
+{
+  constructor* ctor;
+
+  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
+ 8211e00:	e0bfff17 	ldw	r2,-4(fp)
+ 8211e04:	10bfff04 	addi	r2,r2,-4
+ 8211e08:	e0bfff15 	stw	r2,-4(fp)
+ 8211e0c:	e0ffff17 	ldw	r3,-4(fp)
+ 8211e10:	00820874 	movhi	r2,2081
+ 8211e14:	10889d04 	addi	r2,r2,8820
+ 8211e18:	18bff62e 	bgeu	r3,r2,8211df4 <__alt_data_end+0xffff1df4>
+        (*ctor) (); 
+}
+ 8211e1c:	0001883a 	nop
+ 8211e20:	e037883a 	mov	sp,fp
+ 8211e24:	dfc00117 	ldw	ra,4(sp)
+ 8211e28:	df000017 	ldw	fp,0(sp)
+ 8211e2c:	dec00204 	addi	sp,sp,8
+ 8211e30:	f800283a 	ret
+
+08211e34 <_do_dtors>:
+/*
+ * Run the C++ static destructors.
+ */
+
+void _do_dtors(void)
+{
+ 8211e34:	defffd04 	addi	sp,sp,-12
+ 8211e38:	dfc00215 	stw	ra,8(sp)
+ 8211e3c:	df000115 	stw	fp,4(sp)
+ 8211e40:	df000104 	addi	fp,sp,4
+  destructor* dtor;
+
+  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
+ 8211e44:	00820874 	movhi	r2,2081
+ 8211e48:	10889c04 	addi	r2,r2,8816
+ 8211e4c:	e0bfff15 	stw	r2,-4(fp)
+ 8211e50:	00000606 	br	8211e6c <_do_dtors+0x38>
+        (*dtor) (); 
+ 8211e54:	e0bfff17 	ldw	r2,-4(fp)
+ 8211e58:	10800017 	ldw	r2,0(r2)
+ 8211e5c:	103ee83a 	callr	r2
+
+void _do_dtors(void)
+{
+  destructor* dtor;
+
+  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
+ 8211e60:	e0bfff17 	ldw	r2,-4(fp)
+ 8211e64:	10bfff04 	addi	r2,r2,-4
+ 8211e68:	e0bfff15 	stw	r2,-4(fp)
+ 8211e6c:	e0ffff17 	ldw	r3,-4(fp)
+ 8211e70:	00820874 	movhi	r2,2081
+ 8211e74:	10889d04 	addi	r2,r2,8820
+ 8211e78:	18bff62e 	bgeu	r3,r2,8211e54 <__alt_data_end+0xffff1e54>
+        (*dtor) (); 
+}
+ 8211e7c:	0001883a 	nop
+ 8211e80:	e037883a 	mov	sp,fp
+ 8211e84:	dfc00117 	ldw	ra,4(sp)
+ 8211e88:	df000017 	ldw	fp,0(sp)
+ 8211e8c:	dec00204 	addi	sp,sp,8
+ 8211e90:	f800283a 	ret
+
+08211e94 <alt_icache_flush_all>:
+/*
+ * alt_icache_flush_all() is called to flush the entire instruction cache.
+ */
+
+void alt_icache_flush_all (void)
+{
+ 8211e94:	deffff04 	addi	sp,sp,-4
+ 8211e98:	df000015 	stw	fp,0(sp)
+ 8211e9c:	d839883a 	mov	fp,sp
+#if NIOS2_ICACHE_SIZE > 0
+  alt_icache_flush (0, NIOS2_ICACHE_SIZE);
+#endif
+}
+ 8211ea0:	0001883a 	nop
+ 8211ea4:	e037883a 	mov	sp,fp
+ 8211ea8:	df000017 	ldw	fp,0(sp)
+ 8211eac:	dec00104 	addi	sp,sp,4
+ 8211eb0:	f800283a 	ret
+
+08211eb4 <alt_release_fd>:
+ * File descriptors correcponding to standard in, standard out and standard 
+ * error cannont be released backed to the pool. They are always reserved.
+ */
+
+void alt_release_fd (int fd)
+{
+ 8211eb4:	defffc04 	addi	sp,sp,-16
+ 8211eb8:	dfc00315 	stw	ra,12(sp)
+ 8211ebc:	df000215 	stw	fp,8(sp)
+ 8211ec0:	dc000115 	stw	r16,4(sp)
+ 8211ec4:	df000204 	addi	fp,sp,8
+ 8211ec8:	e13ffe15 	stw	r4,-8(fp)
+  if (fd > 2)
+ 8211ecc:	e0bffe17 	ldw	r2,-8(fp)
+ 8211ed0:	108000d0 	cmplti	r2,r2,3
+ 8211ed4:	1000111e 	bne	r2,zero,8211f1c <alt_release_fd+0x68>
+  {
+    alt_fd_list[fd].fd_flags = 0;
+ 8211ed8:	04020874 	movhi	r16,2081
+ 8211edc:	8409b404 	addi	r16,r16,9936
+ 8211ee0:	e0bffe17 	ldw	r2,-8(fp)
+ 8211ee4:	01400304 	movi	r5,12
+ 8211ee8:	1009883a 	mov	r4,r2
+ 8211eec:	82117980 	call	8211798 <__mulsi3>
+ 8211ef0:	8085883a 	add	r2,r16,r2
+ 8211ef4:	10800204 	addi	r2,r2,8
+ 8211ef8:	10000015 	stw	zero,0(r2)
+    alt_fd_list[fd].dev      = 0;
+ 8211efc:	04020874 	movhi	r16,2081
+ 8211f00:	8409b404 	addi	r16,r16,9936
+ 8211f04:	e0bffe17 	ldw	r2,-8(fp)
+ 8211f08:	01400304 	movi	r5,12
+ 8211f0c:	1009883a 	mov	r4,r2
+ 8211f10:	82117980 	call	8211798 <__mulsi3>
+ 8211f14:	8085883a 	add	r2,r16,r2
+ 8211f18:	10000015 	stw	zero,0(r2)
+  }
+}
+ 8211f1c:	0001883a 	nop
+ 8211f20:	e6ffff04 	addi	sp,fp,-4
+ 8211f24:	dfc00217 	ldw	ra,8(sp)
+ 8211f28:	df000117 	ldw	fp,4(sp)
+ 8211f2c:	dc000017 	ldw	r16,0(sp)
+ 8211f30:	dec00304 	addi	sp,sp,12
+ 8211f34:	f800283a 	ret
+
+08211f38 <altera_nios2_gen2_irq_init>:
+/*
+ * To initialize the internal interrupt controller, just clear the IENABLE
+ * register so that all possible IRQs are disabled.
+ */
+void altera_nios2_gen2_irq_init(void) 
+{
+ 8211f38:	deffff04 	addi	sp,sp,-4
+ 8211f3c:	df000015 	stw	fp,0(sp)
+ 8211f40:	d839883a 	mov	fp,sp
+    NIOS2_WRITE_IENABLE(0);
+ 8211f44:	000170fa 	wrctl	ienable,zero
+}
+ 8211f48:	0001883a 	nop
+ 8211f4c:	e037883a 	mov	sp,fp
+ 8211f50:	df000017 	ldw	fp,0(sp)
+ 8211f54:	dec00104 	addi	sp,sp,4
+ 8211f58:	f800283a 	ret
+
+08211f5c <atexit>:
+ 8211f5c:	200b883a 	mov	r5,r4
+ 8211f60:	000f883a 	mov	r7,zero
+ 8211f64:	000d883a 	mov	r6,zero
+ 8211f68:	0009883a 	mov	r4,zero
+ 8211f6c:	8211fa81 	jmpi	8211fa8 <__register_exitproc>
+
+08211f70 <exit>:
+ 8211f70:	defffe04 	addi	sp,sp,-8
+ 8211f74:	000b883a 	mov	r5,zero
+ 8211f78:	dc000015 	stw	r16,0(sp)
+ 8211f7c:	dfc00115 	stw	ra,4(sp)
+ 8211f80:	2021883a 	mov	r16,r4
+ 8211f84:	82120c00 	call	82120c0 <__call_exitprocs>
+ 8211f88:	00820874 	movhi	r2,2081
+ 8211f8c:	108a1404 	addi	r2,r2,10320
+ 8211f90:	11000017 	ldw	r4,0(r2)
+ 8211f94:	20800f17 	ldw	r2,60(r4)
+ 8211f98:	10000126 	beq	r2,zero,8211fa0 <exit+0x30>
+ 8211f9c:	103ee83a 	callr	r2
+ 8211fa0:	8009883a 	mov	r4,r16
+ 8211fa4:	82122400 	call	8212240 <_exit>
+
+08211fa8 <__register_exitproc>:
+ 8211fa8:	defffa04 	addi	sp,sp,-24
+ 8211fac:	dc000315 	stw	r16,12(sp)
+ 8211fb0:	04020874 	movhi	r16,2081
+ 8211fb4:	840a1404 	addi	r16,r16,10320
+ 8211fb8:	80c00017 	ldw	r3,0(r16)
+ 8211fbc:	dc400415 	stw	r17,16(sp)
+ 8211fc0:	dfc00515 	stw	ra,20(sp)
+ 8211fc4:	18805217 	ldw	r2,328(r3)
+ 8211fc8:	2023883a 	mov	r17,r4
+ 8211fcc:	10003726 	beq	r2,zero,82120ac <__register_exitproc+0x104>
+ 8211fd0:	10c00117 	ldw	r3,4(r2)
+ 8211fd4:	010007c4 	movi	r4,31
+ 8211fd8:	20c00e16 	blt	r4,r3,8212014 <__register_exitproc+0x6c>
+ 8211fdc:	1a000044 	addi	r8,r3,1
+ 8211fe0:	8800221e 	bne	r17,zero,821206c <__register_exitproc+0xc4>
+ 8211fe4:	18c00084 	addi	r3,r3,2
+ 8211fe8:	18c7883a 	add	r3,r3,r3
+ 8211fec:	18c7883a 	add	r3,r3,r3
+ 8211ff0:	12000115 	stw	r8,4(r2)
+ 8211ff4:	10c7883a 	add	r3,r2,r3
+ 8211ff8:	19400015 	stw	r5,0(r3)
+ 8211ffc:	0005883a 	mov	r2,zero
+ 8212000:	dfc00517 	ldw	ra,20(sp)
+ 8212004:	dc400417 	ldw	r17,16(sp)
+ 8212008:	dc000317 	ldw	r16,12(sp)
+ 821200c:	dec00604 	addi	sp,sp,24
+ 8212010:	f800283a 	ret
+ 8212014:	00800034 	movhi	r2,0
+ 8212018:	10800004 	addi	r2,r2,0
+ 821201c:	10002626 	beq	r2,zero,82120b8 <__register_exitproc+0x110>
+ 8212020:	01006404 	movi	r4,400
+ 8212024:	d9400015 	stw	r5,0(sp)
+ 8212028:	d9800115 	stw	r6,4(sp)
+ 821202c:	d9c00215 	stw	r7,8(sp)
+ 8212030:	00000000 	call	0 <__alt_mem_ram_data-0x8210000>
+ 8212034:	d9400017 	ldw	r5,0(sp)
+ 8212038:	d9800117 	ldw	r6,4(sp)
+ 821203c:	d9c00217 	ldw	r7,8(sp)
+ 8212040:	10001d26 	beq	r2,zero,82120b8 <__register_exitproc+0x110>
+ 8212044:	81000017 	ldw	r4,0(r16)
+ 8212048:	10000115 	stw	zero,4(r2)
+ 821204c:	02000044 	movi	r8,1
+ 8212050:	22405217 	ldw	r9,328(r4)
+ 8212054:	0007883a 	mov	r3,zero
+ 8212058:	12400015 	stw	r9,0(r2)
+ 821205c:	20805215 	stw	r2,328(r4)
+ 8212060:	10006215 	stw	zero,392(r2)
+ 8212064:	10006315 	stw	zero,396(r2)
+ 8212068:	883fde26 	beq	r17,zero,8211fe4 <__alt_data_end+0xffff1fe4>
+ 821206c:	18c9883a 	add	r4,r3,r3
+ 8212070:	2109883a 	add	r4,r4,r4
+ 8212074:	1109883a 	add	r4,r2,r4
+ 8212078:	21802215 	stw	r6,136(r4)
+ 821207c:	01800044 	movi	r6,1
+ 8212080:	12406217 	ldw	r9,392(r2)
+ 8212084:	30cc983a 	sll	r6,r6,r3
+ 8212088:	4992b03a 	or	r9,r9,r6
+ 821208c:	12406215 	stw	r9,392(r2)
+ 8212090:	21c04215 	stw	r7,264(r4)
+ 8212094:	01000084 	movi	r4,2
+ 8212098:	893fd21e 	bne	r17,r4,8211fe4 <__alt_data_end+0xffff1fe4>
+ 821209c:	11006317 	ldw	r4,396(r2)
+ 82120a0:	218cb03a 	or	r6,r4,r6
+ 82120a4:	11806315 	stw	r6,396(r2)
+ 82120a8:	003fce06 	br	8211fe4 <__alt_data_end+0xffff1fe4>
+ 82120ac:	18805304 	addi	r2,r3,332
+ 82120b0:	18805215 	stw	r2,328(r3)
+ 82120b4:	003fc606 	br	8211fd0 <__alt_data_end+0xffff1fd0>
+ 82120b8:	00bfffc4 	movi	r2,-1
+ 82120bc:	003fd006 	br	8212000 <__alt_data_end+0xffff2000>
+
+082120c0 <__call_exitprocs>:
+ 82120c0:	defff504 	addi	sp,sp,-44
+ 82120c4:	df000915 	stw	fp,36(sp)
+ 82120c8:	dd400615 	stw	r21,24(sp)
+ 82120cc:	dc800315 	stw	r18,12(sp)
+ 82120d0:	dfc00a15 	stw	ra,40(sp)
+ 82120d4:	ddc00815 	stw	r23,32(sp)
+ 82120d8:	dd800715 	stw	r22,28(sp)
+ 82120dc:	dd000515 	stw	r20,20(sp)
+ 82120e0:	dcc00415 	stw	r19,16(sp)
+ 82120e4:	dc400215 	stw	r17,8(sp)
+ 82120e8:	dc000115 	stw	r16,4(sp)
+ 82120ec:	d9000015 	stw	r4,0(sp)
+ 82120f0:	2839883a 	mov	fp,r5
+ 82120f4:	04800044 	movi	r18,1
+ 82120f8:	057fffc4 	movi	r21,-1
+ 82120fc:	00820874 	movhi	r2,2081
+ 8212100:	108a1404 	addi	r2,r2,10320
+ 8212104:	12000017 	ldw	r8,0(r2)
+ 8212108:	45005217 	ldw	r20,328(r8)
+ 821210c:	44c05204 	addi	r19,r8,328
+ 8212110:	a0001c26 	beq	r20,zero,8212184 <__call_exitprocs+0xc4>
+ 8212114:	a0800117 	ldw	r2,4(r20)
+ 8212118:	15ffffc4 	addi	r23,r2,-1
+ 821211c:	b8000d16 	blt	r23,zero,8212154 <__call_exitprocs+0x94>
+ 8212120:	14000044 	addi	r16,r2,1
+ 8212124:	8421883a 	add	r16,r16,r16
+ 8212128:	8421883a 	add	r16,r16,r16
+ 821212c:	84402004 	addi	r17,r16,128
+ 8212130:	a463883a 	add	r17,r20,r17
+ 8212134:	a421883a 	add	r16,r20,r16
+ 8212138:	e0001e26 	beq	fp,zero,82121b4 <__call_exitprocs+0xf4>
+ 821213c:	80804017 	ldw	r2,256(r16)
+ 8212140:	e0801c26 	beq	fp,r2,82121b4 <__call_exitprocs+0xf4>
+ 8212144:	bdffffc4 	addi	r23,r23,-1
+ 8212148:	843fff04 	addi	r16,r16,-4
+ 821214c:	8c7fff04 	addi	r17,r17,-4
+ 8212150:	bd7ff91e 	bne	r23,r21,8212138 <__alt_data_end+0xffff2138>
+ 8212154:	00800034 	movhi	r2,0
+ 8212158:	10800004 	addi	r2,r2,0
+ 821215c:	10000926 	beq	r2,zero,8212184 <__call_exitprocs+0xc4>
+ 8212160:	a0800117 	ldw	r2,4(r20)
+ 8212164:	1000301e 	bne	r2,zero,8212228 <__call_exitprocs+0x168>
+ 8212168:	a0800017 	ldw	r2,0(r20)
+ 821216c:	10003226 	beq	r2,zero,8212238 <__call_exitprocs+0x178>
+ 8212170:	a009883a 	mov	r4,r20
+ 8212174:	98800015 	stw	r2,0(r19)
+ 8212178:	00000000 	call	0 <__alt_mem_ram_data-0x8210000>
+ 821217c:	9d000017 	ldw	r20,0(r19)
+ 8212180:	a03fe41e 	bne	r20,zero,8212114 <__alt_data_end+0xffff2114>
+ 8212184:	dfc00a17 	ldw	ra,40(sp)
+ 8212188:	df000917 	ldw	fp,36(sp)
+ 821218c:	ddc00817 	ldw	r23,32(sp)
+ 8212190:	dd800717 	ldw	r22,28(sp)
+ 8212194:	dd400617 	ldw	r21,24(sp)
+ 8212198:	dd000517 	ldw	r20,20(sp)
+ 821219c:	dcc00417 	ldw	r19,16(sp)
+ 82121a0:	dc800317 	ldw	r18,12(sp)
+ 82121a4:	dc400217 	ldw	r17,8(sp)
+ 82121a8:	dc000117 	ldw	r16,4(sp)
+ 82121ac:	dec00b04 	addi	sp,sp,44
+ 82121b0:	f800283a 	ret
+ 82121b4:	a0800117 	ldw	r2,4(r20)
+ 82121b8:	80c00017 	ldw	r3,0(r16)
+ 82121bc:	10bfffc4 	addi	r2,r2,-1
+ 82121c0:	15c01426 	beq	r2,r23,8212214 <__call_exitprocs+0x154>
+ 82121c4:	80000015 	stw	zero,0(r16)
+ 82121c8:	183fde26 	beq	r3,zero,8212144 <__alt_data_end+0xffff2144>
+ 82121cc:	95c8983a 	sll	r4,r18,r23
+ 82121d0:	a0806217 	ldw	r2,392(r20)
+ 82121d4:	a5800117 	ldw	r22,4(r20)
+ 82121d8:	2084703a 	and	r2,r4,r2
+ 82121dc:	10000b26 	beq	r2,zero,821220c <__call_exitprocs+0x14c>
+ 82121e0:	a0806317 	ldw	r2,396(r20)
+ 82121e4:	2088703a 	and	r4,r4,r2
+ 82121e8:	20000c1e 	bne	r4,zero,821221c <__call_exitprocs+0x15c>
+ 82121ec:	89400017 	ldw	r5,0(r17)
+ 82121f0:	d9000017 	ldw	r4,0(sp)
+ 82121f4:	183ee83a 	callr	r3
+ 82121f8:	a0800117 	ldw	r2,4(r20)
+ 82121fc:	15bfbf1e 	bne	r2,r22,82120fc <__alt_data_end+0xffff20fc>
+ 8212200:	98800017 	ldw	r2,0(r19)
+ 8212204:	153fcf26 	beq	r2,r20,8212144 <__alt_data_end+0xffff2144>
+ 8212208:	003fbc06 	br	82120fc <__alt_data_end+0xffff20fc>
+ 821220c:	183ee83a 	callr	r3
+ 8212210:	003ff906 	br	82121f8 <__alt_data_end+0xffff21f8>
+ 8212214:	a5c00115 	stw	r23,4(r20)
+ 8212218:	003feb06 	br	82121c8 <__alt_data_end+0xffff21c8>
+ 821221c:	89000017 	ldw	r4,0(r17)
+ 8212220:	183ee83a 	callr	r3
+ 8212224:	003ff406 	br	82121f8 <__alt_data_end+0xffff21f8>
+ 8212228:	a0800017 	ldw	r2,0(r20)
+ 821222c:	a027883a 	mov	r19,r20
+ 8212230:	1029883a 	mov	r20,r2
+ 8212234:	003fb606 	br	8212110 <__alt_data_end+0xffff2110>
+ 8212238:	0005883a 	mov	r2,zero
+ 821223c:	003ffb06 	br	821222c <__alt_data_end+0xffff222c>
+
+08212240 <_exit>:
+ *
+ * ALT_EXIT is mapped onto the _exit() system call in alt_syscall.h
+ */
+
+void ALT_EXIT (int exit_code)
+{
+ 8212240:	defffd04 	addi	sp,sp,-12
+ 8212244:	df000215 	stw	fp,8(sp)
+ 8212248:	df000204 	addi	fp,sp,8
+ 821224c:	e13fff15 	stw	r4,-4(fp)
+  ALT_LOG_PRINT_BOOT("[alt_exit.c] Entering _exit() function.\r\n");
+  ALT_LOG_PRINT_BOOT("[alt_exit.c] Exit code from main was %d.\r\n",exit_code);
+  /* Stop all other threads */
+
+  ALT_LOG_PRINT_BOOT("[alt_exit.c] Calling ALT_OS_STOP().\r\n");
+  ALT_OS_STOP();
+ 8212250:	0001883a 	nop
+ 8212254:	e0bfff17 	ldw	r2,-4(fp)
+ 8212258:	e0bffe15 	stw	r2,-8(fp)
+/*
+ * Routine called on exit.
+ */
+static ALT_INLINE ALT_ALWAYS_INLINE void alt_sim_halt(int exit_code)
+{
+  register int r2 asm ("r2") = exit_code;
+ 821225c:	e0bffe17 	ldw	r2,-8(fp)
+  __asm__ volatile ("\n0:\n\taddi %0,%0, -1\n\tbgt %0,zero,0b" : : "r" (ALT_CPU_FREQ/100) ); /* Delay for >30ms */
+
+  __asm__ volatile ("break 2" : : "r"(r2), "r"(r3) ALT_GMON_DATA );
+
+#else /* !DEBUG_STUB */
+  if (r2) {
+ 8212260:	10000226 	beq	r2,zero,821226c <_exit+0x2c>
+    ALT_SIM_FAIL();
+ 8212264:	002af070 	cmpltui	zero,zero,43969
+ 8212268:	00000106 	br	8212270 <_exit+0x30>
+  } else {
+    ALT_SIM_PASS();
+ 821226c:	002af0b0 	cmpltui	zero,zero,43970
+  ALT_SIM_HALT(exit_code);
+
+  /* spin forever, since there's no where to go back to */
+
+  ALT_LOG_PRINT_BOOT("[alt_exit.c] Spinning forever.\r\n");
+  while (1);
+ 8212270:	003fff06 	br	8212270 <__alt_data_end+0xffff2270>

@@ -1,0 +1,22 @@
+15:35:14 **** Incremental Build of configuration Nios II for project processador ****
+make all 
+Info: Building ../processador_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../processador_bsp/
+[BSP build complete]
+Info: Compiling hello_world.c to obj/default/hello_world.o
+nios2-elf-gcc -xc -MP -MMD -c -I../processador_bsp//HAL/inc -I../processador_bsp/ -I../processador_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world.o hello_world.c
+hello_world.c: In function 'init_pio_interrupt':
+hello_world.c:429:5: warning: implicit declaration of function 'alt_irq_register' [-Wimplicit-function-declaration]
+     alt_irq_register(PIO_0_IRQ, NULL, (void*)new_frame_isr);
+     ^
+Info: Linking processador.elf
+nios2-elf-g++  -T'../processador_bsp//linker.x' -msys-crt0='../processador_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../processador_bsp/   -Wl,-Map=processador.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o processador.elf obj/default/hello_world.o -lm -msys-lib=m
+nios2-elf-insert processador.elf --thread_model hal --cpu_name processor --qsys true --simulation_enabled false --stderr_dev none --stdin_dev none --stdout_dev none --sopc_system_name embedded_vpu --quartus_project_dir "C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit" --jdi ../..//output_files/visual_processing_unit.jdi --sopcinfo C:/Users/caios/OneDrive/Documentos/UFBA/laboratorio_integrado_IV/sdram+sprites+sram/visual_processing_unit/software/processador_bsp/../../embedded_vpu.sopcinfo
+Info: (processador.elf) 11 KBytes program size (code + initialized data).
+Info:                   51 KBytes free for stack + heap.
+Info: Creating processador.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source processador.elf >processador.objdump
+[processador build complete]
+
+15:35:15 Build Finished (took 1s.620ms)
+
