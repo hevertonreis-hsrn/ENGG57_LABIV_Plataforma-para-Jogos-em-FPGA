@@ -1,0 +1,20 @@
+# Interrupt Test
+
+# Setup interrupt vector table
+MOV R1 R0        # R1 = 1
+ADD R1 R1        # R1 = 2
+ADD R1 R1        # R1 = 4
+ADD R1 R1        # R1 = 8 (This will be our handler address)
+SVEC 3 R1        # Set interrupt 3 to use handler at address 8
+
+# Main program
+MOV R2 R0        # R2 = 1 
+ADD R2 R2        # R2 = 2
+INT 3            # Call interrupt 3
+ADD R2 R2        # R2 = 4 (after interrupt returns)
+HALT             # Stop execution
+
+# Interrupt handler (at address 8)
+MOV R5 R0        # R5 = 1
+ADD R5 R5        # R5 = 2
+IRET             # Return from interrupt

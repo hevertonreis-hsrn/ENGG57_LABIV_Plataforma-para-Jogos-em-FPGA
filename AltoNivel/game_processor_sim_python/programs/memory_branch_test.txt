@@ -1,0 +1,66 @@
+# Test program for memory operations and branching
+
+# Initialize some values
+MOV R1 R0      # R1 = 0
+ADD R1 R0      # R1 = 1
+ADD R1 R1      # R1 = 2
+ADD R1 R1      # R1 = 4
+ADD R1 R1      # R1 = 8
+
+# Store values in memory
+SW R1 100(R0)  # Store 8 at address 100
+MOV R2 R1      # R2 = 8
+ADD R2 R1      # R2 = 16
+SW R2 104(R0)  # Store 16 at address 104
+
+# Load values from memory
+LW R3 100(R0)  # R3 = MEM[100] = 8
+LW R4 104(R0)  # R4 = MEM[104] = 16
+
+# Test indirect addressing
+MOV R5 R0      # R5 = 0
+ADD R5 R0      # R5 = 1
+ADD R5 R5      # R5 = 2
+MUL R5 R5      # R5 = 4
+MUL R5 R5      # R5 = 16
+ADD R5 R5      # R5 = 32
+ADD R5 R5      # R5 = 64
+ADD R5 R5      # R5 = 128 (base address)
+
+MOV R6 R0      # R6 = 0
+ADD R6 R0      # R6 = 1
+ADD R6 R6      # R6 = 2
+ADD R6 R6      # R6 = 4 (offset)
+
+# Store value using base+offset
+SW R1 0(R5)    # Store 8 at address 128
+SW R2 4(R5)    # Store 16 at address 132
+
+# Load using base+offset
+LW R7 0(R5)    # R7 = MEM[128] = 8
+LW R8 4(R5)    # R8 = MEM[132] = 16
+
+# Test conditional branching with a loop
+MOV R9 R0      # R9 = 0 (counter)
+MOV R10 R0     # R10 = 0
+ADD R10 R0     # R10 = 1
+ADD R10 R10    # R10 = 2
+ADD R10 R10    # R10 = 4
+ADD R10 R10    # R10 = 8
+ADD R10 R10    # R10 = 16
+ADD R10 R10    # R10 = 32
+
+# Loop start
+LOOP:
+ADD R9 R1      # Increment counter by 2
+SW R9 200(R0)  # Store counter at 200 (for verification)
+CMP R9 R10     # Compare counter with 32
+BRFL 15 004    # Branch if below == 1 (not equal)
+JPC 2          # Skip next instruction if equal
+JPC -5         # Jump back to LOOP
+
+# Loop exit
+MOV R11 R0     # R11 = 0
+ADD R11 R0     # R11 = 1
+MUL R11 R10    # R11 = 32 (loop completed marker)
+SW R11 210(R0) # Store completion marker at 210

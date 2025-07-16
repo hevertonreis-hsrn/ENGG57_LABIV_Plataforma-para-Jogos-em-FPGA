@@ -1,0 +1,35 @@
+# Test program for call and return instructions
+
+# Initialize register with the address of the subroutine
+MOV R1 R0    # R1 = 0
+ADD R1 R0    # R1 = 1
+ADD R1 R1    # R1 = 2
+ADD R1 R1    # R1 = 4
+ADD R1 R1    # R1 = 8
+ADD R1 R1    # R1 = 16
+
+# Main program
+MOV R2 R0    # R2 = 0
+ADD R2 R0    # R2 = 1 (initial value)
+SW R2 100(R0)  # Store 1 at address 100
+
+# Call the subroutine to double the value
+CALL R1      # Call subroutine at address 16
+
+# After return, store the result
+SW R2 104(R0)  # Store doubled value at address 104
+
+# Call the subroutine again
+CALL R1      # Call subroutine at address 16
+
+# After second return, store the result
+SW R2 108(R0)  # Store quadrupled value at address 108
+
+# Halt by jumping to self
+JPC 0        # Infinite loop at end of program
+
+# Subroutine at address 16
+# Doubles the value in R2
+LW R3 100(R0)  # Load the initial value
+ADD R2 R2    # Double R2
+RET          # Return to caller

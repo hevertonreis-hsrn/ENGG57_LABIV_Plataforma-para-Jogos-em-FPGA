@@ -1,0 +1,130 @@
+# Comprehensive test program for all opcodes
+
+# ---------- Data Transfer Instructions ----------
+# Test MOV
+MOV R1 R0    # R1 = 0
+ADD R1 R0    # R1 = 1
+MOV R2 R1    # R2 = 1
+
+# Test LW and SW
+SW R2 100(R0) # Store 1 at address 100
+LW R3 100(R0) # Load from address 100 into R3
+
+# ---------- Arithmetic Instructions ----------
+# Test ADD
+MOV R4 R2    # R4 = 1
+ADD R4 R2    # R4 = 1 + 1 = 2
+
+# Test SUB
+MOV R5 R4    # R5 = 2
+SUB R5 R2    # R5 = 2 - 1 = 1
+
+# Test MUL
+MOV R6 R4    # R6 = 2
+MUL R6 R4    # R6 = 2 * 2 = 4
+
+# Test DIV
+MOV R7 R6    # R7 = 4
+DIV R7 R2    # R7 = 4 / 1 = 4
+
+# ---------- Logical Instructions ----------
+# Test AND
+MOV R8 R6    # R8 = 4 (0100 in binary)
+MOV R9 R6    # R9 = 4
+ADD R9 R2    # R9 = 4 + 1 = 5 (0101 in binary)
+AND R8 R9    # R8 = 4 & 5 = 4
+
+# Test OR
+MOV R10 R4   # R10 = 2 (0010 in binary)
+MOV R11 R2   # R11 = 1 (0001 in binary)
+OR R10 R11   # R10 = 2 | 1 = 3
+
+# Test SHL
+MOV R12 R2   # R12 = 1
+SHL R12 R2   # R12 = 1 << 1 = 2
+
+# Test SHR
+MOV R13 R6   # R13 = 4
+SHR R13 R2   # R13 = 4 >> 1 = 2
+
+# Test CMP
+MOV R14 R4   # R14 = 2
+MOV R15 R6   # R15 = 4
+CMP R14 R15  # Sets flags: below=1 (R14<R15)
+
+# Test NOT
+MOV R16 R2   # R16 = 1 (0001 in binary)
+NOT R16      # R16 = ~1 = -2 (in two's complement)
+
+# ---------- Control Flow Instructions ----------
+# Test JPC (unconditional forward jump)
+JPC 2        # Skip next instruction
+MOV R17 R0   # This should be skipped
+MOV R18 R6   # R18 = 4
+
+# Set up for BRFL test
+MOV R19 R0   # R19 = 0
+ADD R19 R0   # R19 = 1
+ADD R19 R19  # R19 = 2
+ADD R19 R19  # R19 = 4
+ADD R19 R19  # R19 = 8
+ADD R19 R19  # R19 = 16
+ADD R19 R19  # R19 = 32
+ADD R19 R19  # R19 = 64 (PC destination)
+
+# Test comparison and branch
+MOV R20 R6   # R20 = 4
+MOV R21 R7   # R21 = 4
+CMP R20 R21  # Sets flags: equal=1 (R20=R21)
+BRFL R0 010 010  # Branch if equal=1 (skip next 2 instructions)
+MOV R22 R2   # This should be skipped
+MOV R22 R4   # This should be skipped
+MOV R22 R6   # R22 = 4
+
+# Test CALL/RET
+MOV R23 R0   # R23 = 0
+ADD R23 R0   # R23 = 1
+ADD R23 R23  # R23 = 2
+ADD R23 R23  # R23 = 4
+ADD R23 R23  # R23 = 8
+ADD R23 R23  # R23 = 16
+ADD R23 R23  # R23 = 32
+ADD R23 R23  # R23 = 64
+ADD R23 R23  # R23 = 128 (subroutine address)
+MOV R24 R0   # R24 = 0
+CALL R23     # Call subroutine at address 128
+
+# Test NOP
+NOP          # No operation
+NOP          # No operation
+
+# Store all test results
+SW R1 200(R0)  # Store R1 (should be 1)
+SW R2 204(R0)  # Store R2 (should be 1)
+SW R3 208(R0)  # Store R3 (should be 1)
+SW R4 212(R0)  # Store R4 (should be 2)
+SW R5 216(R0)  # Store R5 (should be 1)
+SW R6 220(R0)  # Store R6 (should be 4)
+SW R7 224(R0)  # Store R7 (should be 4)
+SW R8 228(R0)  # Store R8 (should be 4)
+SW R10 232(R0) # Store R10 (should be 3)
+SW R12 236(R0) # Store R12 (should be 2)
+SW R13 240(R0) # Store R13 (should be 2)
+SW R16 244(R0) # Store R16 (should be -2)
+SW R18 248(R0) # Store R18 (should be 4)
+SW R22 252(R0) # Store R22 (should be 4)
+SW R24 256(R0) # Store R24 (should be 42 after subroutine)
+
+# End of main program
+JPC 0        # Loop forever (halt)
+
+# Subroutine at address 128
+MOV R24 R0   # R24 = 0
+ADD R24 R0   # R24 = 1
+MUL R24 R6   # R24 = 1 * 4 = 4
+MUL R24 R6   # R24 = 4 * 4 = 16
+ADD R24 R6   # R24 = 16 + 4 = 20
+MUL R24 R4   # R24 = 20 * 2 = 40
+ADD R24 R4   # R24 = 40 + 2 = 42 (arbitrary value)
+SW R24 260(R0) # Store result in memory too
+RET          # Return to caller
